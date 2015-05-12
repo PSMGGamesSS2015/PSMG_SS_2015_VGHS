@@ -1,0 +1,104 @@
+fileFormatVersion: 2
+guid: f36753be54c796c4e965d800321e9e15
+timeCreated: 1431442437
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Amaturen
+    100002: //RootNode
+    100004: Griffe_oben
+    100006: Griffe_unten
+    100008: Unterschrank
+    100010: Wand
+    100012: Waschbecken
+    100014: Wasserhahn
+    400000: Amaturen
+    400002: //RootNode
+    400004: Griffe_oben
+    400006: Griffe_unten
+    400008: Unterschrank
+    400010: Wand
+    400012: Waschbecken
+    400014: Wasserhahn
+    2300000: Amaturen
+    2300002: Griffe_oben
+    2300004: Griffe_unten
+    2300006: Unterschrank
+    2300008: Wand
+    2300010: Waschbecken
+    2300012: Wasserhahn
+    3300000: Amaturen
+    3300002: Griffe_oben
+    3300004: Griffe_unten
+    3300006: Unterschrank
+    3300008: Wand
+    3300010: Waschbecken
+    3300012: Wasserhahn
+    4300000: Wand
+    4300002: Unterschrank
+    4300004: Waschbecken
+    4300006: Amaturen
+    4300008: Wasserhahn
+    4300010: Griffe_oben
+    4300012: Griffe_unten
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
