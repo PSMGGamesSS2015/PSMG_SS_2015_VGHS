@@ -823,6 +823,10 @@ Prefab:
       propertyPath: m_MouseLook.MaximumX
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_FovKick.Camera
+      value: 
+      objectReference: {fileID: 1587559161}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -1521,6 +1525,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d02c9ccaeb8cf794ea55a083a9a95e35, type: 3}
   m_IsPrefabParent: 0
+--- !u!20 &1587559161
+Camera:
+  m_PrefabParentObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 2}
+  m_PrefabInternal: {fileID: 713061760}
 --- !u!1 &1604696889
 GameObject:
   m_ObjectHideFlags: 0
