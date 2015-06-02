@@ -1793,7 +1793,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: ee64c68e4a080454788c579ddf54812d, type: 3}
       propertyPath: m_TagString
-      value: PlayerCharacter
+      value: JacketOn
       objectReference: {fileID: 0}
     - target: {fileID: 2300008, guid: ee64c68e4a080454788c579ddf54812d, type: 3}
       propertyPath: m_Enabled
