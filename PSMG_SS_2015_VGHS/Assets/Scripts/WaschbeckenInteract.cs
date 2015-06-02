@@ -3,13 +3,26 @@ using System.Collections;
 
 public class WaschbeckenInteract : MonoBehaviour
 {
+	int interactTime = 0;
     bool insideCollider = false;
-    bool mirror = false;
+
+
     void Update()
     {
-        if (insideCollider == true && Input.GetKeyDown(KeyCode.E))
-        {
-            mirror = true;
+
+		//react to interaction with sink
+		if (insideCollider == true && Input.GetKeyDown(KeyCode.E))
+		{
+			switch (interactTime){
+			case 0: 
+				interactTime = 1;
+				break;
+			case 2:
+				interactTime = 3;
+				break;
+
+			default: break;
+			}
         }
     }
 
@@ -24,24 +37,55 @@ public class WaschbeckenInteract : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "PlayerCharacter")
-        {
-            insideCollider = false;
-            mirror = false;
-        }
+		if (other.tag == "PlayerCharacter")
+		{
+			insideCollider = false;
+		}
+	}
+	
+	void OnGUI()
+	{
+        
+		//show possible interaction when colliding with sink
+        if (insideCollider && (interactTime == 0 || interactTime == 2)) 
+		{
+
+			GUI.Box (new Rect (10, 10, 150, 25), "Press \"E\" to interact!");
+		}
+
+		//react to first interaction
+		if (interactTime == 1) 
+		{
+			Time.timeScale = 0;
+			GUI.Box(new Rect(Screen.width / 2 - 550, Screen.height / 2 - 12, 1100, 25), "Okay, ganz ruhig bleiben. Jetzt bloß keine Panik. Wer bist du, Frau im Spiegel? Bist du ich? Verdammt warum erkenne ich dich nicht?! Mir ist so heiß... (press 'Leer' to go on)");
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				Time.timeScale = 1;
+				setupJacket();
+				interactTime = 2;
+			}
+		}
+
+		//react to second interaction
+		if (interactTime == 3) 
+		{
+			Time.timeScale = 0;
+			GUI.Box(new Rect(Screen.width / 2 - 550, Screen.height / 2 - 12, 1100, 25), "Was zum…?! O-Oh mein… Nein, das ist… das ist Blut!!! Nicht mein Blut! Was ist denn hier los - oh Gott was habe ich getan?! (press 'Leer' to go on)");
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				Time.timeScale = 1;
+				interactTime = 4;
+			}
+		}
     }
 
-    void OnGUI()
-    {
-        //GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 100, 100), "My Text");
+	//handle taking off and rendering the jacket
+	void setupJacket()
+	{
+		Destroy (GameObject.FindGameObjectWithTag("JacketOn"));
 
-        if (insideCollider)
-        {
-            GUI.Box(new Rect(10, 10, 150, 25), "Press \"E\" to interact!");
-            if (mirror)
-            {
-                GUI.Box(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 12, 300, 25), "You interacted with the mirror!");
-            }
-        }
-    }
+	}
+
+
+
 }
