@@ -48,7 +48,7 @@ public class MantelInteract : MonoBehaviour
         if (insideCollider && interacted)
         {
             GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = false;
-            GUI.Box(new Rect(Screen.width / 2 - 550, Screen.height / 2 - 12, 1100, 25), "Pat Rutherford. Z.31. 12:30 Uhr… Wer ist Pat Rutherford? War ich um 12:30 bei dieser oder diesem Pat? War das heute? Was war heute? Was war gestern? WER BIN ICH? (press 'Space' to go on)");
+            GUI.Box(new Rect(Screen.width / 2 - 325, Screen.height / 2 - 27, 650, 55), "Pat Rutherford. Z.31. 12:30 Uhr… Wer ist Pat Rutherford? War ich um 12:30 bei dieser oder diesem Pat? \n \n War das heute? Was war heute? Was war gestern? WER BIN ICH? (press 'Space' to go on)");
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = true;
