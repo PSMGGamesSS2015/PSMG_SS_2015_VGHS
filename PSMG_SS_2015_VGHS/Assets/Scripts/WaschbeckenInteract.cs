@@ -9,6 +9,7 @@ public class WaschbeckenInteract : MonoBehaviour
     GameObject mantel;
     GameObject mantelAn;
     GameObject mantelTrigger;
+	public Canvas inventory;
 
     void Start()
     {
@@ -16,11 +17,25 @@ public class WaschbeckenInteract : MonoBehaviour
         mantelAn = GameObject.Find("Mantel");
         mantelTrigger = GameObject.Find("MantelTrigger");
         mantelTrigger.GetComponent<SphereCollider>().enabled = false;
+		inventory.enabled = false;
+
+
+
     }
 
 
     void Update()
     {
+		if (Input.GetKeyDown (KeyCode.I)) {
+			if(inventory.enabled == false){
+				inventory.enabled = true;
+				GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = false;
+			}
+			else{
+				inventory.enabled = false;
+				GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = true;
+			}
+		}
 
 		//react to interaction with sink
 		if (insideCollider == true && Input.GetKeyDown(KeyCode.E))
