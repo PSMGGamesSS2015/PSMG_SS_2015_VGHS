@@ -57,9 +57,12 @@ public class MainController : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 					guiController.showInventoryHint();
 >>>>>>> origin/Sabse
+=======
+>>>>>>> parent of 9cc0f0b... Hint added
 =======
 >>>>>>> parent of 9cc0f0b... Hint added
 =======
@@ -75,9 +78,12 @@ public class MainController : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				guiController.showInventoryHint();
 >>>>>>> origin/Sabse
+=======
+>>>>>>> parent of 9cc0f0b... Hint added
 =======
 >>>>>>> parent of 9cc0f0b... Hint added
 =======
