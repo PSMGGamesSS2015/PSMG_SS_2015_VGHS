@@ -10,11 +10,16 @@ public class GUIController : MonoBehaviour {
 	public GameObject subtitleObject;
 	public GameObject interactionHintObject;
 	public GameObject inventoryObject;
+	public GameObject inventoryHint;
 	
 	bool subtlIsShown;
 	bool sinkIsActive;
 	int sinkCounter = 0;
-	
+
+	//show hint for Inventory
+	public void showInventoryHint(){
+		inventoryHint.SetActive (true);
+	}
 
 	//show a hint for possible 'E' interactions
 	public void showInteractionHint(){
