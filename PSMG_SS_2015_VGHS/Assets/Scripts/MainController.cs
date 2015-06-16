@@ -55,9 +55,12 @@ public class MainController : MonoBehaviour {
 				case 1:
 					guiController.showSubtl("mirror2");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 					guiController.showInventoryHint();
 >>>>>>> origin/Sabse
+=======
+>>>>>>> parent of 9cc0f0b... Hint added
 					sinkCounter++;
 					break;
 				default: break;
@@ -67,9 +70,12 @@ public class MainController : MonoBehaviour {
 			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()){
 				guiController.showSubtl("paper");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				guiController.showInventoryHint();
 >>>>>>> origin/Sabse
+=======
+>>>>>>> parent of 9cc0f0b... Hint added
 				noteFound = true;
 			}
 		}
