@@ -54,6 +54,10 @@ public class MainController : MonoBehaviour {
 					break;
 				case 1:
 					guiController.showSubtl("mirror2");
+<<<<<<< HEAD
+=======
+					guiController.showInventoryHint();
+>>>>>>> origin/Sabse
 					sinkCounter++;
 					break;
 				default: break;
@@ -62,6 +66,10 @@ public class MainController : MonoBehaviour {
 			// interacted with jacket
 			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()){
 				guiController.showSubtl("paper");
+<<<<<<< HEAD
+=======
+				guiController.showInventoryHint();
+>>>>>>> origin/Sabse
 				noteFound = true;
 			}
 		}
