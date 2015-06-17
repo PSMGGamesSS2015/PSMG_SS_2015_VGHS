@@ -1,60 +1,55 @@
-﻿
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
 /* GUI CONTROLLER
  * Handles anything that is needed to be shown on the canvas.
- */
-public class GUIController : MonoBehaviour
-{
+ */ 
+public class GUIController : MonoBehaviour {
+	
+	public GameObject subtitleObject;
+	public GameObject interactionHintObject;
+	public GameObject inventoryObject;
+	public GameObject inventoryHint;
+	
+	bool subtlIsShown;
+	bool sinkIsActive;
+	int sinkCounter = 0;
 
-    public GameObject subtitleObject;
-    public GameObject interactionHintObject;
-    public GameObject inventoryObject;
-    public GameObject inventoryHint;
+	//show hint for Inventory
+	public void showInventoryHint(){
+		inventoryHint.SetActive (true);
+	}
 
-    bool subtlIsShown;
-    bool sinkIsActive;
-    int sinkCounter = 0;
+	//show a hint for possible 'E' interactions
+	public void showInteractionHint(){
+		interactionHintObject.SetActive(true);
+	}
 
-    //show hint for Inventory
-    public void showInventoryHint()
-    {
-        inventoryHint.SetActive(true);
-    }
+	//hide interaction hint for 
+	public void unshowInteractionHint(){
+			interactionHintObject.SetActive(false);	
+	}
 
-    //show a hint for possible 'E' interactions
-    public void showInteractionHint()
-    {
-        interactionHintObject.SetActive(true);
-    }
+	// show a subtitle on the GUI
+	public void showSubtl(string key){
+		subtitleObject.SetActive(true);
+		subtitleObject.GetComponent<Subtitle>().setKeyWord(key);
+		subtlIsShown = true;
+	}
 
-    //hide interaction hint for 
-    public void unshowInteractionHint()
-    {
-        interactionHintObject.SetActive(false);
-    }
+	//disable subtitle on GUI
+	public void unshowSubtl(){
+		subtitleObject.SetActive(false);
+		subtlIsShown = false;
+	}
 
-    // show a subtitle on the GUI
-    public void showSubtl(string key)
-    {
-        subtitleObject.SetActive(true);
-        subtitleObject.GetComponent<Subtitle>().setKeyWord(key);
-        subtlIsShown = true;
-    }
+	//method that makes it able to check if an subtitle is shown currently
+	public bool isShowing(){
+		return subtlIsShown;
+	}
 
-    //disable subtitle on GUI
-    public void unshowSubtl()
-    {
-        subtitleObject.SetActive(false);
-        subtlIsShown = false;
-    }
 
-    //method that makes it able to check if an subtitle is shown currently
-    public bool isShowing()
-    {
-        return subtlIsShown;
-    }
+
+
 }

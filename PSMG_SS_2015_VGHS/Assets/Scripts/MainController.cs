@@ -55,7 +55,6 @@ public class MainController : MonoBehaviour {
 				case 1:
 					guiController.showSubtl("mirror2");
 					guiController.showInventoryHint();
-
 					sinkCounter++;
 					break;
 				default: break;
