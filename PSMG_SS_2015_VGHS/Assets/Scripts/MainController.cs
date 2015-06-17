@@ -56,12 +56,9 @@ public class MainController : MonoBehaviour {
 					guiController.showSubtl("mirror2");
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 					guiController.showInventoryHint();
 >>>>>>> origin/Sabse
-=======
->>>>>>> parent of 9cc0f0b... Hint added
 =======
 >>>>>>> parent of 9cc0f0b... Hint added
 					sinkCounter++;
@@ -74,12 +71,9 @@ public class MainController : MonoBehaviour {
 				guiController.showSubtl("paper");
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 				guiController.showInventoryHint();
 >>>>>>> origin/Sabse
-=======
->>>>>>> parent of 9cc0f0b... Hint added
 =======
 >>>>>>> parent of 9cc0f0b... Hint added
 				noteFound = true;
