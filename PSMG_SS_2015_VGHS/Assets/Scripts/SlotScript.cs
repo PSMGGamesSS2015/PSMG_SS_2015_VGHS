@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+// Handle anything happening in a slot here
 public class SlotScript : MonoBehaviour, IPointerDownHandler{
 
 	public Item item;
@@ -24,6 +25,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler{
 		}
 	}
 
+	// Do sth. when slot is clicked
 	public void OnPointerDown(PointerEventData data){
 		Debug.Log (transform.name);
 	}
