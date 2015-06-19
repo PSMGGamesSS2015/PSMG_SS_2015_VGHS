@@ -16,6 +16,7 @@ public class MainController : MonoBehaviour {
 	public GameObject sinkTrigger;
 	public GameObject jacketTrigger;
 	public GameObject jacket;
+	public GameObject jacketOn;
 
 	int sinkCounter = 0;
 	bool noteFound = false;
@@ -45,6 +46,7 @@ public class MainController : MonoBehaviour {
 			guiController.unshowSubtl();
 			if(sinkCounter == 1){
 				jacket.SetActive(true);
+				jacketOn.SetActive(false);
 			}
 		}
 
@@ -60,6 +62,7 @@ public class MainController : MonoBehaviour {
 				case 1:
 					guiController.showSubtl("mirror2");
 					guiController.showInventoryHint();
+					guiController.addHint("dressHint");
 					sinkCounter++;
 					break;
 				default: break;
@@ -69,6 +72,7 @@ public class MainController : MonoBehaviour {
 			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()){
 				guiController.showSubtl("paper");
 				guiController.showInventoryHint();
+				guiController.addHint("noteHint");
 				noteFound = true;
 			}
 		}
