@@ -8,17 +8,21 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler{
 
 	public Item item;
 	Image itemImage;
+	public int slotNumber;
+
+	Inventory inventory;
 
 	// Use this for initialization
 	void Start () {
+		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
 		itemImage = gameObject.transform.GetChild(0).GetComponent<Image>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	 	if (item != null) {
+	 	if (inventory.Items[slotNumber].itemName != null) {
 			itemImage.enabled = true;
-			itemImage.sprite = item.itemIcon;
+			itemImage.sprite = inventory.Items[slotNumber].itemIcon;
 		} 
 		else {
 			itemImage.enabled = false;

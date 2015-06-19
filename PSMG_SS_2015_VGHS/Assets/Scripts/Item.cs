@@ -18,6 +18,7 @@ public class Item {
 		itemName = name;
 		itemDesc = desc;
 		itemId = id;
+		itemIcon = Resources.Load<Sprite> ("" + name);
 	}
 
 	public Item(){

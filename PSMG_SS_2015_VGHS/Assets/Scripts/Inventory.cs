@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour {
 	public List <GameObject> Slots = new List<GameObject> (); 
 	public List <Item> Items = new List<Item> (); 
 
+
 	ItemDatabase database;
 
 	public GameObject slots;
@@ -24,11 +25,15 @@ public class Inventory : MonoBehaviour {
 
 
 	public void setupInventory(){
+
+		int slotAmount = 0;
+
 		database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
-		
+
 		for(int i = 0; i < slotNumY; i++){
 			for(int k = 0; k < slotNumX; k++){
 				GameObject slot = (GameObject) Instantiate(slots);
+				slot.GetComponent<SlotScript>().slotNumber = slotAmount;
 				slot.transform.parent = this.gameObject.transform;
 				slot.GetComponent<RectTransform>().localPosition = new Vector3 (x, y, 0);
 				slot.name = "Slot"+i+"."+k;
@@ -39,6 +44,7 @@ public class Inventory : MonoBehaviour {
 					x = xReset;
 					y -= slotDistY;
 				}
+				slotAmount++;
 			}
 		}
 	}
