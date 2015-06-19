@@ -1318,6 +1318,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d02c9ccaeb8cf794ea55a083a9a95e35, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1004258599 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100010, guid: ee64c68e4a080454788c579ddf54812d, type: 3}
+  m_PrefabInternal: {fileID: 1775813970}
 --- !u!1 &1049069000 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b158803f05b4fc04590305e9b6175544, type: 3}
@@ -1355,6 +1359,7 @@ MonoBehaviour:
   sinkTrigger: {fileID: 440735518}
   jacketTrigger: {fileID: 991728984}
   jacket: {fileID: 1049069000}
+  jacketOn: {fileID: 1004258599}
 --- !u!4 &1052943392
 Transform:
   m_ObjectHideFlags: 0
@@ -2008,6 +2013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85c9c1e34b244a46a71de2a017a1508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Slots: []
   slots: {fileID: 195024, guid: cb2a0284987809f43bbbf5095ffb7f9c, type: 2}
   slotNumX: 4
   slotNumY: 5
