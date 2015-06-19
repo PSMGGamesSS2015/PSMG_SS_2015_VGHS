@@ -35,7 +35,12 @@ public class MainController : MonoBehaviour {
 
 	//get all the key interactions
 	void getKeyInteractions(){
-		//close a subtitle with space
+		// open/close inventory with 'I'
+		if (Input.GetKeyDown (KeyCode.I)) {
+			guiController.toggleInventory();
+		}
+
+		// close a subtitle with space
 		if (Input.GetKeyDown (KeyCode.Space) && guiController.isShowing ()) {
 			guiController.unshowSubtl();
 			if(sinkCounter == 1){

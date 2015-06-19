@@ -5,8 +5,6 @@ using UnityEngine.UI;
 public class InventoryHint : MonoBehaviour {
 
 	public Text hint;
-
-	
 	
 	/* Update is called once per frame
 	 * Change alpha and hide

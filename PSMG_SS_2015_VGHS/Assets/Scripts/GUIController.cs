@@ -11,10 +11,21 @@ public class GUIController : MonoBehaviour {
 	public GameObject interactionHintObject;
 	public GameObject inventoryObject;
 	public GameObject inventoryHint;
+	public GameObject inventory;
 	
 	bool subtlIsShown;
 	bool sinkIsActive;
 	int sinkCounter = 0;
+
+	//show inventory
+	public void toggleInventory(){
+		if (inventory.activeSelf) {
+			inventory.SetActive (false);
+		} else {
+			inventory.SetActive(true);
+		}
+
+	}
 
 	//show hint for Inventory
 	public void showInventoryHint(){
