@@ -452,6 +452,7 @@ MonoBehaviour:
   interactionHintObject: {fileID: 1804175349}
   inventoryObject: {fileID: 1459443344}
   inventoryHint: {fileID: 2099662729}
+  inventory: {fileID: 1459443344}
 --- !u!4 &292991808 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d02c9ccaeb8cf794ea55a083a9a95e35, type: 3}
