@@ -61,13 +61,10 @@ public class MainController : MonoBehaviour {
 				}
 			}
 			// interacted with jacket
-			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()){
+			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered() && noteFound == false){
 				guiController.showSubtl("paper");
 				guiController.showInventoryHint();
 				noteFound = true;
-                jacketTrigger.GetComponent<JacketTrigger>().OnTriggerExit(GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<Collider>());
-                jacketTrigger.GetComponent<SphereCollider>().enabled = false;
-                Debug.Log("Sphere Collider disabled!");
 			}
 		}
 	}
