@@ -65,6 +65,9 @@ public class MainController : MonoBehaviour {
 				guiController.showSubtl("paper");
 				guiController.showInventoryHint();
 				noteFound = true;
+                jacketTrigger.GetComponent<JacketTrigger>().OnTriggerExit(GameObject.FindGameObjectWithTag("PlayerCharacter").GetComponent<Collider>());
+                jacketTrigger.GetComponent<SphereCollider>().enabled = false;
+                Debug.Log("Sphere Collider disabled!");
 			}
 		}
 	}
