@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 /*INVENTORY CONTROLLER
  * initialize number, rows and coloumns of inventory slots
@@ -10,6 +11,7 @@ public class Inventory : MonoBehaviour {
 	public List <GameObject> Slots = new List<GameObject> (); 
 	public List <Item> Items = new List<Item> (); 
 
+	public GameObject canvas;
 
 	ItemDatabase database;
 
@@ -22,6 +24,18 @@ public class Inventory : MonoBehaviour {
 	public int x;
 	public int y;
 	public int xReset;
+
+	public bool draggingItem = false;
+	public Item draggedItem;
+	public GameObject draggedItemObject;
+
+	// Update is called once per frame
+	void Update(){
+		if (draggingItem) {
+			Vector3 pos = (Input.mousePosition - canvas.GetComponent<RectTransform>().localPosition);
+			draggedItemObject.GetComponent<RectTransform>().localPosition = new Vector3(pos.x +35, pos.y - 35, pos.z);
+		}
+	}
 
 
 	public void setupInventory(){
@@ -72,5 +86,18 @@ public class Inventory : MonoBehaviour {
 			}
 
 		}
+	}
+
+	public void dragItem(Item item){
+		draggedItemObject.SetActive (true);
+		draggedItemObject.GetComponent<Image> ().sprite = item.itemIcon;
+		draggingItem = true;
+		draggedItem = item;
+
+	}
+
+	public void dropItem(){
+		draggingItem = false;
+		draggedItemObject.SetActive (false);
 	}
 }
