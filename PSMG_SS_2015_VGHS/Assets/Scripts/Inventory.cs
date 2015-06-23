@@ -25,6 +25,8 @@ public class Inventory : MonoBehaviour {
 	public int y;
 	public int xReset;
 
+	int actualSlotNum;
+
 	public bool draggingItem = false;
 	public Item draggedItem;
 	public GameObject draggedItemObject;
@@ -84,20 +86,36 @@ public class Inventory : MonoBehaviour {
 				Items[i] = item;
 				break;
 			}
-
 		}
 	}
 
-	public void dragItem(Item item){
+	public void dragItem(Item item, int actualSlot){
 		draggedItemObject.SetActive (true);
 		draggedItemObject.GetComponent<Image> ().sprite = item.itemIcon;
 		draggingItem = true;
 		draggedItem = item;
-
+		actualSlotNum = actualSlot;
+		Debug.Log (actualSlot);
 	}
 
 	public void dropItem(){
 		draggingItem = false;
 		draggedItemObject.SetActive (false);
+	}
+
+	public void reverseDrag(){
+		draggingItem = false;
+		draggedItemObject.SetActive (false);
+		addItemToSlot ();
+	}
+
+	// this method is needed when a drag ends and item needs to be put back
+	void addItemToSlot(){
+		for(int i = 0; i < Items.Count; i++){
+			if(i == actualSlotNum){
+				Items[i] = draggedItem;
+				break;
+			}
+		}
 	}
 }
