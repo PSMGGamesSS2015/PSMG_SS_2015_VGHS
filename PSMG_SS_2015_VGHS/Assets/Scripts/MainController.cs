@@ -69,11 +69,7 @@ public class MainController : MonoBehaviour {
 				}
 			}
 			// interacted with jacket
-<<<<<<< HEAD
 			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()&& noteFound == false){
-=======
-			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered() && noteFound == false){
->>>>>>> origin/Pauli-Branch
 				guiController.showSubtl("paper");
 				guiController.showInventoryHint();
 				guiController.addHint("noteHint");
