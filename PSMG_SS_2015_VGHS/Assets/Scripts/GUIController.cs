@@ -64,8 +64,8 @@ public class GUIController : MonoBehaviour {
 
 	// show a subtitle on the GUI
 	public void showSubtl(string key){
-		subtitleObject.SetActive(true);
-		subtitleObject.GetComponent<Subtitle>().setKeyWord(key);
+        subtitleObject.GetComponent<Subtitle>().setKeyWord(key);
+        subtitleObject.SetActive(true);
 		subtlIsShown = true;
 	}
 

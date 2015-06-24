@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour {
     public Button play;
     public Button options;
     public Button exit;
+    public GameObject mainController;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class MenuManager : MonoBehaviour {
 
     public void OnPlayButtonPressed()
     {
-        Application.LoadLevel(1);
+        mainController.GetComponent<MainController>().ChangeLevel(1);
     }
 
     public void OnOptionsButtonPressed()

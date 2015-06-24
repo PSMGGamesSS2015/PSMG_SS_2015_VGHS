@@ -13,6 +13,7 @@ public class Subtitle : MonoBehaviour {
 	public string mirrorText;
 	public string bloodyDressText;
 	public string paperText;
+    public string changeLevelText;
 	
 
 	/* Update is called once per frame
@@ -32,6 +33,9 @@ public class Subtitle : MonoBehaviour {
 		case "paper": 
 			subtl.GetComponent<Text>().text = paperText;
 			break;
+        case "changeLevel":
+            subtl.GetComponent<Text>().text = changeLevelText;
+            break;
 		default: 
 			Debug.Log ("Subtitle/Update: couldnt show subtitle");
 			break;

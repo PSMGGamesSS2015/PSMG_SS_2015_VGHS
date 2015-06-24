@@ -454,7 +454,7 @@ MonoBehaviour:
   inventoryObject: {fileID: 1459443344}
   inventoryHint: {fileID: 2099662729}
   inventory: {fileID: 1459443344}
---- !u!4 &292991808 stripped
+--- !u!4 &292991808
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d02c9ccaeb8cf794ea55a083a9a95e35, type: 3}
   m_PrefabInternal: {fileID: 1585714286}
@@ -1319,11 +1319,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d02c9ccaeb8cf794ea55a083a9a95e35, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1004258599 stripped
+--- !u!1 &1004258599
 GameObject:
   m_PrefabParentObject: {fileID: 100010, guid: ee64c68e4a080454788c579ddf54812d, type: 3}
   m_PrefabInternal: {fileID: 1775813970}
---- !u!1 &1049069000 stripped
+--- !u!1 &1049069000
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b158803f05b4fc04590305e9b6175544, type: 3}
   m_PrefabInternal: {fileID: 512734680}
@@ -1817,6 +1817,7 @@ MonoBehaviour:
   paperText: "Pat Rutherford. Z.31. 12:30 Uhr\u2026 Wer ist Pat Rutherford? War ich
     um 12:30 bei dieser oder diesem Pat? \\n \\n War das heute? Was war heute? Was
     war gestern? WER BIN ICH?"
+  changeLevelText: Press "Space" to go to next Level
 --- !u!222 &1374679477
 CanvasRenderer:
   m_ObjectHideFlags: 0

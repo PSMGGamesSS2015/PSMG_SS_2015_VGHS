@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene0-Startbildschirm.unity
   - enabled: 1
     path: Assets/Scenes/Scene1-EinBad.unity
+  - enabled: 1
+    path: Assets/Scenes/Scene2-Haus.unity
