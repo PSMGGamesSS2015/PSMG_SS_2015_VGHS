@@ -16,6 +16,7 @@ public class MainController : MonoBehaviour {
 	public GameObject sinkTrigger;
 	public GameObject jacketTrigger;
 	public GameObject jacket;
+	public GameObject jacketOn;
 
 	int sinkCounter = 0;
 	bool noteFound = false;
@@ -35,11 +36,17 @@ public class MainController : MonoBehaviour {
 
 	//get all the key interactions
 	void getKeyInteractions(){
-		//close a subtitle with space
+		// open/close inventory with 'I'
+		if (Input.GetKeyDown (KeyCode.I)) {
+			guiController.toggleInventory();
+		}
+
+		// close a subtitle with space
 		if (Input.GetKeyDown (KeyCode.Space) && guiController.isShowing ()) {
 			guiController.unshowSubtl();
 			if(sinkCounter == 1){
 				jacket.SetActive(true);
+				jacketOn.SetActive(false);
 			}
 		}
 
@@ -55,15 +62,17 @@ public class MainController : MonoBehaviour {
 				case 1:
 					guiController.showSubtl("mirror2");
 					guiController.showInventoryHint();
+					guiController.addHint("dressHint");
 					sinkCounter++;
 					break;
 				default: break;
 				}
 			}
 			// interacted with jacket
-			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()){
+			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()&& noteFound == false){
 				guiController.showSubtl("paper");
 				guiController.showInventoryHint();
+				guiController.addHint("noteHint");
 				noteFound = true;
 			}
 		}

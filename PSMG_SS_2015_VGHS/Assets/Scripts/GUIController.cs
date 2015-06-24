@@ -11,10 +11,41 @@ public class GUIController : MonoBehaviour {
 	public GameObject interactionHintObject;
 	public GameObject inventoryObject;
 	public GameObject inventoryHint;
+	public GameObject inventory;
 	
 	bool subtlIsShown;
 	bool sinkIsActive;
-	int sinkCounter = 0;
+
+	// Use this for initialization
+	void Start (){
+		inventory.GetComponent<Inventory> ().setupInventory ();
+	}
+
+	//put hint into inventory
+	public void addHint(string key){
+
+		switch (key) {
+
+		case "dressHint": 
+			inventory.GetComponent<Inventory> ().addItem (0);
+			break;
+		case "noteHint":
+			inventory.GetComponent<Inventory> ().addItem (1);
+			break;
+		default: break;
+		}
+
+	}
+
+	//show inventory
+	public void toggleInventory(){
+		if (inventory.activeSelf) {
+			inventory.SetActive (false);
+		} else {
+			inventory.SetActive(true);
+		}
+
+	}
 
 	//show hint for Inventory
 	public void showInventoryHint(){
@@ -48,6 +79,8 @@ public class GUIController : MonoBehaviour {
 	public bool isShowing(){
 		return subtlIsShown;
 	}
+
+
 
 
 

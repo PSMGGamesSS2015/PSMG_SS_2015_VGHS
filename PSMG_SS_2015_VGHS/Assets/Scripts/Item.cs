@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Setup Item resources in this class
 public class Item {
 
 	public string itemName;
@@ -17,6 +18,7 @@ public class Item {
 		itemName = name;
 		itemDesc = desc;
 		itemId = id;
+		itemIcon = Resources.Load<Sprite> ("" + name);
 	}
 
 	public Item(){

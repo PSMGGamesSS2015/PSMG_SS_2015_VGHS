@@ -1,0 +1,78 @@
+################################
+##### sources for objects ######
+################################
+
+woman:
+http://tf3dm.com/3d-model/eva-53957.html
+
+man - frank:
+http://tf3dm.com/3d-model/puo-20965.html
+
+iPhone:
+https://www.youtube.com/watch?v=THGlpv-6w4U
+
+dining-room plant (Dracena):
+http://blender-archi.tuxfamily.org/Greenhouse
+
+bedroom - telephone:
+http://www.blenderchallenge.com/images/blends0033/final_phone.blend
+
+
+################################
+##### sources for graphics #####
+################################
+
+crumpled paper:
+http://www.psdgraphics.com/file/crumpled-paper.jpg
+
+blood on coat:
+http://images.forwallpaper.com/files/images/a/a5a6/a5a671ee/239220/splatter-blood-spatter-blood-complete-pacification.jpg
+
+piano and picture-frames:
+http://www.jimahoffman.com/Blender/blendertextures/texture/wood/cherry_light.jpg
+
+pictures:
+http://www.frameusa.com/blog/wp-content/uploads/2013/12/Family-Christmas-Gift-Exchange.jpg
+
+http://www.dekanat.at/dekanat/judenburg/st-nikolaus/Pfarrkindergarten/GruppenfotoKindergarten.JPG
+
+http://www.kristinthurm.de/wp-content/uploads/2012/05/60-01-familienfoto-fotograf.jpg
+
+http://www.gs-irschenberg.de/schulleben2012_13/1.schultag/1.klasse.jpg
+
+
+entry-area:
+
+wallpaper:
+http://www.cgtextures.com/texview.php?id=19071&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+floor:
+http://www.cgtextures.com/texview.php?id=8259&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+roof:
+http://www.cgtextures.com/texview.php?id=39988&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+vase:
+http://www.cgtextures.com/texview.php?id=20296&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+stairs:
+http://www.cgtextures.com/texview.php?id=14285&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+
+
+toilette:
+
+tiles:
+http://www.cgtextures.com/texview.php?id=72261&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+cabinet:
+http://www.cgtextures.com/texview.php?id=14181&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+towel:
+http://www.cgtextures.com/texview.php?id=107727&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+
+bedroom:
+
+cotton:
+http://www.bco-wohntextilien.de/out/pictures/master/product/1/gc9091061.jpg
