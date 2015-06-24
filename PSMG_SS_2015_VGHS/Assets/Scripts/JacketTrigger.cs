@@ -13,7 +13,7 @@ public class JacketTrigger : MonoBehaviour {
 		}
 	}
 	
-	void OnTriggerExit(Collider other){
+	public void OnTriggerExit(Collider other){
 		if (other.tag == "PlayerCharacter"){
 			isTriggered = false;
 		}
