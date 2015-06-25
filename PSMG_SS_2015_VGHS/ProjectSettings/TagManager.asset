@@ -9,6 +9,7 @@ TagManager:
   - JacketOff
   - ItemDatabase
   - Inventory
+  - TheoryInventory
   layers:
   - Default
   - TransparentFX
