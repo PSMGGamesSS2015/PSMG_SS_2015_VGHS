@@ -1426,6 +1426,7 @@ GameObject:
   - 224: {fileID: 1104626226}
   - 222: {fileID: 1104626228}
   - 114: {fileID: 1104626227}
+  - 114: {fileID: 1104626229}
   m_Layer: 5
   m_Name: TheoryInventory
   m_TagString: TheoryInventory
@@ -1477,6 +1478,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1104626225}
+--- !u!114 &1104626229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104626225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d81c4979353414aadc42cc3636aceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theory1Text: Murdered Pat Rutherford?
+  theory1Found: 0
 --- !u!1 &1106839104 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 7f35c86232d8bab499316b844e16a655, type: 3}
@@ -1878,6 +1892,7 @@ MonoBehaviour:
   paperText: "Pat Rutherford. Z.31. 12:30 Uhr\u2026 Wer ist Pat Rutherford? War ich
     um 12:30 bei dieser oder diesem Pat? \\n \\n War das heute? Was war heute? Was
     war gestern? WER BIN ICH?"
+  changeLevelText: 
 --- !u!222 &1374679477
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2080,7 +2095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1459443345
 RectTransform:
   m_ObjectHideFlags: 0
