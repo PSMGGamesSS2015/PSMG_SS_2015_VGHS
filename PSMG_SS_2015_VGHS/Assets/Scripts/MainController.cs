@@ -69,12 +69,18 @@ public class MainController : MonoBehaviour {
 				}
 			}
 			// interacted with jacket
-			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered()&& noteFound == false){
+			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered() && noteFound == false){
 				guiController.showSubtl("paper");
 				guiController.showInventoryHint();
 				guiController.addHint("noteHint");
 				noteFound = true;
 			}
+            //change Level
+            else
+            {
+                guiController.showSubtl("changeLevel");
+                ChangeLevel(2);
+            }
 		}
 	}
 
@@ -99,4 +105,9 @@ public class MainController : MonoBehaviour {
 			guiController.GetComponent<GUIController> ().unshowInteractionHint ();
 		}
 	}
+
+    public void ChangeLevel(int level)
+    {
+        Application.LoadLevel(level);
+    }
 }
