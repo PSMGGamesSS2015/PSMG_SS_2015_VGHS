@@ -1416,6 +1416,67 @@ Transform:
   - {fileID: 1106839110}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1 &1104626225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1104626226}
+  - 222: {fileID: 1104626228}
+  - 114: {fileID: 1104626227}
+  m_Layer: 5
+  m_Name: TheoryInventory
+  m_TagString: TheoryInventory
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1104626226
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104626225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1459443345}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 561, y: 0}
+  m_SizeDelta: {x: -379, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1104626227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104626225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: .0795132071, b: .235294104, a: .392156869}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1104626228
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104626225}
 --- !u!1 &1106839104 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 7f35c86232d8bab499316b844e16a655, type: 3}
@@ -2019,7 +2080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1459443345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2029,12 +2090,13 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1104626226}
   m_Father: {fileID: 254136673}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -298, y: 0}
+  m_AnchoredPosition: {x: -171, y: 0}
   m_SizeDelta: {x: -722, y: -87}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1459443346
@@ -2076,14 +2138,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Slots: []
+  TheorySlots: []
   canvas: {fileID: 254136669}
+  theoryInventory: {fileID: 1104626225}
   slots: {fileID: 195024, guid: cb2a0284987809f43bbbf5095ffb7f9c, type: 2}
+  theorySlots: {fileID: 130916, guid: c590923994102a74490a9942831acb28, type: 2}
   slotNumX: 4
   slotNumY: 5
   slotDistX: 85
   slotDistY: 85
   x: -130
   y: 170
+  thX: 1
+  thY: 166
   xReset: -130
   draggingItem: 0
   draggedItemObject: {fileID: 1206266489}

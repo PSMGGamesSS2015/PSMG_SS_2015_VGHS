@@ -9,13 +9,16 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour {
 
 	public List <GameObject> Slots = new List<GameObject> (); 
+	public List <GameObject> TheorySlots = new List<GameObject> (); 
 	public List <Item> Items = new List<Item> (); 
 
 	public GameObject canvas;
+	public GameObject theoryInventory;
 
 	ItemDatabase database;
 
 	public GameObject slots;
+	public GameObject theorySlots;
 
 	public int slotNumX;
 	public int slotNumY;
@@ -23,6 +26,10 @@ public class Inventory : MonoBehaviour {
 	public int slotDistY;
 	public int x;
 	public int y;
+
+	public int thX;
+	public int thY;
+
 	public int xReset;
 
 	int actualSlotNum;
@@ -75,7 +82,6 @@ public class Inventory : MonoBehaviour {
 				break;
 			}
 		}
-
 	}
 
 	// make sure that an item is added to an empty slot
@@ -89,24 +95,38 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+	// register the dragged item
 	public void dragItem(Item item, int actualSlot){
 		draggedItemObject.SetActive (true);
 		draggedItemObject.GetComponent<Image> ().sprite = item.itemIcon;
 		draggingItem = true;
 		draggedItem = item;
 		actualSlotNum = actualSlot;
-		Debug.Log (actualSlot);
 	}
 
-	public void dropItem(){
+	// unset image to mouse, recieve if possible second Item and check for new Theory
+	public void dropItem(bool combined, string secondItem){
+
 		draggingItem = false;
 		draggedItemObject.SetActive (false);
+		// do sth. when hints were combined
+		if (combined) {
+			addItemToSlot ();
+			setupTheory(theoryInventory.GetComponent<Theory>().getTheory(draggedItem.itemName, secondItem));
+		}
 	}
 
-	public void reverseDrag(){
-		draggingItem = false;
-		draggedItemObject.SetActive (false);
-		addItemToSlot ();
+	// put new theory to theory inventory
+	void setupTheory(int theoryNum){
+		//check if this theory already exists
+		if (TheorySlots.Exists (x => x.name == "theory1")== false) {
+			GameObject slot = (GameObject)Instantiate (theorySlots);
+			slot.transform.parent = theoryInventory.transform;
+			slot.GetComponent<RectTransform> ().localPosition = new Vector3 (thX, thY, 0);
+			slot.name = "theory" + theoryNum;
+			TheorySlots.Add (slot);
+			thY -= slotDistY;
+		}
 	}
 
 	// this method is needed when a drag ends and item needs to be put back

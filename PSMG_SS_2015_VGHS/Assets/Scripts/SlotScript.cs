@@ -51,13 +51,12 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IDragHandler, IDro
 		// Just drop item to empty slot
 		if (inventory.Items [slotNumber].itemName == null && inventory.draggingItem) {
 			inventory.Items [slotNumber] = inventory.draggedItem;
-			inventory.dropItem ();
+			inventory.dropItem (false, "");
 		}
 
 		// trigger a theory combination
 		else if (inventory.Items [slotNumber] != null && inventory.draggingItem) {
-			Debug.Log ("Oh mein Gott, könnte ich Pat getötet haben?!");
-			inventory.reverseDrag ();
+			inventory.dropItem (true, inventory.Items[slotNumber].itemName);
 		}
 
 	}
