@@ -10,6 +10,7 @@ TagManager:
   - ItemDatabase
   - Inventory
   - TheoryInventory
+  - SomeObject
   layers:
   - Default
   - TransparentFX

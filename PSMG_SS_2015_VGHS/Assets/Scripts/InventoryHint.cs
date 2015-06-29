@@ -19,8 +19,5 @@ public class InventoryHint : MonoBehaviour {
 			hint.GetComponent<Text>().canvasRenderer.SetAlpha(255);
 			gameObject.SetActive(false);
 		}
-
 	}
-
-
 }

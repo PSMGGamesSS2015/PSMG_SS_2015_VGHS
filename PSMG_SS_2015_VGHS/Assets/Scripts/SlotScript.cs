@@ -4,12 +4,12 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 // Handle anything happening in a slot here
-public class SlotScript : MonoBehaviour, IPointerDownHandler, IDragHandler, IDropHandler{
+public class SlotScript : MonoBehaviour, IDragHandler, IDropHandler{
 
 	public Item item;
-	Image itemImage;
 	public int slotNumber;
 
+	Image itemImage;
 	Inventory inventory;
 
 	// Use this for initialization
@@ -20,6 +20,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IDragHandler, IDro
 	
 	// Update is called once per frame
 	void Update () {
+		//check if there is an item in the slot and display icon
 	 	if (inventory.Items[slotNumber].itemName != null) {
 			itemImage.enabled = true;
 			itemImage.sprite = inventory.Items[slotNumber].itemIcon;
@@ -27,14 +28,6 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IDragHandler, IDro
 		else {
 			itemImage.enabled = false;
 		}
-	}
-
-	// Do sth. when slot is clicked
-	public void OnPointerDown(PointerEventData data){
-
-
-
-
 	}
 
 	// Do sth. when item dragged
@@ -58,8 +51,5 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IDragHandler, IDro
 		else if (inventory.Items [slotNumber] != null && inventory.draggingItem) {
 			inventory.dropItem (true, inventory.Items[slotNumber].itemName);
 		}
-
 	}
-
-
 }
