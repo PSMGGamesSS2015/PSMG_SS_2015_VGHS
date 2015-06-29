@@ -40,13 +40,14 @@ public class Inventory : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update(){
+		// set dragged item to mouse
 		if (draggingItem) {
 			Vector3 pos = (Input.mousePosition - canvas.GetComponent<RectTransform>().localPosition);
 			draggedItemObject.GetComponent<RectTransform>().localPosition = new Vector3(pos.x +35, pos.y - 35, pos.z);
 		}
 	}
 
-
+	//setup the slots for hints to be saved
 	public void setupInventory(){
 
 		int slotAmount = 0;

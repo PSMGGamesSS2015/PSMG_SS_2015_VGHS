@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* THEORY CLASS
+ * This class offers a method to check 
+ * 1. If the combination of two hints is a theory
+ * 2. If the theory was already found
+ * Theories are ordered by number, so it returns the number of the found theory.
+ */
+
 public class Theory : MonoBehaviour {
 
 	public string theory1Text = "Murdered Pat Rutherford?";
@@ -13,6 +20,7 @@ public class Theory : MonoBehaviour {
 
 	public bool theory1Found = false;
 
+	// set up theory depending on the hints that were combined
 	public int getTheory(string first, string second){
 		switch (first) {
 		case "dress":

@@ -12,20 +12,20 @@ public class GUIController : MonoBehaviour {
 	public GameObject inventoryObject;
 	public GameObject inventoryHint;
 	public GameObject inventory;
+
 	
 	bool subtlIsShown;
 	bool sinkIsActive;
+	bool inventoryIsShown;
 
 	// Use this for initialization
 	void Start (){
 		inventory.GetComponent<Inventory> ().setupInventory ();
 	}
 
-	//put hint into inventory
+	// put hint into inventory
 	public void addHint(string key){
-
 		switch (key) {
-
 		case "dressHint": 
 			inventory.GetComponent<Inventory> ().addItem (0);
 			break;
@@ -34,55 +34,53 @@ public class GUIController : MonoBehaviour {
 			break;
 		default: break;
 		}
-
 	}
 
-	//show inventory
+	// show/hide inventory
 	public void toggleInventory(){
 		if (inventory.activeSelf) {
 			inventory.SetActive (false);
+			inventoryIsShown = false;
 		} else {
 			inventory.SetActive(true);
+			inventoryIsShown = true;
 		}
-
 	}
 
-	//show hint for Inventory
-	public void showInventoryHint(){
+	// show hint for Inventory
+	public void toggleInventoryHint(){
+		//set inactive first in case its still shown from another interaction
+		inventoryHint.SetActive (false);
 		inventoryHint.SetActive (true);
 	}
 
-	//show a hint for possible 'E' interactions
-	public void showInteractionHint(){
-		interactionHintObject.SetActive(true);
-	}
-
-	//hide interaction hint for 
-	public void unshowInteractionHint(){
-			interactionHintObject.SetActive(false);	
+	// toggle hint for possible 'E' interactions
+	public void toggleInteractionHint(bool active){
+		if (active) {
+			interactionHintObject.SetActive(true);	
+		} else {
+			interactionHintObject.SetActive(false);
+		}
 	}
 
 	// show a subtitle on the GUI
-	public void showSubtl(string key){
-		subtitleObject.SetActive(true);
-		subtitleObject.GetComponent<Subtitle>().setKeyWord(key);
-		subtlIsShown = true;
-	}
-
-	//disable subtitle on GUI
-	public void unshowSubtl(){
-		subtitleObject.SetActive(false);
-		subtlIsShown = false;
+	public void toggleSubtl(string key){
+		if (key != null) {
+			subtitleObject.SetActive (true);
+			subtitleObject.GetComponent<Subtitle> ().setKeyWord (key);
+			subtlIsShown = true;
+		} else {
+			subtitleObject.SetActive(false);
+			subtlIsShown = false;
+		}
 	}
 
 	//method that makes it able to check if an subtitle is shown currently
 	public bool isShowing(){
-		return subtlIsShown;
+		if (subtlIsShown || inventoryIsShown) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-
-
-
-
-
-
 }

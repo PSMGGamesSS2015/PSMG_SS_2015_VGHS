@@ -7,7 +7,9 @@ using UnityStandardAssets.Characters.FirstPerson;
  * It receives event based data from other scripts (like where collisions are triggered).
  * Its task is to store and process this data and to communicate the results to other scripts.
  * So every logic of the game is handled here.
+ * Interactions depending on the inventory like dragging & dropping hints are handled by the SlotScript and Inventory Script
  */
+
 public class MainController : MonoBehaviour {
 
 	public GUIController guiController;
@@ -17,19 +19,22 @@ public class MainController : MonoBehaviour {
 	public GameObject jacketTrigger;
 	public GameObject jacket;
 	public GameObject jacketOn;
+	public GameObject theory;
 
 	int sinkCounter = 0;
 	bool noteFound = false;
+	bool theory1Registered = false;
 
 
 	// Use this for initialization
 	void Start () {
-		guiController.showSubtl ("entry");
+		guiController.toggleSubtl ("entry");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		getKeyInteractions ();
+		checkInventory ();
 		checkGUI ();
 		checkCollisions ();
 	}
@@ -43,52 +48,54 @@ public class MainController : MonoBehaviour {
 
 		// close a subtitle with space
 		if (Input.GetKeyDown (KeyCode.Space) && guiController.isShowing ()) {
-			guiController.unshowSubtl();
+			guiController.toggleSubtl(null);
+			//special case: check what sink interaction has been made to toggle the jacket
 			if(sinkCounter == 1){
 				jacket.SetActive(true);
 				jacketOn.SetActive(false);
+			}
+			//change level when final interaction was made
+			if(theory1Registered){
+				ChangeLevel(2);
 			}
 		}
 
 		// handle 'E' interactions
 		if (Input.GetKeyDown (KeyCode.E)) {
-			// interacted with sink
-			if (sink.GetComponent<SinkTrigger>().sinkTriggered() && sinkCounter < 2) {
-				switch (sinkCounter){
-				case 0: 
-					guiController.showSubtl("mirror1");
-					sinkCounter++;
-					break;
-				case 1:
-					guiController.showSubtl("mirror2");
-					guiController.showInventoryHint();
-					guiController.addHint("dressHint");
-					sinkCounter++;
-					break;
-				default: break;
+			// interactions are only possible if nothing like subtitles or the inventory is shown
+			if(guiController.isShowing() == false){
+				// interacted with sink
+				if (sink.GetComponent<SinkTrigger>().sinkTriggered() && sinkCounter < 2) {
+					switch (sinkCounter){
+					case 0: 
+						guiController.toggleSubtl("mirror1");
+						sinkCounter++;
+						break;
+					case 1:
+						guiController.toggleSubtl("mirror2");
+						guiController.toggleInventoryHint();
+						guiController.addHint("dressHint");
+						sinkCounter++;
+						break;
+					default: break;
+					}
+				}
+			
+				// interacted with jacket
+				else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered() && noteFound == false){
+					guiController.toggleSubtl("paper");
+					guiController.toggleInventoryHint();
+					guiController.addHint("noteHint");
+					noteFound = true;
 				}
 			}
-			// interacted with jacket
-			else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered() && noteFound == false){
-				guiController.showSubtl("paper");
-				guiController.showInventoryHint();
-				guiController.addHint("noteHint");
-				noteFound = true;
-			}
-            //change Level
-            else
-            {
-                guiController.showSubtl("changeLevel");
-                ChangeLevel(2);
-            }
 		}
 	}
 
-	//check if a subtitle is shown and handle player movement and interaction hint
+	//check if a subtitle or the inventory is shown and handle player movement and interaction hint
 	void checkGUI(){
 		if (guiController.isShowing ()) {
 			player.GetComponent<FirstPersonController> ().enabled = false;
-			guiController.GetComponent<GUIController> ().unshowInteractionHint ();	
 		} else {
 			player.GetComponent<FirstPersonController> ().enabled = true;
 		}
@@ -96,18 +103,29 @@ public class MainController : MonoBehaviour {
 
 	//check if the player collides with an interactable object
 	void checkCollisions(){
-		if (sink.GetComponent<SinkTrigger> ().sinkTriggered () && guiController.isShowing () == false && sinkCounter < 2) {
-			guiController.GetComponent<GUIController> ().showInteractionHint ();			
+		//handle sink collision (is only two times interactable)
+		if (sink.GetComponent<SinkTrigger> ().sinkTriggered () && sinkCounter < 2 && guiController.isShowing () == false) {
+			guiController.toggleInteractionHint (true);
 		}
-		else if (jacketTrigger.GetComponent<JacketTrigger> ().jacketTriggered() && noteFound == false) {
-			guiController.GetComponent<GUIController> ().showInteractionHint ();
+		//handle jacket collision (is only one time interactable)
+		else if (jacketTrigger.GetComponent<JacketTrigger> ().jacketTriggered () && noteFound == false && guiController.isShowing () == false) {
+			guiController.toggleInteractionHint (true);	
 		} else {
-			guiController.GetComponent<GUIController> ().unshowInteractionHint ();
+			guiController.toggleInteractionHint (false);
 		}
 	}
 
-    public void ChangeLevel(int level)
-    {
+	// handle Level changing stuff triggered by actions in the inventory here
+	void checkInventory(){
+		if(theory.GetComponent<Theory>().theory1Found && theory1Registered == false){
+			guiController.toggleInventory();
+			guiController.toggleSubtl("theory1");
+			theory1Registered = true;
+		}
+	}
+
+
+	public void ChangeLevel(int level){
         Application.LoadLevel(level);
     }
 }
