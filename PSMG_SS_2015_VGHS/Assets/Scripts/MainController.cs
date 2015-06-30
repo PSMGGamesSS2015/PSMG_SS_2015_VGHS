@@ -126,6 +126,7 @@ public class MainController : MonoBehaviour {
 
 
 	public void ChangeLevel(int level){
-        Application.LoadLevel(level);
+        //Application.LoadLevel(level);
+        GetComponent<SceneFader>().SwitchScene(level);
     }
 }
