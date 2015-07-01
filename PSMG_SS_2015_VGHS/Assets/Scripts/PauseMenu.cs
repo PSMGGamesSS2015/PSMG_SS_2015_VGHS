@@ -55,12 +55,12 @@ public class PauseMenu : MonoBehaviour {
         if (!isPaused)
         {
             player.GetComponent<FirstPersonController>().enabled = false;
-            Time.timeScale = 0;
+            Cursor.visible = true;
         }
         else
         {
             player.GetComponent<FirstPersonController>().enabled = true;
-            Time.timeScale = 1;
+            Cursor.visible = false;
         }
         isPaused = !isPaused;
     }

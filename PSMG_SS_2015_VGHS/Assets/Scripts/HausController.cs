@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.Characters.FirstPerson;
 
 /* MAIN CONTROLLER
  * This is the games main controlling Script. 
@@ -13,12 +12,10 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class HausController : MonoBehaviour
 {
 
-
-
     // Use this for initialization
     void Start()
     {
-
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

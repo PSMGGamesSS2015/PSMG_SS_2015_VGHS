@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
+
 
 /* GUI CONTROLLER
  * Handles anything that is needed to be shown on the canvas.
@@ -12,9 +14,11 @@ public class GUIController : MonoBehaviour {
 	public GameObject inventoryObject;
 	public GameObject inventoryHint;
 	public GameObject inventory;
-
+    public GameObject player;
 	
-	bool subtlIsShown;
+    
+    
+    bool subtlIsShown;
 	bool sinkIsActive;
 	bool inventoryIsShown;
 
@@ -41,9 +45,13 @@ public class GUIController : MonoBehaviour {
 		if (inventory.activeSelf) {
 			inventory.SetActive (false);
 			inventoryIsShown = false;
+            player.GetComponent<FirstPersonController>().enabled = true;
+            Cursor.visible = false;
 		} else {
 			inventory.SetActive(true);
 			inventoryIsShown = true;
+            player.GetComponent<FirstPersonController>().enabled = false;
+            Cursor.visible = true;
 		}
 	}
 

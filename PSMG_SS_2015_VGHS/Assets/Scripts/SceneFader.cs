@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SceneFader : MonoBehaviour {
 
     public Texture2D texture;
     public float fadeSpeed = 2;
+    public GameObject player;
 
     int nextLevel = 1;
     Rect screenRect;
@@ -28,6 +30,7 @@ public class SceneFader : MonoBehaviour {
         }
         if (isEnding)
         {
+            player.GetComponent<FirstPersonController>().enabled = false;
             FadeOut();
         }
     }

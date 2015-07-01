@@ -29,6 +29,7 @@ public class MainController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Cursor.visible = false;
 		guiController.toggleSubtl ("entry");
 	}
 	
@@ -40,13 +41,10 @@ public class MainController : MonoBehaviour {
             isPaused = !isPaused;
         }
 
-        if (!isPaused)
-        {
-            getKeyInteractions();
-            checkInventory();
-            checkGUI();
-            checkCollisions();
-        }
+        getKeyInteractions();
+        checkInventory();
+        checkGUI();
+        checkCollisions();
 	}
 
 	//get all the key interactions
@@ -104,11 +102,18 @@ public class MainController : MonoBehaviour {
 
 	//check if a subtitle or the inventory is shown and handle player movement and interaction hint
 	void checkGUI(){
-		if (guiController.isShowing ()) {
-			player.GetComponent<FirstPersonController> ().enabled = false;
-		} else {
-			player.GetComponent<FirstPersonController> ().enabled = true;
-		}
+        if (!isPaused)
+        {
+            if (guiController.isShowing())
+            {
+                player.GetComponent<FirstPersonController>().enabled = false;
+            }
+            else
+            {
+                player.GetComponent<FirstPersonController>().enabled = true;
+            }
+        }
+        
 	}
 
 	//check if the player collides with an interactable object
@@ -131,6 +136,7 @@ public class MainController : MonoBehaviour {
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory1");
 			theory1Registered = true;
+            player.GetComponent<FirstPersonController>().enabled = false;
 		}
 	}
 
