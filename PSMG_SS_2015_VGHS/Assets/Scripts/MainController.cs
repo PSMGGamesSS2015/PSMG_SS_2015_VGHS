@@ -20,6 +20,7 @@ public class MainController : MonoBehaviour {
 	public GameObject jacket;
 	public GameObject jacketOn;
 	public GameObject theory;
+    bool isPaused = false;
 
 	int sinkCounter = 0;
 	bool noteFound = false;
@@ -33,10 +34,19 @@ public class MainController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		getKeyInteractions ();
-		checkInventory ();
-		checkGUI ();
-		checkCollisions ();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+        }
+
+        if (!isPaused)
+        {
+            getKeyInteractions();
+            checkInventory();
+            checkGUI();
+            checkCollisions();
+        }
 	}
 
 	//get all the key interactions

@@ -1126,6 +1126,10 @@ Prefab:
       propertyPath: m_JumpBob.BobAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -1337,6 +1341,7 @@ GameObject:
   - 4: {fileID: 1052943392}
   - 114: {fileID: 1052943391}
   - 114: {fileID: 1052943393}
+  - 114: {fileID: 1052943394}
   m_Layer: 0
   m_Name: MainController
   m_TagString: Untagged
@@ -1388,6 +1393,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texture: {fileID: 2800000, guid: 37629bd5ecb6b29478fe9d1b9e21e403, type: 3}
   fadeSpeed: 2
+--- !u!114 &1052943394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052943390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a428b8c83ff93f841b3a66714e091d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1646147065}
+  texture: {fileID: 2800000, guid: bee0c40bb97355e4b83ab12e4a843867, type: 3}
+  font: {fileID: 12800000, guid: 4cb0d1dd52f57f64fa6ce5e947e2a3dd, type: 3}
 --- !u!1 &1072661338
 GameObject:
   m_ObjectHideFlags: 0

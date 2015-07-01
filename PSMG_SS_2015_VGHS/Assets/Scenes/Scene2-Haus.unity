@@ -52864,6 +52864,7 @@ GameObject:
   - 4: {fileID: 1915226134}
   - 114: {fileID: 1915226133}
   - 114: {fileID: 1915226132}
+  - 114: {fileID: 1915226135}
   m_Layer: 0
   m_Name: MainController
   m_TagString: Untagged
@@ -52907,6 +52908,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1915226135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1915226131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a428b8c83ff93f841b3a66714e091d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1969385616}
+  texture: {fileID: 2800000, guid: bee0c40bb97355e4b83ab12e4a843867, type: 3}
+  font: {fileID: 12800000, guid: 4cb0d1dd52f57f64fa6ce5e947e2a3dd, type: 3}
 --- !u!1001 &1915470636
 Prefab:
   m_ObjectHideFlags: 0
@@ -54185,6 +54200,10 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0f96d824d064d0f45862d057f7bd6272, type: 3}
   m_PrefabInternal: {fileID: 702881890}
+--- !u!1 &1969385616
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  m_PrefabInternal: {fileID: 1371267952}
 --- !u!1001 &1972992128
 Prefab:
   m_ObjectHideFlags: 0

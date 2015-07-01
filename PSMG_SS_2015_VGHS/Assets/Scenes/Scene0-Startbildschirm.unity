@@ -98,7 +98,6 @@ GameObject:
   - 223: {fileID: 85051044}
   - 114: {fileID: 85051043}
   - 114: {fileID: 85051042}
-  - 114: {fileID: 85051046}
   - 114: {fileID: 85051047}
   m_Layer: 5
   m_Name: Startscreen
@@ -180,22 +179,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &85051046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 85051041}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 981cada4ebf32b54fb5aeca03b0b204c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitMenu: {fileID: 1166933035}
-  play: {fileID: 503102328}
-  options: {fileID: 681382799}
-  exit: {fileID: 366082902}
-  mainController: {fileID: 2033709921}
 --- !u!114 &85051047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +311,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: .627451003}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: .627451003}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: .639215708}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -347,7 +330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 85051046}
+      - m_Target: {fileID: 85051047}
         m_MethodName: OnExitButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -606,7 +589,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: .627451003}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: .627451003}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: .639215708}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -625,7 +608,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 85051046}
+      - m_Target: {fileID: 85051047}
         m_MethodName: OnPlayButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -694,7 +677,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: .627451003}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: .627451003}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: .639215708}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -713,8 +696,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 85051046}
-        m_MethodName: OnOptionsButtonPressed
+      - m_Target: {fileID: 85051047}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -870,7 +853,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: .627451003}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: .639215708}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -889,7 +872,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 85051046}
+      - m_Target: {fileID: 85051047}
         m_MethodName: OnYesButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -1007,7 +990,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: .627451003}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: .639215708}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -1026,7 +1009,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 85051046}
+      - m_Target: {fileID: 85051047}
         m_MethodName: OnNoButtonPressed
         m_Mode: 1
         m_Arguments:
