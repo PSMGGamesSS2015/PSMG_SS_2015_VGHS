@@ -57,6 +57,7 @@ public class MainController : MonoBehaviour {
 		// close a subtitle with space
 		if (Input.GetKeyDown (KeyCode.Space) && guiController.isShowing ()) {
 			guiController.toggleSubtl(null);
+            player.GetComponent<FirstPersonController>().enabled = true;
 			//special case: check what sink interaction has been made to toggle the jacket
 			if(sinkCounter == 1){
 				jacket.SetActive(true);
@@ -95,6 +96,7 @@ public class MainController : MonoBehaviour {
 					guiController.toggleInventoryHint();
 					guiController.addHint("noteHint");
 					noteFound = true;
+                    player.GetComponent<FirstPersonController>().enabled = false;
 				}
 			}
 		}
