@@ -6,7 +6,6 @@ public class SceneFader : MonoBehaviour {
 
     public Texture2D texture;
     public float fadeSpeed = 2;
-    public GameObject player;
 
     int nextLevel = 1;
     Rect screenRect;
@@ -15,57 +14,51 @@ public class SceneFader : MonoBehaviour {
     bool isEnding = false;
 
 
-
-	// Use this for initialization
+	// setup rectange  in-/ and outfadiing
 	void Start () {
         screenRect = new Rect(0, 0, Screen.width, Screen.height);
         currentColor = Color.black;
 	}
 
-    void Update()
-    {
-        if (isStarting)
-        {
+	// handle fading here
+    void Update(){
+        if (isStarting){
             FadeIn();
         }
-        if (isEnding)
-        {
-            player.GetComponent<FirstPersonController>().enabled = false;
+        if (isEnding){
             FadeOut();
         }
     }
 
-    void OnGUI()
-    {
+	// update GUI
+    void OnGUI(){
         GUI.depth = 0;
         GUI.color = currentColor;
         GUI.DrawTexture(screenRect, texture, ScaleMode.StretchToFill);
     }
 
-    void FadeIn()
-    {
+	// fade in by fading rectangle out
+    void FadeIn(){
         currentColor = Color.Lerp(currentColor, Color.clear, fadeSpeed * Time.deltaTime);
 
-        if (currentColor.a <= 0.05f)
-        {
+        if (currentColor.a <= 0.05f){
             currentColor = Color.clear;
             isStarting = false;
         }
     }
 
-    void FadeOut()
-    {
+	// fade out by fading rectangle in
+    void FadeOut(){
         currentColor = Color.Lerp(currentColor, Color.black, fadeSpeed * Time.deltaTime);
 
-        if (currentColor.a >= 0.95f)
-        {
+        if (currentColor.a >= 0.95f){
             currentColor.a = 1;
             Application.LoadLevel(nextLevel);
         }
     }
 
-    public void SwitchScene(int nextSceneIndex)
-    {
+	// method for other classes to initialize level change
+    public void SwitchScene(int nextSceneIndex){
         nextLevel = nextSceneIndex;
         isEnding = true;
         isStarting = false;
