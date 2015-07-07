@@ -13,8 +13,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class StartScreenController : MonoBehaviour {
 
-	GameController gameController;
-
 	public Canvas exitMenu;
 	public GameObject startScreenContent;
 	public Button playButton;
@@ -23,11 +21,6 @@ public class StartScreenController : MonoBehaviour {
 
 	bool buttonPressed = false;
 
-
-    // Use this for initialization
-    void Start(){ 
-		gameController = new GameController (0);
-    }
 
     /* Update is called once per frame
      * Toggle Button visibility here

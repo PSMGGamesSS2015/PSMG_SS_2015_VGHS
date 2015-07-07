@@ -1,22 +1,63 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.Characters.FirstPerson;
 
-/* GAME CONTROLLER
- * This Controller is managing anything that happens all over the Game.
- * It communicates with the Controllers of all Scenes and manages the communication with the UI.
- */
-public class GameController {
-	int scene;
+public class GameController : MonoBehaviour {
 
-	//constructor that recieves current scene by initialisation
-	public GameController(int sceneNum){
-		scene = sceneNum;
-		whatScene();
+	public GUIController guiController;
+	public GameObject player;
+	public SceneFader fader;
+
+	// Use this for initialization
+	void Start () {
+	}
+	
+	// get alltime needed keyinteractions and control player movement
+	void Update () {
+		getKeyInteractions ();
+		togglePlayer ();
 	}
 
-	void whatScene(){
-		Debug.Log (scene);
+	// handle Level changing stuff triggered by actions in the inventory here
+	void getKeyInteractions(){
+
+		// open/close inventory with 'I'
+		if (Input.GetKeyDown (KeyCode.I)) {
+			guiController.toggleInventory();
+		}
+
+		// close subtitles
+		if (Input.GetKeyDown (KeyCode.Space) && guiController.isShowing ()) {
+			guiController.toggleSubtl (null);
+		}
+
+		// toggle pause menu
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if(GetComponent<SceneFader>().isFading == false){
+				guiController.togglePauseMenu();
+			}
+				
+
+		}
 	}
 
+	// toggle player movement, player is only able to move if nothing is shown on the GUI or scene isnt fading
+	void togglePlayer(){
+		if (guiController.isShowing () || GetComponent<SceneFader> ().isFading) {
+			player.GetComponent<FirstPersonController> ().enabled = false;
+		} else {
+			player.GetComponent<FirstPersonController> ().enabled = true;
+		}
+	}
 
+	// handle interaction with continue button in pause menu
+	public void OnContinueClicked(){
+		guiController.togglePauseMenu ();
+	}
+
+	// handle interaction with back button in pause menu
+	public void OnBackClicked(){
+		GetComponent<SceneFader>().SwitchScene (0);
+	}
 }

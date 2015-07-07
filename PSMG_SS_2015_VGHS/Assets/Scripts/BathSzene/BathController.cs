@@ -2,15 +2,11 @@
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
-/* MAIN CONTROLLER
- * This is the games main controlling Script. 
- * It receives event based data from other scripts (like where collisions are triggered).
- * Its task is to store and process this data and to communicate the results to other scripts.
- * So every logic of the game is handled here.
- * Interactions depending on the inventory like dragging & dropping hints are handled by the SlotScript and Inventory Script
+/* BATH CONTROLLER
+ * This is the controlling script that handles all the logic performed during the bath scene (first level).
  */
 
-public class MainController : MonoBehaviour {
+public class BathController : MonoBehaviour {
 
 	public GUIController guiController;
 	public GameObject player;
@@ -20,48 +16,38 @@ public class MainController : MonoBehaviour {
 	public GameObject jacket;
 	public GameObject jacketOn;
 	public GameObject theory;
-    bool isPaused = false;
+    
 
 	int sinkCounter = 0;
+
 	bool noteFound = false;
 	bool theory1Registered = false;
 
 
 	// Use this for initialization
 	void Start () {
-        Cursor.visible = false;
 		guiController.toggleSubtl ("entry");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isPaused = !isPaused;
-        }
-
         getKeyInteractions();
         checkInventory();
-        checkGUI();
         checkCollisions();
 	}
 
 	//get all the key interactions
 	void getKeyInteractions(){
-		// open/close inventory with 'I'
-		if (Input.GetKeyDown (KeyCode.I)) {
-			guiController.toggleInventory();
-		}
 
-		// close a subtitle with space
-		if (Input.GetKeyDown (KeyCode.Space) && guiController.isShowing ()) {
-			guiController.toggleSubtl(null);
+		// special effects when space is hit
+		if (Input.GetKeyDown (KeyCode.Space)) {
+
 			//special case: check what sink interaction has been made to toggle the jacket
 			if(sinkCounter == 1){
 				jacket.SetActive(true);
 				jacketOn.SetActive(false);
 			}
+
 			//change level when final interaction was made
 			if(theory1Registered){
 				ChangeLevel(2);
@@ -100,21 +86,6 @@ public class MainController : MonoBehaviour {
 		}
 	}
 
-	//check if a subtitle or the inventory is shown and handle player movement and interaction hint
-	void checkGUI(){
-        if (!isPaused)
-        {
-            if (guiController.isShowing())
-            {
-                player.GetComponent<FirstPersonController>().enabled = false;
-            }
-            else
-            {
-                player.GetComponent<FirstPersonController>().enabled = true;
-            }
-        }
-        
-	}
 
 	//check if the player collides with an interactable object
 	void checkCollisions(){

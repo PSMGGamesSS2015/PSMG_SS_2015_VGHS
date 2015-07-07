@@ -14,16 +14,15 @@ public class GUIController : MonoBehaviour {
 	public GameObject inventoryObject;
 	public GameObject inventoryHint;
 	public GameObject inventory;
-    public GameObject player;
-	
-    
-    
-    bool subtlIsShown;
-	bool sinkIsActive;
-	bool inventoryIsShown;
+	public GameObject pauseMenu;
+
+	bool subtlShown;
+	bool inventoryShown;
+	bool menuShown;
 
 	// Use this for initialization
 	void Start (){
+		Cursor.visible = false;
 		inventory.GetComponent<Inventory> ().setupInventory ();
 	}
 
@@ -44,13 +43,11 @@ public class GUIController : MonoBehaviour {
 	public void toggleInventory(){
 		if (inventory.activeSelf) {
 			inventory.SetActive (false);
-			inventoryIsShown = false;
-            player.GetComponent<FirstPersonController>().enabled = true;
+			inventoryShown = false;
             Cursor.visible = false;
 		} else {
 			inventory.SetActive(true);
-			inventoryIsShown = true;
-            player.GetComponent<FirstPersonController>().enabled = false;
+			inventoryShown = true;
             Cursor.visible = true;
 		}
 	}
@@ -76,19 +73,32 @@ public class GUIController : MonoBehaviour {
 		if (key != null) {
 			subtitleObject.SetActive (true);
 			subtitleObject.GetComponent<Subtitle> ().setKeyWord (key);
-			subtlIsShown = true;
+			subtlShown = true;
 		} else {
 			subtitleObject.SetActive(false);
-			subtlIsShown = false;
+			subtlShown = false;
 		}
 	}
 
-	//method that makes it able to check if an subtitle is shown currently
+	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlIsShown || inventoryIsShown) {
+		if (subtlShown || inventoryShown || menuShown) {
 			return true;
 		} else {
 			return false;
+		}
+	}
+
+	// show/unshow pause menu
+	public void togglePauseMenu(){
+		if (pauseMenu.activeSelf) {
+			menuShown = false;
+			pauseMenu.SetActive (false);
+			Cursor.visible = false;
+		} else {
+			menuShown = true;
+			pauseMenu.SetActive(true);
+			Cursor.visible = true;
 		}
 	}
 }

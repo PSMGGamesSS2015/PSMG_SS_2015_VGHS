@@ -6,12 +6,14 @@ public class SceneFader : MonoBehaviour {
 
     public Texture2D texture;
     public float fadeSpeed = 2;
+	public bool isFading = true;
 
     int nextLevel = 1;
     Rect screenRect;
     Color currentColor;
     bool isStarting = true;
     bool isEnding = false;
+
 
 
 	// setup rectange  in-/ and outfadiing
@@ -44,13 +46,14 @@ public class SceneFader : MonoBehaviour {
         if (currentColor.a <= 0.05f){
             currentColor = Color.clear;
             isStarting = false;
+			isFading = false;
         }
     }
 
 	// fade out by fading rectangle in
     void FadeOut(){
         currentColor = Color.Lerp(currentColor, Color.black, fadeSpeed * Time.deltaTime);
-
+		isFading = true;
         if (currentColor.a >= 0.95f){
             currentColor.a = 1;
             Application.LoadLevel(nextLevel);
