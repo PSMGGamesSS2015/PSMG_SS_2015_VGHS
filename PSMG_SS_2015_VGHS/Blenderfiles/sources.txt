@@ -17,6 +17,9 @@ http://blender-archi.tuxfamily.org/Greenhouse
 bedroom - telephone:
 http://www.blenderchallenge.com/images/blends0033/final_phone.blend
 
+kitchen - frame parts:
+http://www.blendswap.com/blends/view/69874
+
 
 ################################
 ##### sources for graphics #####
