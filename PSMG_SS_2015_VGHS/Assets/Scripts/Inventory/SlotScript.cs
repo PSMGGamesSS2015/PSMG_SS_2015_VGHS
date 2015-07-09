@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 // Handle anything happening in a slot here
-public class SlotScript : MonoBehaviour, IDragHandler, IDropHandler, IPointerDownHandler{
+public class SlotScript : MonoBehaviour, IDragHandler, IPointerDownHandler{
 
 	public Item item;
 	public int slotNumber;
@@ -38,26 +38,15 @@ public class SlotScript : MonoBehaviour, IDragHandler, IDropHandler, IPointerDow
 		}
 	}
 
-
-	// Do sth. when item dropped
-	public void OnDrop(PointerEventData data){
-		// Just drop item to empty slot
-		if (inventory.Items [slotNumber].itemName == null && inventory.draggingItem) {
-			inventory.Items [slotNumber] = inventory.draggedItem;
-			inventory.dropItem (false, "");
-		}
-
-		// trigger a theory combination
-		else if (inventory.Items [slotNumber] != null && inventory.draggingItem) {
-			inventory.dropItem (true, inventory.Items[slotNumber].itemName);
-		}
-	}
-
 	// Do sth. when clicked on slot
 	public void OnPointerDown(PointerEventData data){
 		if (inventory.Items [slotNumber].itemName == null && inventory.draggingItem) {
 			inventory.Items [slotNumber] = inventory.draggedItem;
 			inventory.dropItem (false, "");
+		}
+		// trigger a theory combination
+		else if (inventory.Items [slotNumber] != null && inventory.draggingItem) {
+			inventory.dropItem (true, inventory.Items[slotNumber].itemName);
 		}
 	}
 }
