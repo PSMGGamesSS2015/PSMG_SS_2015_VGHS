@@ -6,7 +6,6 @@ public class GameController : MonoBehaviour {
 
 	public GUIController guiController;
 	public GameObject player;
-	public SceneFader fader;
 
 	// Use this for initialization
 	void Start () {
@@ -36,9 +35,7 @@ public class GameController : MonoBehaviour {
 		{
 			if(GetComponent<SceneFader>().isFading == false){
 				guiController.togglePauseMenu();
-			}
-				
-
+			}				
 		}
 	}
 

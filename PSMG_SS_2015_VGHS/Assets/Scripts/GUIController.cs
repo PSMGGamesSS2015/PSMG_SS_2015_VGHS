@@ -101,4 +101,9 @@ public class GUIController : MonoBehaviour {
 			Cursor.visible = true;
 		}
 	}
+
+	// this is needed once when house scene was loaded and the inventory need to be set to the status of bath ending
+	public void forceThSetup(){
+		inventory.GetComponent<Inventory> ().setupTheory (1);
+	}
 }
