@@ -38,9 +38,7 @@ public class Subtitle : MonoBehaviour {
 		case "theory1": 
 			subtl.GetComponent<Text>().text = firstTheoryText;
 			break;
-		default: 
-			Debug.Log ("Subtitle/Update: couldnt show subtitle");
-			break;
+		default: break;
 		}
 	}
 

@@ -118,7 +118,7 @@ public class Inventory : MonoBehaviour {
 	}
 
 	// put new theory to theory inventory
-	void setupTheory(int theoryNum){
+	public void setupTheory(int theoryNum){
 		//check if this theory already exists
 		if (TheorySlots.Exists (x => x.name == "theory1")== false) {
 			GameObject slot = (GameObject)Instantiate (theorySlots);
