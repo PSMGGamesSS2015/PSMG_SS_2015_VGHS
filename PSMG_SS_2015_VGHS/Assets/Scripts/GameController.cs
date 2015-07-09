@@ -57,4 +57,30 @@ public class GameController : MonoBehaviour {
 	public void OnBackClicked(){
 		GetComponent<SceneFader>().SwitchScene (0);
 	}
+
+    public void OnOptionsClicked()
+    {
+        guiController.GoToOptionsMenu();
+    }
+
+    public void OnOptionsBackClicked()
+    {
+        guiController.GoFromOptionsBackToPauseMenu();
+    }
+
+    public void OnQualityClicked()
+    {
+        guiController.GoToQualityMenu();
+    }
+
+    public void OnQualityBackClicked()
+    {
+        guiController.GoFromQualityToOptionsMenu();
+    }
+
+    public void SetQuality(int level)
+    {
+        QualitySettings.SetQualityLevel(level, true);
+        OnQualityBackClicked();
+    }
 }

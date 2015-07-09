@@ -18,6 +18,9 @@ public class StartScreenController : MonoBehaviour {
 	public Button playButton;
 	public Button optionsButton;
 	public Button exitButton;
+    public GameObject optionsMenu;
+    public GameObject qualityMenu;
+    public GameObject startScreen;
 
 	bool buttonPressed = false;
 
@@ -42,7 +45,8 @@ public class StartScreenController : MonoBehaviour {
 
 	// handle anything belonging to option button here
 	public void OnOptionsButtonPressed(){
-		Debug.Log ("options");
+        optionsMenu.SetActive(true);
+        startScreen.SetActive(false);
 	}
 
 	// show exit menu
@@ -61,4 +65,29 @@ public class StartScreenController : MonoBehaviour {
 		buttonPressed = false;
 		exitMenu.enabled = false;
 	}
+
+    public void OnQualityButtonPressed()
+    {
+        optionsMenu.SetActive(false);
+        qualityMenu.SetActive(true);
+
+    }
+
+    public void OnOptionsBackButtonPressed()
+    {
+        optionsMenu.SetActive(false);
+        startScreen.SetActive(true);
+    }
+
+    public void OnQualityBackButtonPressed()
+    {
+        qualityMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void SetQuality(int level)
+    {
+        QualitySettings.SetQualityLevel(level, true);
+        OnQualityBackButtonPressed();
+    }
 }
