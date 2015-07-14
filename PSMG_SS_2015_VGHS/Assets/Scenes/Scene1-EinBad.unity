@@ -812,7 +812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a23fc392ebebeb4ebf479d4d59a5301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: 53b92dd9297e90b4f8055a2bb0b3bd82, type: 3}
   subtitleObject: {fileID: 1374679473}
   interactionHintObject: {fileID: 1804175349}
   inventoryObject: {fileID: 1459443344}
@@ -3240,23 +3239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textAsset: {fileID: 4900000, guid: 53b92dd9297e90b4f8055a2bb0b3bd82, type: 3}
   subtl: {fileID: 1108059945}
-<<<<<<< HEAD
-  entryText: Was passiert hier...? Oh mein Gott was ist hier los? Wasser... ich brauche
-    Wasser!
-  mirrorText: "Okay, ganz ruhig bleiben. Jetzt blo\xDF keine Panik. Wer bist du, Frau
-    im Spiegel? Bist du ich? \\n \\nVerdammt warum erkenne ich dich nicht?! Mir ist
-    so hei\xDF..."
-  bloodyDressText: "Was zum\u2026?! O-Oh mein\u2026 Nein, das ist\u2026 das ist Blut!!!
-    Nicht mein Blut! \\n \\nWas ist denn hier los - oh Gott was habe ich getan?!"
-  paperText: "Pat Rutherford. Z.31. 12:30 Uhr\u2026 Wer ist Pat Rutherford? War ich
-    um 12:30 bei dieser oder diesem Pat? \\n \\n War das heute? Was war heute? Was
-    war gestern? WER BIN ICH?"
-  firstTheoryText: "Nein... ich k\xF6nnte doch nicht... nein bitte, ich habe doch
-    nicht einen Mord begangen?!"
-  welcomeText: 
-  answereWelcome1: 
-=======
->>>>>>> origin/master
 --- !u!222 &1374679477
 CanvasRenderer:
   m_ObjectHideFlags: 0
