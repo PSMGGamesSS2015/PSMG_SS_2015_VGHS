@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -8,7 +9,7 @@ using UnityStandardAssets.Characters.FirstPerson;
  * Handles anything that is needed to be shown on the canvas.
  */ 
 public class GUIController : MonoBehaviour {
-	
+
 	public GameObject subtitleObject;
 	public GameObject interactionHintObject;
 	public GameObject inventoryObject;

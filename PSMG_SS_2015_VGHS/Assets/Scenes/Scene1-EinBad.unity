@@ -812,6 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a23fc392ebebeb4ebf479d4d59a5301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textAsset: {fileID: 4900000, guid: 53b92dd9297e90b4f8055a2bb0b3bd82, type: 3}
   subtitleObject: {fileID: 1374679473}
   interactionHintObject: {fileID: 1804175349}
   inventoryObject: {fileID: 1459443344}
@@ -1714,7 +1715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'E' to Interact
+  m_Text: "Dr\xFCcke 'E' zum Interagieren"
 --- !u!222 &645383859
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3237,6 +3238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db612e89f5886e94c884a8b869a535ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textAsset: {fileID: 4900000, guid: 53b92dd9297e90b4f8055a2bb0b3bd82, type: 3}
   subtl: {fileID: 1108059945}
   entryText: Was passiert hier...? Oh mein Gott was ist hier los? Wasser... ich brauche
     Wasser!
@@ -3250,6 +3252,8 @@ MonoBehaviour:
     war gestern? WER BIN ICH?"
   firstTheoryText: "Nein... ich k\xF6nnte doch nicht... nein bitte, ich habe doch
     nicht einen Mord begangen?!"
+  welcomeText: 
+  answereWelcome1: 
 --- !u!222 &1374679477
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4607,7 +4611,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hint added...
+  m_Text: "Hinweis hinzugef\xFCgt..."
 --- !u!222 &1854997571
 CanvasRenderer:
   m_ObjectHideFlags: 0

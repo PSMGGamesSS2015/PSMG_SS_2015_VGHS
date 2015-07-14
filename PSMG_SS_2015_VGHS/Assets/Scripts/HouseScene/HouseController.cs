@@ -10,6 +10,7 @@ public class HouseController : MonoBehaviour {
 		guiController.addHint("dressHint");
 		guiController.addHint("noteHint");
 		guiController.forceThSetup();
+		guiController.toggleSubtl ("welcome");
 	}
 	
 	// Update is called once per frame
