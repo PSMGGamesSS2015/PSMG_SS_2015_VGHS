@@ -11,8 +11,11 @@
 	
 	<!-- House First Scene -->
 	<jane_house_1_1>Es fühlt sich nicht an wie ein Zuhause...</jane_house_1_1>
+	<jane_house_1_2>Naja, wenn du meinst...</jane_house_1_2>
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
 	<michael_house_1_1>Willkommen zu Hause, Jane!</michael_house_1_1>
+	<michael_house_1_2>Lass dir bisschen Zeit, du musst dich erst noch an alles gewöhnen,/nund wenn deine Erinnerungen wieder da sind, gibt sich das von selbst.</michael_house_1_2>
+	<michael_house_1_3>Schau dich einfach um, vielleicht erinnerst du dich sogar an etwas.</michael_house_1_3>
 </ger>

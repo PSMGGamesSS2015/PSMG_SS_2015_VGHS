@@ -16,6 +16,8 @@ public class GUIController : MonoBehaviour {
 	public GameObject inventoryHint;
 	public GameObject inventory;
 	public GameObject pauseMenu;
+    public GameObject optionsMenu;
+    public GameObject qualityMenu;
 
 	bool subtlShown;
 	bool inventoryShown;
@@ -107,4 +109,28 @@ public class GUIController : MonoBehaviour {
 	public void forceThSetup(){
 		inventory.GetComponent<Inventory> ().setupTheory (1);
 	}
+
+    public void GoToOptionsMenu()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void GoFromOptionsBackToPauseMenu()
+    {
+        optionsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
+    public void GoToQualityMenu()
+    {
+        optionsMenu.SetActive(false);
+        qualityMenu.SetActive(true);
+    }
+
+    public void GoFromQualityToOptionsMenu()
+    {
+        qualityMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
 }
