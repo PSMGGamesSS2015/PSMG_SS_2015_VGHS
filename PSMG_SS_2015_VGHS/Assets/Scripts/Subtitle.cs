@@ -49,8 +49,24 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("jane_bath_5", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
-		case "welcome": 
+		case "welcome1": 
 			lyrics.TryGetValue("michael_house_1_1", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "welcome2": 
+			lyrics.TryGetValue("jane_house_1_1", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "welcome3": 
+			lyrics.TryGetValue("michael_house_1_2", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "welcome4": 
+			lyrics.TryGetValue("jane_house_1_2", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "welcome5": 
+			lyrics.TryGetValue("michael_house_1_3", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
 		default: break;
@@ -74,8 +90,7 @@ public class Subtitle : MonoBehaviour {
 					//obj.Add(childNode.Name.ToString(), childNode.InnerText);
 					lyrics.Add(childNode.Name.ToString(), childNode.InnerText);
 				}
-			}
-			
+			}		
 		}
 	}
 

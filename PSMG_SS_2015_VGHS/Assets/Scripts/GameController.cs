@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour {
 		togglePlayer ();
 	}
 
-	// handle Level changing stuff triggered by actions in the inventory here
+	// handle keyboard input here 
 	void getKeyInteractions(){
 
 		// open/close inventory with 'I'
