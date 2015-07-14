@@ -93,12 +93,7 @@ public class Subtitle : MonoBehaviour {
 					//obj.Add(childNode.Name.ToString(), childNode.InnerText);
 					lyrics.Add(childNode.Name.ToString(), childNode.InnerText);
 				}
-<<<<<<< HEAD
 			}
-			
-=======
-			}		
->>>>>>> origin/master
 		}
 	}
 
