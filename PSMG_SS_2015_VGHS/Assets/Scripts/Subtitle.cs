@@ -17,7 +17,6 @@ public class Subtitle : MonoBehaviour {
 	string text = "";
 
 	Dictionary<string,string> lyrics = new Dictionary<string,string>();
-	Dictionary<string,string> obj;
 
 	// setup xml file first 
 	void Start(){
@@ -72,6 +71,14 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("michael_house_1_3", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
+		case "diningRoom": 
+			lyrics.TryGetValue("michael_house_1_4", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "scar1_1":
+			lyrics.TryGetValue("jane_house_1_3", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
 		default: break;
 		}
 	}
@@ -85,12 +92,10 @@ public class Subtitle : MonoBehaviour {
 		//extract child nodes into new xml node list and prepare dictionary
 		foreach(XmlNode node in xmlList){
 			XmlNodeList stringList = node.ChildNodes;
-			obj = new Dictionary<string, string>();
 			
 			//extraxt strings of child nodes and insert into dictionary
 			foreach(XmlNode childNode in stringList){
 				if(childNode.Name.ToString() != "#comment"){
-					//obj.Add(childNode.Name.ToString(), childNode.InnerText);
 					lyrics.Add(childNode.Name.ToString(), childNode.InnerText);
 				}
 			}

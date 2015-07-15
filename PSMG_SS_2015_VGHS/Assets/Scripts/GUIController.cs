@@ -18,15 +18,21 @@ public class GUIController : MonoBehaviour {
 	public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject qualityMenu;
+	public GameObject michaelInteraction;
 
 	bool subtlShown;
 	bool inventoryShown;
 	bool menuShown;
+	bool interactionPanelShown;
 
 	// Use this for initialization
 	void Start (){
 		Cursor.visible = false;
 		inventory.GetComponent<Inventory> ().setupInventory ();
+
+		if (Application.loadedLevel == 2) {
+			michaelInteraction.GetComponent<MichaelInteractions>().setupInteractions();
+		}
 	}
 
 	// put hint into inventory
@@ -85,7 +91,7 @@ public class GUIController : MonoBehaviour {
 
 	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlShown || inventoryShown || menuShown) {
+		if (subtlShown || inventoryShown || menuShown || interactionPanelShown) {
 			return true;
 		} else {
 			return false;
@@ -105,6 +111,24 @@ public class GUIController : MonoBehaviour {
 		}
 	}
 
+	// show/unshow interaction panel
+	public void toggleInteractionPanel(){
+		if (michaelInteraction.activeSelf) {
+			michaelInteraction.SetActive (false);
+			interactionPanelShown = false;
+			Cursor.visible = false;
+		} else {
+			michaelInteraction.SetActive(true);
+			interactionPanelShown = true;
+			Cursor.visible = true;
+		}
+	}
+
+	// manage shown interaction in interaction panel
+	public void manageInteraction (string key){
+		michaelInteraction.GetComponent<MichaelInteractions> ().setupInteraction (key);
+	}
+	
 	// this is needed once when house scene was loaded and the inventory need to be set to the status of bath ending
 	public void forceThSetup(){
 		inventory.GetComponent<Inventory> ().setupTheory (1);

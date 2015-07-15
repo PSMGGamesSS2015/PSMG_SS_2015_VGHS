@@ -12,10 +12,13 @@
 	<!-- House First Scene -->
 	<jane_house_1_1>Es fühlt sich nicht an wie ein Zuhause...</jane_house_1_1>
 	<jane_house_1_2>Naja, wenn du meinst...</jane_house_1_2>
+	<jane_house_1_3>Was ist das?</jane_house_1_3>
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
 	<michael_house_1_1>Willkommen zu Hause, Jane!</michael_house_1_1>
 	<michael_house_1_2>Lass dir bisschen Zeit, du musst dich erst noch an alles gewöhnen,/nund wenn deine Erinnerungen wieder da sind, gibt sich das von selbst.</michael_house_1_2>
 	<michael_house_1_3>Schau dich einfach um, vielleicht erinnerst du dich sogar an etwas.</michael_house_1_3>
+	<michael_house_1_4>Das ist das Esszimmer./nWir haben hier oft mit Freunden gegessen.</michael_house_1_4>
+	<michael_house_1_5>Das? Nur eine Verletzung, nichts schlimmes./nEs verheilt recht gut.</michael_house_1_5>
 </ger>

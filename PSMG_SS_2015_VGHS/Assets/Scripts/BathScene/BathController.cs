@@ -11,7 +11,6 @@ public class BathController : MonoBehaviour {
 	public GUIController guiController;
 	public GameObject player;
 	public GameObject sink;
-	public GameObject sinkTrigger;
 	public GameObject jacketTrigger;
 	public GameObject jacket;
 	public GameObject jacketOn;

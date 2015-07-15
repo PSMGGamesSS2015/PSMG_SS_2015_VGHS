@@ -11,6 +11,7 @@ TagManager:
   - Inventory
   - TheoryInventory
   - SomeObject
+  - InteractionPanel
   layers:
   - Default
   - TransparentFX
