@@ -35055,6 +35055,7 @@ MonoBehaviour:
   slotDistY: 85
   iX: 1
   iY: 210
+  scar1: 0
 --- !u!114 &1242278635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47275,6 +47276,7 @@ MonoBehaviour:
   michaelTrigger: {fileID: 771804679}
   diningRoomTrigger1: {fileID: 143317647}
   diningRoomTrigger2: {fileID: 238703079}
+  InteractionPanel: {fileID: 1242278632}
 --- !u!1001 &1634315712
 Prefab:
   m_ObjectHideFlags: 0
