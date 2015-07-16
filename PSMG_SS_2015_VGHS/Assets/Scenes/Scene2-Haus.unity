@@ -35055,7 +35055,7 @@ MonoBehaviour:
   slotDistY: 85
   iX: 1
   iY: 210
-  scar1: 0
+  triggeredInteraction: 
 --- !u!114 &1242278635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58738,6 +58738,7 @@ MonoBehaviour:
   optionsMenu: {fileID: 1435996335}
   qualityMenu: {fileID: 358478998}
   michaelInteraction: {fileID: 1242278632}
+  subtlShown: 0
 --- !u!114 &2051808690
 MonoBehaviour:
   m_ObjectHideFlags: 0

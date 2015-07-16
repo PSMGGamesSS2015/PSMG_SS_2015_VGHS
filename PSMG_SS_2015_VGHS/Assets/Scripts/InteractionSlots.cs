@@ -16,11 +16,6 @@ public class InteractionSlots : MonoBehaviour, IPointerDownHandler {
 	void Start () {
 		interactionPanel = GameObject.FindGameObjectWithTag ("InteractionPanel").GetComponent<MichaelInteractions>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	// setup text for this slot
 	public void setupText(string content){

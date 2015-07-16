@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour {
 	void getKeyInteractions(){
 
 		// open/close inventory with 'I'
-		if (Input.GetKeyDown (KeyCode.I)) {
+		if (Input.GetKeyDown (KeyCode.I) && guiController.subtlShown != true && guiController.interactionPanelShown != true) {
 			guiController.toggleInventory();
 		}
 

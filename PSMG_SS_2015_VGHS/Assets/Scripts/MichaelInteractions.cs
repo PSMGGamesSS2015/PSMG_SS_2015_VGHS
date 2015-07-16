@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Xml;
@@ -20,7 +19,7 @@ public class MichaelInteractions : MonoBehaviour {
 	public int iX;
 	public int iY;
 
-	public bool scar1;
+	public string triggeredInteraction = "";
 
 	Dictionary<string,string> interactionContent = new Dictionary<string,string>();
 	
@@ -29,11 +28,6 @@ public class MichaelInteractions : MonoBehaviour {
 	void Start () {
 		setupXmlData ();
 		gameObject.SetActive (false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	// setup the interaction panel
@@ -96,7 +90,7 @@ public class MichaelInteractions : MonoBehaviour {
 	public void interactionAlert(string interaction){
 		switch (interaction) {
 		case "Narbe":
-			scar1 = true;
+			triggeredInteraction = "scar1_";
 			break;
 		}
 	}

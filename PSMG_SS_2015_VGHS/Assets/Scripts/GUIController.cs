@@ -20,10 +20,11 @@ public class GUIController : MonoBehaviour {
     public GameObject qualityMenu;
 	public GameObject michaelInteraction;
 
-	bool subtlShown;
+	public bool subtlShown;
+	public bool interactionPanelShown;
 	bool inventoryShown;
 	bool menuShown;
-	bool interactionPanelShown;
+
 
 	// Use this for initialization
 	void Start (){
@@ -112,8 +113,8 @@ public class GUIController : MonoBehaviour {
 	}
 
 	// show/unshow interaction panel
-	public void toggleInteractionPanel(){
-		if (michaelInteraction.activeSelf) {
+	public void toggleInteractionPanel(bool active){
+		if (michaelInteraction.activeSelf || active == false) {
 			michaelInteraction.SetActive (false);
 			interactionPanelShown = false;
 			Cursor.visible = false;
@@ -127,6 +128,10 @@ public class GUIController : MonoBehaviour {
 	// manage shown interaction in interaction panel
 	public void manageInteraction (string key){
 		michaelInteraction.GetComponent<MichaelInteractions> ().setupInteraction (key);
+	}
+
+	public string manageDialogs(){
+		return michaelInteraction.GetComponent<MichaelInteractions> ().triggeredInteraction;
 	}
 	
 	// this is needed once when house scene was loaded and the inventory need to be set to the status of bath ending

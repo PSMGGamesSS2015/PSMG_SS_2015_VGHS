@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HouseController : MonoBehaviour {
 
@@ -9,32 +10,30 @@ public class HouseController : MonoBehaviour {
 	public GameObject diningRoomTrigger2;
 	public GameObject InteractionPanel;
 
-	int dialogCount = 0;
+	List<string> dialogsPerformed = new List<string>();
+	int dialogCount = 1;
 	bool welcomeDialog = true;
 	bool scar1Dialog = true;
 	bool michael = true;
 	bool diningRoom = true;
+	bool dialog = false;
+	string actualDialog = "";
 
-	// Setup Inventory when House Scene starts
+	// Setup Inventory and Interactions when House Scene starts
 	void Start () {
 		guiController.addHint("dressHint");
 		guiController.addHint("noteHint");
 		guiController.forceThSetup();
-		guiController.toggleSubtl ("welcome");
 		guiController.manageInteraction("michael_scar");
+		initDialog ("welcome");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		// during welcoming
-		if(welcomeDialog){
-			toggleWelcomeDialog ();
-		}
-
+		toggleDialogs ();
 		getKeyInteractions ();
 		checkCollisions();
 		checkInteractionPanel ();
-
 	}
 
 	// handle key interactions here
@@ -42,50 +41,16 @@ public class HouseController : MonoBehaviour {
 
 		// handle dialog counting for each Dialog
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			if(welcomeDialog != false){
+			if(dialog){
 				dialogCount++;
-			} else{
-				dialogCount = 0;
 			}
 		}
 
 		// handle 'E' interactions
 		if (Input.GetKeyDown (KeyCode.E)) {
-			if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && michael){
-				guiController.toggleInteractionPanel();
+			if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && michael && guiController.subtlShown !=true){
+				guiController.toggleInteractionPanel(true);
 			}
-		}
-	}
-
-	// handle procedure of welcoming dialog here
-	void toggleWelcomeDialog(){
-		switch (dialogCount) {
-		case 0:
-			guiController.toggleSubtl ("welcome1");
-			break;
-		case 1:
-			guiController.toggleSubtl ("welcome2");
-			break;
-		case 2:
-			guiController.toggleSubtl ("welcome3");
-			break;
-		case 3:
-			guiController.toggleSubtl ("welcome4");
-			break;
-		case 4:
-			guiController.toggleSubtl ("welcome5");
-			break;
-		}
-	}
-
-	void toggleScar1Dialog(){
-		switch (dialogCount) {
-		case 0:
-			guiController.toggleSubtl ("scar1_1");
-			break;
-		case 1:
-			guiController.toggleSubtl ("scar1_2");
-			break;
 		}
 	}
 
@@ -106,8 +71,44 @@ public class HouseController : MonoBehaviour {
 
 	// check for new interactions in interaction panel
 	void checkInteractionPanel(){
-		if (InteractionPanel.GetComponent<MichaelInteractions> ().scar1) {
-
+		if (guiController.manageDialogs() != "" && dialogsPerformed.Contains(guiController.manageDialogs()) == false) {
+			initDialog(guiController.manageDialogs());
+			guiController.toggleInteractionPanel(false);
 		}
 	}
+
+	void initDialog(string dialogToInit){
+		dialog = true;
+		actualDialog = dialogToInit;
+		guiController.toggleSubtl (dialogToInit+dialogCount);
+	}
+
+	// toggle the needed dialog
+	void toggleDialogs(){
+		int dialogMaxNum = 0;
+		switch (actualDialog) {
+		case "welcome":
+			dialogMaxNum = 5;
+			break;
+		case "scar1_":
+			dialogMaxNum = 2;
+			break;
+		default: break;
+		}
+		manageDialogSettings(dialogMaxNum, actualDialog+dialogCount);
+	}
+
+	// manage if dialog has ended or not
+	void manageDialogSettings(int dialogNum, string actualSubtl){
+		if (dialogCount > dialogNum) {
+			dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
+			Debug.Log (dialogsPerformed.Contains("scar1_"));
+			dialogCount = 1;
+			actualDialog = "";
+			dialog = false;
+		} else {
+			guiController.toggleSubtl (actualSubtl);
+		}
+	}
+
 }
