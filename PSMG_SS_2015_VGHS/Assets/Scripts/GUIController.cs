@@ -51,6 +51,9 @@ public class GUIController : MonoBehaviour {
 		case "family":
 			inventory.GetComponent<Inventory>().addItem (4);
 			break;
+		case "daughter":
+			inventory.GetComponent<Inventory>().addItem (5);
+			break;
 		default: break;
 		}
 	}
