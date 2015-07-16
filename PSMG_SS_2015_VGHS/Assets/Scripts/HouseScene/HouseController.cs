@@ -41,14 +41,12 @@ public class HouseController : MonoBehaviour {
 
 	// handle key interactions here
 	void getKeyInteractions(){
-
 		// handle dialog counting for each Dialog
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if(dialog){
 				dialogCount++;
 			}
 		}
-
 		// handle 'E' interactions
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent() && guiController.subtlShown !=true){
@@ -80,6 +78,7 @@ public class HouseController : MonoBehaviour {
 		}
 	}
 
+	// initialize a dialog
 	void initDialog(string dialogToInit){
 		dialog = true;
 		actualDialog = dialogToInit;
@@ -95,6 +94,9 @@ public class HouseController : MonoBehaviour {
 			break;
 		case "scar1_":
 			dialogMaxNum = 2;
+			break;
+		case "scar2_":
+			dialogMaxNum = 4;
 			break;
 		default: break;
 		}
@@ -126,12 +128,11 @@ public class HouseController : MonoBehaviour {
 
 	// handle Level changing stuff triggered by actions in the inventory here
 	void checkInventory(){
-
 		if(theory.GetComponent<Theory> ().theory2Found && theory2Registered == false){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory2");
+			guiController.manageInteraction("michael_scar_2");
 			theory2Registered = true;
 		}
 	}
-
 }

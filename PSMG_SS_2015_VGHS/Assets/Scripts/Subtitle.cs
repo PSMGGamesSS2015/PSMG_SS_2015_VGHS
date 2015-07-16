@@ -18,6 +18,7 @@ public class Subtitle : MonoBehaviour {
 
 	Dictionary<string,string> lyrics = new Dictionary<string,string>();
 
+
 	// setup xml file first 
 	void Start(){
 		setupXmlData ();
@@ -81,6 +82,22 @@ public class Subtitle : MonoBehaviour {
 			break;
 		case "scar1_2":
 			lyrics.TryGetValue("michael_house_1_5", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "scar2_1":
+			lyrics.TryGetValue("michael_house_1_6", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "scar2_2":
+			lyrics.TryGetValue("jane_house_1_5", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "scar2_3":
+			lyrics.TryGetValue("michael_house_1_7", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "scar2_4":
+			lyrics.TryGetValue("jane_house_1_6", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
 		case "theory2":

@@ -92,6 +92,9 @@ public class MichaelInteractions : MonoBehaviour {
 		case "Narbe":
 			triggeredInteraction = "scar1_";
 			break;
+		case "Woher kommt die Narbe?":
+			triggeredInteraction = "scar2_";
+			break;
 		}
 	}
 }
