@@ -101,6 +101,9 @@ public class MichaelInteractions : MonoBehaviour {
 		case "Meine Familie":
 			triggeredInteraction = "family";
 			break;
+		case "Kinder?":
+			triggeredInteraction = "daughter";
+			break;
 		default: break;
 		}
 

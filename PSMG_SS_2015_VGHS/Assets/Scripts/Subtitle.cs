@@ -128,6 +128,34 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("michael_house_1_10", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
+		case "daughter1":
+			lyrics.TryGetValue("jane_house_1_10", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2":
+			lyrics.TryGetValue("michael_house_1_11", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter3":
+			lyrics.TryGetValue("jane_house_1_11", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter4":
+			lyrics.TryGetValue("michael_house_1_12", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter5":
+			lyrics.TryGetValue("jane_house_1_12", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter6":
+			lyrics.TryGetValue("michael_house_1_13", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter7":
+			lyrics.TryGetValue("jane_house_1_13", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
 
 		default: break;
 		}

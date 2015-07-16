@@ -111,6 +111,9 @@ public class HouseController : MonoBehaviour {
 		case "family":
 			dialogMaxNum = 4;
 			break;
+		case "daughter":
+			dialogMaxNum = 7;
+			break;
 		default: break;
 		}
 		if(actualDialog.Equals("") == false){
@@ -125,7 +128,13 @@ public class HouseController : MonoBehaviour {
 			// add hint during dialog
 			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar")){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
-			} else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
+			} 
+			// activate children interaction and insert hin about brother
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
+				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
+				guiController.manageInteraction("michael_daughter");
+			}
+			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("daughter")){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
 			}
 			dialogCount = 1;
