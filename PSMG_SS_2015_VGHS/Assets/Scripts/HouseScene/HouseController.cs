@@ -48,7 +48,7 @@ public class HouseController : MonoBehaviour {
 
 		// handle 'E' interactions
 		if (Input.GetKeyDown (KeyCode.E)) {
-			if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && michael && guiController.subtlShown !=true){
+			if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent() && guiController.subtlShown !=true){
 				guiController.toggleInteractionPanel(true);
 			}
 		}
@@ -57,7 +57,7 @@ public class HouseController : MonoBehaviour {
 	//check if the player collides with an interactable object
 	void checkCollisions(){
 		//check if michael is triggered and interactable
-		if (michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && michael && guiController.isShowing() == false) {
+		if (michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent() && guiController.isShowing() == false) {
 			guiController.toggleInteractionHint (true);
 		} 
 		// toggle dining room triggering
@@ -95,20 +95,29 @@ public class HouseController : MonoBehaviour {
 			break;
 		default: break;
 		}
-		manageDialogSettings(dialogMaxNum, actualDialog+dialogCount);
+		if(actualDialog != ""){
+			manageDialogSettings(dialogMaxNum, actualDialog+dialogCount);
+		}
 	}
 
 	// manage if dialog has ended or not
 	void manageDialogSettings(int dialogNum, string actualSubtl){
 		if (dialogCount > dialogNum) {
 			dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
-			Debug.Log (dialogsPerformed.Contains("scar1_"));
+			if(actualSubtl.Substring(0, actualSubtl.Length-3) == "scar"){
+				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
+			}
 			dialogCount = 1;
 			actualDialog = "";
 			dialog = false;
 		} else {
 			guiController.toggleSubtl (actualSubtl);
 		}
+	}
+
+	void insertIntoInventory(string hintToAdd){
+		guiController.toggleInventoryHint ();
+		guiController.addHint (hintToAdd);
 	}
 
 }

@@ -45,6 +45,9 @@ public class GUIController : MonoBehaviour {
 		case "noteHint":
 			inventory.GetComponent<Inventory> ().addItem (1);
 			break;
+		case "scar":
+			inventory.GetComponent<Inventory>().addItem (3);
+			break;
 		default: break;
 		}
 	}
@@ -110,6 +113,16 @@ public class GUIController : MonoBehaviour {
 			pauseMenu.SetActive(true);
 			Cursor.visible = true;
 		}
+	}
+
+	// check if panel contains interactions
+	public bool checkForPanelContent(){
+		for(int i = 0; i < michaelInteraction.GetComponent<MichaelInteractions>().iSlots.Count; i++){
+			if(michaelInteraction.GetComponent<MichaelInteractions>().iSlots[i].activeSelf){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	// show/unshow interaction panel
