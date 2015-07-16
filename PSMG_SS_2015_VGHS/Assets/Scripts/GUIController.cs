@@ -32,7 +32,7 @@ public class GUIController : MonoBehaviour {
 		inventory.GetComponent<Inventory> ().setupInventory ();
 
 		if (Application.loadedLevel == 2) {
-			michaelInteraction.GetComponent<MichaelInteractions>().setupInteractions();
+			michaelInteraction.GetComponent<MichaelInteractions>().setupInteractionSlots();
 		}
 	}
 
@@ -47,6 +47,9 @@ public class GUIController : MonoBehaviour {
 			break;
 		case "scar":
 			inventory.GetComponent<Inventory>().addItem (3);
+			break;
+		case "family":
+			inventory.GetComponent<Inventory>().addItem (4);
 			break;
 		default: break;
 		}

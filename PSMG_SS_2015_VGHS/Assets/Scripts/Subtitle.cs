@@ -104,6 +104,31 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("jane_house_1_4", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
+		case "friends1":
+			lyrics.TryGetValue("jane_house_1_7", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "friends2":
+			lyrics.TryGetValue("michael_house_1_8", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "family1":
+			lyrics.TryGetValue("jane_house_1_8", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "family2":
+			lyrics.TryGetValue("michael_house_1_9", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "family3":
+			lyrics.TryGetValue("jane_house_1_9", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "family4":
+			lyrics.TryGetValue("michael_house_1_10", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+
 		default: break;
 		}
 	}
@@ -120,7 +145,7 @@ public class Subtitle : MonoBehaviour {
 			
 			//extraxt strings of child nodes and insert into dictionary
 			foreach(XmlNode childNode in stringList){
-				if(childNode.Name.ToString() != "#comment"){
+				if(childNode.Name.ToString().Equals("#comment") == false){
 					lyrics.Add(childNode.Name.ToString(), childNode.InnerText);
 				}
 			}

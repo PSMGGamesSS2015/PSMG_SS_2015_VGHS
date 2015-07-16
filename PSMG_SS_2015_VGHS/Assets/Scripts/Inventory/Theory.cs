@@ -20,6 +20,7 @@ public class Theory : MonoBehaviour {
 	string hint1 = "dress";
 	string hint2 = "note";
 	string hint3 = "scar";
+	string hint4 = "family";
 
 	public bool theory1Found = false;
 	public bool theory2Found = false;

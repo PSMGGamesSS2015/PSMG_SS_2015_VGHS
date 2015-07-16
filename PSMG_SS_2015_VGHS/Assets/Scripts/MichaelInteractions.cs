@@ -31,7 +31,7 @@ public class MichaelInteractions : MonoBehaviour {
 	}
 
 	// setup the interaction panel
-	public void setupInteractions(){
+	public void setupInteractionSlots(){
 
 		int slotAmount = 0;
 
@@ -95,6 +95,15 @@ public class MichaelInteractions : MonoBehaviour {
 		case "Woher kommt die Narbe?":
 			triggeredInteraction = "scar2_";
 			break;
+		case "Meine Freunde":
+			triggeredInteraction = "friends";
+			break;
+		case "Meine Familie":
+			triggeredInteraction = "family";
+			break;
+		default: break;
 		}
+
+
 	}
 }

@@ -18,7 +18,9 @@ public class HouseController : MonoBehaviour {
 	bool michael = true;
 	bool diningRoom = true;
 	bool dialog = false;
+	bool theory1Registered = true;
 	bool theory2Registered = false;
+	bool familyInteractionDone = false;
 	string actualDialog = "";
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -64,6 +66,11 @@ public class HouseController : MonoBehaviour {
 		// toggle dining room triggering
 		else if(diningRoom && (diningRoomTrigger1.GetComponent<DiningRoomTrigger1>().diningRoomTriggered() || diningRoomTrigger2.GetComponent<DiningRoomTrigger2>().diningRoomTriggered())){
 			guiController.toggleSubtl("diningRoom");
+			guiController.manageInteraction("michael_friends");
+			if(familyInteractionDone == false){
+				guiController.manageInteraction("michael_family");
+				familyInteractionDone = true;
+			}
 			diningRoom = false;
 		} else {
 			guiController.toggleInteractionHint (false);
@@ -72,7 +79,7 @@ public class HouseController : MonoBehaviour {
 
 	// check for new interactions in interaction panel
 	void checkInteractionPanel(){
-		if (guiController.manageDialogs() != "" && dialogsPerformed.Contains(guiController.manageDialogs()) == false) {
+		if (guiController.manageDialogs().Equals("") == false && dialogsPerformed.Contains(guiController.manageDialogs()) == false) {
 			initDialog(guiController.manageDialogs());
 			guiController.toggleInteractionPanel(false);
 		}
@@ -98,9 +105,15 @@ public class HouseController : MonoBehaviour {
 		case "scar2_":
 			dialogMaxNum = 4;
 			break;
+		case "friends":
+			dialogMaxNum = 2;
+			break;
+		case "family":
+			dialogMaxNum = 4;
+			break;
 		default: break;
 		}
-		if(actualDialog != ""){
+		if(actualDialog.Equals("") == false){
 			manageDialogSettings(dialogMaxNum, actualDialog+dialogCount);
 		}
 	}
@@ -109,8 +122,11 @@ public class HouseController : MonoBehaviour {
 	void manageDialogSettings(int dialogNum, string actualSubtl){
 		if (dialogCount > dialogNum) {
 			dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
-			if(actualSubtl.Substring(0, actualSubtl.Length-3) == "scar"){
+			// add hint during dialog
+			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar")){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
+			} else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
+				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
 			}
 			dialogCount = 1;
 			actualDialog = "";
