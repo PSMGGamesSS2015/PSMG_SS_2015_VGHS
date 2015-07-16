@@ -120,7 +120,7 @@ public class Inventory : MonoBehaviour {
 	// put new theory to theory inventory
 	public void setupTheory(int theoryNum){
 		//check if this theory already exists
-		if (TheorySlots.Exists (x => x.name == "theory1")== false) {
+		if (TheorySlots.Exists (x => x.name == "theory1")== false || TheorySlots.Exists (x => x.name == "theory2")== false) {
 			GameObject slot = (GameObject)Instantiate (theorySlots);
 			slot.transform.parent = theoryInventory.transform;
 			slot.GetComponent<RectTransform> ().localPosition = new Vector3 (thX, thY, 0);

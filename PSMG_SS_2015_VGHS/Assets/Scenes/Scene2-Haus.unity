@@ -10727,7 +10727,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theory1Text: Murdered Pat Rutherford?
+  theory2Text: Hit Michael?
+  actualTheory: 0
   theory1Found: 0
+  theory2Found: 0
 --- !u!114 &393317080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35048,7 +35051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textAsset: {fileID: 4900000, guid: 4eec443574c58dc4cabfaaec339618ea, type: 3}
-  Interactions: []
   iSlots: []
   interactionSlots: {fileID: 107980, guid: 78a79b0b3cee4b1459454af93eadafea, type: 2}
   slotNum: 6
@@ -47277,6 +47279,7 @@ MonoBehaviour:
   diningRoomTrigger1: {fileID: 143317647}
   diningRoomTrigger2: {fileID: 238703079}
   InteractionPanel: {fileID: 1242278632}
+  theory: {fileID: 393317077}
 --- !u!1001 &1634315712
 Prefab:
   m_ObjectHideFlags: 0
@@ -58739,6 +58742,7 @@ MonoBehaviour:
   qualityMenu: {fileID: 358478998}
   michaelInteraction: {fileID: 1242278632}
   subtlShown: 0
+  interactionPanelShown: 0
 --- !u!114 &2051808690
 MonoBehaviour:
   m_ObjectHideFlags: 0

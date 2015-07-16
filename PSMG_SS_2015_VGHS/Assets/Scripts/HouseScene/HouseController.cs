@@ -9,6 +9,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject diningRoomTrigger1;
 	public GameObject diningRoomTrigger2;
 	public GameObject InteractionPanel;
+	public GameObject theory;
 
 	List<string> dialogsPerformed = new List<string>();
 	int dialogCount = 1;
@@ -17,6 +18,7 @@ public class HouseController : MonoBehaviour {
 	bool michael = true;
 	bool diningRoom = true;
 	bool dialog = false;
+	bool theory2Registered = false;
 	string actualDialog = "";
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -34,6 +36,7 @@ public class HouseController : MonoBehaviour {
 		getKeyInteractions ();
 		checkCollisions();
 		checkInteractionPanel ();
+		checkInventory ();
 	}
 
 	// handle key interactions here
@@ -115,9 +118,20 @@ public class HouseController : MonoBehaviour {
 		}
 	}
 
+	//insert item into inventory
 	void insertIntoInventory(string hintToAdd){
 		guiController.toggleInventoryHint ();
 		guiController.addHint (hintToAdd);
+	}
+
+	// handle Level changing stuff triggered by actions in the inventory here
+	void checkInventory(){
+
+		if(theory.GetComponent<Theory> ().theory2Found && theory2Registered == false){
+			guiController.toggleInventory();
+			guiController.toggleSubtl("theory2");
+			theory2Registered = true;
+		}
 	}
 
 }

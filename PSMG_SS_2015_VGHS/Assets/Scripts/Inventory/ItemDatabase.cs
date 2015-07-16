@@ -13,5 +13,6 @@ public class ItemDatabase : MonoBehaviour {
 	void Start () {
 		items.Add (new Item ("dress", "a bloody dress", 0));
 		items.Add (new Item ("note", "a strange note", 1));
+		items.Add (new Item ("scar", "a scar on michaels head", 3));
 	}
 }

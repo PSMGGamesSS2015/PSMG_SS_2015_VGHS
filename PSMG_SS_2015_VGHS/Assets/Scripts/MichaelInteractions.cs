@@ -9,7 +9,7 @@ public class MichaelInteractions : MonoBehaviour {
 
 	public TextAsset textAsset;
 
-	public List <GameObject> Interactions = new List<GameObject> (); 
+
 	public List <GameObject> iSlots = new List<GameObject> ();
 
 	public GameObject interactionSlots;

@@ -106,10 +106,8 @@ public class BathController : MonoBehaviour {
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory1");
 			theory1Registered = true;
-            player.GetComponent<FirstPersonController>().enabled = false;
 		}
 	}
-
 
 	public void ChangeLevel(int level){
         //Application.LoadLevel(level);
