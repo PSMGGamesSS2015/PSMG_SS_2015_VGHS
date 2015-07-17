@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 58afd79aa88329f49a74b45469ff12f4
+timeCreated: 1437123799
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Buch01
+    100004: Buch02
+    100006: Buch03
+    100008: Buch04
+    100010: Buch05
+    100012: Buch06
+    100014: Buch07
+    100016: Buch08
+    100018: Buch09
+    100020: Buch10
+    100022: Buch11
+    100024: Buch12
+    100026: Buch13
+    100028: Buch14
+    100030: Buch15
+    100032: Buch16
+    100034: Familienalbum
+    100036: Regal
+    400000: //RootNode
+    400002: Buch01
+    400004: Buch02
+    400006: Buch03
+    400008: Buch04
+    400010: Buch05
+    400012: Buch06
+    400014: Buch07
+    400016: Buch08
+    400018: Buch09
+    400020: Buch10
+    400022: Buch11
+    400024: Buch12
+    400026: Buch13
+    400028: Buch14
+    400030: Buch15
+    400032: Buch16
+    400034: Familienalbum
+    400036: Regal
+    2300000: Buch01
+    2300002: Buch02
+    2300004: Buch03
+    2300006: Buch04
+    2300008: Buch05
+    2300010: Buch06
+    2300012: Buch07
+    2300014: Buch08
+    2300016: Buch09
+    2300018: Buch10
+    2300020: Buch11
+    2300022: Buch12
+    2300024: Buch13
+    2300026: Buch14
+    2300028: Buch15
+    2300030: Buch16
+    2300032: Familienalbum
+    2300034: Regal
+    3300000: Buch01
+    3300002: Buch02
+    3300004: Buch03
+    3300006: Buch04
+    3300008: Buch05
+    3300010: Buch06
+    3300012: Buch07
+    3300014: Buch08
+    3300016: Buch09
+    3300018: Buch10
+    3300020: Buch11
+    3300022: Buch12
+    3300024: Buch13
+    3300026: Buch14
+    3300028: Buch15
+    3300030: Buch16
+    3300032: Familienalbum
+    3300034: Regal
+    4300000: Regal
+    4300002: Buch01
+    4300004: Buch02
+    4300006: Buch03
+    4300008: Buch04
+    4300010: Buch05
+    4300012: Buch06
+    4300014: Buch07
+    4300016: Buch08
+    4300018: Buch09
+    4300020: Buch10
+    4300022: Buch11
+    4300024: Buch12
+    4300026: Buch13
+    4300028: Buch14
+    4300030: Buch15
+    4300032: Buch16
+    4300034: Familienalbum
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

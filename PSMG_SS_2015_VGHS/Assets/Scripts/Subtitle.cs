@@ -156,6 +156,46 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("jane_house_1_13", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
+		case "piano1":
+			lyrics.TryGetValue("michael_house_1_14", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "piano2":
+			lyrics.TryGetValue("jane_house_1_14", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "piano3":
+			lyrics.TryGetValue("michael_house_1_15", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2_1":
+			lyrics.TryGetValue("jane_house_1_15", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2_2":
+			lyrics.TryGetValue("michael_house_1_16", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2_3":
+			lyrics.TryGetValue("michael_house_1_17", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2_4":
+			lyrics.TryGetValue("jane_house_1_16", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2_5":
+			lyrics.TryGetValue("michael_house_1_18", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2_6":
+			lyrics.TryGetValue("jane_house_1_17", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "daughter2_7":
+			lyrics.TryGetValue("michael_house_1_19", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
 
 		default: break;
 		}

@@ -54,6 +54,12 @@ public class GUIController : MonoBehaviour {
 		case "daughter":
 			inventory.GetComponent<Inventory>().addItem (5);
 			break;
+		case "picture":
+			inventory.GetComponent<Inventory>().addItem (6);
+			break;
+		case "dianesDaughter":
+			inventory.GetComponent<Inventory>().addItem (7);
+			break;
 		default: break;
 		}
 	}
@@ -76,6 +82,10 @@ public class GUIController : MonoBehaviour {
 		//set inactive first in case its still shown from another interaction
 		inventoryHint.SetActive (false);
 		inventoryHint.SetActive (true);
+	}
+
+	public List<GameObject> getInventoryContent(){
+		return inventory.GetComponent<Inventory> ().Slots;
 	}
 
 	// toggle hint for possible 'E' interactions
@@ -129,6 +139,13 @@ public class GUIController : MonoBehaviour {
 			}
 		}
 		return false;
+	}
+
+	public void closeInteractionInPanel(string key){
+		for(int i = 0; i < michaelInteraction.GetComponent<MichaelInteractions>().iSlots.Count; i++){
+			michaelInteraction.GetComponent<MichaelInteractions>().iSlots[i].GetComponent<InteractionSlots>().forceInteractionSlotClose(key);
+		}
+
 	}
 
 	// show/unshow interaction panel

@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: 18200f92fdc51344b962c26105b06d5e
+timeCreated: 1437123795
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: hifi1
+    100004: hifi1_buttons_left
+    100006: hifi1_buttons_right
+    100008: hifi1_cd
+    100010: hifi1_display
+    100012: hifi2
+    100014: hifi2_buttons_left
+    100016: hifi2_buttons_right
+    100018: hifi2_buttons_right2
+    100020: hifi2_display
+    100022: Speaker-Frame-left
+    100024: Speaker-Frame-middle
+    100026: Speaker-Frame-right
+    100028: Speaker-sound-left
+    100030: Speaker-sound-middle
+    100032: Speaker-sound-right
+    100034: Speaker-word-left
+    100036: Speaker-word-middle
+    100038: Speaker-word-right
+    400000: //RootNode
+    400002: hifi1
+    400004: hifi1_buttons_left
+    400006: hifi1_buttons_right
+    400008: hifi1_cd
+    400010: hifi1_display
+    400012: hifi2
+    400014: hifi2_buttons_left
+    400016: hifi2_buttons_right
+    400018: hifi2_buttons_right2
+    400020: hifi2_display
+    400022: Speaker-Frame-left
+    400024: Speaker-Frame-middle
+    400026: Speaker-Frame-right
+    400028: Speaker-sound-left
+    400030: Speaker-sound-middle
+    400032: Speaker-sound-right
+    400034: Speaker-word-left
+    400036: Speaker-word-middle
+    400038: Speaker-word-right
+    2300000: hifi1
+    2300002: hifi1_buttons_left
+    2300004: hifi1_buttons_right
+    2300006: hifi1_cd
+    2300008: hifi1_display
+    2300010: hifi2
+    2300012: hifi2_buttons_left
+    2300014: hifi2_buttons_right
+    2300016: hifi2_buttons_right2
+    2300018: hifi2_display
+    2300020: Speaker-Frame-left
+    2300022: Speaker-Frame-middle
+    2300024: Speaker-Frame-right
+    2300026: Speaker-sound-left
+    2300028: Speaker-sound-middle
+    2300030: Speaker-sound-right
+    2300032: Speaker-word-left
+    2300034: Speaker-word-middle
+    2300036: Speaker-word-right
+    3300000: hifi1
+    3300002: hifi1_buttons_left
+    3300004: hifi1_buttons_right
+    3300006: hifi1_cd
+    3300008: hifi1_display
+    3300010: hifi2
+    3300012: hifi2_buttons_left
+    3300014: hifi2_buttons_right
+    3300016: hifi2_buttons_right2
+    3300018: hifi2_display
+    3300020: Speaker-Frame-left
+    3300022: Speaker-Frame-middle
+    3300024: Speaker-Frame-right
+    3300026: Speaker-sound-left
+    3300028: Speaker-sound-middle
+    3300030: Speaker-sound-right
+    3300032: Speaker-word-left
+    3300034: Speaker-word-middle
+    3300036: Speaker-word-right
+    4300000: hifi1_cd
+    4300002: hifi1_buttons_left
+    4300004: hifi1
+    4300006: Speaker-Frame-middle
+    4300008: Speaker-sound-middle
+    4300010: Speaker-word-middle
+    4300012: hifi1_display
+    4300014: hifi1_buttons_right
+    4300016: hifi2
+    4300018: hifi2_buttons_left
+    4300020: hifi2_buttons_right
+    4300022: hifi2_display
+    4300024: hifi2_buttons_right2
+    4300026: Speaker-Frame-left
+    4300028: Speaker-sound-left
+    4300030: Speaker-word-left
+    4300032: Speaker-Frame-right
+    4300034: Speaker-sound-right
+    4300036: Speaker-word-right
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

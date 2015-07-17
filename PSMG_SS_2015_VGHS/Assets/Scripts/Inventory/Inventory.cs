@@ -87,11 +87,12 @@ public class Inventory : MonoBehaviour {
 
 	// make sure that an item is added to an empty slot
 	void addToEmptySlot(Item item){
-
-		for(int i = 0; i < Items.Count; i++){
-			if(Items[i].itemName == null){
-				Items[i] = item;
-				break;
+		if (Items.Contains (item) == false) {
+			for (int i = 0; i < Items.Count; i++) {
+				if (Items [i].itemName == null) {
+					Items [i] = item;
+					break;
+				}
 			}
 		}
 	}
@@ -121,7 +122,6 @@ public class Inventory : MonoBehaviour {
 	public void setupTheory(int theoryNum){
 		//check if this theory already exists
 		if(TheorySlots.Exists (x => x.name.Equals("theory"+theoryNum))== false && theoryNum != 0){
-		//if (TheorySlots.Exists (x => x.name.Equals("theory1"))== false) {
 			GameObject slot = (GameObject)Instantiate (theorySlots);
 			slot.transform.parent = theoryInventory.transform;
 			slot.GetComponent<RectTransform> ().localPosition = new Vector3 (thX, thY, 0);
