@@ -97,6 +97,24 @@ ModelImporter:
     4300030: Buch15
     4300032: Buch16
     4300034: Familienalbum
+    6400000: Buch01
+    6400002: Buch02
+    6400004: Buch03
+    6400006: Buch04
+    6400008: Buch05
+    6400010: Buch06
+    6400012: Buch07
+    6400014: Buch08
+    6400016: Buch09
+    6400018: Buch10
+    6400020: Buch11
+    6400022: Buch12
+    6400024: Buch13
+    6400026: Buch14
+    6400028: Buch15
+    6400030: Buch16
+    6400032: Familienalbum
+    6400034: Regal
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -120,7 +138,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

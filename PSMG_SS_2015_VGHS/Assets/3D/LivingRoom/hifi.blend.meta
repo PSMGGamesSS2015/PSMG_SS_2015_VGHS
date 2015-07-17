@@ -102,6 +102,25 @@ ModelImporter:
     4300032: Speaker-Frame-right
     4300034: Speaker-sound-right
     4300036: Speaker-word-right
+    6400000: hifi1
+    6400002: hifi1_buttons_left
+    6400004: hifi1_buttons_right
+    6400006: hifi1_cd
+    6400008: hifi1_display
+    6400010: hifi2
+    6400012: hifi2_buttons_left
+    6400014: hifi2_buttons_right
+    6400016: hifi2_buttons_right2
+    6400018: hifi2_display
+    6400020: Speaker-Frame-left
+    6400022: Speaker-Frame-middle
+    6400024: Speaker-Frame-right
+    6400026: Speaker-sound-left
+    6400028: Speaker-sound-middle
+    6400030: Speaker-sound-right
+    6400032: Speaker-word-left
+    6400034: Speaker-word-middle
+    6400036: Speaker-word-right
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -125,7 +144,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

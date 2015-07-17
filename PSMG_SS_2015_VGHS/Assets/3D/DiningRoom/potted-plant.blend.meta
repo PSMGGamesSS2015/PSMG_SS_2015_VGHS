@@ -1,42 +1,66 @@
 fileFormatVersion: 2
-guid: 2153564dbcf3b4042ac2f9f852b9304f
-timeCreated: 1437123796
+guid: dd8a005ce03b32f418c7a440945dde66
+timeCreated: 1437140874
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Holz1
-    100004: Holz2
-    100006: Holz3
-    100008: Holzgitter
-    100010: Kamin
-    400000: //RootNode
-    400002: Holz1
-    400004: Holz2
-    400006: Holz3
-    400008: Holzgitter
-    400010: Kamin
-    2300000: Holz1
-    2300002: Holz2
-    2300004: Holz3
-    2300006: Holzgitter
-    2300008: Kamin
-    3300000: Holz1
-    3300002: Holz2
-    3300004: Holz3
-    3300006: Holzgitter
-    3300008: Kamin
-    4300000: Holz1
-    4300002: Holzgitter
-    4300004: Kamin
-    4300006: Holz2
-    4300008: Holz3
-    6400000: Holz1
-    6400002: Holz2
-    6400004: Holz3
-    6400006: Holzgitter
-    6400008: Kamin
+    100000: Erde
+    100002: plant_pmat1_001
+    100004: plant_pmat2_001
+    100006: plant_pmat3_001
+    100008: plant_pmat4_001
+    100010: plant_pmat5_001
+    100012: plant_pmat6
+    100014: plant_pmat7
+    100016: //RootNode
+    100018: Topf
+    400000: Erde
+    400002: plant_pmat1_001
+    400004: plant_pmat2_001
+    400006: plant_pmat3_001
+    400008: plant_pmat4_001
+    400010: plant_pmat5_001
+    400012: plant_pmat6
+    400014: plant_pmat7
+    400016: //RootNode
+    400018: Topf
+    2300000: Erde
+    2300002: plant_pmat1_001
+    2300004: plant_pmat2_001
+    2300006: plant_pmat3_001
+    2300008: plant_pmat4_001
+    2300010: plant_pmat5_001
+    2300012: plant_pmat6
+    2300014: plant_pmat7
+    2300016: Topf
+    3300000: Erde
+    3300002: plant_pmat1_001
+    3300004: plant_pmat2_001
+    3300006: plant_pmat3_001
+    3300008: plant_pmat4_001
+    3300010: plant_pmat5_001
+    3300012: plant_pmat6
+    3300014: plant_pmat7
+    3300016: Topf
+    4300000: Erde
+    4300002: Topf
+    4300004: plant_pmat1_001
+    4300006: plant_pmat2_001
+    4300008: plant_pmat3_001
+    4300010: plant_pmat4_001
+    4300012: plant_pmat5_001
+    4300014: plant_pmat6
+    4300016: plant_pmat7
+    6400000: Erde
+    6400002: plant_pmat1_001
+    6400004: plant_pmat2_001
+    6400006: plant_pmat3_001
+    6400008: plant_pmat4_001
+    6400010: plant_pmat5_001
+    6400012: plant_pmat6
+    6400014: plant_pmat7
+    6400016: Topf
     7400000: Default Take
     9500000: //RootNode
   materials:

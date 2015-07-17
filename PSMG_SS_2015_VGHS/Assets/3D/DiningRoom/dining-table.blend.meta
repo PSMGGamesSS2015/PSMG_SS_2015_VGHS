@@ -1,42 +1,24 @@
 fileFormatVersion: 2
-guid: 2153564dbcf3b4042ac2f9f852b9304f
-timeCreated: 1437123796
+guid: 669d17d686c193b48819471dffb46bd4
+timeCreated: 1437140873
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Holz1
-    100004: Holz2
-    100006: Holz3
-    100008: Holzgitter
-    100010: Kamin
-    400000: //RootNode
-    400002: Holz1
-    400004: Holz2
-    400006: Holz3
-    400008: Holzgitter
-    400010: Kamin
-    2300000: Holz1
-    2300002: Holz2
-    2300004: Holz3
-    2300006: Holzgitter
-    2300008: Kamin
-    3300000: Holz1
-    3300002: Holz2
-    3300004: Holz3
-    3300006: Holzgitter
-    3300008: Kamin
-    4300000: Holz1
-    4300002: Holzgitter
-    4300004: Kamin
-    4300006: Holz2
-    4300008: Holz3
-    6400000: Holz1
-    6400002: Holz2
-    6400004: Holz3
-    6400006: Holzgitter
-    6400008: Kamin
+    100000: Circle
+    100002: //RootNode
+    100004: Stuhl
+    400000: Circle
+    400002: //RootNode
+    400004: Stuhl
+    2300000: Circle
+    2300002: Stuhl
+    3300000: Circle
+    3300002: Stuhl
+    4300000: Stuhl
+    4300002: Circle
+    6400000: Circle
+    6400002: Stuhl
     7400000: Default Take
     9500000: //RootNode
   materials:
