@@ -120,7 +120,7 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleInteractionHint (true);
 		}
 		// check if noteblock triggered
-		else if (noteTrigger.GetComponent<NoteTrigger> ().noteTriggered () guiController.isShowing () == false) {
+		else if (noteTrigger.GetComponent<NoteTrigger> ().noteTriggered () && guiController.isShowing () == false) {
 			guiController.toggleInteractionHint (true);
 		}
 
