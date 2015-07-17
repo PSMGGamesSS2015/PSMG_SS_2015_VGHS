@@ -20,14 +20,27 @@ public class StartScreenController : MonoBehaviour {
 	public Button exitButton;
     public GameObject optionsMenu;
     public GameObject qualityMenu;
+    public GameObject resolutionMenu;
+    public Toggle checkbox;
     public GameObject startScreen;
 
 	bool buttonPressed = false;
+    bool windowed;
 
 
     /* Update is called once per frame
      * Toggle Button visibility here
      */
+
+    void Start()
+    {
+        windowed = Screen.fullScreen;
+        if (Screen.fullScreen == false)
+        {
+            checkbox.isOn = true;
+        }
+    }
+
     void Update(){
 		if (buttonPressed) {
 			startScreenContent.SetActive(false);
@@ -89,5 +102,34 @@ public class StartScreenController : MonoBehaviour {
     {
         QualitySettings.SetQualityLevel(level, true);
         OnQualityBackButtonPressed();
+    }
+
+    public void OnResolutionClicked()
+    {
+        optionsMenu.SetActive(false);
+        resolutionMenu.SetActive(true);
+    }
+
+    public void OnResolutionBackClicked()
+    {
+        resolutionMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void SetResolution(string res)
+    {
+        string[] array = res.Split(new char[] { 'x' });
+
+        int width = int.Parse(array[0]);
+        int height = int.Parse(array[1]);
+
+        Screen.SetResolution(width, height, windowed);
+
+        Debug.Log(Screen.currentResolution.width + "x" + Screen.currentResolution.height);
+    }
+
+    public void SetWindowedMode()
+    {
+        windowed = !windowed;
     }
 }

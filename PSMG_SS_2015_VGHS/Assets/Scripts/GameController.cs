@@ -7,9 +7,11 @@ public class GameController : MonoBehaviour {
 
 	public GUIController guiController;
 	public GameObject player;
+    bool windowed;
 
 	// Use this for initialization
 	void Start () {
+        windowed = Screen.fullScreen;        
 	}
 	
 	// get alltime needed keyinteractions and control player movement
@@ -83,5 +85,32 @@ public class GameController : MonoBehaviour {
     {
         QualitySettings.SetQualityLevel(level, true);
         OnQualityBackClicked();
+    }
+
+    public void OnResolutionClicked()
+    {
+        guiController.GoToResolutionMenu();
+    }
+
+    public void SetResolution(string res)
+    {
+        string[] array = res.Split(new char[] { 'x' });
+
+        int width = int.Parse(array[0]);
+        int height = int.Parse(array[1]);
+
+        Screen.SetResolution(width, height, windowed);
+
+        Debug.Log(Screen.currentResolution.width + "x" + Screen.currentResolution.height);
+    }
+
+    public void OnResolutionBackClicked()
+    {
+        guiController.GoFromResolutionToOptionsMenu();
+    }
+
+    public void SetWindowedMode()
+    {
+        windowed = !windowed;
     }
 }

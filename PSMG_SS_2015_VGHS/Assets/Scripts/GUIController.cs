@@ -18,6 +18,8 @@ public class GUIController : MonoBehaviour {
 	public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject qualityMenu;
+    public GameObject resolutionMenu;
+    public Toggle checkbox;
 	public GameObject michaelInteraction;
 
 	public bool subtlShown;
@@ -28,6 +30,10 @@ public class GUIController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start (){
+        if (Screen.fullScreen == false)
+        {
+            checkbox.isOn = true;
+        }
 		Cursor.visible = false;
 		inventory.GetComponent<Inventory> ().setupInventory ();
 
@@ -199,6 +205,18 @@ public class GUIController : MonoBehaviour {
     public void GoFromQualityToOptionsMenu()
     {
         qualityMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void GoToResolutionMenu()
+    {
+        optionsMenu.SetActive(false);
+        resolutionMenu.SetActive(true);
+    }
+
+    public void GoFromResolutionToOptionsMenu()
+    {
+        resolutionMenu.SetActive(false);
         optionsMenu.SetActive(true);
     }
 }
