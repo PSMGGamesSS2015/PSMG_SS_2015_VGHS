@@ -60,6 +60,9 @@ public class GUIController : MonoBehaviour {
 		case "dianesDaughter":
 			inventory.GetComponent<Inventory>().addItem (7);
 			break;
+		case "missingPicture":
+			inventory.GetComponent<Inventory>().addItem (8);
+			break;
 		default: break;
 		}
 	}
@@ -84,8 +87,8 @@ public class GUIController : MonoBehaviour {
 		inventoryHint.SetActive (true);
 	}
 
-	public List<GameObject> getInventoryContent(){
-		return inventory.GetComponent<Inventory> ().Slots;
+	public string checkForNewHint(){
+		return inventory.GetComponent<Inventory> ().newHint;
 	}
 
 	// toggle hint for possible 'E' interactions

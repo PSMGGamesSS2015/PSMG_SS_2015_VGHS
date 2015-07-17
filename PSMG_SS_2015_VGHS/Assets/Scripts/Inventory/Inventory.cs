@@ -34,9 +34,14 @@ public class Inventory : MonoBehaviour {
 
 	int actualSlotNum;
 
+	public string newHint = "";
 	public bool draggingItem = false;
 	public Item draggedItem;
 	public GameObject draggedItemObject;
+
+	void Start(){
+		gameObject.SetActive (false);
+	}
 
 	// Update is called once per frame
 	void Update(){
@@ -114,14 +119,18 @@ public class Inventory : MonoBehaviour {
 		// do sth. when hints were combined
 		if (combined) {
 			addItemToSlot ();
-			setupTheory(theoryInventory.GetComponent<Theory>().getTheory(draggedItem.itemName, secondItem));
+			setupTheory(theoryInventory.GetComponent<Theory>().checkCombination(draggedItem.itemName, secondItem));
 		}
 	}
 
 	// put new theory to theory inventory
 	public void setupTheory(int theoryNum){
+		// check if theory is actually a hint
+		if (theoryNum == 8) {
+			newHint = "missingPicture";
+		}
 		//check if this theory already exists
-		if(TheorySlots.Exists (x => x.name.Equals("theory"+theoryNum))== false && theoryNum != 0){
+		else if(TheorySlots.Exists (x => x.name.Equals("theory"+theoryNum))== false && theoryNum != 0){
 			GameObject slot = (GameObject)Instantiate (theorySlots);
 			slot.transform.parent = theoryInventory.transform;
 			slot.GetComponent<RectTransform> ().localPosition = new Vector3 (thX, thY, 0);

@@ -24,6 +24,7 @@ public class HouseController : MonoBehaviour {
 	bool theory1Registered = true;
 	bool theory2Registered = false;
 	bool familyInteractionDone = false;
+	bool missingPicture = false;
 	string actualDialog = "";
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -154,7 +155,10 @@ public class HouseController : MonoBehaviour {
 		case "daughter2_":
 			dialogMaxNum = 7;
 			break;
-		
+		case "picture":
+			dialogMaxNum = 4;
+			break;
+
 		default: break;
 		}
 		if(actualDialog.Equals("") == false){
@@ -185,6 +189,10 @@ public class HouseController : MonoBehaviour {
 			// add hint about dianes daughter to inventory
 			else if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("daughter")){
 				insertIntoInventory("dianesDaughter");
+				guiController.manageInteraction("michael_friends");
+			}
+			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("picture")){
+				insertIntoInventory("missingPicture");
 			}
 			dialogCount = 1;
 			actualDialog = "";
@@ -207,6 +215,18 @@ public class HouseController : MonoBehaviour {
 
 	// handle Level changing stuff triggered by actions in the inventory here
 	void checkInventory(){
+		if (guiController.checkForNewHint ().Equals ("") == false) {
+			switch(guiController.checkForNewHint()){
+			case "missingPicture":
+				if(missingPicture == false){
+					missingPicture = true;
+					guiController.toggleSubtl("missingPictureFound");
+					guiController.toggleInventory();
+					guiController.manageInteraction("michael_missingPicture");
+				}
+				break;
+			}
+		}
 		if(theory.GetComponent<Theory> ().theory2Found && theory2Registered == false){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory2");

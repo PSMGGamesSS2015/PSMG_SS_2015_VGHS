@@ -10733,6 +10733,7 @@ MonoBehaviour:
   theory1Text: Murdered Pat Rutherford?
   theory2Text: Hit Michael?
   actualTheory: 0
+  newHint: 0
   theory1Found: 0
   theory2Found: 0
 --- !u!114 &393317080
@@ -29751,7 +29752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1091585564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29796,6 +29797,7 @@ MonoBehaviour:
   thX: 1
   thY: 166
   xReset: -130
+  newHint: 
   draggingItem: 0
   draggedItemObject: {fileID: 555254823}
 --- !u!114 &1091585566

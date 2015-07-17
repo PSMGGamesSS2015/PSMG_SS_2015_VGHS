@@ -17,6 +17,7 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add (new Item ("family", "Diane was my best friend", 4));
 		items.Add (new Item ("daughter", "I have a daughter named Emily. She is 7 years old", 5));
 		items.Add (new Item ("picture", "Emilies picture of first class", 6));
-		items.Add (new Item ("dianesDaughter", "Emilies picture of first class", 7));
+		items.Add (new Item ("dianesDaughter", "Emilies picture of first grade", 7));
+		items.Add (new Item ("missingPicture", "Picture of second grade missing", 8));
 	}
 }

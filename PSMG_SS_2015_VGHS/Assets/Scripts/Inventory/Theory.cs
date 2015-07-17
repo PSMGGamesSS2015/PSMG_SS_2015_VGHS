@@ -16,17 +16,20 @@ public class Theory : MonoBehaviour {
 	int theory1 = 1;
 	int theory2 = 2;
 	public int actualTheory;
+	public int newHint;
 
 	string hint1 = "dress";
 	string hint2 = "note";
 	string hint3 = "scar";
 	string hint4 = "family";
+	string hint5 = "daughter";
+	string hint6 = "picture";
 
 	public bool theory1Found = false;
 	public bool theory2Found = false;
 
 	// set up theory depending on the hints that were combined
-	public int getTheory(string first, string second){
+	public int checkCombination(string first, string second){
 		switch (first) {
 		case "dress":
 			if(second.Equals(hint2)){
@@ -48,6 +51,16 @@ public class Theory : MonoBehaviour {
 			if(second.Equals(hint1)){
 				theory2Found = true;
 				actualTheory = theory2;
+			}
+			break;
+		case "daughter":
+			if(second.Equals(hint6)){
+				actualTheory = 8;
+			}
+			break;
+		case "picture":
+			if(second.Equals(hint5)){
+				actualTheory = 8;
 			}
 			break;
 		default: break;

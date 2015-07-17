@@ -196,7 +196,26 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("michael_house_1_19", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
-
+		case "missingPictureFound":
+			lyrics.TryGetValue("jane_house_1_18", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "picture1": 
+			lyrics.TryGetValue("jane_house_1_19", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "picture2": 
+			lyrics.TryGetValue("michael_house_1_20", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "picture3": 
+			lyrics.TryGetValue("jane_house_1_20", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "picture4": 
+			lyrics.TryGetValue("michael_house_1_21", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
 		default: break;
 		}
 	}

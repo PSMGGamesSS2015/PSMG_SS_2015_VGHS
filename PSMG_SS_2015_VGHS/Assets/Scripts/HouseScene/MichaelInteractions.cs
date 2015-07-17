@@ -52,11 +52,14 @@ public class MichaelInteractions : MonoBehaviour {
 
 	// set new interaction to slot
 	public void setupInteraction(string key){
-		for (int i = 0; i < slotNum; i ++) {
-			if (iSlots[i].GetComponent<InteractionSlots>().isFilled == false){
-				iSlots[i].SetActive(true);
-				iSlots[i].GetComponent<InteractionSlots>().setupText(getText(key));
-				break;
+		if (iSlots.Exists (x => x.name.Equals (key)) == false) {
+			for (int i = 0; i < slotNum; i ++) {
+				if (iSlots [i].GetComponent<InteractionSlots> ().isFilled == false) {
+					iSlots [i].SetActive (true);
+					iSlots [i].GetComponent<InteractionSlots> ().setupText (getText (key));
+					iSlots [i].name = key;
+					break;
+				}
 			}
 		}
 	}
@@ -103,6 +106,9 @@ public class MichaelInteractions : MonoBehaviour {
 			break;
 		case "Kinder?":
 			triggeredInteraction = "daughter";
+			break;
+		case "Fehlendes Foto":
+			triggeredInteraction = "picture";
 			break;
 		default: break;
 		}
