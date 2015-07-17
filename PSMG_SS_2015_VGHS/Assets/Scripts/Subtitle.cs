@@ -224,6 +224,10 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("michael_house_1_22", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
+		case "noteMonolog":
+			lyrics.TryGetValue("jane_house_1_22", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
 		default: break;
 		}
 	}

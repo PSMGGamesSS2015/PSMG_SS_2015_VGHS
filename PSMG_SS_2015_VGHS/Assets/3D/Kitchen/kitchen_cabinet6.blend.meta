@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 47544a0f7087b664491d34e3304076fc
+timeCreated: 1437148991
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone_0
+    100004: cabinet4_door_l
+    100006: cabinet4_door_r
+    100008: cabinet6_bottom
+    100010: cabinet6_counter
+    100012: cabinet6_door_left
+    100014: cabinet6_door_right
+    100016: cabinet6_drawer1
+    100018: cabinet6_frame1
+    100020: cabinet6_frame4
+    100022: cabinet6_frame5
+    100024: cabinet6_frame6
+    100026: cabinet6_frame7
+    100028: cabinet6_frame7_001
+    100030: Circle
+    100032: //RootNode
+    400000: Bone
+    400002: Bone_0
+    400004: cabinet4_door_l
+    400006: cabinet4_door_r
+    400008: cabinet6_bottom
+    400010: cabinet6_counter
+    400012: cabinet6_door_left
+    400014: cabinet6_door_right
+    400016: cabinet6_drawer1
+    400018: cabinet6_frame1
+    400020: cabinet6_frame4
+    400022: cabinet6_frame5
+    400024: cabinet6_frame6
+    400026: cabinet6_frame7
+    400028: cabinet6_frame7_001
+    400030: Circle
+    400032: //RootNode
+    2300000: cabinet6_bottom
+    2300002: cabinet6_counter
+    2300004: cabinet6_drawer1
+    2300006: cabinet6_frame1
+    2300008: cabinet6_frame4
+    2300010: cabinet6_frame5
+    2300012: cabinet6_frame6
+    2300014: cabinet6_frame7
+    2300016: cabinet6_frame7_001
+    2300018: Circle
+    3300000: cabinet6_bottom
+    3300002: cabinet6_counter
+    3300004: cabinet6_drawer1
+    3300006: cabinet6_frame1
+    3300008: cabinet6_frame4
+    3300010: cabinet6_frame5
+    3300012: cabinet6_frame6
+    3300014: cabinet6_frame7
+    3300016: cabinet6_frame7_001
+    3300018: Circle
+    4300000: Circle
+    4300002: cabinet6_bottom
+    4300004: cabinet6_counter
+    4300006: cabinet4_door_l
+    4300008: cabinet4_door_r
+    4300010: cabinet6_drawer1
+    4300012: cabinet6_frame1
+    4300014: cabinet6_frame4
+    4300016: cabinet6_frame5
+    4300018: cabinet6_frame6
+    4300020: cabinet6_frame7
+    4300022: cabinet6_frame7_001
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: cabinet4_door_l
+    13700002: cabinet4_door_r
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

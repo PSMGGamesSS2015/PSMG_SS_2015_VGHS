@@ -10,6 +10,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject diningRoomTrigger1;
 	public GameObject diningRoomTrigger2;
 	public GameObject familyAlbumTrigger;
+	public GameObject noteTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 
@@ -88,33 +89,41 @@ public class HouseController : MonoBehaviour {
 			if(Application.loadedLevel == 2 && familyAlbumTrigger.GetComponent<FamilyAlbumTrigger>().albumTriggered()){
 				initDialog("familyAlbum1_");
 			}
+			if(Application.loadedLevel == 2 && noteTrigger.GetComponent<NoteTrigger>().noteTriggered()){
+				guiController.toggleSubtl("noteMonolog");
+			}
 		}
 	}
 
 	//check if the player collides with an interactable object
 	void checkCollisions(){
 		//check if michael is triggered and interactable
-		if (michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent() && guiController.isShowing() == false) {
+		if (michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent () && guiController.isShowing () == false) {
 			guiController.toggleInteractionHint (true);
 		} 
 		// toggle dining room triggering
-		else if(diningRoom && (diningRoomTrigger1.GetComponent<DiningRoomTrigger1>().diningRoomTriggered() || diningRoomTrigger2.GetComponent<DiningRoomTrigger2>().diningRoomTriggered())){
-			guiController.toggleSubtl("diningRoom");
-			guiController.manageInteraction("michael_friends");
-			if(familyInteractionDone == false){
-				guiController.manageInteraction("michael_family");
+		else if (diningRoom && (diningRoomTrigger1.GetComponent<DiningRoomTrigger1> ().diningRoomTriggered () || diningRoomTrigger2.GetComponent<DiningRoomTrigger2> ().diningRoomTriggered ())) {
+			guiController.toggleSubtl ("diningRoom");
+			guiController.manageInteraction ("michael_friends");
+			if (familyInteractionDone == false) {
+				guiController.manageInteraction ("michael_family");
 				familyInteractionDone = true;
 			}
 			diningRoom = false;
 		} 
 		// check if piano is triggered
-		else if(pianoTrigger.GetComponent<PianoTrigger>().pianoTriggered() && pianoCount < 3 &&guiController.isShowing() == false){
+		else if (pianoTrigger.GetComponent<PianoTrigger> ().pianoTriggered () && pianoCount < 3 && guiController.isShowing () == false) {
 			guiController.toggleInteractionHint (true);
 		}
 		// check if family album is triggered
-		else if(familyAlbumTrigger.GetComponent<FamilyAlbumTrigger>().albumTriggered()){
+		else if (familyAlbumTrigger.GetComponent<FamilyAlbumTrigger> ().albumTriggered ()) {
 			guiController.toggleInteractionHint (true);
 		}
+		// check if noteblock triggered
+		else if (noteTrigger.GetComponent<NoteTrigger> ().noteTriggered ()) {
+			guiController.toggleInteractionHint (true);
+		}
+
 		else {
 			guiController.toggleInteractionHint (false);
 		}
