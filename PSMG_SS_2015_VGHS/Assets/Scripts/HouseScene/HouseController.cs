@@ -9,6 +9,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject pianoTrigger;
 	public GameObject diningRoomTrigger1;
 	public GameObject diningRoomTrigger2;
+	public GameObject familyAlbumTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 
@@ -84,6 +85,9 @@ public class HouseController : MonoBehaviour {
 				pianoCount++;
 
 			}
+			if(Application.loadedLevel == 2 && familyAlbumTrigger.GetComponent<FamilyAlbumTrigger>().albumTriggered()){
+				initDialog("familyAlbum1_");
+			}
 		}
 	}
 
@@ -105,6 +109,10 @@ public class HouseController : MonoBehaviour {
 		} 
 		// check if piano is triggered
 		else if(pianoTrigger.GetComponent<PianoTrigger>().pianoTriggered() && pianoCount < 3 &&guiController.isShowing() == false){
+			guiController.toggleInteractionHint (true);
+		}
+		// check if family album is triggered
+		else if(familyAlbumTrigger.GetComponent<FamilyAlbumTrigger>().albumTriggered()){
 			guiController.toggleInteractionHint (true);
 		}
 		else {
@@ -157,6 +165,9 @@ public class HouseController : MonoBehaviour {
 			break;
 		case "picture":
 			dialogMaxNum = 4;
+			break;
+		case "familyAlbum1_":
+			dialogMaxNum = 2;
 			break;
 
 		default: break;
