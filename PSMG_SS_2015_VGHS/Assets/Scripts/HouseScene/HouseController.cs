@@ -11,6 +11,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject diningRoomTrigger2;
 	public GameObject familyAlbumTrigger;
 	public GameObject noteTrigger;
+	public GameObject wintergardenTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 
@@ -22,6 +23,7 @@ public class HouseController : MonoBehaviour {
 	bool michael = true;
 	bool daughter = false;
 	bool diningRoom = true;
+	bool wintergarden = true;
 	bool dialog = false;
 	bool theory1Registered = true;
 	bool theory2Registered = false;
@@ -123,7 +125,11 @@ public class HouseController : MonoBehaviour {
 		else if (noteTrigger.GetComponent<NoteTrigger> ().noteTriggered () && guiController.isShowing () == false) {
 			guiController.toggleInteractionHint (true);
 		}
-
+		// check if jane entered wintergarden for first time
+		else if(wintergardenTrigger.GetComponent<WintergardenTrigger>().wintergardenTriggered() && wintergarden){
+			initDialog("wintergarden");
+			wintergarden = false;
+		}
 		else {
 			guiController.toggleInteractionHint (false);
 		}
@@ -178,7 +184,9 @@ public class HouseController : MonoBehaviour {
 		case "familyAlbum1_":
 			dialogMaxNum = 2;
 			break;
-
+		case "wintergarden":
+			dialogMaxNum = 3;
+			break;
 		default: break;
 		}
 		if(actualDialog.Equals("") == false){
