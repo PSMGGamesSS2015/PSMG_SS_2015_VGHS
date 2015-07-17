@@ -12,6 +12,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject familyAlbumTrigger;
 	public GameObject noteTrigger;
 	public GameObject wintergardenTrigger;
+	public GameObject glassTableTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 
@@ -24,6 +25,7 @@ public class HouseController : MonoBehaviour {
 	bool daughter = false;
 	bool diningRoom = true;
 	bool wintergarden = true;
+	bool glassTableTriggered = true;
 	bool dialog = false;
 	bool theory1Registered = true;
 	bool theory2Registered = false;
@@ -94,6 +96,10 @@ public class HouseController : MonoBehaviour {
 			if(Application.loadedLevel == 2 && noteTrigger.GetComponent<NoteTrigger>().noteTriggered()){
 				guiController.toggleSubtl("noteMonolog");
 			}
+			if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTrigger){
+				glassTableTriggered = false;
+				initDialog("glassTable");
+			}
 		}
 	}
 
@@ -129,6 +135,10 @@ public class HouseController : MonoBehaviour {
 		else if(wintergardenTrigger.GetComponent<WintergardenTrigger>().wintergardenTriggered() && wintergarden){
 			initDialog("wintergarden");
 			wintergarden = false;
+		}
+		// check if glass table was triggered
+		else if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTriggered){
+			guiController.toggleInteractionHint(true);
 		}
 		else {
 			guiController.toggleInteractionHint (false);
@@ -186,6 +196,9 @@ public class HouseController : MonoBehaviour {
 			break;
 		case "wintergarden":
 			dialogMaxNum = 3;
+			break;
+		case "glassTable":
+			dialogMaxNum = 5;
 			break;
 		default: break;
 		}

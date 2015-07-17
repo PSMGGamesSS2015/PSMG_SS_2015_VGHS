@@ -33169,6 +33169,7 @@ Transform:
   m_Children:
   - {fileID: 1330920706}
   - {fileID: 1564436095}
+  - {fileID: 1926383128}
   m_Father: {fileID: 1302640875}
   m_RootOrder: 4
 --- !u!1001 &770571671
@@ -72948,6 +72949,7 @@ MonoBehaviour:
   familyAlbumTrigger: {fileID: 2128304660}
   noteTrigger: {fileID: 463925145}
   wintergardenTrigger: {fileID: 1330920705}
+  glassTableTrigger: {fileID: 1926383127}
   InteractionPanel: {fileID: 1242278632}
   theory: {fileID: 393317077}
 --- !u!1 &1632050884
@@ -86136,6 +86138,58 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e1be62dd718cd5c40ac72cca125b6be1, type: 3}
   m_PrefabInternal: {fileID: 1924613179}
+--- !u!1 &1926383127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1926383128}
+  - 135: {fileID: 1926383130}
+  - 114: {fileID: 1926383129}
+  m_Layer: 0
+  m_Name: GlassTableTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926383128
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926383127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6.96000004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 770204977}
+  m_RootOrder: 2
+--- !u!114 &1926383129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926383127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30318932fbd90b446b9cf730ac6188b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1926383130
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926383127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1927212952 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 7f35c86232d8bab499316b844e16a655, type: 3}

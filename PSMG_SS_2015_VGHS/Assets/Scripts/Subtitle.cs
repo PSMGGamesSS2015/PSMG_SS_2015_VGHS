@@ -240,6 +240,26 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("jane_house_1_24", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
+		case "glassTable1":
+			lyrics.TryGetValue("jane_house_1_25", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "glassTable2":
+			lyrics.TryGetValue("michael_house_1_24", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "glassTable3":
+			lyrics.TryGetValue("jane_house_1_26", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "glassTable4":
+			lyrics.TryGetValue("michael_house_1_25", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "glassTable5":
+			lyrics.TryGetValue("jane_house_1_27", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
 
 		default: break;
 		}
