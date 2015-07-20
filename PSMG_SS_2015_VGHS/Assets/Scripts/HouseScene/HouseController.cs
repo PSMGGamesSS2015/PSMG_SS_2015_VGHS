@@ -13,6 +13,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject noteTrigger;
 	public GameObject wintergardenTrigger;
 	public GameObject glassTableTrigger;
+	public GameObject childsroomTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 
@@ -24,6 +25,7 @@ public class HouseController : MonoBehaviour {
 	bool michael = true;
 	bool daughter = false;
 	bool diningRoom = true;
+	bool childsroom = true;
 	bool wintergarden = true;
 	bool glassTableTriggered = true;
 	bool dialog = false;
@@ -140,6 +142,11 @@ public class HouseController : MonoBehaviour {
 		else if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTriggered){
 			guiController.toggleInteractionHint(true);
 		}
+		// check if player entered childsroom
+		else if(childsroom && childsroomTrigger.GetComponent<ChildsroomTrigger>().childsroomTriggered()){
+			initDialog("childsroom");
+			childsroom = false;
+		}
 		else {
 			guiController.toggleInteractionHint (false);
 		}
@@ -200,6 +207,9 @@ public class HouseController : MonoBehaviour {
 		case "glassTable":
 			dialogMaxNum = 5;
 			break;
+		case "childsroom":
+			dialogMaxNum = 3;
+			break;
 		default: break;
 		}
 		if(actualDialog.Equals("") == false){
@@ -234,6 +244,9 @@ public class HouseController : MonoBehaviour {
 			}
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("picture")){
 				insertIntoInventory("missingPicture");
+			}
+			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("childsroom")){
+				insertIntoInventory("emilyWhereabout");
 			}
 			dialogCount = 1;
 			actualDialog = "";

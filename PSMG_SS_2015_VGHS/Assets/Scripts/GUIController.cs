@@ -69,6 +69,9 @@ public class GUIController : MonoBehaviour {
 		case "missingPicture":
 			inventory.GetComponent<Inventory>().addItem (8);
 			break;
+		case "emilyWhereabout":
+			inventory.GetComponent<Inventory>().addItem (9);
+			break;
 		default: break;
 		}
 	}
