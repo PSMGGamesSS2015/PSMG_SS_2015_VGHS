@@ -11,10 +11,12 @@ public class HouseController : MonoBehaviour {
 	public GameObject diningRoomTrigger2;
 	public GameObject familyAlbumTrigger;
 	public GameObject noteTrigger;
+	public GameObject bookshelfTrigger;
 	public GameObject wintergardenTrigger;
 	public GameObject glassTableTrigger;
 	public GameObject childsroomTrigger;
 	public GameObject guestroomTrigger;
+	public GameObject workroomTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 
@@ -29,6 +31,7 @@ public class HouseController : MonoBehaviour {
 	bool childsroom = true;
 	bool wintergarden = true;
 	bool guestroom = true;
+	bool workroom = true;
 	bool glassTableTriggered = true;
 	bool dialog = false;
 	bool theory1Registered = true;
@@ -100,6 +103,9 @@ public class HouseController : MonoBehaviour {
 			if(Application.loadedLevel == 2 && noteTrigger.GetComponent<NoteTrigger>().noteTriggered()){
 				guiController.toggleSubtl("noteMonolog");
 			}
+			if(Application.loadedLevel == 2 && bookshelfTrigger.GetComponent<BookshelfTrigger>().bookshelfTriggered()){
+				guiController.toggleSubtl("bookshelf");
+			}
 			if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTrigger){
 				glassTableTriggered = false;
 				initDialog("glassTable");
@@ -153,6 +159,15 @@ public class HouseController : MonoBehaviour {
 		else if(guestroom && guestroomTrigger.GetComponent<GuestroomTrigger>().guestroomTriggered()){
 			initDialog("guestroom");
 			guestroom = false;
+		}
+		// check if player entered workroom
+		else if (workroom && workroomTrigger.GetComponent<WorkroomTrigger>().workroomTriggered()){
+			guiController.toggleSubtl("workroom");
+			workroom = false;
+		}
+		// check if player is nearby bookshelf in workroom
+		else if (bookshelfTrigger.GetComponent<BookshelfTrigger>().bookshelfTriggered()&& guiController.isShowing () == false){
+			guiController.toggleInteractionHint(true);
 		}
 		else {
 			guiController.toggleInteractionHint (false);

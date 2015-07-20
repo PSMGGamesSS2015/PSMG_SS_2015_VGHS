@@ -9595,6 +9595,58 @@ Transform:
   - {fileID: 132399340}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &217671811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 217671812}
+  - 135: {fileID: 217671813}
+  - 114: {fileID: 217671814}
+  m_Layer: 0
+  m_Name: BookshelfTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &217671812
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217671811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.09000015, y: 6.07999992, z: 9.18999958}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 381177214}
+  m_RootOrder: 1
+--- !u!135 &217671813
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217671811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &217671814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 217671811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dd8bf38e2720d498945c983b05fad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &217732656
 Prefab:
   m_ObjectHideFlags: 0
@@ -16908,6 +16960,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1547627122}
+  - {fileID: 217671812}
   - {fileID: 592965772}
   m_Father: {fileID: 216763776}
   m_RootOrder: 3
@@ -26585,7 +26639,7 @@ Transform:
   - {fileID: 1796874886}
   - {fileID: 927016424}
   m_Father: {fileID: 381177214}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &593402678
 GameObject:
   m_ObjectHideFlags: 0
@@ -69465,6 +69519,58 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0f96d824d064d0f45862d057f7bd6272, type: 3}
   m_PrefabInternal: {fileID: 1546755993}
+--- !u!1 &1547627121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1547627122}
+  - 65: {fileID: 1547627124}
+  - 114: {fileID: 1547627123}
+  m_Layer: 0
+  m_Name: WorkroomTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1547627122
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547627121}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.0100002, y: 6.09000015, z: 3.13000011}
+  m_LocalScale: {x: 1, y: 1, z: .345470965}
+  m_Children: []
+  m_Father: {fileID: 381177214}
+  m_RootOrder: 0
+--- !u!114 &1547627123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547627121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48b59b61b42e974a82ae73699e36abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1547627124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547627121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1547675436
 Prefab:
   m_ObjectHideFlags: 0
@@ -74185,10 +74291,12 @@ MonoBehaviour:
   diningRoomTrigger2: {fileID: 238703079}
   familyAlbumTrigger: {fileID: 2128304660}
   noteTrigger: {fileID: 463925145}
+  bookshelfTrigger: {fileID: 217671811}
   wintergardenTrigger: {fileID: 1330920705}
   glassTableTrigger: {fileID: 1926383127}
   childsroomTrigger: {fileID: 935237801}
   guestroomTrigger: {fileID: 1475178201}
+  workroomTrigger: {fileID: 1547627121}
   InteractionPanel: {fileID: 1242278632}
   theory: {fileID: 393317077}
 --- !u!1 &1632050884
