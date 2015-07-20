@@ -14,6 +14,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject wintergardenTrigger;
 	public GameObject glassTableTrigger;
 	public GameObject childsroomTrigger;
+	public GameObject guestroomTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 
@@ -27,6 +28,7 @@ public class HouseController : MonoBehaviour {
 	bool diningRoom = true;
 	bool childsroom = true;
 	bool wintergarden = true;
+	bool guestroom = true;
 	bool glassTableTriggered = true;
 	bool dialog = false;
 	bool theory1Registered = true;
@@ -147,6 +149,11 @@ public class HouseController : MonoBehaviour {
 			initDialog("childsroom");
 			childsroom = false;
 		}
+		// check if player entered guestroom
+		else if(guestroom && guestroomTrigger.GetComponent<GuestroomTrigger>().guestroomTriggered()){
+			initDialog("guestroom");
+			guestroom = false;
+		}
 		else {
 			guiController.toggleInteractionHint (false);
 		}
@@ -209,6 +216,9 @@ public class HouseController : MonoBehaviour {
 			break;
 		case "childsroom":
 			dialogMaxNum = 3;
+			break;
+		case "guestroom":
+			dialogMaxNum = 4;
 			break;
 		default: break;
 		}
