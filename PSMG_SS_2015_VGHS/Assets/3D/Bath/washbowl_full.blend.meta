@@ -1,0 +1,119 @@
+fileFormatVersion: 2
+guid: 16b90406d46058641ae62488269597e4
+timeCreated: 1437388390
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Amaturen
+    100002: Griffe_oben
+    100004: Griffe_unten
+    100006: Handtuch
+    100008: Handtuchhalter
+    100010: Spiegel
+    100012: Unterschrank
+    100014: Wand
+    100016: Waschbecken
+    100018: //RootNode
+    100020: Wasserhahn
+    400000: Amaturen
+    400002: Griffe_oben
+    400004: Griffe_unten
+    400006: Handtuch
+    400008: Handtuchhalter
+    400010: Spiegel
+    400012: Unterschrank
+    400014: Wand
+    400016: Waschbecken
+    400018: //RootNode
+    400020: Wasserhahn
+    2300000: Amaturen
+    2300002: Griffe_oben
+    2300004: Griffe_unten
+    2300006: Handtuch
+    2300008: Handtuchhalter
+    2300010: Spiegel
+    2300012: Unterschrank
+    2300014: Wand
+    2300016: Waschbecken
+    2300018: Wasserhahn
+    3300000: Amaturen
+    3300002: Griffe_oben
+    3300004: Griffe_unten
+    3300006: Handtuch
+    3300008: Handtuchhalter
+    3300010: Spiegel
+    3300012: Unterschrank
+    3300014: Wand
+    3300016: Waschbecken
+    3300018: Wasserhahn
+    4300000: Spiegel
+    4300002: Handtuchhalter
+    4300004: Wand
+    4300006: Unterschrank
+    4300008: Waschbecken
+    4300010: Amaturen
+    4300012: Wasserhahn
+    4300014: Griffe_unten
+    4300016: Handtuch
+    4300018: Griffe_oben
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

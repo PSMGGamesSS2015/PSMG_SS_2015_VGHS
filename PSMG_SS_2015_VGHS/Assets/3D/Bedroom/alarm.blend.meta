@@ -1,0 +1,109 @@
+fileFormatVersion: 2
+guid: 4e1dc35e49f83b249a7ede9d1a256935
+timeCreated: 1437387210
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: arrow-dot
+    100004: arrow1
+    100006: arrow2
+    100008: bell
+    100010: bell2
+    100012: bellstick
+    100014: mainbody
+    100016: stand
+    400000: //RootNode
+    400002: arrow-dot
+    400004: arrow1
+    400006: arrow2
+    400008: bell
+    400010: bell2
+    400012: bellstick
+    400014: mainbody
+    400016: stand
+    2300000: arrow-dot
+    2300002: arrow1
+    2300004: arrow2
+    2300006: bell
+    2300008: bell2
+    2300010: bellstick
+    2300012: mainbody
+    2300014: stand
+    3300000: arrow-dot
+    3300002: arrow1
+    3300004: arrow2
+    3300006: bell
+    3300008: bell2
+    3300010: bellstick
+    3300012: mainbody
+    3300014: stand
+    4300000: arrow-dot
+    4300002: arrow1
+    4300004: bellstick
+    4300006: bell
+    4300008: mainbody
+    4300010: stand
+    4300012: bell2
+    4300014: arrow2
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

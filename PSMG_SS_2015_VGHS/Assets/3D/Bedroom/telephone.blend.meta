@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 1ac9a6a3ea4d1d54c81bdbbf2025885e
+timeCreated: 1437387208
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: badge
+    100002: body
+    100004: button
+    100006: cable
+    100008: cable_deform_curve
+    100010: cable_hook
+    100012: cable_hook_001
+    100014: cam_target
+    100016: cover
+    100018: cradle
+    100020: cradle_holder
+    100022: dial_plate
+    100024: earpiece
+    100026: handle
+    100028: knob
+    100030: mouthpiece
+    100032: numbers
+    100034: shadow_plane
+    100036: //RootNode
+    400000: badge
+    400002: body
+    400004: button
+    400006: cable
+    400008: cable_deform_curve
+    400010: cable_hook
+    400012: cable_hook_001
+    400014: cam_target
+    400016: cover
+    400018: cradle
+    400020: cradle_holder
+    400022: dial_plate
+    400024: earpiece
+    400026: handle
+    400028: knob
+    400030: mouthpiece
+    400032: numbers
+    400034: shadow_plane
+    400036: //RootNode
+    2300000: badge
+    2300002: body
+    2300004: button
+    2300006: cable
+    2300008: cable_deform_curve
+    2300010: cover
+    2300012: cradle
+    2300014: cradle_holder
+    2300016: dial_plate
+    2300018: earpiece
+    2300020: handle
+    2300022: knob
+    2300024: mouthpiece
+    2300026: numbers
+    2300028: shadow_plane
+    3300000: badge
+    3300002: body
+    3300004: button
+    3300006: cable
+    3300008: cable_deform_curve
+    3300010: cover
+    3300012: cradle
+    3300014: cradle_holder
+    3300016: dial_plate
+    3300018: earpiece
+    3300020: handle
+    3300022: knob
+    3300024: mouthpiece
+    3300026: numbers
+    3300028: shadow_plane
+    4300000: numbers
+    4300002: dial_plate
+    4300004: badge
+    4300006: cover
+    4300008: knob
+    4300010: button
+    4300012: body
+    4300014: handle
+    4300016: mouthpiece
+    4300018: earpiece
+    4300020: cradle
+    4300022: cradle_holder
+    4300024: cable_deform_curve
+    4300026: cable
+    4300028: shadow_plane
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
