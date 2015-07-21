@@ -61,6 +61,12 @@ http://www.cgtextures.com/texview.php?id=20296&PHPSESSID=tjlbllrh72746ggd4nrieid
 stairs:
 http://www.cgtextures.com/texview.php?id=14285&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
 
+door:
+http://www.cgtextures.com/texview.php?id=19680&PHPSESSID=ctpt43fne82k2fn9qj3si2slb2
+
+doorknob:
+http://cdn.designbeep.com/wp-content/uploads/2012/10/7.gold-textures.jpg
+
 
 
 toilette:
