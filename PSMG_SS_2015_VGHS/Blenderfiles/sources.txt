@@ -44,6 +44,12 @@ http://tf3dm.com/3d-model/house-plant-1-48696.html
 plant4:
 http://tf3dm.com/3d-model/house-plant-4-76681.html
 
+childroom - bed:
+http://resources.blogscopia.com/2010/05/12/iron-bed-download
+
+childroom - penguin:
+http://www.blender-models.com/model-downloads/animals/amphibians/id/penguin/
+
 
 ################################
 ##### sources for graphics #####
