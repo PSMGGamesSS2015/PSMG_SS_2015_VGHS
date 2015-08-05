@@ -115,3 +115,23 @@ bedroom:
 
 cotton:
 http://www.bco-wohntextilien.de/out/pictures/master/product/1/gc9091061.jpg
+
+living-room:
+
+couch:
+http://www.modes4u.com/de/kawaii/p19638_rosa-weiS-gestreifter-Blumen-Rosen-Stoff-von-Cosmo.html
+
+couch:
+http://www.cgtextures.com/texview.php?id=15224&PHPSESSID=9vao1vkfoqa3211u4s8j4nfh02
+
+fireplace:
+http://www.cgtextures.com/texview.php?id=9651&PHPSESSID=p7nhp3ueps66b7n2sem6dn84v0
+
+fireplace - wood:
+http://provetextures.de/albums/holz-texturen/holz-rinde-00083.jpg
+http://provetextures.de/albums/holz-texturen/holz-baumstamm-baumringe-00047.jpg
+
+fireplace - metal:
+http://www.cgtextures.com/texview.php?id=6850&PHPSESSID=p7nhp3ueps66b7n2sem6dn84v0
+
+
