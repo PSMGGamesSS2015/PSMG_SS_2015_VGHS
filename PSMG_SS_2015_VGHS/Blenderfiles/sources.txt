@@ -134,4 +134,16 @@ http://provetextures.de/albums/holz-texturen/holz-baumstamm-baumringe-00047.jpg
 fireplace - metal:
 http://www.cgtextures.com/texview.php?id=6850&PHPSESSID=p7nhp3ueps66b7n2sem6dn84v0
 
+family-album:
+http://www.cgtextures.com/texview.php?id=15237&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
 
+bath:
+
+ground:
+http://www.cgtextures.com/tiledpreview.php?id=76594&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
+
+dining-room - table:
+http://www.cgtextures.com/texview.php?id=4319&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
+
+chair:
+http://www.cgtextures.com/tiledpreview.php?id=38137&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
