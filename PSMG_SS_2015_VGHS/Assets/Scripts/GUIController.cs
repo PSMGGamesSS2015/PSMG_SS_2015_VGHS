@@ -21,10 +21,12 @@ public class GUIController : MonoBehaviour {
     public GameObject resolutionMenu;
     public Toggle checkbox;
 	public GameObject michaelInteraction;
+	public GameObject adressBook;
 
 	public bool subtlShown;
 	public bool interactionPanelShown;
 	bool inventoryShown;
+	bool adressBookShown;
 	bool menuShown;
 
 
@@ -123,7 +125,7 @@ public class GUIController : MonoBehaviour {
 
 	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlShown || inventoryShown || menuShown || interactionPanelShown) {
+		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown) {
 			return true;
 		} else {
 			return false;
@@ -178,6 +180,7 @@ public class GUIController : MonoBehaviour {
 		michaelInteraction.GetComponent<MichaelInteractions> ().setupInteraction (key);
 	}
 
+	// return the clicked interaction to choose right dialog
 	public string manageDialogs(){
 		return michaelInteraction.GetComponent<MichaelInteractions> ().triggeredInteraction;
 	}
@@ -185,6 +188,20 @@ public class GUIController : MonoBehaviour {
 	// this is needed once when house scene was loaded and the inventory need to be set to the status of bath ending
 	public void forceThSetup(){
 		inventory.GetComponent<Inventory> ().setupTheory (1);
+	}
+
+	// show adress book when player interacts with book in sidetable
+	public void toggleAdressBook(){
+		if (adressBook.activeSelf == false) {
+			adressBook.SetActive (true);
+			adressBookShown = true;
+			Cursor.visible = true;
+		} else {
+			adressBook.SetActive (false);
+			adressBookShown = false;
+			Cursor.visible = false;
+		}
+
 	}
 
     public void GoToOptionsMenu()

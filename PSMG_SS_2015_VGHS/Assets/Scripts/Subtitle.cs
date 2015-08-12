@@ -304,6 +304,14 @@ public class Subtitle : MonoBehaviour {
 			lyrics.TryGetValue("jane_house_1_32", out text);
 			subtl.GetComponent<Text>().text = text;
 			break;
+		case "adressBook1":
+			lyrics.TryGetValue("jane_house_1_33", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
+		case "adressBook2":
+			lyrics.TryGetValue("michael_house_1_32", out text);
+			subtl.GetComponent<Text>().text = text;
+			break;
 		default: break;
 		}
 	}

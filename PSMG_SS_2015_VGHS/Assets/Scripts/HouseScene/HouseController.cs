@@ -18,15 +18,19 @@ public class HouseController : MonoBehaviour {
 	public GameObject guestroomTrigger;
 	public GameObject workroomTrigger;
 	public GameObject bedroomTrigger;
+	public GameObject sideTableTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
+	public GameObject drawer;
+
 
 	List<string> dialogsPerformed = new List<string>();
 	int pianoCount = 0;
 	int dialogCount = 1;
-	bool welcomeDialog = true;
-	bool scar1Dialog = true;
-	bool michael = true;
+	int actualHouseScene = 1;
+	bool scarHint = false;
+	bool friends = false;
+	bool family = false;
 	bool daughter = false;
 	bool diningRoom = true;
 	bool childsroom = true;
@@ -34,12 +38,15 @@ public class HouseController : MonoBehaviour {
 	bool guestroom = true;
 	bool workroom = true;
 	bool bedroom = true;
-	bool glassTableTriggered = true;
+	bool glassTableTriggered = false;
 	bool dialog = false;
-	bool theory1Registered = true;
 	bool theory2Registered = false;
 	bool familyInteractionDone = false;
 	bool missingPicture = false;
+	bool missingPictureFound = false;
+	bool sidetableOpen = false;
+	bool adressBookDialog = false;
+	bool adressBookFound = false;
 	string actualDialog = "";
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -58,6 +65,7 @@ public class HouseController : MonoBehaviour {
 		checkCollisions();
 		checkInteractionPanel ();
 		checkInventory ();
+		checkSceneEnding ();
 	}
 
 	// handle key interactions here
@@ -99,18 +107,27 @@ public class HouseController : MonoBehaviour {
 				pianoCount++;
 
 			}
-			if(Application.loadedLevel == 2 && familyAlbumTrigger.GetComponent<FamilyAlbumTrigger>().albumTriggered()){
+			if(actualHouseScene == 1 && familyAlbumTrigger.GetComponent<FamilyAlbumTrigger>().albumTriggered()){
 				initDialog("familyAlbum1_");
 			}
-			if(Application.loadedLevel == 2 && noteTrigger.GetComponent<NoteTrigger>().noteTriggered()){
+			if(actualHouseScene == 1 && noteTrigger.GetComponent<NoteTrigger>().noteTriggered()){
 				guiController.toggleSubtl("noteMonolog");
 			}
-			if(Application.loadedLevel == 2 && bookshelfTrigger.GetComponent<BookshelfTrigger>().bookshelfTriggered()){
+			if(actualHouseScene == 1 && bookshelfTrigger.GetComponent<BookshelfTrigger>().bookshelfTriggered()){
 				guiController.toggleSubtl("bookshelf");
 			}
-			if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTrigger){
-				glassTableTriggered = false;
+			if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTriggered == false){
+				glassTableTriggered = true;
 				initDialog("glassTable");
+			}
+			if(sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered() && sidetableOpen == false && adressBookDialog == false){
+				drawer.transform.Translate(0, 0, 0.7f);
+				sidetableOpen = true;
+				initDialog("adressBook");
+			}
+			if(sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered() && adressBookDialog){
+				guiController.toggleAdressBook();
+				adressBookFound = true;
 			}
 		}
 	}
@@ -149,7 +166,7 @@ public class HouseController : MonoBehaviour {
 			wintergarden = false;
 		}
 		// check if glass table was triggered
-		else if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTriggered){
+		else if(glassTableTrigger.GetComponent<GlassTableTrigger>().glassTableTriggered() && glassTableTriggered == false){
 			guiController.toggleInteractionHint(true);
 		}
 		// check if player entered childsroom
@@ -175,6 +192,10 @@ public class HouseController : MonoBehaviour {
 		else if (bedroom && bedroomTrigger.GetComponent<BedroomTrigger>().bedroomTriggered()){
 			initDialog("bedroom");
 			bedroom = false;
+		}
+		// check if player is near sidetable
+		else if (sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered() && guiController.isShowing () == false){
+			guiController.toggleInteractionHint (true);
 		}
 		else {
 			guiController.toggleInteractionHint (false);
@@ -245,6 +266,9 @@ public class HouseController : MonoBehaviour {
 		case "bedroom":
 			dialogMaxNum = 2;
 			break;
+		case "adressBook":
+			dialogMaxNum = 2;
+			break;
 		default: break;
 		}
 		if(actualDialog.Equals("") == false){
@@ -258,8 +282,17 @@ public class HouseController : MonoBehaviour {
 			dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
 			// add hint during dialog
 			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar")){
-				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
+				if (scarHint == false){
+					insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
+					scarHint = true;
+				}
 			} 
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
+				family = true;
+			}
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("friends")){
+				friends = true;
+			}
 			// activate children interaction and insert hin about brother
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
@@ -279,9 +312,13 @@ public class HouseController : MonoBehaviour {
 			}
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("picture")){
 				insertIntoInventory("missingPicture");
+				missingPictureFound = true;
 			}
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("childsroom")){
 				insertIntoInventory("emilyWhereabout");
+			}
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("adressBook")){
+				adressBookDialog = true;
 			}
 			dialogCount = 1;
 			actualDialog = "";
@@ -321,6 +358,13 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("theory2");
 			guiController.manageInteraction("michael_scar_2");
 			theory2Registered = true;
+		}
+	}
+
+	// check if all necessary interactions are done to end a scene
+	void checkSceneEnding (){
+		if(theory2Registered && missingPictureFound && glassTableTriggered && friends && family && adressBookFound && guiController.isShowing() == false){
+			Debug.Log ("fertig");
 		}
 	}
 }
