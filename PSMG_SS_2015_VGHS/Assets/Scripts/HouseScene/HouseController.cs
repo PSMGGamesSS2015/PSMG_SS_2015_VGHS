@@ -47,6 +47,7 @@ public class HouseController : MonoBehaviour {
 	bool sidetableOpen = false;
 	bool adressBookDialog = false;
 	bool adressBookFound = false;
+	bool scene1EndingDialog = false;
 	string actualDialog = "";
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -269,6 +270,9 @@ public class HouseController : MonoBehaviour {
 		case "adressBook":
 			dialogMaxNum = 2;
 			break;
+		case "scene1Ending":
+			dialogMaxNum = 3;
+			break;
 		default: break;
 		}
 		if(actualDialog.Equals("") == false){
@@ -320,6 +324,10 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("adressBook")){
 				adressBookDialog = true;
 			}
+			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("scene1Ending")){
+				scene1EndingDialog = true;
+				insertIntoInventory("pills");
+			}
 			dialogCount = 1;
 			actualDialog = "";
 			dialog = false;
@@ -363,8 +371,8 @@ public class HouseController : MonoBehaviour {
 
 	// check if all necessary interactions are done to end a scene
 	void checkSceneEnding (){
-		if(theory2Registered && missingPictureFound && glassTableTriggered && friends && family && adressBookFound && guiController.isShowing() == false){
-			Debug.Log ("fertig");
+		if(theory2Registered && missingPictureFound && glassTableTriggered && friends && family && adressBookFound && guiController.isShowing() == false && scene1EndingDialog == false){
+			initDialog("scene1Ending");
 		}
 	}
 }
