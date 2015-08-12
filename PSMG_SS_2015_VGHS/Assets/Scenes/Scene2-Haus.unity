@@ -53759,7 +53759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5259fd21e6d6c3949a898f7a5aecff62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1290917323}
+  target: {fileID: 2056165819}
 --- !u!195 &1151198809
 NavMeshAgent:
   m_ObjectHideFlags: 0
