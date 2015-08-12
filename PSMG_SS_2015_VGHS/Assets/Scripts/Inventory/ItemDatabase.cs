@@ -20,5 +20,6 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add (new Item ("dianesDaughter", "Emilies picture of first grade", 7));
 		items.Add (new Item ("missingPicture", "Picture of second grade missing", 8));
 		items.Add (new Item ("emilyWhereabout", "Emily is currently in Woods Hole", 9));
+		items.Add (new Item ("pills", "Dr. Meloff prescribed pills", 10));
 	}
 }
