@@ -94170,6 +94170,7 @@ MonoBehaviour:
   backButton: {fileID: 824606309}
   nextButton: {fileID: 773066775}
   textAsset: {fileID: 4900000, guid: a408d32499130ea4ca3f511bbcf7736d, type: 3}
+  guiController: {fileID: 2051808687}
 --- !u!1 &2084664384
 GameObject:
   m_ObjectHideFlags: 0
