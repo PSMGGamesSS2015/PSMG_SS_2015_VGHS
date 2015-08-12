@@ -53718,6 +53718,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .0355477408
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 8dd254ff80fcb404dbbaac94667f5175, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dd254ff80fcb404dbbaac94667f5175, type: 3}
   m_IsPrefabParent: 0
