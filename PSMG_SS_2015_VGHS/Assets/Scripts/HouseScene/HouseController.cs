@@ -18,8 +18,11 @@ public class HouseController : MonoBehaviour {
 	public GameObject guestroomTrigger;
 	public GameObject workroomTrigger;
 	public GameObject bedroomTrigger;
+	public GameObject sideTableTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
+	public GameObject drawer;
+
 
 	List<string> dialogsPerformed = new List<string>();
 	int pianoCount = 0;
@@ -40,7 +43,11 @@ public class HouseController : MonoBehaviour {
 	bool theory2Registered = false;
 	bool familyInteractionDone = false;
 	bool missingPicture = false;
+	bool sidetableOpen = false;
+	bool adressBookDialog = false;
+	bool adressBookFound = false;
 	string actualDialog = "";
+	Vector3 newPos = new Vector3(0, 0, 0.7f);
 
 	// Setup Inventory and Interactions when House Scene starts
 	void Start () {
@@ -112,6 +119,14 @@ public class HouseController : MonoBehaviour {
 				glassTableTriggered = false;
 				initDialog("glassTable");
 			}
+			if(sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered() && sidetableOpen == false && adressBookDialog == false){
+				drawer.transform.Translate(0, 0, 0.7f);
+				sidetableOpen = true;
+				initDialog("adressBook");
+			}
+			if(sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered() && adressBookDialog){
+				guiController.toggleAdressBook();
+			}
 		}
 	}
 
@@ -175,6 +190,10 @@ public class HouseController : MonoBehaviour {
 		else if (bedroom && bedroomTrigger.GetComponent<BedroomTrigger>().bedroomTriggered()){
 			initDialog("bedroom");
 			bedroom = false;
+		}
+		// check if player is near sidetable
+		else if (sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered() && adressBookFound == false && guiController.isShowing () == false){
+			guiController.toggleInteractionHint (true);
 		}
 		else {
 			guiController.toggleInteractionHint (false);
@@ -245,6 +264,9 @@ public class HouseController : MonoBehaviour {
 		case "bedroom":
 			dialogMaxNum = 2;
 			break;
+		case "adressBook":
+			dialogMaxNum = 2;
+			break;
 		default: break;
 		}
 		if(actualDialog.Equals("") == false){
@@ -282,6 +304,9 @@ public class HouseController : MonoBehaviour {
 			}
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("childsroom")){
 				insertIntoInventory("emilyWhereabout");
+			}
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("adressBook")){
+				adressBookDialog = true;
 			}
 			dialogCount = 1;
 			actualDialog = "";

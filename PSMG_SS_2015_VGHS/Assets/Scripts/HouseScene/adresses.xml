@@ -1,0 +1,26 @@
+<!-- Adresses safed in Janes adress book-->
+<adresses>
+	<!-- Michael Parents-->
+	
+	<name1>Bert and Doris Whittaker</name1>
+	<town1>Woods Hole</town1>
+	<street1>19 High Street</street1>
+	<phone1>(508) 158930</phone1>
+	
+	
+	<!-- Brother -->
+	
+	<name2>Tom and Eleanor Lawrence</name2>
+	<town2>San Diego</town2>
+	<street2>367 Montgomery Street </street2>
+	<phone2>(619) 598377</phone2>
+	
+	
+	<!-- Best Friend-->
+	
+	<name3>Diane Brewster</name3>
+	<town3>Boston</town3>
+	<street3>816 Boylston Street </street3>
+	<phone3>(617) 466599</phone3>
+		
+</adresses>
