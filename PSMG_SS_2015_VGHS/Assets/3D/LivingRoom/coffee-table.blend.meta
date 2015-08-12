@@ -8,17 +8,23 @@ ModelImporter:
     100000: //RootNode
     100002: Tischfuesse
     100004: Tischplatte
+    100006: table_glass
     400000: //RootNode
     400002: Tischfuesse
     400004: Tischplatte
+    400006: table_glass
     2300000: Tischfuesse
     2300002: Tischplatte
+    2300004: table_glass
     3300000: Tischfuesse
     3300002: Tischplatte
+    3300004: table_glass
     4300000: Tischplatte
     4300002: Tischfuesse
+    4300004: table_glass
     6400000: Tischfuesse
     6400002: Tischplatte
+    6400004: table_glass
     7400000: Default Take
     9500000: //RootNode
   materials:

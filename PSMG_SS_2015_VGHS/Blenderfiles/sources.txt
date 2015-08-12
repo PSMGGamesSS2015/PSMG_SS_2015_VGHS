@@ -147,3 +147,6 @@ http://www.cgtextures.com/texview.php?id=4319&PHPSESSID=goof6hkukkl7n6pkc66g6vo8
 
 chair:
 http://www.cgtextures.com/tiledpreview.php?id=38137&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
+
+kitchen - ground:
+http://www.cgtextures.com/texview.php?id=68269&PHPSESSID=6qrui48momudd66rqjskl32ac6
