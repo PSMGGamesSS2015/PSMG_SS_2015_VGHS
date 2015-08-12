@@ -28116,6 +28116,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 34f6b4d03c8547d44af89dc22038d9ab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34f6b4d03c8547d44af89dc22038d9ab, type: 3}
   m_IsPrefabParent: 0
@@ -53755,7 +53759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5259fd21e6d6c3949a898f7a5aecff62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2056165819}
+  target: {fileID: 1290917323}
 --- !u!195 &1151198809
 NavMeshAgent:
   m_ObjectHideFlags: 0
