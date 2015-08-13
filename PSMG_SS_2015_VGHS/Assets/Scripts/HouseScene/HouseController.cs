@@ -28,6 +28,7 @@ public class HouseController : MonoBehaviour {
 	int pianoCount = 0;
 	int dialogCount = 1;
 	int actualHouseScene = 1;
+	string actualDialog = "";
 	bool scarHint = false;
 	bool friends = false;
 	bool family = false;
@@ -48,7 +49,7 @@ public class HouseController : MonoBehaviour {
 	bool adressBookDialog = false;
 	bool adressBookFound = false;
 	bool scene1EndingDialog = false;
-	string actualDialog = "";
+
 
 	// Setup Inventory and Interactions when House Scene starts
 	void Start () {
@@ -79,9 +80,11 @@ public class HouseController : MonoBehaviour {
 		}
 		// handle 'E' interactions
 		if (Input.GetKeyDown (KeyCode.E)) {
+			// check for possible interactions with michael and open interaction panel
 			if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent() && guiController.subtlShown !=true){
 				guiController.toggleInteractionPanel(true);
 			}
+			// handle piano dialogs
 			if(pianoTrigger.GetComponent<PianoTrigger>().pianoTriggered() && pianoCount <3 && guiController.subtlShown !=true){
 				switch (pianoCount){
 				case 0:
@@ -282,22 +285,23 @@ public class HouseController : MonoBehaviour {
 
 	// manage if dialog has ended or not
 	void manageDialogSettings(int dialogNum, string actualSubtl){
+		//do after-dialog-events here
 		if (dialogCount > dialogNum) {
 			dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
-			// add hint during dialog
-			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar")){
-				if (scarHint == false){
-					insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
-					scarHint = true;
-				}
+			// add hint about scar during dialog
+			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar") && scarHint == false){
+				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
+				scarHint = true;
 			} 
+			// checkup dialog about family
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
 				family = true;
 			}
+			// checkup dialog about friends
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("friends")){
 				friends = true;
 			}
-			// activate children interaction and insert hin about brother
+			// activate children interaction and insert hint about brother
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
 				if(daughter == false){
@@ -314,28 +318,35 @@ public class HouseController : MonoBehaviour {
 				insertIntoInventory("dianesDaughter");
 				guiController.manageInteraction("michael_friends");
 			}
+			// add hint about the missing picture
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("picture")){
 				insertIntoInventory("missingPicture");
 				missingPictureFound = true;
 			}
+			// add hint about emilies whereabout
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("childsroom")){
 				insertIntoInventory("emilyWhereabout");
 			}
+			// register that dialog about the adress book is done
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("adressBook")){
 				adressBookDialog = true;
 			}
+			// insert hint about pills after taking them for the first time
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("scene1Ending")){
 				scene1EndingDialog = true;
 				insertIntoInventory("pills");
 			}
+			// reset dialog data for new dialog
 			dialogCount = 1;
 			actualDialog = "";
 			dialog = false;
 		} 
+		// insert hint about picture during dialog (this is a special case)
 		else if(actualSubtl.Equals("daughter2_2")){
 			insertIntoInventory("picture");
 			guiController.toggleSubtl (actualSubtl);
 		}
+		// toggle subtl. during dialog
 		else {
 			guiController.toggleSubtl (actualSubtl);
 		}
@@ -347,9 +358,10 @@ public class HouseController : MonoBehaviour {
 		guiController.addHint (hintToAdd);
 	}
 
-	// handle Level changing stuff triggered by actions in the inventory here
+	// handle stuff triggered by actions in the inventory here
 	void checkInventory(){
 		if (guiController.checkForNewHint ().Equals ("") == false) {
+			// do sth. if a new hint was added that enables an event or interaction
 			switch(guiController.checkForNewHint()){
 			case "missingPicture":
 				if(missingPicture == false){
@@ -361,6 +373,7 @@ public class HouseController : MonoBehaviour {
 				break;
 			}
 		}
+		// check for second theory
 		if(theory.GetComponent<Theory> ().theory2Found && theory2Registered == false){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory2");
@@ -371,6 +384,7 @@ public class HouseController : MonoBehaviour {
 
 	// check if all necessary interactions are done to end a scene
 	void checkSceneEnding (){
+		//Ending conditions for first Scene in house
 		if(theory2Registered && missingPictureFound && glassTableTriggered && friends && family && adressBookFound && guiController.isShowing() == false && scene1EndingDialog == false){
 			initDialog("scene1Ending");
 		}
