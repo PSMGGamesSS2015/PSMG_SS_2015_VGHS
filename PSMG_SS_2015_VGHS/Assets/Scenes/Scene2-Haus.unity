@@ -79323,6 +79323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guiController: {fileID: 2051808689}
+  player: {fileID: 1969385616}
   michaelTrigger: {fileID: 771804679}
   pianoTrigger: {fileID: 1469447480}
   diningRoomTrigger1: {fileID: 143317647}
@@ -79340,6 +79341,7 @@ MonoBehaviour:
   InteractionPanel: {fileID: 1242278632}
   theory: {fileID: 393317077}
   drawer: {fileID: 801632502}
+  glassTableImpression: {fileID: 1859622864}
 --- !u!1 &1632050884
 GameObject:
   m_ObjectHideFlags: 0
@@ -89767,12 +89769,32 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .386680096
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d49a253735c3cac4f90bbe0b60fb0afb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: d49a253735c3cac4f90bbe0b60fb0afb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: d49a253735c3cac4f90bbe0b60fb0afb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: d49a253735c3cac4f90bbe0b60fb0afb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d49a253735c3cac4f90bbe0b60fb0afb, type: 3}
   m_IsPrefabParent: 0
 --- !u!4 &1859622863 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: d49a253735c3cac4f90bbe0b60fb0afb, type: 3}
+  m_PrefabInternal: {fileID: 1859622862}
+--- !u!1 &1859622864 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d49a253735c3cac4f90bbe0b60fb0afb, type: 3}
   m_PrefabInternal: {fileID: 1859622862}
 --- !u!1001 &1859856498
 Prefab:

@@ -13,6 +13,7 @@ public class SceneFader : MonoBehaviour {
     Color currentColor;
     bool isStarting = true;
     bool isEnding = false;
+	bool isBlack = false;
 
 
 
@@ -42,7 +43,7 @@ public class SceneFader : MonoBehaviour {
 	// fade in by fading rectangle out
     void FadeIn(){
         currentColor = Color.Lerp(currentColor, Color.clear, fadeSpeed * Time.deltaTime);
-
+		isBlack = false;
         if (currentColor.a <= 0.05f){
             currentColor = Color.clear;
             isStarting = false;
@@ -56,8 +57,13 @@ public class SceneFader : MonoBehaviour {
 		isFading = true;
         if (currentColor.a >= 0.95f){
             currentColor.a = 1;
-            Application.LoadLevel(nextLevel);
+			if(Application.loadedLevel == 1){
+            	Application.LoadLevel(nextLevel);
+			}
+			isBlack = true;
+
         }
+
     }
 
 	// method for other classes to initialize level change
@@ -66,4 +72,15 @@ public class SceneFader : MonoBehaviour {
         isEnding = true;
         isStarting = false;
     }
+
+	// check if fading out is black
+	public bool checkFade(){
+		return isBlack;
+	}
+
+	// force fading in
+	public void forceFadeIn(){
+		isStarting = true;
+		isEnding = false;
+	}
 }
