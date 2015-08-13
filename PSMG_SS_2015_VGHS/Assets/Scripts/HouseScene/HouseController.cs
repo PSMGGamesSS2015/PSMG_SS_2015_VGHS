@@ -54,6 +54,7 @@ public class HouseController : MonoBehaviour {
 	bool adressBookDialog = false;
 	bool adressBookFound = false;
 	bool scene1EndingDialog = false;
+	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -158,9 +159,8 @@ public class HouseController : MonoBehaviour {
 
 			// handle side table with adress book in bedroom
 			if(sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered()){
-				// open sidetable
+				// open sidetable (!!!not implemented yet!!!)
 				if (sidetableOpen == false && adressBookDialog == false){
-					drawer.transform.Translate(0, 0, 0.7f);
 					sidetableOpen = true;
 					initDialog("adressBook");
 				}
@@ -445,6 +445,7 @@ public class HouseController : MonoBehaviour {
 	// delete or enable objects, trigger etc. as needed in next scene
 	void arrangeNextScene(int scene){
 		GetComponent<SceneFader> ().SwitchScene (3);
+		player.transform.position = bedPos;
 		switch (scene) {
 		case 1:
 			Destroy (glassTableImpression);
