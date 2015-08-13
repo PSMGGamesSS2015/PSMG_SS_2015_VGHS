@@ -38753,7 +38753,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 801632502}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 938477550}
@@ -79342,6 +79342,7 @@ MonoBehaviour:
   theory: {fileID: 393317077}
   drawer: {fileID: 801632502}
   glassTableImpression: {fileID: 1859622864}
+  test: 0
 --- !u!1 &1632050884
 GameObject:
   m_ObjectHideFlags: 0
