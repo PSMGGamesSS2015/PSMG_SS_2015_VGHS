@@ -41,6 +41,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+		private string horizontalString = "Horizontal";
+		private string verticalString = "Vertical";
+
 
         // Use this for initialization
         private void Start()
@@ -202,8 +205,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void GetInput(out float speed)
         {
             // Read input
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+            float horizontal = CrossPlatformInputManager.GetAxis(horizontalString);
+           	float vertical = CrossPlatformInputManager.GetAxis(verticalString);
 
             bool waswalking = m_IsWalking;
 
@@ -253,5 +256,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+		public void randomControl(string h, string v, int i){
+			horizontalString = h;
+			verticalString = v;
+			m_MouseLook.XSensitivity = i;
+			m_MouseLook.YSensitivity = i;
+		}
     }
 }

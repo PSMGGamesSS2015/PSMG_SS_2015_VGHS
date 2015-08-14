@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.ImageEffects;
 
 public class HouseController : MonoBehaviour {
 
@@ -24,7 +26,8 @@ public class HouseController : MonoBehaviour {
 	public GameObject theory;
 	public GameObject drawer;
 	public GameObject glassTableImpression;
-
+	public GameObject adressBook;
+	public GameObject playerCam;
 	public bool test = false;
 
 
@@ -32,6 +35,7 @@ public class HouseController : MonoBehaviour {
 	int pianoCount = 0;
 	int dialogCount = 1;
 	int actualHouseScene = 1;
+	int randomSensitivity = 2;
 	string actualDialog = "";
 	bool scarHint = false;
 	bool friends = false;
@@ -54,7 +58,9 @@ public class HouseController : MonoBehaviour {
 	bool adressBookDialog = false;
 	bool adressBookFound = false;
 	bool scene1EndingDialog = false;
+	bool isDizzy = false;
 	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
+
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -74,6 +80,7 @@ public class HouseController : MonoBehaviour {
 		checkInteractionPanel ();
 		checkInventory ();
 		checkSceneEnding ();
+		randomPlayerControl ();
 	}
 
 	// handle key interactions here
@@ -463,11 +470,24 @@ public class HouseController : MonoBehaviour {
 			Destroy (workroomTrigger);
 			Destroy (guestroomTrigger);
 			Destroy (bedroomTrigger);
+			Destroy (adressBook);
 			diningRoom = true;
 			actualHouseScene++;
+			isDizzy = true;
 			break;
 		default: break;
 		}
 
+	}
+
+	// generate heavier player controlling while jane is dizzy
+	void randomPlayerControl(){
+		if (isDizzy) {
+			player.GetComponent<FirstPersonController> ().randomControl ("Vertical", "Horizontal", 20);
+			playerCam.GetComponent<BlurOptimized>().enabled = true;
+		}else{
+			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 2);
+			playerCam.GetComponent<BlurOptimized>().enabled = false;
+		}
 	}
 }

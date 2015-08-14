@@ -8,7 +8,6 @@ public class DiningRoomTrigger2 : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other){		
 		if (other.tag == "PlayerCharacter"){
-			Debug.Log ("diningRoom");
 			isTriggered = true;
 		}
 	}
