@@ -150,3 +150,13 @@ http://www.cgtextures.com/tiledpreview.php?id=38137&PHPSESSID=goof6hkukkl7n6pkc6
 
 kitchen - ground:
 http://www.cgtextures.com/texview.php?id=68269&PHPSESSID=6qrui48momudd66rqjskl32ac6
+
+kitchen - table and plates:
+http://www.cgtextures.com/tiledpreview.php?id=49995&PHPSESSID=q0tlbnnonfj303fetk6pd9kqe4
+
+wintergarten - ground:
+http://www.cgtextures.com/tiledpreview.php?id=76626&PHPSESSID=gqncjv422voi6sjsdvtai84r44
+
+wintergarten wall:
+http://www.cgtextures.com/texview.php?id=66991&PHPSESSID=gqncjv422voi6sjsdvtai84r44
+
