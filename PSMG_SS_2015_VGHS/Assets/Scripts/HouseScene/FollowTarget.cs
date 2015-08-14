@@ -13,6 +13,10 @@ public class FollowTarget : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         agent.SetDestination(target.position);
+		transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+
 	}
+
 }
