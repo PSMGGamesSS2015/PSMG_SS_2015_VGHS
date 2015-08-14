@@ -8,15 +8,25 @@ ModelImporter:
     100000: Cube
     100002: Stuhl
     100004: //RootNode
+    100006: feeds
+    100008: plate
     400000: Cube
     400002: Stuhl
     400004: //RootNode
+    400006: feeds
+    400008: plate
     2300000: Cube
     2300002: Stuhl
+    2300004: feeds
+    2300006: plate
     3300000: Cube
     3300002: Stuhl
+    3300004: feeds
+    3300006: plate
     4300000: Cube
     4300002: Stuhl
+    4300004: plate
+    4300006: feeds
     7400000: Default Take
     9500000: //RootNode
   materials:
