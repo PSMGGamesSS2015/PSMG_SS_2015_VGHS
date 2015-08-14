@@ -453,7 +453,7 @@ public class HouseController : MonoBehaviour {
 	// check if all necessary interactions are done to end a scene
 	void checkSceneEnding (){
 		//Ending conditions for first Scene in house
-		if(theory2Registered && missingPictureFound && glassTableTriggered && family && adressBookFound && guiController.isShowing() == false && scene1EndingDialog == false && emilyWhereabout){
+		if(glassTableTriggered && family && adressBookFound && guiController.isShowing() == false && scene1EndingDialog == false && emilyWhereabout){
 			initDialog("scene1Ending");
 		}
 	}
@@ -487,7 +487,8 @@ public class HouseController : MonoBehaviour {
 	// generate heavier player controlling while jane is dizzy
 	void randomPlayerControl(){
 		if (isDizzy) {
-			player.GetComponent<FirstPersonController> ().randomControl ("Vertical", "Horizontal", 20);
+
+			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 20);
 			playerCam.GetComponent<BlurOptimized>().enabled = true;
 		}else{
 			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 2);
