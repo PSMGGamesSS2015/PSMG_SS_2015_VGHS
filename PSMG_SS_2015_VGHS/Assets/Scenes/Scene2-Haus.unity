@@ -66167,6 +66167,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_MouseLook.smoothTime
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -79351,6 +79355,7 @@ MonoBehaviour:
   drawer: {fileID: 722105634}
   glassTableImpression: {fileID: 1859622864}
   adressBook: {fileID: 938477549}
+  playerCam: {fileID: 723753983}
   test: 0
 --- !u!1 &1632050884
 GameObject:
