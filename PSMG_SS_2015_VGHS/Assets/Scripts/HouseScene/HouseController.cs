@@ -24,6 +24,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject theory;
 	public GameObject drawer;
 	public GameObject glassTableImpression;
+	public GameObject adressBook;
 
 	public bool test = false;
 
@@ -460,6 +461,7 @@ public class HouseController : MonoBehaviour {
 			Destroy (workroomTrigger);
 			Destroy (guestroomTrigger);
 			Destroy (bedroomTrigger);
+			Destroy (adressBook);
 			diningRoom = true;
 			actualHouseScene++;
 			break;
