@@ -8,6 +8,7 @@ public class HouseController : MonoBehaviour {
 
 	public GUIController guiController;
 	public GameObject player;
+	public GameObject michael;
 	public GameObject michaelTrigger;
 	public GameObject pianoTrigger;
 	public GameObject diningRoomTrigger1;
@@ -28,18 +29,16 @@ public class HouseController : MonoBehaviour {
 	public GameObject glassTableImpression;
 	public GameObject adressBook;
 	public GameObject playerCam;
-	public bool test = false;
 
 
 	List<string> dialogsPerformed = new List<string>();
 	int pianoCount = 0;
 	int dialogCount = 1;
 	int actualHouseScene = 1;
-	int randomSensitivity = 2;
 	string actualDialog = "";
 	bool scarHint = false;
 	bool friends = false;
-	bool family = false;
+	public bool family = false;
 	bool daughter = false;
 	bool diningRoom = true;
 	bool childsroom = true;
@@ -47,18 +46,19 @@ public class HouseController : MonoBehaviour {
 	bool guestroom = true;
 	bool workroom = true;
 	bool bedroom = true;
-	bool glassTableTriggered = false;
+	public bool glassTableTriggered = false;
 	bool dialog = false;
-	bool theory2Registered = false;
+	public bool theory2Registered = false;
 	bool familyInteractionDone = false;
 	bool missingPicture = false;
-	bool missingPictureFound = false;
-	bool emilyWhereabout = false;
+	public bool missingPictureFound = false;
+	public bool emilyWhereabout = false;
 	bool sidetableOpen = false;
 	bool adressBookDialog = false;
-	bool adressBookFound = false;
+	public bool adressBookFound = false;
 	bool scene1EndingDialog = false;
 	bool isDizzy = false;
+	bool secondSceneReady = false;
 	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
 
 
@@ -94,8 +94,10 @@ public class HouseController : MonoBehaviour {
 		// handle 'E' interactions
 		if (Input.GetKeyDown (KeyCode.E)) {
 			// check for possible interactions with michael and open interaction panel
-			if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent() && guiController.subtlShown !=true){
-				guiController.toggleInteractionPanel(true);
+			if(michael.activeSelf){
+				if(michaelTrigger.GetComponent<MichaelTrigger> ().michaelTriggered () && guiController.checkForPanelContent() && guiController.subtlShown !=true){
+					guiController.toggleInteractionPanel(true);
+				}
 			}
 			// make sure not to check for objects that were destroyed
 			switch(actualHouseScene){
@@ -339,7 +341,7 @@ public class HouseController : MonoBehaviour {
 		}
 	}
 
-	// manage if dialog has ended or not
+	// manage if dialog has ended or not and if certain things happen after ending
 	void manageDialogSettings(int dialogNum, string actualSubtl){
 		//do after-dialog-events here
 		if (dialogCount > dialogNum) {
@@ -349,20 +351,17 @@ public class HouseController : MonoBehaviour {
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
 				scarHint = true;
 			} 
-			// checkup dialog about family
+			// checkup dialog about family, insert information about visiting the brother and activate interaction for children if not already done at the piano
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
 				family = true;
-			}
-			// checkup dialog about friends
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("friends")){
-				friends = true;
-			}
-			// activate children interaction and insert hint about brother
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
 				if(daughter == false){
 					guiController.manageInteraction("michael_daughter");
 				}
+			}
+			// checkup dialog about friends
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("friends")){
+				friends = true;
 			}
 			// add hint about emily to inventory
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("daughter")){
@@ -392,6 +391,7 @@ public class HouseController : MonoBehaviour {
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("scene1Ending")){
 				scene1EndingDialog = true;
 				insertIntoInventory("pills");
+				//toggeling here next scene after this dialog makes sure, that nothing is destroyed while first scene still going on
 				arrangeNextScene(actualHouseScene);
 			}
 			// reset dialog data for new dialog
@@ -442,23 +442,16 @@ public class HouseController : MonoBehaviour {
 
 	// check if all necessary interactions are done to end a scene
 	void checkSceneEnding (){
-		if (theory2Registered && missingPictureFound && glassTableTriggered && friends && family && adressBookFound && guiController.isShowing () == false) {
-			Debug.Log ("fertig");
-		}
 		//Ending conditions for first Scene in house
-		if(theory2Registered && missingPictureFound && glassTableTriggered && friends && family && adressBookFound && guiController.isShowing() == false && scene1EndingDialog == false && emilyWhereabout){
+		if(theory2Registered && missingPictureFound && glassTableTriggered && family && adressBookFound && guiController.isShowing() == false && scene1EndingDialog == false && emilyWhereabout){
 			initDialog("scene1Ending");
-		}
-		// move player to bed
-		if (GetComponent<SceneFader> ().checkFade() && actualHouseScene > 1) {
-			GetComponent<SceneFader> ().forceFadeIn();
 		}
 	}
 
 	// delete or enable objects, trigger etc. as needed in next scene
 	void arrangeNextScene(int scene){
 		GetComponent<SceneFader> ().SwitchScene (3);
-		player.transform.position = bedPos;
+
 		switch (scene) {
 		case 1:
 			Destroy (glassTableImpression);
@@ -473,10 +466,10 @@ public class HouseController : MonoBehaviour {
 			Destroy (adressBook);
 			diningRoom = true;
 			actualHouseScene++;
-			isDizzy = true;
 			break;
 		default: break;
 		}
+		StartCoroutine (onNextSceneStart ());
 
 	}
 
@@ -488,6 +481,27 @@ public class HouseController : MonoBehaviour {
 		}else{
 			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 2);
 			playerCam.GetComponent<BlurOptimized>().enabled = false;
+		}
+	}
+
+	// do stuff here that is needed when new scene starts
+	IEnumerator onNextSceneStart(){
+		yield return new WaitForSeconds (2);
+		// fade scene in
+		if (GetComponent<SceneFader> ().checkFade() && actualHouseScene > 1) {
+			michael.SetActive(false);
+			player.transform.position = bedPos;
+			GetComponent<SceneFader> ().forceFadeIn();
+		}
+		switch (actualHouseScene) {
+		case 2:
+			if(secondSceneReady == false){
+				isDizzy = true;
+				guiController.toggleSubtl("dizzy1");
+				secondSceneReady = true;
+			}
+			break;
+		default: break;
 		}
 	}
 }
