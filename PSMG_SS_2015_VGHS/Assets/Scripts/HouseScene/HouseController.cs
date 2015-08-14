@@ -9,6 +9,7 @@ public class HouseController : MonoBehaviour {
 	public GUIController guiController;
 	public GameObject player;
 	public GameObject michael;
+	public GameObject paula;
 	public GameObject michaelTrigger;
 	public GameObject pianoTrigger;
 	public GameObject diningRoomTrigger1;
@@ -23,6 +24,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject workroomTrigger;
 	public GameObject bedroomTrigger;
 	public GameObject sideTableTrigger;
+	public GameObject floorTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 	public GameObject drawer;
@@ -59,6 +61,7 @@ public class HouseController : MonoBehaviour {
 	bool scene1EndingDialog = false;
 	bool isDizzy = false;
 	bool secondSceneReady = false;
+	bool paulaPhoneDialog1 = false;
 	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
 
 
@@ -190,6 +193,7 @@ public class HouseController : MonoBehaviour {
 
 	//check if the player collides with an interactable object
 	void checkCollisions(){
+		//make sure not to check for options only available in vertain scenes
 		switch (actualHouseScene) {
 		case 1: 
 			//check if michael is triggered and interactable
@@ -257,6 +261,12 @@ public class HouseController : MonoBehaviour {
 			}
 			else {
 				guiController.toggleInteractionHint (false);
+			}
+			break;
+		case 2:
+			if (paulaPhoneDialog1 == false && (diningRoomTrigger2.GetComponent<DiningRoomTrigger2>().diningRoomTriggered () || floorTrigger.GetComponent<FloorTrigger>().floorTriggered())){
+				guiController.toggleSubtl("paulaPhoneDialog1");
+				paulaPhoneDialog1 = true;
 			}
 			break;
 		default: break;
@@ -465,6 +475,7 @@ public class HouseController : MonoBehaviour {
 			Destroy (bedroomTrigger);
 			Destroy (adressBook);
 			diningRoom = true;
+			floorTrigger.SetActive(true);
 			actualHouseScene++;
 			break;
 		default: break;
@@ -490,6 +501,7 @@ public class HouseController : MonoBehaviour {
 		// fade scene in
 		if (GetComponent<SceneFader> ().checkFade() && actualHouseScene > 1) {
 			michael.SetActive(false);
+			paula.SetActive(true);
 			player.transform.position = bedPos;
 			GetComponent<SceneFader> ().forceFadeIn();
 		}

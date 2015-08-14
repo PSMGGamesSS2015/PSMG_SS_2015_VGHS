@@ -13,251 +13,26 @@ public class Subtitle : MonoBehaviour {
 	public TextAsset textAsset;
 	public Text subtl;
 
-	string show;
+	string key;
+	string node;
 	string text = "";
 
 	Dictionary<string,string> lyrics = new Dictionary<string,string>();
+	Dictionary<string,string> keyNodeMap = new Dictionary<string,string>();
 
 
 	// setup xml file first 
 	void Start(){
 		setupXmlData ();
+		setupKeyNodeMap ();
 	}
 
 	/* Update is called once per frame
 	 * Change shown subtitles
 	 */
 	void Update () {
-		switch(show){
-		// text of bath scene
-		case "entry":
-			lyrics.TryGetValue("jane_bath_1", out text);
-			break;
-		case "mirror1":
-			lyrics.TryGetValue("jane_bath_2", out text);
-			break;
-		case "mirror2":
-			lyrics.TryGetValue("jane_bath_3", out text);
-			break;
-		case "paper":
-			lyrics.TryGetValue("jane_bath_4", out text);
-			break;
-		case "theory1":
-			lyrics.TryGetValue("jane_bath_5", out text);
-			break;
-
-		// text of first house scene
-		case "welcome1": 
-			lyrics.TryGetValue("michael_house_1_1", out text);
-			break;
-		case "welcome2": 
-			lyrics.TryGetValue("jane_house_1_1", out text);
-			break;
-		case "welcome3": 
-			lyrics.TryGetValue("michael_house_1_2", out text);
-			break;
-		case "welcome4": 
-			lyrics.TryGetValue("jane_house_1_2", out text);
-			break;
-		case "welcome5": 
-			lyrics.TryGetValue("michael_house_1_3", out text);
-			break;
-		case "diningRoom": 
-			lyrics.TryGetValue("michael_house_1_4", out text);
-			break;
-		case "scar1_1":
-			lyrics.TryGetValue("jane_house_1_3", out text);
-			break;
-		case "scar1_2":
-			lyrics.TryGetValue("michael_house_1_5", out text);
-			break;
-		case "scar2_1":
-			lyrics.TryGetValue("michael_house_1_6", out text);
-			break;
-		case "scar2_2":
-			lyrics.TryGetValue("jane_house_1_5", out text);
-			break;
-		case "scar2_3":
-			lyrics.TryGetValue("michael_house_1_7", out text);
-			break;
-		case "scar2_4":
-			lyrics.TryGetValue("jane_house_1_6", out text);
-			break;
-		case "theory2":
-			lyrics.TryGetValue("jane_house_1_4", out text);
-			break;
-		case "friends1":
-			lyrics.TryGetValue("jane_house_1_7", out text);
-			break;
-		case "friends2":
-			lyrics.TryGetValue("michael_house_1_8", out text);
-			break;
-		case "family1":
-			lyrics.TryGetValue("jane_house_1_8", out text);
-			break;
-		case "family2":
-			lyrics.TryGetValue("michael_house_1_9", out text);
-			break;
-		case "family3":
-			lyrics.TryGetValue("jane_house_1_9", out text);
-			break;
-		case "family4":
-			lyrics.TryGetValue("michael_house_1_10", out text);
-			break;
-		case "daughter1":
-			lyrics.TryGetValue("jane_house_1_10", out text);
-			break;
-		case "daughter2":
-			lyrics.TryGetValue("michael_house_1_11", out text);
-			break;
-		case "daughter3":
-			lyrics.TryGetValue("jane_house_1_11", out text);
-			break;
-		case "daughter4":
-			lyrics.TryGetValue("michael_house_1_12", out text);
-			break;
-		case "daughter5":
-			lyrics.TryGetValue("jane_house_1_12", out text);
-			break;
-		case "daughter6":
-			lyrics.TryGetValue("michael_house_1_13", out text);
-			break;
-		case "daughter7":
-			lyrics.TryGetValue("jane_house_1_13", out text);
-			break;
-		case "piano1":
-			lyrics.TryGetValue("michael_house_1_14", out text);
-			break;
-		case "piano2":
-			lyrics.TryGetValue("jane_house_1_14", out text);
-			break;
-		case "piano3":
-			lyrics.TryGetValue("michael_house_1_15", out text);
-			break;
-		case "daughter2_1":
-			lyrics.TryGetValue("jane_house_1_15", out text);
-			break;
-		case "daughter2_2":
-			lyrics.TryGetValue("michael_house_1_16", out text);
-			break;
-		case "daughter2_3":
-			lyrics.TryGetValue("michael_house_1_17", out text);
-			break;
-		case "daughter2_4":
-			lyrics.TryGetValue("jane_house_1_16", out text);
-			break;
-		case "daughter2_5":
-			lyrics.TryGetValue("michael_house_1_18", out text);
-			break;
-		case "daughter2_6":
-			lyrics.TryGetValue("jane_house_1_17", out text);
-			break;
-		case "daughter2_7":
-			lyrics.TryGetValue("michael_house_1_19", out text);
-			break;
-		case "missingPictureFound":
-			lyrics.TryGetValue("jane_house_1_18", out text);
-			break;
-		case "picture1": 
-			lyrics.TryGetValue("jane_house_1_19", out text);
-			break;
-		case "picture2": 
-			lyrics.TryGetValue("michael_house_1_20", out text);
-			break;
-		case "picture3": 
-			lyrics.TryGetValue("jane_house_1_20", out text);
-			break;
-		case "picture4": 
-			lyrics.TryGetValue("michael_house_1_21", out text);
-			break;
-		case "familyAlbum1_1": 
-			lyrics.TryGetValue("jane_house_1_21", out text);
-			break;
-		case "familyAlbum1_2": 
-			lyrics.TryGetValue("michael_house_1_22", out text);
-			break;
-		case "noteMonolog":
-			lyrics.TryGetValue("jane_house_1_22", out text);
-			break;
-		case "wintergarden1":
-			lyrics.TryGetValue("jane_house_1_23", out text);
-			break;
-		case "wintergarden2":
-			lyrics.TryGetValue("michael_house_1_23", out text);
-			break;
-		case "wintergarden3":
-			lyrics.TryGetValue("jane_house_1_24", out text);
-			break;
-		case "glassTable1":
-			lyrics.TryGetValue("jane_house_1_25", out text);
-			break;
-		case "glassTable2":
-			lyrics.TryGetValue("michael_house_1_24", out text);
-			break;
-		case "glassTable3":
-			lyrics.TryGetValue("jane_house_1_26", out text);
-			break;
-		case "glassTable4":
-			lyrics.TryGetValue("michael_house_1_25", out text);
-			break;
-		case "glassTable5":
-			lyrics.TryGetValue("jane_house_1_27", out text);
-			break;
-		case "childsroom1":
-			lyrics.TryGetValue("michael_house_1_26", out text);
-			break;
-		case "childsroom2":
-			lyrics.TryGetValue("jane_house_1_28", out text);
-			break;
-		case "childsroom3":
-			lyrics.TryGetValue("michael_house_1_27", out text);
-			break;
-		case "guestroom1":
-			lyrics.TryGetValue("michael_house_1_28", out text);
-			break;
-		case "guestroom2":
-			lyrics.TryGetValue("jane_house_1_29", out text);
-			break;
-		case "guestroom3":
-			lyrics.TryGetValue("michael_house_1_29", out text);
-			break;
-		case "guestroom4":
-			lyrics.TryGetValue("jane_house_1_30", out text);
-			break;
-		case "workroom":
-			lyrics.TryGetValue("michael_house_1_30", out text);
-			break;
-		case "bookshelf":
-			lyrics.TryGetValue("jane_house_1_31", out text);
-			break;
-		case "bedroom1":
-			lyrics.TryGetValue("michael_house_1_31", out text);
-			break;
-		case "bedroom2":
-			lyrics.TryGetValue("jane_house_1_32", out text);
-			break;
-		case "adressBook1":
-			lyrics.TryGetValue("jane_house_1_33", out text);
-			break;
-		case "adressBook2":
-			lyrics.TryGetValue("michael_house_1_32", out text);
-			break;
-		case "scene1Ending1":
-			lyrics.TryGetValue("michael_house_1_33", out text);
-			break;
-		case "scene1Ending2":
-			lyrics.TryGetValue("jane_house_1_34", out text);
-			break;
-		case "scene1Ending3":
-			lyrics.TryGetValue("michael_house_1_34", out text);
-			break;
-
-		//text of second house scene
-		case "dizzy1":
-			lyrics.TryGetValue("jane_house_2_1", out text);
-			break;
-		default: break;
-		}
+		keyNodeMap.TryGetValue (key, out node);
+		lyrics.TryGetValue(node, out text);
 		subtl.GetComponent<Text>().text = text;
 	}
 
@@ -280,8 +55,90 @@ public class Subtitle : MonoBehaviour {
 		}
 	}
 
+	// link key strings and xml nodes
+	void setupKeyNodeMap(){
+		//text bath
+		keyNodeMap.Add ("entry", "jane_bath_1");
+		keyNodeMap.Add ("mirror1", "jane_bath_2");
+		keyNodeMap.Add ("mirror2", "jane_bath_3");
+		keyNodeMap.Add ("paper", "jane_bath_4");
+		keyNodeMap.Add ("theory1", "jane_bath_5");
+		//text house 1
+		keyNodeMap.Add ("welcome1", "michael_house_1_1");
+		keyNodeMap.Add ("welcome2", "jane_house_1_1");
+		keyNodeMap.Add ("welcome3", "michael_house_1_2");
+		keyNodeMap.Add ("welcome4", "jane_house_1_2");
+		keyNodeMap.Add ("welcome5", "michael_house_1_3");
+		keyNodeMap.Add ("diningRoom", "michael_house_1_4");
+		keyNodeMap.Add ("scar1_1", "jane_house_1_3");
+		keyNodeMap.Add ("scar1_2", "michael_house_1_5");
+		keyNodeMap.Add ("scar2_1", "michael_house_1_6");
+		keyNodeMap.Add ("scar2_2", "jane_house_1_5");		
+		keyNodeMap.Add ("scar2_3", "michael_house_1_7");		
+		keyNodeMap.Add ("scar2_4", "jane_house_1_6");		
+		keyNodeMap.Add ("theory2", "jane_house_1_4");		
+		keyNodeMap.Add ("friends1", "jane_house_1_7");		
+		keyNodeMap.Add ("friends2", "michael_house_1_8");		
+		keyNodeMap.Add ("family1", "jane_house_1_8");		
+		keyNodeMap.Add ("family2", "michael_house_1_9");		
+		keyNodeMap.Add ("family3", "jane_house_1_9");		
+		keyNodeMap.Add ("family4", "michael_house_1_10");		
+		keyNodeMap.Add ("daughter1", "jane_house_1_10");		
+		keyNodeMap.Add ("daughter2", "michael_house_1_11");		
+		keyNodeMap.Add ("daughter3", "jane_house_1_11");		
+		keyNodeMap.Add ("daughter4", "michael_house_1_12");		
+		keyNodeMap.Add ("daughter5", "jane_house_1_12");		
+		keyNodeMap.Add ("daughter6", "michael_house_1_13");		
+		keyNodeMap.Add ("daughter7", "jane_house_1_13");		
+		keyNodeMap.Add ("piano1", "michael_house_1_14");		
+		keyNodeMap.Add ("piano2", "jane_house_1_14");		
+		keyNodeMap.Add ("piano3", "michael_house_1_15");		
+		keyNodeMap.Add ("daughter2_1", "jane_house_1_15");		
+		keyNodeMap.Add ("daughter2_2", "michael_house_1_16");		
+		keyNodeMap.Add ("daughter2_3", "michael_house_1_17");		
+		keyNodeMap.Add ("daughter2_4", "jane_house_1_16");		
+		keyNodeMap.Add ("daughter2_5", "michael_house_1_18");		
+		keyNodeMap.Add ("daughter2_6", "jane_house_1_17");		
+		keyNodeMap.Add ("daughter2_7", "michael_house_1_19");		
+		keyNodeMap.Add ("missingPictureFound", "jane_house_1_18");		
+		keyNodeMap.Add ("picture1", "jane_house_1_19");		
+		keyNodeMap.Add ("picture2", "michael_house_1_20");		
+		keyNodeMap.Add ("picture3", "jane_house_1_20");
+		keyNodeMap.Add ("picture4", "michael_house_1_21");
+		keyNodeMap.Add ("familyAlbum1_1", "jane_house_1_21");		
+		keyNodeMap.Add ("familyAlbum1_2", "michael_house_1_22");		
+		keyNodeMap.Add ("noteMonolog", "jane_house_1_22");		
+		keyNodeMap.Add ("wintergarden1", "jane_house_1_23");		
+		keyNodeMap.Add ("wintergarden2", "michael_house_1_23");		
+		keyNodeMap.Add ("wintergarden3", "jane_house_1_24");		
+		keyNodeMap.Add ("glassTable1", "jane_house_1_25");		
+		keyNodeMap.Add ("glassTable2", "michael_house_1_24");		
+		keyNodeMap.Add ("glassTable3", "jane_house_1_26");		
+		keyNodeMap.Add ("glassTable4", "michael_house_1_25");		
+		keyNodeMap.Add ("glassTable5", "jane_house_1_27");		
+		keyNodeMap.Add ("childsroom1", "michael_house_1_26");		
+		keyNodeMap.Add ("childsroom2", "jane_house_1_28");		
+		keyNodeMap.Add ("childsroom3", "michael_house_1_27");		
+		keyNodeMap.Add ("guestroom1", "michael_house_1_28");		
+		keyNodeMap.Add ("guestroom2", "jane_house_1_29");		
+		keyNodeMap.Add ("guestroom3", "michael_house_1_29");		
+		keyNodeMap.Add ("guestroom4", "jane_house_1_30");		
+		keyNodeMap.Add ("workroom", "michael_house_1_30");		
+		keyNodeMap.Add ("bookshelf", "jane_house_1_31");		
+		keyNodeMap.Add ("bedroom1", "michael_house_1_31");		
+		keyNodeMap.Add ("bedroom2", "jane_house_1_32");		
+		keyNodeMap.Add ("adressBook1", "jane_house_1_33");		
+		keyNodeMap.Add ("adressBook2", "michael_house_1_32");		
+		keyNodeMap.Add ("scene1Ending1", "michael_house_1_33");		
+		keyNodeMap.Add ("scene1Ending2", "jane_house_1_34");		
+		keyNodeMap.Add ("scene1Ending3", "michael_house_1_34");
+		//text house 2
+		keyNodeMap.Add ("dizzy1", "jane_house_2_1");		
+		keyNodeMap.Add ("paulaPhoneDialog1", "paula_house_2_1");
+	}
+
 	// Setter for subtitle that needs to be shown
-	public void setKeyWord(string key){
-		show = key;
+	public void setKeyWord(string keyString){
+		key = keyString ;
 	}
 }
