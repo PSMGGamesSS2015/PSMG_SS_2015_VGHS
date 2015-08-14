@@ -160,14 +160,20 @@ public class HouseController : MonoBehaviour {
 			// handle side table with adress book in bedroom
 			if(sideTableTrigger.GetComponent<SideTableTrigger>().sideTableTriggered()){
 				// open sidetable (!!!not implemented yet!!!)
-				if (sidetableOpen == false && adressBookDialog == false){
+				if (sidetableOpen == false){
+					drawer.GetComponent<DrawerAnimator>().openDrawer();
 					sidetableOpen = true;
-					initDialog("adressBook");
+					if(adressBookFound == false){
+						initDialog("adressBook");
+					}
+
 				}
 				// interact with adressbook
-				else if(adressBookDialog){
+				else if(sidetableOpen){
 					guiController.toggleAdressBook();
+					drawer.GetComponent<DrawerAnimator>().closeDrawer();
 					adressBookFound = true;
+					sidetableOpen = false;
 				}
 			}
 		}
