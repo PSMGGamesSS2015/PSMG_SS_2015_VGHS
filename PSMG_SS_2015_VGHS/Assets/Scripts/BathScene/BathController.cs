@@ -10,12 +10,9 @@ public class BathController : MonoBehaviour {
 
 	public GUIController guiController;
 	public GameObject player;
-	public GameObject sink;
-	public GameObject jacketTrigger;
 	public GameObject jacket;
 	public GameObject jacketOn;
 	public GameObject theory;
-    
 
 	int sinkCounter = 0;
 
@@ -40,14 +37,13 @@ public class BathController : MonoBehaviour {
 
 		// special effects when space is hit
 		if (Input.GetKeyDown (KeyCode.Space)) {
-
-			//special case: check what sink interaction has been made to toggle the jacket
+			// special case: check what sink interaction has been made to toggle the jacket
 			if(sinkCounter == 1){
 				jacket.SetActive(true);
 				jacketOn.SetActive(false);
 			}
 
-			//change level when final interaction was made
+			// change level when final interaction was made and last subtitle disappeard
 			if(theory1Registered){
 				ChangeLevel(2);
 			}
@@ -56,48 +52,69 @@ public class BathController : MonoBehaviour {
 		// handle 'E' interactions
 		if (Input.GetKeyDown (KeyCode.E)) {
 			// interactions are only possible if nothing like subtitles or the inventory is shown
-			if(guiController.isShowing() == false){
-				// interacted with sink
-				if (sink.GetComponent<SinkTrigger>().sinkTriggered() && sinkCounter < 2) {
-					switch (sinkCounter){
-					case 0: 
-						guiController.toggleSubtl("mirror1");
-						sinkCounter++;
+			if (guiController.isShowing () == false) {
+
+				switch (gameObject.GetComponent<TriggerController> ().getTriggerTag()) {
+				case "Sink": // react to sink interaction depending on the interacted time
+					if (sinkCounter < 2) {
+						switch (sinkCounter) {
+						case 0: 
+							guiController.toggleSubtl ("mirror1");
+							sinkCounter++;
+							break;
+						case 1:
+							guiController.toggleSubtl ("mirror2");
+							guiController.toggleInventoryHint ();
+							guiController.addHint ("dressHint");
+							sinkCounter++;
+							break;
+						default:
+							break;
+						}
 						break;
-					case 1:
-						guiController.toggleSubtl("mirror2");
-						guiController.toggleInventoryHint();
-						guiController.addHint("dressHint");
-						sinkCounter++;
-						break;
-					default: break;
 					}
-				}
-			
-				// interacted with jacket
-				else if(jacketTrigger.GetComponent<JacketTrigger>().jacketTriggered() && noteFound == false){
-					guiController.toggleSubtl("paper");
-					guiController.toggleInventoryHint();
-					guiController.addHint("noteHint");
-					noteFound = true;
+					break;
+				case "Jacket": // handle interaction with jacket
+					if(!noteFound){
+						guiController.toggleSubtl ("paper");
+						guiController.toggleInventoryHint ();
+						guiController.addHint ("noteHint");
+						noteFound = true;
+					}
+					break;
 				}
 			}
 		}
 	}
 
 
-	//check if the player collides with an interactable object
+	// check if the player collides with an interactable object and show/unshow interaction hint
 	void checkCollisions(){
-		//handle sink collision (is only two times interactable)
-		if (sink.GetComponent<SinkTrigger> ().sinkTriggered () && sinkCounter < 2 && guiController.isShowing () == false) {
-			guiController.toggleInteractionHint (true);
+		//interaction hints may not be shown if sth else is shown on GUI
+		if (!guiController.isShowing ()) {
+			switch(gameObject.GetComponent<TriggerController> ().getTriggerTag()){
+			case "Sink":
+				if(sinkCounter < 2){
+					guiController.toggleInteractionHint (true);
+				} else {
+					guiController.toggleInteractionHint (false);
+				}
+				break;
+			case "Jacket":
+				if(!noteFound){
+					guiController.toggleInteractionHint (true);
+				} else {
+					guiController.toggleInteractionHint (false);
+				}	
+				break;
+			default: 
+				guiController.toggleInteractionHint (false);
+				break;
+			}
 		}
-		//handle jacket collision (is only one time interactable)
-		else if (jacketTrigger.GetComponent<JacketTrigger> ().jacketTriggered () && noteFound == false && guiController.isShowing () == false) {
-			guiController.toggleInteractionHint (true);	
-		} else {
+		else {
 			guiController.toggleInteractionHint (false);
-		}
+		}	
 	}
 
 	// handle Level changing stuff triggered by actions in the inventory here
@@ -109,8 +126,8 @@ public class BathController : MonoBehaviour {
 		}
 	}
 
+	// initialize level change
 	public void ChangeLevel(int level){
-        //Application.LoadLevel(level);
         GetComponent<SceneFader>().SwitchScene(level);
     }
 }

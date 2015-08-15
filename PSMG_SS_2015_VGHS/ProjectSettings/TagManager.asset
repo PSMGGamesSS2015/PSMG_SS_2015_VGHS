@@ -12,6 +12,9 @@ TagManager:
   - TheoryInventory
   - SomeObject
   - InteractionPanel
+  - Sink
+  - Controlling
+  - Jacket
   layers:
   - Default
   - TransparentFX
