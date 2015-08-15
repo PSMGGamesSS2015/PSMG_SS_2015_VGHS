@@ -167,7 +167,7 @@ public class GUIController : MonoBehaviour {
 
 	// show/unshow interaction panel
 	public void toggleInteractionPanel(bool active){
-		if (michaelInteraction.activeSelf || active == false) {
+		if (!active) {
 			michaelInteraction.SetActive (false);
 			interactionPanelShown = false;
 			Cursor.visible = false;

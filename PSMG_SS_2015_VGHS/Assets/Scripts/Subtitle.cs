@@ -108,9 +108,9 @@ public class Subtitle : MonoBehaviour {
 		keyNodeMap.Add ("familyAlbum1_1", "jane_house_1_21");		
 		keyNodeMap.Add ("familyAlbum1_2", "michael_house_1_22");		
 		keyNodeMap.Add ("noteMonolog", "jane_house_1_22");		
-		keyNodeMap.Add ("wintergarden1", "jane_house_1_23");		
-		keyNodeMap.Add ("wintergarden2", "michael_house_1_23");		
-		keyNodeMap.Add ("wintergarden3", "jane_house_1_24");		
+		keyNodeMap.Add ("conservatory1", "jane_house_1_23");		
+		keyNodeMap.Add ("conservatory2", "michael_house_1_23");		
+		keyNodeMap.Add ("conservatory3", "jane_house_1_24");		
 		keyNodeMap.Add ("glassTable1", "jane_house_1_25");		
 		keyNodeMap.Add ("glassTable2", "michael_house_1_24");		
 		keyNodeMap.Add ("glassTable3", "jane_house_1_26");		

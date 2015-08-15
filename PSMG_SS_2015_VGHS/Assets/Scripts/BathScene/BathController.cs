@@ -53,7 +53,7 @@ public class BathController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.E)) {
 			// interactions are only possible if nothing like subtitles or the inventory is shown
 			if (guiController.isShowing () == false) {
-
+				// do sth. depending on trigger
 				switch (gameObject.GetComponent<TriggerController> ().getTriggerTag()) {
 				case "Sink": // react to sink interaction depending on the interacted time
 					if (sinkCounter < 2) {
@@ -67,8 +67,6 @@ public class BathController : MonoBehaviour {
 							guiController.toggleInventoryHint ();
 							guiController.addHint ("dressHint");
 							sinkCounter++;
-							break;
-						default:
 							break;
 						}
 						break;
@@ -111,8 +109,7 @@ public class BathController : MonoBehaviour {
 				guiController.toggleInteractionHint (false);
 				break;
 			}
-		}
-		else {
+		} else {
 			guiController.toggleInteractionHint (false);
 		}	
 	}
