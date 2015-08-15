@@ -49,6 +49,7 @@ ModelImporter:
     2300010: cabinet4_frame5
     2300012: cabinet4_frame6
     2300014: cabinet4_frame7
+    2300016: cabinet4_drawer1
     3300000: cabinet4_bottom
     3300002: cabinet4_counter
     3300004: cabinet4_frame1
@@ -57,6 +58,7 @@ ModelImporter:
     3300010: cabinet4_frame5
     3300012: cabinet4_frame6
     3300014: cabinet4_frame7
+    3300016: cabinet4_drawer1
     4300000: cabinet4_bottom
     4300002: cabinet4_counter
     4300004: cabinet4_door_l
