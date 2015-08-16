@@ -51,6 +51,7 @@ public class HouseController : MonoBehaviour {
 	bool isDizzy = false;
 	bool secondSceneReady = false;
 	bool paulaPhoneDialog1 = false;
+	bool paulaIntroductionDialog = false;
 
 
 
@@ -150,7 +151,9 @@ public class HouseController : MonoBehaviour {
 					}
 					break;
 				case "Paula": // open interaction panel if interactions are available
-
+					if(guiController.checkForPanelContent()){
+						guiController.toggleInteractionPanel(true, "Paula");
+					}
 					break;
 				default: break;
 				}
@@ -263,7 +266,7 @@ public class HouseController : MonoBehaviour {
 
 	// check for new interactions in interaction panel
 	void checkInteractionPanel(){
-		if (guiController.manageDialogs().Equals("") == false && dialogsPerformed.Contains(guiController.manageDialogs()) == false) {
+		if (!guiController.manageDialogs().Equals("") && !dialogsPerformed.Contains(guiController.manageDialogs())) {
 			initDialog(guiController.manageDialogs());
 			guiController.toggleInteractionPanel(false, "");
 		}
@@ -337,6 +340,11 @@ public class HouseController : MonoBehaviour {
 				insertIntoInventory("pills");
 				//toggeling here next scene after this dialog makes sure, that nothing is destroyed while first scene still going on
 				StartCoroutine (onNextSceneStart ());
+			}
+			// dialog paula introduction needs to be added individually cause its too long, remove the old wrong entry first
+			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("paulaIntroduction")){
+				dialogsPerformed.Remove("paulaIntroduction1");
+				dialogsPerformed.Add ("paulaIntroduction");
 			}
 			// reset dialog data for new dialog
 			dialogCount = 1;
@@ -431,6 +439,7 @@ public class HouseController : MonoBehaviour {
 			isDizzy = true;
 			guiController.toggleSubtl("dizzy1");
 			secondSceneReady = true;
+			guiController.manageInteraction("paula_about", "Paula");
 			break;
 		default: break;
 		}
@@ -455,5 +464,6 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("bedroom", 2);
 		keyDialogSizeMap.Add("adressBook", 2);
 		keyDialogSizeMap.Add("scene1Ending", 3);
+		keyDialogSizeMap.Add("paulaIntroduction", 9);
 	}
 }

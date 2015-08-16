@@ -46,6 +46,11 @@
 	
 	<!-- House Second Scene -->
 	<jane_house_2_1>Oh Gott ist mir schwindlig... Michael? ... Komisch wo kann er nur sein?</jane_house_2_1>
+	<jane_house_2_2>Wer sind sie?</jane_house_2_2>
+	<jane_house_2_3>Wo ist Michael?</jane_house_2_3>
+	<jane_house_2_4>Aha...</jane_house_2_4>
+	<jane_house_2_5>Er hat mir nichts von ihnen gesagt...</jane_house_2_5>
+	<jane_house_2_6>Hm...</jane_house_2_6>
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
@@ -88,4 +93,8 @@
 	<!-- Paula Text -->
 	<!--  House Second Scene -->
 	<paula_house_2_1>Nein, die ist nicht hier... die ist bei ihrem Bruder zu Besuch... Auf Wiederhören</paula_house_2_1>
+	<paula_house_2_2>Paula, ihre Haushälterin.</paula_house_2_2>
+	<paula_house_2_3>Er musste in die Praxis. Ein Notfall.</paula_house_2_3>
+	<paula_house_2_4>Sie wirken beunruhigt deswegen?</paula_house_2_4>
+	<paula_house_2_5>Er hat auch nicht gedacht, dass er heute nicht zu Hause ist.</paula_house_2_5>
 </ger>

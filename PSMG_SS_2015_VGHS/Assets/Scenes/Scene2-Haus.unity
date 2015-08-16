@@ -38549,9 +38549,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 795345239}
   - 114: {fileID: 795345240}
+  - 135: {fileID: 795345241}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: PaulaTrigger
+  m_TagString: Paula
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38563,8 +38564,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795345238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0135411, y: -7.48058796, z: 20.219511}
-  m_LocalScale: {x: 2.43924665, y: 2.43924642, z: 2.43924642}
+  m_LocalPosition: {x: .270000011, y: 3.36999989, z: .479999989}
+  m_LocalScale: {x: 6.47179556, y: 6.47179747, z: 6.47179747}
   m_Children: []
   m_Father: {fileID: 1970067682}
   m_RootOrder: 0
@@ -38579,6 +38580,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db2a9f978f49674a87c1b2501f8b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &795345241
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795345238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &795646510
 GameObject:
   m_ObjectHideFlags: 0
@@ -98899,7 +98912,6 @@ MonoBehaviour:
   resolutionMenu: {fileID: 431699472}
   checkbox: {fileID: 1365536714}
   interactionController: {fileID: 1242278632}
-  paulaInteraction: {fileID: 0}
   adressBook: {fileID: 2039568911}
   subtlShown: 0
   interactionPanelShown: 0

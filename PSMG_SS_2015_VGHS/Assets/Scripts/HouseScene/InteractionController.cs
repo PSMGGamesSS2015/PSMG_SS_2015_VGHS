@@ -66,11 +66,19 @@ public class InteractionController : MonoBehaviour {
 		case "Michael":
 			openMichaelInteractions.Add(key);
 			break;
+		case "Paula":
+			Debug.Log (interactedWith);
+			openPaulaInteractions.Add (key);
+			break;
 		}
 		updateInteractionPanel (person);
 	}
 
 	public void updateInteractionPanel(string person){
+		// first clear all slots
+		for (int j = 0; j < slotNum; j ++) {
+			iSlots [j].GetComponent<InteractionSlots>().isFilled = false;
+		}
 		switch (person) {
 		case "Michael":
 			for (int i = 0; i < openMichaelInteractions.Count; i++) {
@@ -81,6 +89,21 @@ public class InteractionController : MonoBehaviour {
 							iSlots [j].SetActive (true);
 							iSlots [j].GetComponent<InteractionSlots> ().setupText (getText (openMichaelInteractions[i]));
 							iSlots [j].name = openMichaelInteractions[i];
+							break;
+						}
+					}
+				}
+			}
+			break;
+		case "Paula":
+			for (int i = 0; i < openPaulaInteractions.Count; i++) {
+				if (!iSlots.Exists (x => x.name.Equals (openPaulaInteractions[i]))) {
+					
+					for (int j = 0; j < slotNum; j ++) {
+						if (!iSlots [j].GetComponent<InteractionSlots> ().isFilled) {
+							iSlots [j].SetActive (true);
+							iSlots [j].GetComponent<InteractionSlots> ().setupText (getText (openPaulaInteractions[i]));
+							iSlots [j].name = openPaulaInteractions[i];
 							break;
 						}
 					}
@@ -123,6 +146,9 @@ public class InteractionController : MonoBehaviour {
 		case "Michael":
 			openMichaelInteractions.Remove(slotName);
 			break;
+		case "Paula":
+			openPaulaInteractions.Remove(slotName);
+			break;
 		}
 	}
 
@@ -134,5 +160,6 @@ public class InteractionController : MonoBehaviour {
 		interactionDialogMap.Add("Meine Familie", "family");
 		interactionDialogMap.Add("Kinder?", "daughter");
 		interactionDialogMap.Add("Fehlendes Foto", "picture");
+		interactionDialogMap.Add("Wer bist du?", "paulaIntroduction");
 	}
 }
