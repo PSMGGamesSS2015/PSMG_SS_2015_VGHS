@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Xml;
 using System.IO;
+using System.Linq;
 
-public class MichaelInteractions : MonoBehaviour {
+public class InteractionController : MonoBehaviour {
 
 	public TextAsset textAsset;
 
 
 	public List <GameObject> iSlots = new List<GameObject> ();
+	Dictionary<string,string> interactionDialogMap = new Dictionary<string,string>();
 
 	public GameObject interactionSlots;
 
@@ -21,12 +23,18 @@ public class MichaelInteractions : MonoBehaviour {
 
 	public string triggeredInteraction = "";
 
+	string interactedWith = "Michael";
+
+	List<string> openMichaelInteractions = new List<string>();
+	List<string> openPaulaInteractions = new List<string>();
+
 	Dictionary<string,string> interactionContent = new Dictionary<string,string>();
 	
 
 	// Use this for initialization
 	void Start () {
 		setupXmlData ();
+		setupInteractionDialogMap ();
 		gameObject.SetActive (false);
 	}
 
@@ -51,19 +59,38 @@ public class MichaelInteractions : MonoBehaviour {
 	}
 
 	// set new interaction to slot
-	public void setupInteraction(string key){
-		if (iSlots.Exists (x => x.name.Equals (key)) == false) {
-			for (int i = 0; i < slotNum; i ++) {
-				if (iSlots [i].GetComponent<InteractionSlots> ().isFilled == false) {
-					iSlots [i].SetActive (true);
-					iSlots [i].GetComponent<InteractionSlots> ().setupText (getText (key));
-					iSlots [i].name = key;
-					break;
+	public void setupInteraction(string key, string person){
+
+		interactedWith = person;
+		switch (person) {
+		case "Michael":
+			openMichaelInteractions.Add(key);
+			break;
+		}
+		updateInteractionPanel (person);
+	}
+
+	public void updateInteractionPanel(string person){
+		switch (person) {
+		case "Michael":
+			for (int i = 0; i < openMichaelInteractions.Count; i++) {
+				if (!iSlots.Exists (x => x.name.Equals (openMichaelInteractions[i]))) {
+					
+					for (int j = 0; j < slotNum; j ++) {
+						if (!iSlots [j].GetComponent<InteractionSlots> ().isFilled) {
+							iSlots [j].SetActive (true);
+							iSlots [j].GetComponent<InteractionSlots> ().setupText (getText (openMichaelInteractions[i]));
+							iSlots [j].name = openMichaelInteractions[i];
+							break;
+						}
+					}
 				}
 			}
+			break;
 		}
 	}
 
+	// get description for interaction by key
 	string getText(string key){
 		string content = "";
 		interactionContent.TryGetValue(key, out content);
@@ -89,30 +116,23 @@ public class MichaelInteractions : MonoBehaviour {
 		}
 	}
 
-	// called by interaction slots if user interacted with michael
-	public void interactionAlert(string interaction){
-		switch (interaction) {
-		case "Narbe":
-			triggeredInteraction = "scar1_";
+	// called by interaction slots if user triggered an interaction
+	public void interactionAlert(string interaction, string slotName){
+		interactionDialogMap.TryGetValue (interaction, out triggeredInteraction);	
+		switch (interactedWith) {
+		case "Michael":
+			openMichaelInteractions.Remove(slotName);
 			break;
-		case "Woher kommt die Narbe?":
-			triggeredInteraction = "scar2_";
-			break;
-		case "Meine Freunde":
-			triggeredInteraction = "friends";
-			break;
-		case "Meine Familie":
-			triggeredInteraction = "family";
-			break;
-		case "Kinder?":
-			triggeredInteraction = "daughter";
-			break;
-		case "Fehlendes Foto":
-			triggeredInteraction = "picture";
-			break;
-		default: break;
 		}
+	}
 
-
+	// setup list that connects interaction keys with dialog keys
+	void setupInteractionDialogMap (){
+		interactionDialogMap.Add("Narbe", "scar1_");
+		interactionDialogMap.Add("Woher kommt die Narbe?", "scar2_");
+		interactionDialogMap.Add("Meine Freunde", "friends");
+		interactionDialogMap.Add("Meine Familie", "family");
+		interactionDialogMap.Add("Kinder?", "daughter");
+		interactionDialogMap.Add("Fehlendes Foto", "picture");
 	}
 }

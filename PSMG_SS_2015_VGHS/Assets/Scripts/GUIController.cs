@@ -20,7 +20,7 @@ public class GUIController : MonoBehaviour {
     public GameObject qualityMenu;
     public GameObject resolutionMenu;
     public Toggle checkbox;
-	public GameObject michaelInteraction;
+	public GameObject interactionController;
 	public GameObject adressBook;
 
 	public bool subtlShown;
@@ -40,7 +40,7 @@ public class GUIController : MonoBehaviour {
 		inventory.GetComponent<Inventory> ().setupInventory ();
 
 		if (Application.loadedLevel == 2) {
-			michaelInteraction.GetComponent<MichaelInteractions>().setupInteractionSlots();
+			interactionController.GetComponent<InteractionController>().setupInteractionSlots();
 		}
 	}
 
@@ -150,8 +150,8 @@ public class GUIController : MonoBehaviour {
 
 	// check if panel contains interactions
 	public bool checkForPanelContent(){
-		for(int i = 0; i < michaelInteraction.GetComponent<MichaelInteractions>().iSlots.Count; i++){
-			if(michaelInteraction.GetComponent<MichaelInteractions>().iSlots[i].activeSelf){
+		for(int i = 0; i < interactionController.GetComponent<InteractionController>().iSlots.Count; i++){
+			if(interactionController.GetComponent<InteractionController>().iSlots[i].activeSelf){
 				return true;
 			}
 		}
@@ -159,33 +159,34 @@ public class GUIController : MonoBehaviour {
 	}
 
 	public void closeInteractionInPanel(string key){
-		for(int i = 0; i < michaelInteraction.GetComponent<MichaelInteractions>().iSlots.Count; i++){
-			michaelInteraction.GetComponent<MichaelInteractions>().iSlots[i].GetComponent<InteractionSlots>().forceInteractionSlotClose(key);
+		for(int i = 0; i < interactionController.GetComponent<InteractionController>().iSlots.Count; i++){
+			interactionController.GetComponent<InteractionController>().iSlots[i].GetComponent<InteractionSlots>().forceInteractionSlotClose(key);
 		}
 
 	}
 
 	// show/unshow interaction panel
-	public void toggleInteractionPanel(bool active){
+	public void toggleInteractionPanel(bool active, string person){
 		if (!active) {
-			michaelInteraction.SetActive (false);
+			interactionController.SetActive (false);
 			interactionPanelShown = false;
 			Cursor.visible = false;
 		} else {
-			michaelInteraction.SetActive(true);
+			interactionController.SetActive(true);
+			interactionController.GetComponent<InteractionController>().updateInteractionPanel(person);
 			interactionPanelShown = true;
 			Cursor.visible = true;
 		}
 	}
 
 	// manage shown interaction in interaction panel
-	public void manageInteraction (string key){
-		michaelInteraction.GetComponent<MichaelInteractions> ().setupInteraction (key);
+	public void manageInteraction (string key, string person){
+		interactionController.GetComponent<InteractionController> ().setupInteraction (key, person);
 	}
 
 	// return the clicked interaction to choose right dialog
 	public string manageDialogs(){
-		return michaelInteraction.GetComponent<MichaelInteractions> ().triggeredInteraction;
+		return interactionController.GetComponent<InteractionController> ().triggeredInteraction;
 	}
 	
 	// this is needed once when house scene was loaded and the inventory need to be set to the status of bath ending

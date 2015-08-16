@@ -10,11 +10,11 @@ public class InteractionSlots : MonoBehaviour, IPointerDownHandler {
 	public int slotNumber;
 	public bool isFilled = false;
 
-	MichaelInteractions interactionPanel;
+	InteractionController interactionPanel;
 
 	// Use this for initialization
 	void Start () {
-		interactionPanel = GameObject.FindGameObjectWithTag ("InteractionPanel").GetComponent<MichaelInteractions>();
+		interactionPanel = GameObject.FindGameObjectWithTag ("InteractionPanel").GetComponent<InteractionController>();
 	}
 
 	// setup text for this slot
@@ -25,7 +25,7 @@ public class InteractionSlots : MonoBehaviour, IPointerDownHandler {
 
 	// Do sth. when clicked on slot
 	public void OnPointerDown(PointerEventData data){
-		interactionPanel.interactionAlert (text.GetComponent<Text> ().text);
+		interactionPanel.interactionAlert (text.GetComponent<Text> ().text, gameObject.name);
 		isFilled = false;
 		gameObject.SetActive (false);
 	}

@@ -28,6 +28,7 @@ TagManager:
   - Bookshelf
   - Bedroom
   - Sidetable
+  - Paula
   layers:
   - Default
   - TransparentFX

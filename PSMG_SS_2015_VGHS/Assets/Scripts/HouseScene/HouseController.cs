@@ -19,8 +19,8 @@ public class HouseController : MonoBehaviour {
 	public GameObject adressBook;
 	public GameObject playerCam;
 
-	GameObject anyObject;
 	List<string> dialogsPerformed = new List<string>();
+	Dictionary<string,int> keyDialogSizeMap = new Dictionary<string,int>();
 	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
 	string actualDialog = "";
 	int pianoCount = 0;
@@ -60,7 +60,8 @@ public class HouseController : MonoBehaviour {
 		guiController.addHint("dressHint");
 		guiController.addHint("noteHint");
 		guiController.forceThSetup();
-		guiController.manageInteraction("michael_scar");
+		guiController.manageInteraction("michael_scar", "Michael");
+		setupKeyDialogSizeMap ();
 		initDialog ("welcome");
 	}
 	
@@ -90,7 +91,7 @@ public class HouseController : MonoBehaviour {
 				switch(gameObject.GetComponent<TriggerController> ().getTriggerTag()){
 				case "Michael": // open interaction panel if interactions are available
 					if(guiController.checkForPanelContent()){
-						guiController.toggleInteractionPanel(true);
+						guiController.toggleInteractionPanel(true, "Michael");
 					}
 					break;
 				case "Piano": // manage interactions with piano
@@ -148,10 +149,13 @@ public class HouseController : MonoBehaviour {
 						sidetableOpen = false;
 					}
 					break;
+				case "Paula": // open interaction panel if interactions are available
+
+					break;
 				default: break;
 				}
 			}else{
-				guiController.toggleInteractionPanel(false);
+				guiController.toggleInteractionPanel(false, "");
 			}
 		}
 	}
@@ -171,9 +175,9 @@ public class HouseController : MonoBehaviour {
 			case "Diningroom": // check if diningroom entered and initialize new interactions
 				if(!diningRoomTriggered){
 					guiController.toggleSubtl ("diningRoom");
-					guiController.manageInteraction ("michael_friends");
+					guiController.manageInteraction ("michael_friends", "Michael");
 					if (!familyInteractionDone) {
-						guiController.manageInteraction ("michael_family");
+						guiController.manageInteraction ("michael_family", "Michael");
 						familyInteractionDone = true;
 					}
 					diningRoomTriggered = true;	
@@ -240,6 +244,13 @@ public class HouseController : MonoBehaviour {
 			case "Sidetable": // check if sidetable triggered
 				guiController.toggleInteractionHint (true);
 				break;
+			case "Paula": // check if Paula is triggered and interactable
+				if(guiController.checkForPanelContent ()){
+					guiController.toggleInteractionHint(true);
+				}else {
+					guiController.toggleInteractionHint (false);
+				}
+				break;
 			default: 
 				guiController.toggleInteractionHint (false);
 				break;
@@ -254,7 +265,7 @@ public class HouseController : MonoBehaviour {
 	void checkInteractionPanel(){
 		if (guiController.manageDialogs().Equals("") == false && dialogsPerformed.Contains(guiController.manageDialogs()) == false) {
 			initDialog(guiController.manageDialogs());
-			guiController.toggleInteractionPanel(false);
+			guiController.toggleInteractionPanel(false, "");
 		}
 	}
 
@@ -265,68 +276,16 @@ public class HouseController : MonoBehaviour {
 		guiController.toggleSubtl (dialogToInit+dialogCount);
 	}
 
-	// toggle the needed dialog
+	// toggle subtitles in actual dialog
 	void toggleDialogs(){
 		int dialogMaxNum = 0;
-		switch (actualDialog) {
-		case "welcome":
-			dialogMaxNum = 5;
-			break;
-		case "scar1_":
-			dialogMaxNum = 2;
-			break;
-		case "scar2_":
-			dialogMaxNum = 4;
-			break;
-		case "friends":
-			dialogMaxNum = 2;
-			break;
-		case "family":
-			dialogMaxNum = 4;
-			break;
-		case "daughter":
-			dialogMaxNum = 7;
-			break;
-		case "piano":
-			dialogMaxNum = 3;
-			break;
-		case "daughter2_":
-			dialogMaxNum = 7;
-			break;
-		case "picture":
-			dialogMaxNum = 4;
-			break;
-		case "familyAlbum1_":
-			dialogMaxNum = 2;
-			break;
-		case "conservatory":
-			dialogMaxNum = 3;
-			break;
-		case "glassTable":
-			dialogMaxNum = 5;
-			break;
-		case "childsroom":
-			dialogMaxNum = 3;
-			break;
-		case "guestroom":
-			dialogMaxNum = 4;
-			break;
-		case "bedroom":
-			dialogMaxNum = 2;
-			break;
-		case "adressBook":
-			dialogMaxNum = 2;
-			break;
-		case "scene1Ending":
-			dialogMaxNum = 3;
-			break;
-		}
-		if(actualDialog.Equals("") == false){
+		if(!actualDialog.Equals("")){
+			keyDialogSizeMap.TryGetValue(actualDialog, out dialogMaxNum);
 			manageDialogSettings(dialogMaxNum, actualDialog+dialogCount);
 		}
 	}
 
-	// manage if dialog has ended or not and if certain things happen after ending
+	// manage if certain things happen after ending or during the dialog
 	void manageDialogSettings(int dialogNum, string actualSubtl){
 		//do after-dialog-events here
 		if (dialogCount > dialogNum) {
@@ -341,7 +300,7 @@ public class HouseController : MonoBehaviour {
 				family = true;
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
 				if(daughterFound == false){
-					guiController.manageInteraction("michael_daughter");
+					guiController.manageInteraction("michael_daughter", "Michael");
 				}
 			}
 			// checkup dialog about friends
@@ -356,7 +315,7 @@ public class HouseController : MonoBehaviour {
 			// add hint about dianes daughter to inventory
 			else if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("daughter")){
 				insertIntoInventory("dianesDaughter");
-				guiController.manageInteraction("michael_friends");
+				guiController.manageInteraction("michael_friends", "Michael");
 			}
 			// add hint about the missing picture
 			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("picture")){
@@ -411,7 +370,7 @@ public class HouseController : MonoBehaviour {
 					missingPicture = true;
 					guiController.toggleSubtl("missingPictureFound");
 					guiController.toggleInventory();
-					guiController.manageInteraction("michael_missingPicture");
+					guiController.manageInteraction("michael_missingPicture", "Michael");
 				}
 				break;
 			}
@@ -420,7 +379,7 @@ public class HouseController : MonoBehaviour {
 		if(theory.GetComponent<Theory> ().theory2Found && theory2Registered == false){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory2");
-			guiController.manageInteraction("michael_scar_2");
+			guiController.manageInteraction("michael_scar_2", "Michael");
 			theory2Registered = true;
 		}
 	}
@@ -475,5 +434,26 @@ public class HouseController : MonoBehaviour {
 			break;
 		default: break;
 		}
+	}
+
+	// setup list with dialogs and their length
+	void setupKeyDialogSizeMap(){
+		keyDialogSizeMap.Add("welcome", 5);
+		keyDialogSizeMap.Add("scar1_", 2);
+		keyDialogSizeMap.Add("scar2_", 4);
+		keyDialogSizeMap.Add("friends", 2);
+		keyDialogSizeMap.Add("family", 4);
+		keyDialogSizeMap.Add("daughter", 7);
+		keyDialogSizeMap.Add("piano", 3);
+		keyDialogSizeMap.Add("daughter2_", 7);
+		keyDialogSizeMap.Add("picture", 4);
+		keyDialogSizeMap.Add("familyAlbum1_", 2);
+		keyDialogSizeMap.Add("conservatory", 3);
+		keyDialogSizeMap.Add("glassTable", 5);
+		keyDialogSizeMap.Add("childsroom", 3);
+		keyDialogSizeMap.Add("guestroom", 4);
+		keyDialogSizeMap.Add("bedroom", 2);
+		keyDialogSizeMap.Add("adressBook", 2);
+		keyDialogSizeMap.Add("scene1Ending", 3);
 	}
 }
