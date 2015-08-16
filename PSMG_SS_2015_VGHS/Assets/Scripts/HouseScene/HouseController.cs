@@ -12,21 +12,6 @@ public class HouseController : MonoBehaviour {
 	public GameObject player;
 	public GameObject michael;
 	public GameObject paula;
-	public GameObject michaelTrigger;
-	public GameObject pianoTrigger;
-	public GameObject diningRoomTrigger1;
-	public GameObject diningRoomTrigger2;
-	public GameObject familyAlbumTrigger;
-	public GameObject noteTrigger;
-	public GameObject bookshelfTrigger;
-	public GameObject wintergardenTrigger;
-	public GameObject glassTableTrigger;
-	public GameObject childsroomTrigger;
-	public GameObject guestroomTrigger;
-	public GameObject workroomTrigger;
-	public GameObject bedroomTrigger;
-	public GameObject sideTableTrigger;
-	public GameObject floorTrigger;
 	public GameObject InteractionPanel;
 	public GameObject theory;
 	public GameObject drawer;
@@ -34,12 +19,13 @@ public class HouseController : MonoBehaviour {
 	public GameObject adressBook;
 	public GameObject playerCam;
 
-
+	GameObject anyObject;
 	List<string> dialogsPerformed = new List<string>();
+	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
+	string actualDialog = "";
 	int pianoCount = 0;
 	int dialogCount = 1;
 	int actualHouseScene = 1;
-	string actualDialog = "";
 	bool scarHint = false;
 	bool friends = false;
 	public bool family = false;
@@ -65,7 +51,7 @@ public class HouseController : MonoBehaviour {
 	bool isDizzy = false;
 	bool secondSceneReady = false;
 	bool paulaPhoneDialog1 = false;
-	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
+
 
 
 
@@ -192,6 +178,11 @@ public class HouseController : MonoBehaviour {
 					}
 					diningRoomTriggered = true;	
 				}
+				// check if player got near paula in second house scene to trigger phone dialog
+				else if(actualHouseScene == 2 && !paulaPhoneDialog1){
+					guiController.toggleSubtl("paulaPhoneDialog1");
+					paulaPhoneDialog1 = true;
+				}
 				break;
 			case "Piano":
 				if(pianoCount < 3){
@@ -257,19 +248,6 @@ public class HouseController : MonoBehaviour {
 		}else {
 			guiController.toggleInteractionHint (false);
 		}
-		/*
-		//make sure not to check for options only available in vertain scenes
-		switch (actualHouseScene) {
-		case 2:
-			if (paulaPhoneDialog1 == false && (diningRoomTrigger2.GetComponent<DiningRoomTrigger2>().diningRoomTriggered () || floorTrigger.GetComponent<FloorTrigger>().floorTriggered())){
-				guiController.toggleSubtl("paulaPhoneDialog1");
-				paulaPhoneDialog1 = true;
-			}
-			break;
-		default: break;
-		}
-		*/
-
 	}
 
 	// check for new interactions in interaction panel
@@ -399,7 +377,7 @@ public class HouseController : MonoBehaviour {
 				scene1EndingDialog = true;
 				insertIntoInventory("pills");
 				//toggeling here next scene after this dialog makes sure, that nothing is destroyed while first scene still going on
-				arrangeNextScene(actualHouseScene);
+				StartCoroutine (onNextSceneStart ());
 			}
 			// reset dialog data for new dialog
 			dialogCount = 1;
@@ -455,32 +433,6 @@ public class HouseController : MonoBehaviour {
 		}
 	}
 
-	// delete or enable objects, trigger etc. as needed in next scene
-	void arrangeNextScene(int scene){
-		GetComponent<SceneFader> ().SwitchScene (3);
-
-		switch (scene) {
-		case 1:
-			Destroy (glassTableImpression);
-			Destroy(wintergardenTrigger);
-			Destroy(glassTableTrigger);
-			Destroy (pianoTrigger);
-			Destroy(diningRoomTrigger1);
-			Destroy (childsroomTrigger);
-			Destroy (workroomTrigger);
-			Destroy (guestroomTrigger);
-			Destroy (bedroomTrigger);
-			Destroy (adressBook);
-			diningRoomTriggered = false;
-			floorTrigger.SetActive(true);
-			actualHouseScene++;
-			break;
-		default: break;
-		}
-		StartCoroutine (onNextSceneStart ());
-
-	}
-
 	// generate heavier player controlling while jane is dizzy
 	void randomPlayerControl(){
 		if (isDizzy) {
@@ -495,21 +447,31 @@ public class HouseController : MonoBehaviour {
 
 	// do stuff here that is needed when new scene starts
 	IEnumerator onNextSceneStart(){
+		actualHouseScene++;
+		GetComponent<SceneFader> ().SwitchScene (3);
 		yield return new WaitForSeconds (2);
-		// fade scene in
+		// fade scene in and put player to bed
 		if (GetComponent<SceneFader> ().checkFade() && actualHouseScene > 1) {
-			michael.SetActive(false);
-			paula.SetActive(true);
 			player.transform.position = bedPos;
 			GetComponent<SceneFader> ().forceFadeIn();
 		}
 		switch (actualHouseScene) {
-		case 2:
-			if(secondSceneReady == false){
-				isDizzy = true;
-				guiController.toggleSubtl("dizzy1");
-				secondSceneReady = true;
-			}
+		case 2: // setup second house scene
+			Destroy (glassTableImpression);
+			GameObject.Find("DiningRoomTrigger1").SetActive(false);
+			GameObject.Find("ConservatoryTrigger").SetActive(false);
+			GameObject.Find("PianoTrigger").SetActive(false);
+			GameObject.Find("ChildsroomTrigger").SetActive(false);
+			GameObject.Find("WorkroomTrigger").SetActive(false);
+			GameObject.Find("GuestroomTrigger").SetActive(false);
+			GameObject.Find("BedroomTrigger").SetActive(false);
+			GameObject.Find("FloorTrigger").SetActive(true);
+
+			michael.SetActive(false);
+			paula.SetActive(true);
+			isDizzy = true;
+			guiController.toggleSubtl("dizzy1");
+			secondSceneReady = true;
 			break;
 		default: break;
 		}
