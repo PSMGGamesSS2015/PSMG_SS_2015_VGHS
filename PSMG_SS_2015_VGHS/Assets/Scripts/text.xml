@@ -58,6 +58,8 @@
 	<jane_house_2_11>Wie oft sind sie hier?</jane_house_2_11>
 	<jane_house_2_12>Und woher kennen wir uns?</jane_house_2_12>
 	<jane_house_2_13>Eine wirklich überaus dankbare Person, diese Paula...</jane_house_2_13>
+	<jane_house_2_14>Oh Gott, hast du mich jetzt erschreckt!</jane_house_2_14>
+	<jane_house_2_15>Nein...</jane_house_2_15>
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
@@ -95,6 +97,10 @@
 	<michael_house_1_32>Dein Adressbuch.</michael_house_1_32>
 	<michael_house_1_33>Ich denke für heute hast du genug gesehen. Du siehst total erschöpft aus.</michael_house_1_33>
 	<michael_house_1_34>Warte, ich bringe dir die Tabletten, die Dr. Meloff dir verschrieben hat.</michael_house_1_34>
+	
+	<!-- House Second Scene -->
+	<michael_house_2_1>Das tut mir sehr leid Schatz. Du siehst du die Familienalben durch? Das ist gut. Kannst du dich an etwas erinnern?</michael_house_2_1>
+	<michael_house_2_2>Was willst du wissen?</michael_house_2_2>
 	
 	
 	<!-- Paula Text -->

@@ -29,6 +29,7 @@ public class GUIController : MonoBehaviour {
 	bool inventoryShown;
 	bool adressBookShown;
 	bool familyalbumShown;
+	public bool albumClosedFirstTime = false;
 	bool menuShown;
 
 
@@ -212,13 +213,16 @@ public class GUIController : MonoBehaviour {
 		}
 	}
 
-	// show adress book when player interacts with book in sidetable
+	// show familyalbum when player interacts with book in bookshelf in living room 
 	public void toggleFamilyalbum(){
 		if (familyalbum.activeSelf == false) {
 			familyalbum.SetActive (true);
 			familyalbumShown = true;
 			Cursor.visible = true;
 		} else {
+			if(!albumClosedFirstTime){
+				albumClosedFirstTime = true;
+			}
 			familyalbum.SetActive (false);
 			familyalbumShown = false;
 			Cursor.visible = false;

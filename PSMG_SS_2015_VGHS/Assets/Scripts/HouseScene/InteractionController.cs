@@ -68,7 +68,6 @@ public class InteractionController : MonoBehaviour {
 			break;
 		case "Paula":
 			openPaulaInteractions.Add (key);
-			Debug.Log (openPaulaInteractions[0]);
 			break;
 		}
 		updateInteractionPanel (person);
