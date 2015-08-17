@@ -22,11 +22,13 @@ public class GUIController : MonoBehaviour {
     public Toggle checkbox;
 	public GameObject interactionController;
 	public GameObject adressBook;
+	public GameObject familyalbum;
 
 	public bool subtlShown;
 	public bool interactionPanelShown;
 	bool inventoryShown;
 	bool adressBookShown;
+	bool familyalbumShown;
 	bool menuShown;
 
 
@@ -131,7 +133,7 @@ public class GUIController : MonoBehaviour {
 
 	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown) {
+		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown || familyalbumShown) {
 			return true;
 		} else {
 			return false;
@@ -208,7 +210,20 @@ public class GUIController : MonoBehaviour {
 			adressBookShown = false;
 			Cursor.visible = false;
 		}
+	}
 
+	// show adress book when player interacts with book in sidetable
+	public void toggleFamilyalbum(){
+		if (familyalbum.activeSelf == false) {
+			familyalbum.SetActive (true);
+			familyalbumShown = true;
+			Cursor.visible = true;
+		} else {
+			familyalbum.SetActive (false);
+			familyalbumShown = false;
+			Cursor.visible = false;
+		}
+		
 	}
 
     public void GoToOptionsMenu()
