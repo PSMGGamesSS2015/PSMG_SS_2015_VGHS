@@ -22,11 +22,14 @@ public class GUIController : MonoBehaviour {
     public Toggle checkbox;
 	public GameObject interactionController;
 	public GameObject adressBook;
+	public GameObject familyalbum;
 
 	public bool subtlShown;
 	public bool interactionPanelShown;
 	bool inventoryShown;
 	bool adressBookShown;
+	bool familyalbumShown;
+	public bool albumClosedFirstTime = false;
 	bool menuShown;
 
 
@@ -80,6 +83,9 @@ public class GUIController : MonoBehaviour {
 		case "paulasDaughter":
 			inventory.GetComponent<Inventory>().addItem (11);
 			break;
+		case "crash":
+			inventory.GetComponent<Inventory>().addItem (12);
+			break;
 		default: break;
 		}
 	}
@@ -131,7 +137,7 @@ public class GUIController : MonoBehaviour {
 
 	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown) {
+		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown || familyalbumShown) {
 			return true;
 		} else {
 			return false;
@@ -208,7 +214,23 @@ public class GUIController : MonoBehaviour {
 			adressBookShown = false;
 			Cursor.visible = false;
 		}
+	}
 
+	// show familyalbum when player interacts with book in bookshelf in living room 
+	public void toggleFamilyalbum(){
+		if (familyalbum.activeSelf == false) {
+			familyalbum.SetActive (true);
+			familyalbumShown = true;
+			Cursor.visible = true;
+		} else {
+			if(!albumClosedFirstTime){
+				albumClosedFirstTime = true;
+			}
+			familyalbum.SetActive (false);
+			familyalbumShown = false;
+			Cursor.visible = false;
+		}
+		
 	}
 
     public void GoToOptionsMenu()

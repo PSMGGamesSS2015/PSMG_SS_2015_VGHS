@@ -156,6 +156,24 @@ public class Subtitle : MonoBehaviour {
 		keyNodeMap.Add ("paulaIntroduction2_3", "jane_house_2_12");
 		keyNodeMap.Add ("paulaIntroduction2_4", "paula_house_2_10");
 		keyNodeMap.Add ("paulaIntroduction2_5", "jane_house_2_13");
+		keyNodeMap.Add ("scare1", "jane_house_2_14");
+		keyNodeMap.Add ("scare2", "michael_house_2_1");
+		keyNodeMap.Add ("scare3", "jane_house_2_15");
+		keyNodeMap.Add ("scare4", "michael_house_2_2");
+		keyNodeMap.Add ("father1", "jane_house_2_16");
+		keyNodeMap.Add ("father2", "michael_house_2_3");
+		keyNodeMap.Add ("father3", "jane_house_2_17");
+		keyNodeMap.Add ("father4", "michael_house_2_4");
+		keyNodeMap.Add ("father5", "jane_house_2_18");
+		keyNodeMap.Add ("mother1", "jane_house_2_19");
+		keyNodeMap.Add ("mother2", "michael_house_2_5");
+		keyNodeMap.Add ("mother3", "jane_house_2_20");
+		keyNodeMap.Add ("mother4", "michael_house_2_6");
+		keyNodeMap.Add ("mother5", "jane_house_2_21");
+		keyNodeMap.Add ("mother6", "michael_house_2_7");
+		keyNodeMap.Add ("mother7", "jane_house_2_22");
+		keyNodeMap.Add ("mother8", "michael_house_2_8");
+		keyNodeMap.Add ("mother9", "jane_house_2_23");
 	}
 
 	// Setter for subtitle that needs to be shown

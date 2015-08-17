@@ -73,6 +73,16 @@
 	<jane_house_2_11>Wie oft sind sie hier?</jane_house_2_11>
 	<jane_house_2_12>Und woher kennen wir uns?</jane_house_2_12>
 	<jane_house_2_13>Eine wirklich überaus dankbare Person, diese Paula...</jane_house_2_13>
+	<jane_house_2_14>Oh Gott, hast du mich jetzt erschreckt!</jane_house_2_14>
+	<jane_house_2_15>Nein...</jane_house_2_15>
+	<jane_house_2_16>Wer ist der Mann auf dem Foto?</jane_house_2_16>
+	<jane_house_2_17>Oh Gott, woran ist er gestorben?</jane_house_2_17>
+	<jane_house_2_18>Wow… selbst der Tod meines Vaters ruft keine Erinnerungen hervor...</jane_house_2_18>
+	<jane_house_2_19>Wer ist die Frau auf dem Bild?</jane_house_2_19>
+	<jane_house_2_20>Wohnt sie auch in San Diego? Wie mein Bruder?”</jane_house_2_20>
+	<jane_house_2_21>Was meinst du mit hat?</jane_house_2_21>
+	<jane_house_2_22>Was?! Oh mein Gott...</jane_house_2_22>
+	<jane_house_2_23>Und jetzt bin ich außer mir, weil ich nicht mehr weiß, was passiert ist...</jane_house_2_23>
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
@@ -132,6 +142,16 @@
 	<michael_house_1_32>Dein Adressbuch.</michael_house_1_32>
 	<michael_house_1_33>Ich denke für heute hast du genug gesehen. Du siehst total erschöpft aus.</michael_house_1_33>
 	<michael_house_1_34>Warte, ich bringe dir die Tabletten, die Dr. Meloff dir verschrieben hat.</michael_house_1_34>
+	
+	<!-- House Second Scene -->
+	<michael_house_2_1>Das tut mir sehr leid Schatz. Du siehst du die Familienalben durch? Das ist gut. Kannst du dich an etwas erinnern?</michael_house_2_1>
+	<michael_house_2_2>Was willst du wissen?</michael_house_2_2>
+	<michael_house_2_3>Das ist dein Vater. Er starb schon vor einiger Zeit.</michael_house_2_3>
+	<michael_house_2_4>Er hatte Krebs.</michael_house_2_4>
+	<michael_house_2_5>Deine Mutter.</michael_house_2_5>
+	<michael_house_2_6>Nein, sie hat hier bei uns in der Nähe gewohnt...</michael_house_2_6>
+	<michael_house_2_7>Sie hatte vor fast genau einem Jahr einen schweren Autounfall, bei dem sie starb...</michael_house_2_7>
+	<michael_house_2_8>Du warst außer dir, als es passiert ist…</michael_house_2_8>
 	
 	
 	<!-- Paula Text -->
