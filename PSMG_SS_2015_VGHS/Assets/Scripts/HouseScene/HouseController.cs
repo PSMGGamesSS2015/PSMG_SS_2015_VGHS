@@ -440,6 +440,7 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("dizzy1");
 			secondSceneReady = true;
 			guiController.manageInteraction("paula_about", "Paula");
+			guiController.manageInteraction("paula_phoneCall", "Paula");
 			break;
 		default: break;
 		}
@@ -465,5 +466,6 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("adressBook", 2);
 		keyDialogSizeMap.Add("scene1Ending", 3);
 		keyDialogSizeMap.Add("paulaIntroduction", 9);
+		keyDialogSizeMap.Add("paulaPhoneCall", 7);
 	}
 }

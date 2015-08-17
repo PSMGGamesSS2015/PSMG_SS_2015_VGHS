@@ -154,12 +154,13 @@ public class InteractionController : MonoBehaviour {
 
 	// setup list that connects interaction keys with dialog keys
 	void setupInteractionDialogMap (){
-		interactionDialogMap.Add("Narbe", "scar1_");
-		interactionDialogMap.Add("Woher kommt die Narbe?", "scar2_");
-		interactionDialogMap.Add("Meine Freunde", "friends");
-		interactionDialogMap.Add("Meine Familie", "family");
-		interactionDialogMap.Add("Kinder?", "daughter");
-		interactionDialogMap.Add("Fehlendes Foto", "picture");
-		interactionDialogMap.Add("Wer bist du?", "paulaIntroduction");
+		interactionDialogMap.Add ("Narbe", "scar1_");
+		interactionDialogMap.Add ("Woher kommt die Narbe?", "scar2_");
+		interactionDialogMap.Add ("Meine Freunde", "friends");
+		interactionDialogMap.Add ("Meine Familie", "family");
+		interactionDialogMap.Add ("Kinder?", "daughter");
+		interactionDialogMap.Add ("Fehlendes Foto", "picture");
+		interactionDialogMap.Add ("Wer bist du?", "paulaIntroduction");
+		interactionDialogMap.Add ("Wer war am Telephon?", "paulaPhoneCall");
 	}
 }

@@ -51,6 +51,10 @@
 	<jane_house_2_4>Aha...</jane_house_2_4>
 	<jane_house_2_5>Er hat mir nichts von ihnen gesagt...</jane_house_2_5>
 	<jane_house_2_6>Hm...</jane_house_2_6>
+	<jane_house_2_7>Wer war das gerade am Telefon?</jane_house_2_7>
+	<jane_house_2_8>Wie… aber sie haben doch gerade erst aufgelegt?</jane_house_2_8>
+	<jane_house_2_9>Vielleicht möchte ich ja zurückrufen...</jane_house_2_9>
+	<jane_house_2_10>Wo sie wahrscheinlich recht hat…</jane_house_2_10>
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
@@ -97,4 +101,7 @@
 	<paula_house_2_3>Er musste in die Praxis. Ein Notfall.</paula_house_2_3>
 	<paula_house_2_4>Sie wirken beunruhigt deswegen?</paula_house_2_4>
 	<paula_house_2_5>Er hat auch nicht gedacht, dass er heute nicht zu Hause ist.</paula_house_2_5>
+	<paula_house_2_6>Ich habe es vergessen.</paula_house_2_6>
+	<paula_house_2_7>Es war halt einfach nicht wichtig.</paula_house_2_7>
+	<paula_house_2_8>“Ihr Mann hat mir aufgetragen, sie niemanden anrufen zu lassen, oder Telefonate zu beantworten. Das könnte sie zu sehr aufwühlen. Und ihre Freunde auch. Sie bräuchten erstmal nur Ruhe.</paula_house_2_8>
 </ger>
