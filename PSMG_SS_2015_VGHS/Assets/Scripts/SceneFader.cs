@@ -57,11 +57,14 @@ public class SceneFader : MonoBehaviour {
 		isFading = true;
         if (currentColor.a >= 0.95f){
             currentColor.a = 1;
-			if(Application.loadedLevel == 1){
+			/*if(Application.loadedLevel == 1){
             	Application.LoadLevel(nextLevel);
-			}
+			}*/
 			isBlack = true;
-
+            if (currentColor.a == 1)
+            {
+                Application.LoadLevel(nextLevel);
+            }
         }
 
     }

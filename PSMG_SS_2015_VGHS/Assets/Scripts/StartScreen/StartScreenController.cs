@@ -23,6 +23,7 @@ public class StartScreenController : MonoBehaviour {
     public GameObject resolutionMenu;
     public Toggle checkbox;
     public GameObject startScreen;
+    public GameObject developerOptions;
 
 	bool buttonPressed = false;
     bool windowed;
@@ -61,6 +62,12 @@ public class StartScreenController : MonoBehaviour {
         optionsMenu.SetActive(true);
         startScreen.SetActive(false);
 	}
+
+    public void OnDeveloperOptionsButtonPressed()
+    {
+        optionsMenu.SetActive(false);
+        developerOptions.SetActive(true);
+    }
 
 	// show exit menu
 	public void OnExitButtonPressed(){
@@ -114,6 +121,18 @@ public class StartScreenController : MonoBehaviour {
     {
         resolutionMenu.SetActive(false);
         optionsMenu.SetActive(true);
+    }
+
+    public void OnDeveloperOptionsBackClicked()
+    {
+        optionsMenu.SetActive(true);
+        developerOptions.SetActive(false);
+    }
+
+    public void DeveloperLoadLevel(int level)
+    {
+        buttonPressed = true;
+        GetComponent<SceneFader>().SwitchScene(level);
     }
 
     public void SetResolution(string res)
