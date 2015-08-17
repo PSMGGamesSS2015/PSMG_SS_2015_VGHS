@@ -22,5 +22,6 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add (new Item ("emilyWhereabout", "Emily is currently in Woods Hole", 9));
 		items.Add (new Item ("pills", "Dr. Meloff prescribed pills", 10));
 		items.Add (new Item ("paulasDaughter", "Michael saved Paulas Daughter", 11));
+		items.Add (new Item ("crash", "Mother died in a car crash", 12));
 	}
 }

@@ -376,6 +376,19 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("paulaPhoneCall")){
 				paulaPhoneDialog2 = true;
 			}
+			// dialog mother needs to be added individually cause its too long (remove the old wrong entry first), add new interacion to panel
+			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("mother")){
+				dialogsPerformed.Remove("mother1");
+				dialogsPerformed.Add ("mother");
+				insertIntoInventory("crash");
+			}
+			switch(actualDialog){
+			case "scare":
+				guiController.manageInteraction("michael_mother", "Michael");
+				guiController.manageInteraction("michael_father", "Michael");
+				break;
+			}
+
 			// reset dialog data for new dialog
 			dialogCount = 1;
 			actualDialog = "";
@@ -514,5 +527,7 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("paulaPhoneCall", 7);
 		keyDialogSizeMap.Add("paulaIntroduction2_", 5);
 		keyDialogSizeMap.Add("scare", 4);
+		keyDialogSizeMap.Add("father", 5);
+		keyDialogSizeMap.Add("mother",9);
 	}
 }

@@ -83,6 +83,9 @@ public class GUIController : MonoBehaviour {
 		case "paulasDaughter":
 			inventory.GetComponent<Inventory>().addItem (11);
 			break;
+		case "crash":
+			inventory.GetComponent<Inventory>().addItem (12);
+			break;
 		default: break;
 		}
 	}

@@ -164,5 +164,7 @@ public class InteractionController : MonoBehaviour {
 		interactionDialogMap.Add ("Wer bist du?", "paulaIntroduction");
 		interactionDialogMap.Add ("Wer war am Telephon?", "paulaPhoneCall");
 		interactionDialogMap.Add ("Wie oft bist du hier?", "paulaIntroduction2_");
+		interactionDialogMap.Add ("Wer ist die Frau?", "mother");
+		interactionDialogMap.Add ("Wer ist der Mann?", "father");
 	}
 }

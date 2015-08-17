@@ -80059,6 +80059,8 @@ MonoBehaviour:
   missingPictureFound: 0
   emilyWhereabout: 0
   adressBookFound: 0
+  paulaIntroductionDialog: 0
+  paulaPhoneDialog2: 0
 --- !u!114 &1631371277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96017,7 +96019,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2071cffdd1a440a439d2129e7fe0d28c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2071cffdd1a440a439d2129e7fe0d28c, type: 3}
       propertyPath: m_Name
