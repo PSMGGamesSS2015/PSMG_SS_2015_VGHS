@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.ImageEffects;
 using UnityStandardAssets.CrossPlatformInput;
-/* HOUSE CONTROLLER 1
- * Everything that happens during the first scene in the house is managed here
+/* HOUSE CONTROLLER
+ * Everything that happens inside the house is managed here
  */
 public class HouseController : MonoBehaviour {
 
@@ -50,6 +50,7 @@ public class HouseController : MonoBehaviour {
 	public bool emilyWhereabout = false;
 	bool sidetableOpen = false;
 	bool adressBookDialog = false;
+	bool adressBookLost = false;
 	public bool adressBookFound = false;
 	bool scene1EndingDialog = false;
 	bool isDizzy = false;
@@ -58,8 +59,8 @@ public class HouseController : MonoBehaviour {
 	public bool paulaIntroductionDialog = false;
 	public bool paulaPhoneDialog2 = false;
 	bool janeSurprised = false;
-
-
+	bool lostBookFound = false;
+	public bool master = false;
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -79,9 +80,9 @@ public class HouseController : MonoBehaviour {
 		checkCollisions();
 		checkInteractionPanel ();
 		checkInventory ();
-		checkSceneEnding ();
 		randomPlayerControl ();
 		checkSight ();
+		checkConditions ();
 	}
 
 	// handle key interactions here
@@ -159,13 +160,20 @@ public class HouseController : MonoBehaviour {
 					if (!sidetableOpen){
 						drawer.GetComponent<DrawerAnimator>().openDrawer();
 						sidetableOpen = true;
-						if(!adressBookFound){
-							initDialog("adressBook");
-						}	
+						initDialog("adressBook");
+
 					} else{
-						guiController.toggleAdressBook();
+						if(!adressBookLost){
+							guiController.toggleAdressBook();
+							adressBookFound = true;
+						}
+						if(actualHouseScene == 2 && adressBookLost){
+							guiController.toggleSubtl("adressbookLost");
+							lostBookFound = true;
+							michael.GetComponent<FollowTarget>().target = player.transform;
+							guiController.manageInteraction ("michael_adressBook", "Michael");
+						}
 						drawer.GetComponent<DrawerAnimator>().closeDrawer();
-						adressBookFound = true;
 						sidetableOpen = false;
 					}
 					break;
@@ -260,7 +268,11 @@ public class HouseController : MonoBehaviour {
 				guiController.toggleInteractionHint(true);
 				break;
 			case "Bedroom": // check if bedroom entered
-					initDialog("bedroom");
+				initDialog("bedroom");
+				if(actualHouseScene == 2 && !bedroomTriggered && dialogsPerformed.Contains ("bedtime")){
+					guiController.toggleSubtl("bedroom3");
+					bedroomTriggered = true;
+				}
 				break;
 			case "Sidetable": // check if sidetable triggered
 				guiController.toggleInteractionHint (true);
@@ -376,11 +388,16 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("paulaPhoneCall")){
 				paulaPhoneDialog2 = true;
 			}
-			// dialog mother needs to be added individually cause its too long (remove the old wrong entry first), add new interacion to panel
+			// dialog mother needs to be added individually cause its too long (remove the old wrong entry first), add new hint to inventory
 			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("mother")){
 				dialogsPerformed.Remove("mother1");
 				dialogsPerformed.Add ("mother");
 				insertIntoInventory("crash");
+			}
+			// dialog lostAdressBook needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("lostAdressBook")){
+				dialogsPerformed.Remove("lostAdressBook1");
+				dialogsPerformed.Add ("lostAdressbook");
 			}
 			switch(actualDialog){
 			case "scare":
@@ -435,12 +452,26 @@ public class HouseController : MonoBehaviour {
 		}
 	}
 
-	// check if all necessary interactions are done to end a scene
-	void checkSceneEnding (){
-		//Ending conditions for first Scene in house
-		if(glasstableTriggered && family && adressBookFound && guiController.isShowing() == false && scene1EndingDialog == false && emilyWhereabout){
+	// check conditions to trigger a certain event
+	void checkConditions(){
+		// Ending conditions for first Scene in house
+		if(glasstableTriggered && family && adressBookFound && !guiController.isShowing() && !scene1EndingDialog && emilyWhereabout && actualHouseScene == 1){
 			initDialog("scene1Ending");
 		}
+		// conditions to remove adressbook during second house scene
+		if(/*dialogsPerformed.Contains("mother") && dialogsPerformed.Contains("father") && dialogsPerformed.Contains ("scar2_") && dialogsPerformed.Contains ("friends") && actualHouseScene == 2 && !guiController.isShowing()*/ master){
+			adressBook.SetActive(false);
+			adressBookLost = true;
+			initDialog("bedtime");
+			if(dialogsPerformed.Contains("bedtime") && !lostBookFound){
+				michael.GetComponent<FollowTarget>().target = paula.transform;
+			}
+		}
+		// condition to end second house scene
+		if (dialogsPerformed.Contains ("lostAdressBook")) {
+			// scene ends here
+		}
+			
 	}
 
 	// generate heavier player controlling while jane is dizzy
@@ -487,13 +518,11 @@ public class HouseController : MonoBehaviour {
 			GameObject.Find("ChildsroomTrigger").SetActive(false);
 			GameObject.Find("WorkroomTrigger").SetActive(false);
 			GameObject.Find("GuestroomTrigger").SetActive(false);
-			GameObject.Find("BedroomTrigger").SetActive(false);
 			GameObject.Find("FloorTrigger").SetActive(true);
 
 			michael.transform.position = michaelScene2Pos;
 			michael.SetActive(false);
 			paula.SetActive(true);
-			drawer.SetActive(false);
 			isDizzy = true;
 			guiController.toggleSubtl("dizzy1");
 			secondSceneReady = true;
@@ -529,5 +558,7 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("scare", 4);
 		keyDialogSizeMap.Add("father", 5);
 		keyDialogSizeMap.Add("mother",9);
+		keyDialogSizeMap.Add("bedtime", 3);
+		keyDialogSizeMap.Add("lostAdressBook", 11);
 	}
 }

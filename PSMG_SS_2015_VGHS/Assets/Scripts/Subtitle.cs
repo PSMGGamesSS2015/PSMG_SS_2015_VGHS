@@ -174,6 +174,22 @@ public class Subtitle : MonoBehaviour {
 		keyNodeMap.Add ("mother7", "jane_house_2_22");
 		keyNodeMap.Add ("mother8", "michael_house_2_8");
 		keyNodeMap.Add ("mother9", "jane_house_2_23");
+		keyNodeMap.Add ("bedroom3", "jane_house_2_24");
+		keyNodeMap.Add ("adressbookLost", "jane_house_2_25");
+		keyNodeMap.Add ("bedtime1", "michael_house_2_9");
+		keyNodeMap.Add ("bedtime2", "jane_house_2_26");
+		keyNodeMap.Add ("bedtime3", "michael_house_2_10");
+		keyNodeMap.Add ("lostAdressBook1", "jane_house_2_27");
+		keyNodeMap.Add ("lostAdressBook2", "michael_house_2_11");
+		keyNodeMap.Add ("lostAdressBook3", "jane_house_2_28");
+		keyNodeMap.Add ("lostAdressBook4", "michael_house_2_12");
+		keyNodeMap.Add ("lostAdressBook5", "jane_house_2_29");
+		keyNodeMap.Add ("lostAdressBook6", "michael_house_2_13");
+		keyNodeMap.Add ("lostAdressBook7", "jane_house_2_30");
+		keyNodeMap.Add ("lostAdressBook8", "michael_house_2_14");
+		keyNodeMap.Add ("lostAdressBook9", "jane_house_2_31");
+		keyNodeMap.Add ("lostAdressBook10", "michael_house_2_15");
+		keyNodeMap.Add ("lostAdressBook11", "jane_house_2_32");
 	}
 
 	// Setter for subtitle that needs to be shown
