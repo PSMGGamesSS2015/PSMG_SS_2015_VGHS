@@ -160,3 +160,48 @@ http://www.cgtextures.com/tiledpreview.php?id=76626&PHPSESSID=gqncjv422voi6sjsdv
 wintergarten wall:
 http://www.cgtextures.com/texview.php?id=66991&PHPSESSID=gqncjv422voi6sjsdvtai84r44
 
+kids - wall:
+https://www.colourbox.de/preview/6025284-seamless-abstract-liana-twisted-tendril-background.jpg
+
+kids - ground:
+http://www.cgtextures.com/tiledpreview.php?id=107346&PHPSESSID=gqncjv422voi6sjsdvtai84r44
+
+office - table:
+http://www.cgtextures.com/tiledpreview.php?id=16437&PHPSESSID=f6drus3v0ogou7326ebafnsk86
+
+office - table: plate:
+http://www.cgtextures.com/tiledpreview.php?id=33823&PHPSESSID=f6drus3v0ogou7326ebafnsk86
+
+office - couch leather:
+http://www.cgtextures.com/tiledpreview.php?id=38149&PHPSESSID=f6drus3v0ogou7326ebafnsk86
+
+kiddy-room:
+stuffed-toy:
+
+cat:
+http://tf3dm.com/3d-model/cartoon-cat-37218.html
+
+frog:
+http://tf3dm.com/3d-model/frog-3d-model-78864.html
+
+dog:
+http://tf3dm.com/3d-model/dog-9109.html
+
+fluttershy:
+http://tf3dm.com/3d-model/fluttershy-98890.html
+
+teddy:
+http://tf3dm.com/3d-model/teddy-45008.html
+
+snail:
+http://tf3dm.com/3d-model/snail-17540.html
+
+twilight sparkle:
+http://tf3dm.com/3d-model/twilight-sparkle-34407.html
+
+mario & luigi:
+http://tf3dm.com/3d-model/mario-and-luigi-56237.html
+
+childroom - wood:
+http://www.cgtextures.com/tiledpreview.php?id=21897&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
+
