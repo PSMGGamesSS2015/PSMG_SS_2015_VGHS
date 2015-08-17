@@ -29,6 +29,8 @@ TagManager:
   - Bedroom
   - Sidetable
   - Paula
+  - MichaelSlot
+  - PaulaSlot
   layers:
   - Default
   - TransparentFX

@@ -77,6 +77,9 @@ public class GUIController : MonoBehaviour {
 		case "pills":
 			inventory.GetComponent<Inventory>().addItem (10);
 			break;
+		case "paulasDaughter":
+			inventory.GetComponent<Inventory>().addItem (11);
+			break;
 		default: break;
 		}
 	}
@@ -158,11 +161,11 @@ public class GUIController : MonoBehaviour {
 		return false;
 	}
 
+	// force interaction close in interaction panel
 	public void closeInteractionInPanel(string key){
 		for(int i = 0; i < interactionController.GetComponent<InteractionController>().iSlots.Count; i++){
 			interactionController.GetComponent<InteractionController>().iSlots[i].GetComponent<InteractionSlots>().forceInteractionSlotClose(key);
 		}
-
 	}
 
 	// show/unshow interaction panel

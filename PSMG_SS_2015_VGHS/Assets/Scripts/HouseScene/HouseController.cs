@@ -341,10 +341,14 @@ public class HouseController : MonoBehaviour {
 				//toggeling here next scene after this dialog makes sure, that nothing is destroyed while first scene still going on
 				StartCoroutine (onNextSceneStart ());
 			}
-			// dialog paula introduction needs to be added individually cause its too long, remove the old wrong entry first
+			// dialog paula introduction needs to be added individually cause its too long (remove the old wrong entry first), add new interacion to panel
 			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("paulaIntroduction")){
 				dialogsPerformed.Remove("paulaIntroduction1");
 				dialogsPerformed.Add ("paulaIntroduction");
+				guiController.manageInteraction("paula_about2", "Paula");
+			}
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("paulaIntroduction2_")){
+				insertIntoInventory("paulasDaughter");
 			}
 			// reset dialog data for new dialog
 			dialogCount = 1;
@@ -467,5 +471,6 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("scene1Ending", 3);
 		keyDialogSizeMap.Add("paulaIntroduction", 9);
 		keyDialogSizeMap.Add("paulaPhoneCall", 7);
+		keyDialogSizeMap.Add("paulaIntroduction2_", 5);
 	}
 }

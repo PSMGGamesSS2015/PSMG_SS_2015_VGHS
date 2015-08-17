@@ -25,7 +25,7 @@ public class InteractionSlots : MonoBehaviour, IPointerDownHandler {
 
 	// Do sth. when clicked on slot
 	public void OnPointerDown(PointerEventData data){
-		interactionPanel.interactionAlert (text.GetComponent<Text> ().text, gameObject.name);
+		interactionPanel.interactionAlert (text.GetComponent<Text> ().text, gameObject.name, gameObject.tag);
 		isFilled = false;
 		gameObject.SetActive (false);
 	}
