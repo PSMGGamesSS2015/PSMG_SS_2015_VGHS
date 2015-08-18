@@ -24,6 +24,7 @@ public class HouseController : MonoBehaviour {
 	Dictionary<string,int> keyDialogSizeMap = new Dictionary<string,int>();
 	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
 	Vector3 michaelScene2Pos = new Vector3(22f, -1f, 32f);
+	Vector3 michaelScene3Pos = new Vector3(24f, 3f, 32f);
 	RaycastHit hit;
 	string actualDialog = "";
 	int pianoCount = 0;
@@ -397,7 +398,7 @@ public class HouseController : MonoBehaviour {
 			// dialog lostAdressBook needs to be added individually cause its too long (remove the old wrong entry first)
 			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("lostAdressBook")){
 				dialogsPerformed.Remove("lostAdressBook1");
-				dialogsPerformed.Add ("lostAdressbook");
+				dialogsPerformed.Add ("lostAdressBook");
 			}
 			switch(actualDialog){
 			case "scare":
@@ -468,8 +469,8 @@ public class HouseController : MonoBehaviour {
 			}
 		}
 		// condition to end second house scene
-		if (dialogsPerformed.Contains ("lostAdressBook")) {
-			// scene ends here
+		if (dialogsPerformed.Contains ("lostAdressBook") && actualHouseScene == 2) {
+			StartCoroutine (onNextSceneStart ());
 		}
 			
 	}
@@ -477,9 +478,17 @@ public class HouseController : MonoBehaviour {
 	// generate heavier player controlling while jane is dizzy
 	void randomPlayerControl(){
 		if (isDizzy) {
-
-			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 20);
 			playerCam.GetComponent<BlurOptimized>().enabled = true;
+			switch(actualHouseScene){
+			case 2:
+				player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 20);
+				break;
+			case 3:
+				player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 30);
+
+
+				break;
+			}
 		}else{
 			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 2);
 			playerCam.GetComponent<BlurOptimized>().enabled = false;
@@ -528,6 +537,15 @@ public class HouseController : MonoBehaviour {
 			secondSceneReady = true;
 			guiController.manageInteraction("paula_about", "Paula");
 			guiController.manageInteraction("paula_phoneCall", "Paula");
+			break;
+		case 3:
+			GameObject.Find("SidetableTrigger").SetActive(false);
+			GameObject.Find("Familienalbum").SetActive(false);
+
+			michael.transform.position = michaelScene3Pos;
+			michael.GetComponent<NavMeshAgent>().speed = 0;
+			paula.SetActive(false);
+
 			break;
 		default: break;
 		}
