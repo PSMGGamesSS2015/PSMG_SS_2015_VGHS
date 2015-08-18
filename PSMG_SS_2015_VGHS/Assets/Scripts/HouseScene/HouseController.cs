@@ -542,10 +542,12 @@ public class HouseController : MonoBehaviour {
 			GameObject.Find("SidetableTrigger").SetActive(false);
 			GameObject.Find("Familienalbum").SetActive(false);
 
-			michael.transform.position = michaelScene3Pos;
 			michael.GetComponent<NavMeshAgent>().speed = 0;
+			michael.transform.position = michaelScene3Pos;
 			paula.SetActive(false);
 
+			guiController.toggleSubtl("dizzy2");
+			guiController.addHint("dizzy");
 			break;
 		default: break;
 		}
