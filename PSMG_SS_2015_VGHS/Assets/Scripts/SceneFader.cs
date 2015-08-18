@@ -61,7 +61,7 @@ public class SceneFader : MonoBehaviour {
             	Application.LoadLevel(nextLevel);
 			}*/
 			isBlack = true;
-            if (currentColor.a == 1)
+            if (currentColor.a == 1 && nextLevel < 3)
             {
                 Application.LoadLevel(nextLevel);
             }
@@ -71,7 +71,7 @@ public class SceneFader : MonoBehaviour {
 
 	// method for other classes to initialize level change
     public void SwitchScene(int nextSceneIndex){
-        nextLevel = nextSceneIndex;
+		nextLevel = nextSceneIndex;
         isEnding = true;
         isStarting = false;
     }

@@ -67,7 +67,6 @@ public class InteractionController : MonoBehaviour {
 			openMichaelInteractions.Add(key);
 			break;
 		case "Paula":
-			Debug.Log (interactedWith);
 			openPaulaInteractions.Add (key);
 			break;
 		}
@@ -89,6 +88,7 @@ public class InteractionController : MonoBehaviour {
 							iSlots [j].SetActive (true);
 							iSlots [j].GetComponent<InteractionSlots> ().setupText (getText (openMichaelInteractions[i]));
 							iSlots [j].name = openMichaelInteractions[i];
+							iSlots [j].tag = "MichaelSlot";
 							break;
 						}
 					}
@@ -104,6 +104,7 @@ public class InteractionController : MonoBehaviour {
 							iSlots [j].SetActive (true);
 							iSlots [j].GetComponent<InteractionSlots> ().setupText (getText (openPaulaInteractions[i]));
 							iSlots [j].name = openPaulaInteractions[i];
+							iSlots [j].tag = "PaulaSlot";
 							break;
 						}
 					}
@@ -140,13 +141,13 @@ public class InteractionController : MonoBehaviour {
 	}
 
 	// called by interaction slots if user triggered an interaction
-	public void interactionAlert(string interaction, string slotName){
-		interactionDialogMap.TryGetValue (interaction, out triggeredInteraction);	
-		switch (interactedWith) {
-		case "Michael":
+	public void interactionAlert(string interaction, string slotName, string slotTag){
+		interactionDialogMap.TryGetValue (interaction, out triggeredInteraction);
+		switch (slotTag) {
+		case "MichaelSlot":
 			openMichaelInteractions.Remove(slotName);
 			break;
-		case "Paula":
+		case "PaulaSlot":
 			openPaulaInteractions.Remove(slotName);
 			break;
 		}
@@ -154,12 +155,17 @@ public class InteractionController : MonoBehaviour {
 
 	// setup list that connects interaction keys with dialog keys
 	void setupInteractionDialogMap (){
-		interactionDialogMap.Add("Narbe", "scar1_");
-		interactionDialogMap.Add("Woher kommt die Narbe?", "scar2_");
-		interactionDialogMap.Add("Meine Freunde", "friends");
-		interactionDialogMap.Add("Meine Familie", "family");
-		interactionDialogMap.Add("Kinder?", "daughter");
-		interactionDialogMap.Add("Fehlendes Foto", "picture");
-		interactionDialogMap.Add("Wer bist du?", "paulaIntroduction");
+		interactionDialogMap.Add ("Narbe", "scar1_");
+		interactionDialogMap.Add ("Woher kommt die Narbe?", "scar2_");
+		interactionDialogMap.Add ("Meine Freunde", "friends");
+		interactionDialogMap.Add ("Meine Familie", "family");
+		interactionDialogMap.Add ("Kinder?", "daughter");
+		interactionDialogMap.Add ("Fehlendes Foto", "picture");
+		interactionDialogMap.Add ("Wer bist du?", "paulaIntroduction");
+		interactionDialogMap.Add ("Wer war am Telephon?", "paulaPhoneCall");
+		interactionDialogMap.Add ("Wie oft bist du hier?", "paulaIntroduction2_");
+		interactionDialogMap.Add ("Wer ist die Frau?", "mother");
+		interactionDialogMap.Add ("Wer ist der Mann?", "father");
+		interactionDialogMap.Add ("Wo ist mein Adressbuch?", "lostAdressBook");
 	}
 }

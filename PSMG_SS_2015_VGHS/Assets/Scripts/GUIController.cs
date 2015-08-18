@@ -22,11 +22,14 @@ public class GUIController : MonoBehaviour {
     public Toggle checkbox;
 	public GameObject interactionController;
 	public GameObject adressBook;
+	public GameObject familyalbum;
 
 	public bool subtlShown;
 	public bool interactionPanelShown;
 	bool inventoryShown;
 	bool adressBookShown;
+	bool familyalbumShown;
+	public bool albumClosedFirstTime = false;
 	bool menuShown;
 
 
@@ -76,6 +79,12 @@ public class GUIController : MonoBehaviour {
 			break;
 		case "pills":
 			inventory.GetComponent<Inventory>().addItem (10);
+			break;
+		case "paulasDaughter":
+			inventory.GetComponent<Inventory>().addItem (11);
+			break;
+		case "crash":
+			inventory.GetComponent<Inventory>().addItem (12);
 			break;
 		default: break;
 		}
@@ -128,7 +137,7 @@ public class GUIController : MonoBehaviour {
 
 	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown) {
+		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown || familyalbumShown) {
 			return true;
 		} else {
 			return false;
@@ -158,11 +167,11 @@ public class GUIController : MonoBehaviour {
 		return false;
 	}
 
+	// force interaction close in interaction panel
 	public void closeInteractionInPanel(string key){
 		for(int i = 0; i < interactionController.GetComponent<InteractionController>().iSlots.Count; i++){
 			interactionController.GetComponent<InteractionController>().iSlots[i].GetComponent<InteractionSlots>().forceInteractionSlotClose(key);
 		}
-
 	}
 
 	// show/unshow interaction panel
@@ -205,7 +214,23 @@ public class GUIController : MonoBehaviour {
 			adressBookShown = false;
 			Cursor.visible = false;
 		}
+	}
 
+	// show familyalbum when player interacts with book in bookshelf in living room 
+	public void toggleFamilyalbum(){
+		if (familyalbum.activeSelf == false) {
+			familyalbum.SetActive (true);
+			familyalbumShown = true;
+			Cursor.visible = true;
+		} else {
+			if(!albumClosedFirstTime){
+				albumClosedFirstTime = true;
+			}
+			familyalbum.SetActive (false);
+			familyalbumShown = false;
+			Cursor.visible = false;
+		}
+		
 	}
 
     public void GoToOptionsMenu()

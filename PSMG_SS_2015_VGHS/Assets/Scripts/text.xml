@@ -3,9 +3,18 @@
 	<!-- Jane Text -->
 	<!-- Bath Scene -->
 	<jane_bath_1>Was passiert hier...? Oh mein Gott was ist hier los? Wasser... ich brauche Wasser!</jane_bath_1>
-	<jane_bath_2>Okay, ganz ruhig bleiben. Jetzt bloß keine Panik. Wer bist du, Frau im Spiegel? Bist du ich?\nVerdammt warum erkenne ich dich nicht?! Mir ist so heiß...</jane_bath_2>
-	<jane_bath_3>Was zum…?! O-Oh mein… Nein, das ist… das ist Blut!!! Nicht mein Blut!\nWas ist denn hier los - oh Gott was habe ich getan?!</jane_bath_3>
-	<jane_bath_4>Pat Rutherford. Z.31. 12:30 Uhr… Wer ist Pat Rutherford? War ich um 12:30 bei dieser oder diesem Pat?\nWar das heute? Was war heute? Was war gestern? WER BIN ICH?</jane_bath_4>
+	<jane_bath_2>
+    Okay, ganz ruhig bleiben. Jetzt bloß keine Panik. Wer bist du, Frau im Spiegel? Bist du ich?
+    Verdammt warum erkenne ich dich nicht?! Mir ist so heiß...
+  </jane_bath_2>
+	<jane_bath_3>
+    Was zum…?! O-Oh mein… Nein, das ist… das ist Blut!!! Nicht mein Blut!
+    Was ist denn hier los - oh Gott was habe ich getan?!
+  </jane_bath_3>
+	<jane_bath_4>
+    Pat Rutherford. Z.31. 12:30 Uhr… Wer ist Pat Rutherford? War ich um 12:30 bei dieser oder diesem Pat?
+    War das heute? Was war heute? Was war gestern? WER BIN ICH?
+  </jane_bath_4>
 	<jane_bath_5>Nein... ich könnte doch nicht... nein bitte, ich habe doch nicht einen Mord begangen?!</jane_bath_5>
 	
 	<!-- House First Scene -->
@@ -28,7 +37,10 @@
 	<jane_house_1_17>Wer ist Sara?</jane_house_1_17>
 	<jane_house_1_18>Hm... irgendwas stimmt mit den Bildern nicht... ich sollte Michael darauf ansprechen.</jane_house_1_18>
 	<jane_house_1_19>Du, Michael...</jane_house_1_19>
-	<jane_house_1_20>Wenn unsere Tochter sieben Jahre alt ist... müsste es dann nicht auch ein Bild aus der zweiten Klasse von ihr geben?</jane_house_1_20>
+	<jane_house_1_20>
+    Wenn unsere Tochter sieben Jahre alt ist...
+    müsste es dann nicht auch ein Bild aus der zweiten Klasse von ihr geben?
+  </jane_house_1_20>
 	<jane_house_1_21>Oh, Fotoalben?</jane_house_1_21>
 	<jane_house_1_22>Hm... Pat Rutherford...</jane_house_1_22>
 	<jane_house_1_23>Dieser Raum... ich habe eine Gänsehaut...</jane_house_1_23>
@@ -36,7 +48,10 @@
 	<jane_house_1_25>Hm... hier stand wohl mal was?</jane_house_1_25>
 	<jane_house_1_26>Nein, nein... es tut mir nur so leid zu hören, was du durchmachen musstest...</jane_house_1_26>
 	<jane_house_1_27>Ja, wohlbehalten...</jane_house_1_27>
-	<jane_house_1_28>Ein wirklich hübsches Zimmer für eine siebenjährige… Oh mein Gott, wie wird sie reagieren, wenn sie erfährt, dass ihre eigene Mutter sie vergessen hat?</jane_house_1_28>
+	<jane_house_1_28>
+    Ein wirklich hübsches Zimmer für eine siebenjährige… Oh mein Gott, wie wird sie reagieren,
+    wenn sie erfährt, dass ihre eigene Mutter sie vergessen hat?
+  </jane_house_1_28>
 	<jane_house_1_29>Das ist wirklich lieb von dir… danke, dass du so viel Verständnis für mich hast...</jane_house_1_29>
 	<jane_house_1_30>Ich habe es wirklich gut getroffen mit ihm als Mann...</jane_house_1_30>
 	<jane_house_1_31>Ich denke ich habe gerade nicht wirklich Lust, mir medizinische Fachliteratur anzusehen...</jane_house_1_31>
@@ -51,18 +66,57 @@
 	<jane_house_2_4>Aha...</jane_house_2_4>
 	<jane_house_2_5>Er hat mir nichts von ihnen gesagt...</jane_house_2_5>
 	<jane_house_2_6>Hm...</jane_house_2_6>
+	<jane_house_2_7>Wer war das gerade am Telefon?</jane_house_2_7>
+	<jane_house_2_8>Wie… aber sie haben doch gerade erst aufgelegt?</jane_house_2_8>
+	<jane_house_2_9>Vielleicht möchte ich ja zurückrufen...</jane_house_2_9>
+	<jane_house_2_10>Wo sie wahrscheinlich recht hat…</jane_house_2_10>
+	<jane_house_2_11>Wie oft sind sie hier?</jane_house_2_11>
+	<jane_house_2_12>Und woher kennen wir uns?</jane_house_2_12>
+	<jane_house_2_13>Eine wirklich überaus dankbare Person, diese Paula...</jane_house_2_13>
+	<jane_house_2_14>Oh Gott, hast du mich jetzt erschreckt!</jane_house_2_14>
+	<jane_house_2_15>Nein...</jane_house_2_15>
+	<jane_house_2_16>Wer ist der Mann auf dem Foto?</jane_house_2_16>
+	<jane_house_2_17>Oh Gott, woran ist er gestorben?</jane_house_2_17>
+	<jane_house_2_18>Wow… selbst der Tod meines Vaters ruft keine Erinnerungen hervor...</jane_house_2_18>
+	<jane_house_2_19>Wer ist die Frau auf dem Bild?</jane_house_2_19>
+	<jane_house_2_20>Wohnt sie auch in San Diego? Wie mein Bruder?”</jane_house_2_20>
+	<jane_house_2_21>Was meinst du mit hat?</jane_house_2_21>
+	<jane_house_2_22>Was?! Oh mein Gott...</jane_house_2_22>
+	<jane_house_2_23>Und jetzt bin ich außer mir, weil ich nicht mehr weiß, was passiert ist...</jane_house_2_23>
+	<jane_house_2_24>Irgendwas stimmt hier nicht...</jane_house_2_24>
+	<jane_house_2_25>Wo ist denn mein Adressbuch hin?</jane_house_2_25>
+	<jane_house_2_26>Na gut...</jane_house_2_26>
+	<jane_house_2_27>Wo ist mein Adressbuch?</jane_house_2_27>
+	<jane_house_2_28>Nein es ist nicht in der Schublade! Hast du es herausgenommen?</jane_house_2_28>
+	<jane_house_2_29>Dann hat es Paula verräumt?</jane_house_2_29>
+	<jane_house_2_30>Ich habe es hier in dieser Schublade gehabt und jetzt ist es verschwunden!</jane_house_2_30>
+	<jane_house_2_31>Aber ich kann mich doch daran erinnern, dass...</jane_house_2_31>
+	<jane_house_2_32>Oh mein Gott, drehe ich jetzt vollkommen durch?</jane_house_2_32>
+	
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
 	<michael_house_1_1>Willkommen zu Hause, Jane!</michael_house_1_1>
-	<michael_house_1_2>Lass dir bisschen Zeit, du musst dich erst noch an alles gewöhnen,/nund wenn deine Erinnerungen wieder da sind, gibt sich das von selbst.</michael_house_1_2>
+	<michael_house_1_2>
+    Lass dir bisschen Zeit, du musst dich erst noch an alles gewöhnen,
+    und wenn deine Erinnerungen wieder da sind, gibt sich das von selbst.
+  </michael_house_1_2>
 	<michael_house_1_3>Schau dich einfach um, vielleicht erinnerst du dich sogar an etwas.</michael_house_1_3>
-	<michael_house_1_4>Das ist das Esszimmer./nWir haben hier oft mit Freunden gegessen.</michael_house_1_4>
-	<michael_house_1_5>Das? Nur eine Verletzung, nichts schlimmes./nEs verheilt recht gut.</michael_house_1_5>
+	<michael_house_1_4>Das ist das Esszimmer. Wir haben hier oft mit Freunden gegessen.</michael_house_1_4>
+	<michael_house_1_5>Das? Nur eine Verletzung, nichts schlimmes. Es verheilt recht gut.</michael_house_1_5>
 	<michael_house_1_6>Warum starrst du so? ... Die Narbe?</michael_house_1_6>
-	<michael_house_1_7>Ok ich packe aus. Es war ein Badunfall, einer von der peinlichen Sorte. Bitte zwing mich nicht, das näher zu erläutern.</michael_house_1_7>
-	<michael_house_1_8>Oh ja, einige, aber ich glaube Diane war deine beste Freundin. Wenn ihr zusammen wart gab es keine Hoffnung mehr, ihr habt ganze Parties zerlegt</michael_house_1_8>
-	<michael_house_1_9>Also da hätten wir einmal meine Eltern - deine Schwiegereltern - die in Woods Hole Leben, und du hast noch einen Bruder, den...</michael_house_1_9>
+	<michael_house_1_7>
+    Ok ich packe aus. Es war ein Badunfall, einer von der peinlichen Sorte.
+    Bitte zwing mich nicht, das näher zu erläutern.
+  </michael_house_1_7>
+	<michael_house_1_8>
+    Oh ja, einige, aber ich glaube Diane war deine beste Freundin.
+    Wenn ihr zusammen wart gab es keine Hoffnung mehr, ihr habt ganze Parties zerlegt
+  </michael_house_1_8>
+	<michael_house_1_9>
+    Also da hätten wir einmal meine Eltern - deine Schwiegereltern -
+    die in Woods Hole Leben, und du hast noch einen Bruder, den...
+  </michael_house_1_9>
 	<michael_house_1_10>Siehst du, wenigstens vergisst du jetzt nichts mehr.</michael_house_1_10>
 	<michael_house_1_11>Ja...</michael_house_1_11>
 	<michael_house_1_12>Eine Tochter um genau zu sein… sie ist jetzt 7 Jahre alt.</michael_house_1_12>
@@ -77,17 +131,44 @@
 	<michael_house_1_21>Hm, du hast recht... vielleicht haben sie es uns noch nicht geschickt?</michael_house_1_21>
 	<michael_house_1_22>Lass uns das auf morgen verschieben. Ich denke für heute wärst du sonst überfordert.</michael_house_1_22>
 	<michael_house_1_23>Das war dein persönliches Refugium. Du hast dich hierher oft zurückgezogen.</michael_house_1_23>
-	<michael_house_1_24>Als du verschwunden bist, saß ich lange hier und habe Kaffee getrunken und einfach nur gehofft, dass du wieder auftauchst. Ich hatte das Schlimmste befürchtet, meine Hände haben gezittert, sodass ein bisschen Kaffee übergelaufen ist. Ich habe wohl vergessen, den Abdruck wezuwischen, das macht dich doch nicht wütend?</michael_house_1_24>
+	<michael_house_1_24>
+    Als du verschwunden bist, saß ich lange hier und habe Kaffee getrunken und einfach nur gehofft, dass du wieder auftauchst.
+    Ich hatte das Schlimmste befürchtet, meine Hände haben gezittert, sodass ein bisschen Kaffee übergelaufen ist.
+    Ich habe wohl vergessen, den Abdruck wezuwischen, das macht dich doch nicht wütend?
+  </michael_house_1_24>
 	<michael_house_1_25>Aber jetzt bist du ja wohlbehalten wieder da.</michael_house_1_25>
 	<michael_house_1_26>Das ist das Zimmer von Emily.</michael_house_1_26>
-	<michael_house_1_27>Mach dir keinen Kopf deswegen Jane… Sie ist bei meinen Eltern in Woods Hole solange du dich nicht erinnern kannst.</michael_house_1_27>
+	<michael_house_1_27>
+    Mach dir keinen Kopf deswegen Jane…
+    Sie ist bei meinen Eltern in Woods Hole solange du dich nicht erinnern kannst.
+  </michael_house_1_27>
 	<michael_house_1_28>Das hier ist das Gästezimmer. Ich werde hier schlafen, solange du dich bei mir nicht wohl fühlst.</michael_house_1_28>
-	<michael_house_1_29>Ich liebe dich Jane. Ich würde alles für dich tun. Alles, damit du möglichst bald wieder gesund wirst.</michael_house_1_29>
+	<michael_house_1_29>
+    Ich liebe dich Jane. Ich würde alles für dich tun.
+    Alles, damit du möglichst bald wieder gesund wirst.
+  </michael_house_1_29>
 	<michael_house_1_30>Das ist mein Arbeitszimmer. Alles was mit meiner Praxis zu tun hat mache ich hier drinnen.</michael_house_1_30>
 	<michael_house_1_31>Und das hier ist unser Schlafzimmer.</michael_house_1_31>
 	<michael_house_1_32>Dein Adressbuch.</michael_house_1_32>
 	<michael_house_1_33>Ich denke für heute hast du genug gesehen. Du siehst total erschöpft aus.</michael_house_1_33>
 	<michael_house_1_34>Warte, ich bringe dir die Tabletten, die Dr. Meloff dir verschrieben hat.</michael_house_1_34>
+	
+	<!-- House Second Scene -->
+	<michael_house_2_1>Das tut mir sehr leid Schatz. Du siehst du die Familienalben durch? Das ist gut. Kannst du dich an etwas erinnern?</michael_house_2_1>
+	<michael_house_2_2>Was willst du wissen?</michael_house_2_2>
+	<michael_house_2_3>Das ist dein Vater. Er starb schon vor einiger Zeit.</michael_house_2_3>
+	<michael_house_2_4>Er hatte Krebs.</michael_house_2_4>
+	<michael_house_2_5>Deine Mutter.</michael_house_2_5>
+	<michael_house_2_6>Nein, sie hat hier bei uns in der Nähe gewohnt...</michael_house_2_6>
+	<michael_house_2_7>Sie hatte vor fast genau einem Jahr einen schweren Autounfall, bei dem sie starb...</michael_house_2_7>
+	<michael_house_2_8>Du warst außer dir, als es passiert ist…</michael_house_2_8>
+	<michael_house_2_9>Es wird Zeit für deine Tabletten, Schatz.</michael_house_2_9>
+	<michael_house_2_10>Geh doch schonmal nach oben ins Schlafzimmer, ich bringe sie dir gleich.</michael_house_2_10>
+	<michael_house_2_11>Ist es nicht in der Schublade?</michael_house_2_11>
+	<michael_house_2_12>Aber was soll ich denn mit deinem Adressbuch, Jane?</michael_house_2_12>
+	<michael_house_2_13>Paula könnte doch auch nichts damit anfangen.</michael_house_2_13>
+	<michael_house_2_14>Vielleicht hast du es selbst weggelegt und weißt es nicht mehr?</michael_house_2_14>
+	<michael_house_2_15>Vielleicht irgendeine Nachwirkung deiner Amnesie… wir sollten vielleicht noch einmal zu Arzt gehen… Am besten beruhigst du dich erstmal und nimmst deine Tabletten… das Buch wird schon wieder auftauchen.</michael_house_2_15>
 	
 	
 	<!-- Paula Text -->
@@ -97,4 +178,16 @@
 	<paula_house_2_3>Er musste in die Praxis. Ein Notfall.</paula_house_2_3>
 	<paula_house_2_4>Sie wirken beunruhigt deswegen?</paula_house_2_4>
 	<paula_house_2_5>Er hat auch nicht gedacht, dass er heute nicht zu Hause ist.</paula_house_2_5>
+	<paula_house_2_6>Ich habe es vergessen.</paula_house_2_6>
+	<paula_house_2_7>Es war halt einfach nicht wichtig.</paula_house_2_7>
+	<paula_house_2_8>
+    Ihr Mann hat mir aufgetragen, sie niemanden anrufen zu lassen, oder Telefonate zu beantworten.
+    Das könnte sie zu sehr aufwühlen. Und ihre Freunde auch. Sie bräuchten erstmal nur Ruhe.
+  </paula_house_2_8>
+	<paula_house_2_9>Solange es ihnen nicht besser geht, täglich.</paula_house_2_9>
+	<paula_house_2_10>
+    Ihr Mann hat meiner Tochter das Leben gerettet…
+    Ich konnte die Operation nicht bezahlen, deshalb gab er mir diese Anstellung, um sie abzuarbeiten.
+    Er ist so ein wunderbarer Mensch...
+  </paula_house_2_10>
 </ger>

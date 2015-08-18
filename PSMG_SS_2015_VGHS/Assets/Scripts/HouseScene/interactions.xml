@@ -1,16 +1,22 @@
 <!-- German Textfiles -->
 <ger>
 	<!-- Interactions with Michael -->
-		<michael_friends>Meine Freunde</michael_friends>
-		<michael_family>Meine Familie</michael_family>
-		<michael_daughter>Kinder?</michael_daughter>
-		<michael_missing>Fehlendes Foto</michael_missing>
-		<michael_scar>Narbe</michael_scar>
-		<michael_scar_2>Woher kommt die Narbe?</michael_scar_2>
-		<michael_diane>Diane</michael_diane>
-		<michael_missingPicture>Fehlendes Foto</michael_missingPicture>
-		
-		<paula_about>Wer bist du?</paula_about>
+	<michael_friends>Meine Freunde</michael_friends>
+	<michael_family>Meine Familie</michael_family>
+	<michael_daughter>Kinder?</michael_daughter>
+	<michael_missing>Fehlendes Foto</michael_missing>
+	<michael_scar>Narbe</michael_scar>
+	<michael_scar_2>Woher kommt die Narbe?</michael_scar_2>
+	<michael_diane>Diane</michael_diane>
+	<michael_missingPicture>Fehlendes Foto</michael_missingPicture>
+	<michael_mother>Wer ist die Frau?</michael_mother>
+	<michael_father>Wer ist der Mann?</michael_father>
+	<michael_adressBook>Wo ist mein Adressbuch?</michael_adressBook>
+	
+	<!-- Interactions with Paula -->
+	<paula_about>Wer bist du?</paula_about>
+	<paula_about2>Wie oft bist du hier?</paula_about2>
+	<paula_phoneCall>Wer war am Telephon?</paula_phoneCall>
 	
 	<!-- Interactions with Paula -->
 
