@@ -23,6 +23,8 @@ public class GUIController : MonoBehaviour {
 	public GameObject interactionController;
 	public GameObject adressBook;
 	public GameObject familyalbum;
+    public GameObject soundOptions;
+    public Slider slider;
 
 	public bool subtlShown;
 	public bool interactionPanelShown;
@@ -45,6 +47,8 @@ public class GUIController : MonoBehaviour {
 		if (Application.loadedLevel == 2) {
 			interactionController.GetComponent<InteractionController>().setupInteractionSlots();
 		}
+
+        slider.value = AudioListener.volume;
 	}
 
 	// put hint into inventory
@@ -267,5 +271,22 @@ public class GUIController : MonoBehaviour {
     {
         resolutionMenu.SetActive(false);
         optionsMenu.SetActive(true);
+    }
+
+    public void GoFromOptionsMenuToSoundMenu()
+    {
+        optionsMenu.SetActive(false);
+        soundOptions.SetActive(true);
+    }
+
+    public void GoDromSoundOptionsToOptionsMenu()
+    {
+        optionsMenu.SetActive(true);
+        soundOptions.SetActive(false);
+    }
+
+    public void SetVolume()
+    {
+        AudioListener.volume = slider.value;
     }
 }

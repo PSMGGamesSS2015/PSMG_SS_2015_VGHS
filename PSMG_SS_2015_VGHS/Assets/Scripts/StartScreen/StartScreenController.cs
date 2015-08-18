@@ -24,6 +24,8 @@ public class StartScreenController : MonoBehaviour {
     public Toggle checkbox;
     public GameObject startScreen;
     public GameObject developerOptions;
+    public GameObject soundOptions;
+    public Slider slider;
 
 	bool buttonPressed = false;
     bool windowed;
@@ -40,6 +42,8 @@ public class StartScreenController : MonoBehaviour {
         {
             checkbox.isOn = true;
         }
+
+        slider.value = AudioListener.volume;
     }
 
     void Update(){
@@ -91,6 +95,18 @@ public class StartScreenController : MonoBehaviour {
         optionsMenu.SetActive(false);
         qualityMenu.SetActive(true);
 
+    }
+
+    public void OnSoundOptionsButtonPressed()
+    {
+        optionsMenu.SetActive(false);
+        soundOptions.SetActive(true);
+    }
+
+    public void OnSoundOptionsBackClicked()
+    {
+        soundOptions.SetActive(false);
+        optionsMenu.SetActive(true);
     }
 
     public void OnOptionsBackButtonPressed()
@@ -145,6 +161,11 @@ public class StartScreenController : MonoBehaviour {
         Screen.SetResolution(width, height, windowed);
 
         Debug.Log(Screen.currentResolution.width + "x" + Screen.currentResolution.height);
+    }
+
+    public void SetVolume()
+    {
+        AudioListener.volume = slider.value;
     }
 
     public void SetWindowedMode()
