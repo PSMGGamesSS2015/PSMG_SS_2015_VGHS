@@ -95,6 +95,12 @@
 	
 	<!-- House Third Scene -->
 	<jane_house_3_1>Mir ist schon wieder so schlecht… warum ist mir in letzter Zeit immer so schlecht? Woran kann das liegen?</jane_house_3_1>
+	<jane_house_3_2>Kann es an diesen Tabletten liegen? Vielleicht sollte ich Michael darauf ansprechen...</jane_house_3_2>
+	<jane_house_3_3>Michael, ich glaube mit meinen Tabletten stimmt was nicht.</jane_house_3_3>
+	<jane_house_3_4>Mir ist so übel, seitdem ich sie nehmen muss, mir ist schwindlig und ich fühle mich so deprimiert...</jane_house_3_4>
+	<jane_house_3_5>Können wir nicht trotzdem zu einem Arzt gehen? Nur um sicher zu gehen...</jane_house_3_5>
+	<jane_house_3_6>Für nächste Woche?! Warum erst für nächste Woche?! Warum nicht jetzt? Sind diese Tabletten etwa… vielleicht sollte ich...</jane_house_3_6>
+	
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
@@ -171,6 +177,12 @@
 	<michael_house_2_13>Paula könnte doch auch nichts damit anfangen.</michael_house_2_13>
 	<michael_house_2_14>Vielleicht hast du es selbst weggelegt und weißt es nicht mehr?</michael_house_2_14>
 	<michael_house_2_15>Vielleicht irgendeine Nachwirkung deiner Amnesie… wir sollten vielleicht noch einmal zu Arzt gehen… Am besten beruhigst du dich erstmal und nimmst deine Tabletten… das Buch wird schon wieder auftauchen.</michael_house_2_15>
+	
+	<!-- House Third Scene -->
+	<michael_house_3_1>Wieso, was soll damit nicht stimmen?</michael_house_3_1>
+	<michael_house_3_2>Ich denke nicht, dass das die Tabletten sind. Das ist Ativan, das wirkt beruhigend, aber es macht nicht depressiv. Das muss mit deiner Amnesie zusammenhängen</michael_house_3_2>
+	<michael_house_3_3>Ich werden für nächste Woche einen Termin ausmachen.</michael_house_3_3>
+	<michael_house_3_4>Am besten gehst du wieder nach oben und legst dich hin. Ich bringe dir ein Glas Wasser. Du siehst unglaublich schwach aus.</michael_house_3_4>
 	
 	
 	<!-- Paula Text -->
