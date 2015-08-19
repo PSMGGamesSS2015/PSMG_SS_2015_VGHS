@@ -547,11 +547,18 @@ public class HouseController : MonoBehaviour {
 	// trigger events that are based on sth. jane is able to see
 	void checkSight(){
 		// toggle scared dialog after familyalbum was closed for the first time here
+		Ray lookRay = new Ray (playerCam.transform.position, playerCam.transform.forward);
 		if (janeSurprised) {
-			Ray lookRay = new Ray (playerCam.transform.position, playerCam.transform.forward);
 			if (Physics.Raycast (lookRay, out hit, rayDist)) {
 				if(hit.collider.tag.Equals("Michael")){
 					initDialog("scare");
+				}
+			}
+		}
+		if (answerCorrect) {
+			if (Physics.Raycast (lookRay, out hit, rayDist)) {
+				if(hit.collider.tag.Equals("Michael")){
+					initDialog("scene3Ending");
 				}
 			}
 		}
@@ -649,5 +656,6 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("information", 3);
 		keyDialogSizeMap.Add("information2_", 2);
 		keyDialogSizeMap.Add("meloffCall", 12);
+		keyDialogSizeMap.Add("scene3Ending", 5);
 	}
 }
