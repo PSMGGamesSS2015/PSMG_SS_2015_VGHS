@@ -531,6 +531,11 @@ public class HouseController : MonoBehaviour {
 			michael.GetComponent<FollowTarget>().target = GameObject.Find("notepad").transform;
 			michael.GetComponent<NavMeshAgent>().speed = 3.5f;
 		}
+		// start next Scene
+		if (dialogsPerformed.Contains ("scene3Ending")&& actualHouseScene == 3) {
+			Debug.Log ("huhu");
+			StartCoroutine(onNextSceneStart());
+		}
 		master = false;
 			
 	}
@@ -630,6 +635,11 @@ public class HouseController : MonoBehaviour {
 			bedroomTriggered = false;
 			guiController.toggleSubtl("dizzy2");
 			insertIntoInventory("dizzy");
+			break;
+		case 4: 
+			michael.SetActive(false);
+			paula.SetActive(true);
+			guiController.toggleSubtl("dizzy3");
 			break;
 		default: break;
 		}
