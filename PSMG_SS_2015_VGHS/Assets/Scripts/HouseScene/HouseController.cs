@@ -20,10 +20,13 @@ public class HouseController : MonoBehaviour {
 	public GameObject adressBook;
 	public GameObject playerCam;
 
+	public bool master = false;
+
 	List<string> dialogsPerformed = new List<string>();
 	Dictionary<string,int> keyDialogSizeMap = new Dictionary<string,int>();
 	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
 	Vector3 michaelScene2Pos = new Vector3(22f, -1f, 32f);
+	Vector3 michaelScene3Pos = new Vector3(24f, 3f, 32f);
 	RaycastHit hit;
 	string actualDialog = "";
 	int pianoCount = 0;
@@ -32,7 +35,7 @@ public class HouseController : MonoBehaviour {
 	float rayDist = 40;
 	bool scarHint = false;
 	bool friends = false;
-	public bool family = false;
+	bool family = false;
 	bool daughterFound = false;
 	bool diningRoomTriggered = false;
 	bool childsroomTriggered = false;
@@ -41,26 +44,28 @@ public class HouseController : MonoBehaviour {
 	bool guestroomTriggered = false;
 	bool workroomTriggered = false;
 	bool bedroomTriggered = false;
-	public bool glasstableTriggered = false;
+	bool glasstableTriggered = false;
 	bool dialog = false;
-	public bool theory2Registered = false;
+	bool theory2Registered = false;
+	bool theory3Registered = false;
 	bool familyInteractionDone = false;
 	bool missingPicture = false;
-	public bool missingPictureFound = false;
-	public bool emilyWhereabout = false;
+	bool missingPictureFound = false;
+	bool emilyWhereabout = false;
 	bool sidetableOpen = false;
 	bool adressBookDialog = false;
 	bool adressBookLost = false;
-	public bool adressBookFound = false;
+	bool adressBookFound = false;
 	bool scene1EndingDialog = false;
 	bool isDizzy = false;
 	bool secondSceneReady = false;
 	bool paulaPhoneDialog1 = false;
-	public bool paulaIntroductionDialog = false;
-	public bool paulaPhoneDialog2 = false;
+	bool paulaIntroductionDialog = false;
+	bool paulaPhoneDialog2 = false;
 	bool janeSurprised = false;
 	bool lostBookFound = false;
-	public bool master = false;
+	bool phoneTriggered = false;
+	bool answerCorrect = false;
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -83,6 +88,7 @@ public class HouseController : MonoBehaviour {
 		randomPlayerControl ();
 		checkSight ();
 		checkConditions ();
+		checkQuizResult ();
 	}
 
 	// handle key interactions here
@@ -175,6 +181,12 @@ public class HouseController : MonoBehaviour {
 						}
 						drawer.GetComponent<DrawerAnimator>().closeDrawer();
 						sidetableOpen = false;
+					}
+					break;
+				case "Phone":
+					if (dialogsPerformed.Contains ("pills") && !guiController.isShowing() && !dialogsPerformed.Contains("meloffCall")){
+						initDialog("information");
+						phoneTriggered = true;
 					}
 					break;
 				case "Paula": // open interaction panel if interactions are available
@@ -278,9 +290,18 @@ public class HouseController : MonoBehaviour {
 				break;
 			case "Bedroom": // check if bedroom entered
 				initDialog("bedroom");
-				if(actualHouseScene == 2 && !bedroomTriggered && dialogsPerformed.Contains ("bedtime")){
+				if(!bedroomTriggered && dialogsPerformed.Contains ("bedtime") && actualHouseScene == 2){
 					guiController.toggleSubtl("bedroom3");
 					bedroomTriggered = true;
+				}
+				if(dialogsPerformed.Contains("pills") && !dialogsPerformed.Contains("meloffCall") && !bedroomTriggered && actualHouseScene == 3){
+					guiController.toggleSubtl("callDoc");
+					bedroomTriggered = true;
+				}
+				break;
+			case "Phone":
+				if (actualHouseScene == 3 && !dialogsPerformed.Contains("meloffCall")){
+					guiController.toggleInteractionHint(true);
 				}
 				break;
 			case "Sidetable": // check if sidetable triggered
@@ -314,6 +335,7 @@ public class HouseController : MonoBehaviour {
 
 	// initialize a dialog
 	void initDialog(string dialogToInit){
+		// make sure dialogs are performed only once (information dialog is special case)
 		if (!dialogsPerformed.Contains(dialogToInit)){
 			dialog = true;
 			actualDialog = dialogToInit;
@@ -335,8 +357,10 @@ public class HouseController : MonoBehaviour {
 	void manageDialogSettings(int dialogNum, string actualSubtl){
 		//do after-dialog-events here
 		if (dialogCount > dialogNum) {
-
-			dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
+			// add dialog to performed dialogs list if not already added
+			if(!dialogsPerformed.Contains(actualSubtl.Substring(0, actualSubtl.Length-1))){
+				dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
+			}
 			// add hint about scar during dialog
 			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar") && scarHint == false){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
@@ -407,7 +431,21 @@ public class HouseController : MonoBehaviour {
 			// dialog lostAdressBook needs to be added individually cause its too long (remove the old wrong entry first)
 			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("lostAdressBook")){
 				dialogsPerformed.Remove("lostAdressBook1");
-				dialogsPerformed.Add ("lostAdressbook");
+				dialogsPerformed.Add ("lostAdressBook");
+			}
+			// remove dialog to toggle it more than one time and open quiz panel
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("information")){
+				dialogsPerformed.Remove("information");
+				guiController.toggleQuizPanel("doctor");
+			}
+			// remove dialog to toggle it more than one time
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("information2_")){
+				dialogsPerformed.Remove("information2_");
+			}
+			// dialog meloffCall needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("meloffCall")){
+				dialogsPerformed.Remove("meloffCall1");
+				dialogsPerformed.Add ("meloffCall");
 			}
 			switch(actualDialog){
 			case "scare":
@@ -440,7 +478,7 @@ public class HouseController : MonoBehaviour {
 
 	// handle stuff triggered by actions in the inventory here
 	void checkInventory(){
-		if (guiController.checkForNewHint ().Equals ("") == false) {
+		if (!guiController.checkForNewHint ().Equals ("")) {
 			// do sth. if a new hint was added that enables an event or interaction
 			switch(guiController.checkForNewHint()){
 			case "missingPicture":
@@ -454,22 +492,29 @@ public class HouseController : MonoBehaviour {
 			}
 		}
 		// check for second theory
-		if(theory.GetComponent<Theory> ().theory2Found && theory2Registered == false){
+		if(theory.GetComponent<Theory> ().theory2Found && !theory2Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory2");
 			guiController.manageInteraction("michael_scar_2", "Michael");
 			theory2Registered = true;
+		}
+		// check for third theory
+		if(theory.GetComponent<Theory> ().theory3Found && !theory3Registered){
+			guiController.toggleInventory();
+			guiController.toggleSubtl("theory3");
+			guiController.manageInteraction("michael_dizzy", "Michael");
+			theory3Registered = true;
 		}
 	}
 
 	// check conditions to trigger a certain event
 	void checkConditions(){
 		// Ending conditions for first Scene in house
-		if(glasstableTriggered && family && adressBookFound && !guiController.isShowing() && !scene1EndingDialog && emilyWhereabout && actualHouseScene == 1){
+		if((glasstableTriggered && family && adressBookFound && !guiController.isShowing() && !scene1EndingDialog && emilyWhereabout && actualHouseScene == 1) || (master && actualHouseScene == 1)){
 			initDialog("scene1Ending");
 		}
 		// conditions to remove adressbook during second house scene
-		if(/*dialogsPerformed.Contains("mother") && dialogsPerformed.Contains("father") && dialogsPerformed.Contains ("scar2_") && dialogsPerformed.Contains ("friends") && actualHouseScene == 2 && !guiController.isShowing()*/ master){
+		if(dialogsPerformed.Contains("mother") && dialogsPerformed.Contains("father") && dialogsPerformed.Contains ("scar2_") && dialogsPerformed.Contains ("friends") && actualHouseScene == 2 && !guiController.isShowing()){
 			adressBook.SetActive(false);
 			adressBookLost = true;
 			initDialog("bedtime");
@@ -478,18 +523,31 @@ public class HouseController : MonoBehaviour {
 			}
 		}
 		// condition to end second house scene
-		if (dialogsPerformed.Contains ("lostAdressBook")) {
-			// scene ends here
+		if ((dialogsPerformed.Contains ("lostAdressBook") && actualHouseScene == 2) || (master && actualHouseScene == 2)) {
+			StartCoroutine (onNextSceneStart ());
 		}
+		// make michael walk into the kitchen in third house scene
+		if (dialogsPerformed.Contains ("pills") && !answerCorrect) {
+			michael.GetComponent<FollowTarget>().target = GameObject.Find("notepad").transform;
+			michael.GetComponent<NavMeshAgent>().speed = 3.5f;
+		}
+		master = false;
 			
 	}
 
 	// generate heavier player controlling while jane is dizzy
 	void randomPlayerControl(){
 		if (isDizzy) {
-
-			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 20);
 			playerCam.GetComponent<BlurOptimized>().enabled = true;
+			switch(actualHouseScene){
+			case 2:
+				player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 20);
+				break;
+			case 3:
+				player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 40);
+				playerCam.GetComponent<BlurOptimized>().blurIterations = 2;
+				break;
+			}
 		}else{
 			player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 2);
 			playerCam.GetComponent<BlurOptimized>().enabled = false;
@@ -499,12 +557,35 @@ public class HouseController : MonoBehaviour {
 	// trigger events that are based on sth. jane is able to see
 	void checkSight(){
 		// toggle scared dialog after familyalbum was closed for the first time here
+		Ray lookRay = new Ray (playerCam.transform.position, playerCam.transform.forward);
 		if (janeSurprised) {
-			Ray lookRay = new Ray (playerCam.transform.position, playerCam.transform.forward);
 			if (Physics.Raycast (lookRay, out hit, rayDist)) {
 				if(hit.collider.tag.Equals("Michael")){
 					initDialog("scare");
 				}
+			}
+		}
+		if (answerCorrect) {
+			if (Physics.Raycast (lookRay, out hit, rayDist)) {
+				if(hit.collider.tag.Equals("Michael")){
+					initDialog("scene3Ending");
+				}
+			}
+		}
+	}
+
+	void checkQuizResult(){
+		if (!guiController.quizAnswer.Equals ("") && !answerCorrect) {
+			if(guiController.quizAnswer.Equals ("Dr. Meloff")){
+				guiController.toggleQuizPanel("");
+				initDialog("meloffCall");
+				michael.GetComponent<FollowTarget>().target = player.transform;
+				answerCorrect = true;
+			}
+			else{
+				initDialog("information2_");
+				guiController.quizAnswer = "";
+				guiController.toggleQuizPanel("");
 			}
 		}
 	}
@@ -539,6 +620,17 @@ public class HouseController : MonoBehaviour {
 			guiController.manageInteraction("paula_about", "Paula");
 			guiController.manageInteraction("paula_phoneCall", "Paula");
 			break;
+		case 3:
+			GameObject.Find("SidetableTrigger").SetActive(false);
+			GameObject.Find("Familienalbum").SetActive(false);
+
+			michael.GetComponent<NavMeshAgent>().speed = 0;
+			michael.transform.position = michaelScene3Pos;
+			paula.SetActive(false);
+			bedroomTriggered = false;
+			guiController.toggleSubtl("dizzy2");
+			insertIntoInventory("dizzy");
+			break;
 		default: break;
 		}
 	}
@@ -570,6 +662,11 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("mother",9);
 		keyDialogSizeMap.Add("bedtime", 3);
 		keyDialogSizeMap.Add("lostAdressBook", 11);
+		keyDialogSizeMap.Add("pills", 8);
+		keyDialogSizeMap.Add("information", 3);
+		keyDialogSizeMap.Add("information2_", 2);
+		keyDialogSizeMap.Add("meloffCall", 12);
+		keyDialogSizeMap.Add("scene3Ending", 5);
 	}
 
     void DisableHighlighting(string name)
