@@ -64,6 +64,8 @@ public class HouseController : MonoBehaviour {
 	bool paulaPhoneDialog2 = false;
 	bool janeSurprised = false;
 	bool lostBookFound = false;
+	bool phoneTriggered = false;
+	bool answerCorrect = false;
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -86,6 +88,7 @@ public class HouseController : MonoBehaviour {
 		randomPlayerControl ();
 		checkSight ();
 		checkConditions ();
+		checkQuizResult ();
 	}
 
 	// handle key interactions here
@@ -180,6 +183,12 @@ public class HouseController : MonoBehaviour {
 						sidetableOpen = false;
 					}
 					break;
+				case "Phone":
+					if (dialogsPerformed.Contains ("pills") && !guiController.isShowing() && !dialogsPerformed.Contains("meloffCall")){
+						initDialog("information");
+						phoneTriggered = true;
+					}
+					break;
 				case "Paula": // open interaction panel if interactions are available
 					if(guiController.checkForPanelContent()){
 						guiController.toggleInteractionPanel(true, "Paula");
@@ -272,9 +281,18 @@ public class HouseController : MonoBehaviour {
 				break;
 			case "Bedroom": // check if bedroom entered
 				initDialog("bedroom");
-				if(actualHouseScene == 2 && !bedroomTriggered && dialogsPerformed.Contains ("bedtime")){
+				if(!bedroomTriggered && dialogsPerformed.Contains ("bedtime") && actualHouseScene == 2){
 					guiController.toggleSubtl("bedroom3");
 					bedroomTriggered = true;
+				}
+				if(dialogsPerformed.Contains("pills") && !dialogsPerformed.Contains("meloffCall") && !bedroomTriggered && actualHouseScene == 3){
+					guiController.toggleSubtl("callDoc");
+					bedroomTriggered = true;
+				}
+				break;
+			case "Phone":
+				if (actualHouseScene == 3 && !dialogsPerformed.Contains("meloffCall")){
+					guiController.toggleInteractionHint(true);
 				}
 				break;
 			case "Sidetable": // check if sidetable triggered
@@ -307,6 +325,7 @@ public class HouseController : MonoBehaviour {
 
 	// initialize a dialog
 	void initDialog(string dialogToInit){
+		// make sure dialogs are performed only once (information dialog is special case)
 		if (!dialogsPerformed.Contains(dialogToInit)){
 			dialog = true;
 			actualDialog = dialogToInit;
@@ -328,8 +347,10 @@ public class HouseController : MonoBehaviour {
 	void manageDialogSettings(int dialogNum, string actualSubtl){
 		//do after-dialog-events here
 		if (dialogCount > dialogNum) {
-
-			dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
+			// add dialog to performed dialogs list if not already added
+			if(!dialogsPerformed.Contains(actualSubtl.Substring(0, actualSubtl.Length-1))){
+				dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
+			}
 			// add hint about scar during dialog
 			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar") && scarHint == false){
 				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
@@ -402,6 +423,20 @@ public class HouseController : MonoBehaviour {
 				dialogsPerformed.Remove("lostAdressBook1");
 				dialogsPerformed.Add ("lostAdressBook");
 			}
+			// remove dialog to toggle it more than one time and open quiz panel
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("information")){
+				dialogsPerformed.Remove("information");
+				guiController.toggleQuizPanel("doctor");
+			}
+			// remove dialog to toggle it more than one time
+			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("information2_")){
+				dialogsPerformed.Remove("information2_");
+			}
+			// dialog meloffCall needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("meloffCall")){
+				dialogsPerformed.Remove("meloffCall1");
+				dialogsPerformed.Add ("meloffCall");
+			}
 			switch(actualDialog){
 			case "scare":
 				guiController.manageInteraction("michael_mother", "Michael");
@@ -469,7 +504,7 @@ public class HouseController : MonoBehaviour {
 			initDialog("scene1Ending");
 		}
 		// conditions to remove adressbook during second house scene
-		if(/*dialogsPerformed.Contains("mother") && dialogsPerformed.Contains("father") && dialogsPerformed.Contains ("scar2_") && dialogsPerformed.Contains ("friends") && actualHouseScene == 2 && !guiController.isShowing()*/ master){
+		if(dialogsPerformed.Contains("mother") && dialogsPerformed.Contains("father") && dialogsPerformed.Contains ("scar2_") && dialogsPerformed.Contains ("friends") && actualHouseScene == 2 && !guiController.isShowing()){
 			adressBook.SetActive(false);
 			adressBookLost = true;
 			initDialog("bedtime");
@@ -482,8 +517,9 @@ public class HouseController : MonoBehaviour {
 			StartCoroutine (onNextSceneStart ());
 		}
 		// make michael walk into the kitchen in third house scene
-		if (dialogsPerformed.Contains ("pills")) {
+		if (dialogsPerformed.Contains ("pills") && !answerCorrect) {
 			michael.GetComponent<FollowTarget>().target = GameObject.Find("notepad").transform;
+			michael.GetComponent<NavMeshAgent>().speed = 3.5f;
 		}
 		master = false;
 			
@@ -517,6 +553,22 @@ public class HouseController : MonoBehaviour {
 				if(hit.collider.tag.Equals("Michael")){
 					initDialog("scare");
 				}
+			}
+		}
+	}
+
+	void checkQuizResult(){
+		if (!guiController.quizAnswer.Equals ("") && !answerCorrect) {
+			if(guiController.quizAnswer.Equals ("Dr. Meloff")){
+				guiController.toggleQuizPanel("");
+				initDialog("meloffCall");
+				michael.GetComponent<FollowTarget>().target = player.transform;
+				answerCorrect = true;
+			}
+			else{
+				initDialog("information2_");
+				guiController.quizAnswer = "";
+				guiController.toggleQuizPanel("");
 			}
 		}
 	}
@@ -558,7 +610,7 @@ public class HouseController : MonoBehaviour {
 			michael.GetComponent<NavMeshAgent>().speed = 0;
 			michael.transform.position = michaelScene3Pos;
 			paula.SetActive(false);
-
+			bedroomTriggered = false;
 			guiController.toggleSubtl("dizzy2");
 			insertIntoInventory("dizzy");
 			break;
@@ -594,5 +646,8 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("bedtime", 3);
 		keyDialogSizeMap.Add("lostAdressBook", 11);
 		keyDialogSizeMap.Add("pills", 8);
+		keyDialogSizeMap.Add("information", 3);
+		keyDialogSizeMap.Add("information2_", 2);
+		keyDialogSizeMap.Add("meloffCall", 12);
 	}
 }

@@ -23,6 +23,7 @@ public class GUIController : MonoBehaviour {
 	public GameObject interactionController;
 	public GameObject adressBook;
 	public GameObject familyalbum;
+	public GameObject quizPanel;
     public GameObject soundOptions;
     public Slider slider;
 
@@ -33,6 +34,8 @@ public class GUIController : MonoBehaviour {
 	bool familyalbumShown;
 	public bool albumClosedFirstTime = false;
 	bool menuShown;
+	bool quizIsShown;
+	public string quizAnswer = "";
 
 
 	// Use this for initialization
@@ -144,7 +147,7 @@ public class GUIController : MonoBehaviour {
 
 	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown || familyalbumShown) {
+		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown || familyalbumShown || quizIsShown) {
 			return true;
 		} else {
 			return false;
@@ -237,7 +240,28 @@ public class GUIController : MonoBehaviour {
 			familyalbumShown = false;
 			Cursor.visible = false;
 		}
-		
+	}
+
+	// show/unshow quiz 
+	public void toggleQuizPanel(string context){
+		if (!quizPanel.activeSelf) {
+			quizPanel.SetActive(true);
+			quizIsShown = true;
+			Cursor.visible = true;
+			switch (context){
+			case "doctor":
+				quizPanel.GetComponent<QuizController>().setupButtonText("Dr. Mellof", "Dr. Mehlhof", "Dr. Meloff", "Dr. Meltoff");
+				break;
+			}
+		} else {
+			quizPanel.SetActive(false);
+			quizIsShown = false;
+			Cursor.visible = false;
+		}
+	}
+
+	public void checkQuizAnswer(string answer){
+		quizAnswer = answer;
 	}
 
     public void GoToOptionsMenu()
