@@ -29,4 +29,9 @@ public class HighlightObject : MonoBehaviour {
             gameObject.GetComponent<Renderer>().material = startMaterial;
         }
 	}
+
+    public Material GetObjectStartMaterial()
+    {
+        return startMaterial;
+    }
 }

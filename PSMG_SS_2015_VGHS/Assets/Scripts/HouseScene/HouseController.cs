@@ -104,7 +104,7 @@ public class HouseController : MonoBehaviour {
 					}
 					break;
 				case "Piano": // manage interactions with piano
-					if(pianoCount <3){
+                    if(pianoCount <3){
 						switch (pianoCount){
 						case 0:
 							initDialog ("piano");
@@ -200,6 +200,7 @@ public class HouseController : MonoBehaviour {
 					guiController.toggleInteractionHint(true);
 				}else {
 					guiController.toggleInteractionHint (false);
+                    DisableHighlighting("Michael");
 				}
 				break;
 			case "Diningroom": // check if diningroom entered and initialize new interactions
@@ -220,7 +221,11 @@ public class HouseController : MonoBehaviour {
 				}
 				break;
 			case "Piano":
-				if(pianoCount < 3){
+                if (pianoCount >= 3)
+                {
+                    DisableHighlighting("piano");
+                }
+                if(pianoCount < 3){
 					guiController.toggleInteractionHint (true);
 				}
 				break;
@@ -243,7 +248,11 @@ public class HouseController : MonoBehaviour {
 					initDialog("conservatory");
 				break;
 			case "Glasstable": // check if glasstable triggered
-				if(!glasstableTriggered){
+                if (glasstableTriggered)
+                {
+                    DisableHighlighting("table_glass_conservatory");
+                }
+                if(!glasstableTriggered){
 					guiController.toggleInteractionHint(true);
 				}
 				break;
@@ -282,6 +291,7 @@ public class HouseController : MonoBehaviour {
 					guiController.toggleInteractionHint(true);
 				}else {
 					guiController.toggleInteractionHint (false);
+                    DisableHighlighting("Paula");
 				}
 				break;
 			default: 
@@ -561,4 +571,11 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("bedtime", 3);
 		keyDialogSizeMap.Add("lostAdressBook", 11);
 	}
+
+    void DisableHighlighting(string name)
+    {
+        GameObject myObject = GameObject.Find(name);
+        myObject.GetComponent<HighlightObject>().enabled = false;
+        myObject.GetComponent<Renderer>().material = myObject.GetComponent<HighlightObject>().GetObjectStartMaterial();
+    }
 }

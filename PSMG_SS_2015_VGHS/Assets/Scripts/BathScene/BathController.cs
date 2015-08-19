@@ -13,6 +13,7 @@ public class BathController : MonoBehaviour {
 	public GameObject jacket;
 	public GameObject jacketOn;
 	public GameObject theory;
+    public GameObject roomObjects;
 
 	int sinkCounter = 0;
 
@@ -67,6 +68,7 @@ public class BathController : MonoBehaviour {
 							guiController.toggleInventoryHint ();
 							guiController.addHint ("dressHint");
 							sinkCounter++;
+                            DisableHighlighting("Spiegel");
 							break;
 						}
 						break;
@@ -78,6 +80,7 @@ public class BathController : MonoBehaviour {
 						guiController.toggleInventoryHint ();
 						guiController.addHint ("noteHint");
 						noteFound = true;
+                        DisableHighlighting("Mantel_ueber_Badewanne");
 					}
 					break;
 				}
@@ -126,5 +129,12 @@ public class BathController : MonoBehaviour {
 	// initialize level change
 	public void ChangeLevel(int level){
         GetComponent<SceneFader>().SwitchScene(level);
+    }
+
+    void DisableHighlighting(string name)
+    {
+        GameObject myObject = GameObject.Find(name);
+        myObject.GetComponent<HighlightObject>().enabled = false;
+        myObject.GetComponent<Renderer>().material = myObject.GetComponent<HighlightObject>().GetObjectStartMaterial();
     }
 }

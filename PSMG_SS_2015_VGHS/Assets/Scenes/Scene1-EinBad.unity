@@ -3408,6 +3408,18 @@ GameObject:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b158803f05b4fc04590305e9b6175544, type: 3}
   m_PrefabInternal: {fileID: 512734680}
+--- !u!114 &1049069001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1049069000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174da966bc0ea3e47adeaf05191f6ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glow: {fileID: 2100000, guid: e44e66b73626c334fa82d3409f4af502, type: 2}
 --- !u!1 &1052943390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,6 +3455,7 @@ MonoBehaviour:
   jacket: {fileID: 1049069000}
   jacketOn: {fileID: 1004258599}
   theory: {fileID: 1104626225}
+  roomObjects: {fileID: 1072661338}
 --- !u!4 &1052943392
 Transform:
   m_ObjectHideFlags: 0
