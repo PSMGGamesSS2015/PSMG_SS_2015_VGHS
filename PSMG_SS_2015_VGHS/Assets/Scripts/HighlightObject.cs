@@ -18,7 +18,6 @@ public class HighlightObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Distance to " + gameObject.name + " :" + Vector3.Distance(gameObject.transform.position, player.transform.position));
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 3)
         {
             //gameObject.GetComponent<Renderer>().material.color = Color.cyan;

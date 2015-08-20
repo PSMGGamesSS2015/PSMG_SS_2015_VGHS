@@ -114,6 +114,18 @@
 	
 	<!-- House Fourth Scene -->
 	<jane_house_4_1>Oh Gott... mir gehts von Tag zu Tag schlechter... ob das wirklich mit meiner Amnesie zusammenhängt?</jane_house_4_1>
+	<jane_house_4_2>Ich kann kaum verstehen was sie sagt... hm... wo hat Michael das Telephon aus dem Schlafzimmer hingeräumt?</jane_house_4_2>
+	<jane_house_4_3>Aha... ein Buch über Amnesien...</jane_house_4_3>
+	<jane_house_4_4>Amnesie bezeichnet eine Form der Störung des Gedächtnisses für zeitliche oder inhaltliche Erinnerungen... so weit so gut...</jane_house_4_4>
+	<jane_house_4_5>Hysterische Amnesie, da ist es ja, bezeichnet einen Gedächtnisverlust im Zusammenhang mit bestimmten Ereignissen.</jane_house_4_5>
+	<jane_house_4_6>Hm... d.h. wenn ich das alles richtig verstehe habe ich mein Gedächtnis an dem Tag verloren, an dem auch etwas schlimmes passiert ist.</jane_house_4_6>
+	<jane_house_4_7>Ich recherchiere über meine Krankheit!</jane_house_4_7>
+	<jane_house_4_8>Nein, das denke ich nicht...</jane_house_4_8>
+	<jane_house_4_9>Oh nein, wie konnte denn das passieren? Könnten sie mir ein neues Glas bringen bitte?</jane_house_4_9>
+	<jane_house_4_10>Ich muss schleunigst diese Tabletten verstecken...</jane_house_4_10>
+	<jane_house_4_11>Ich glaube das ist vorerst ein gutes Versteck...</jane_house_4_11>
+	<jane_house_4_12>Vielen Dank.</jane_house_4_12>
+	<jane_house_4_13>Natürlich...</jane_house_4_13>
 	
 	
 	<!-- Michael Text -->
@@ -214,13 +226,24 @@
 	<paula_house_2_8>
     Ihr Mann hat mir aufgetragen, sie niemanden anrufen zu lassen, oder Telefonate zu beantworten.
     Das könnte sie zu sehr aufwühlen. Und ihre Freunde auch. Sie bräuchten erstmal nur Ruhe.
-  </paula_house_2_8>
+  	</paula_house_2_8>
 	<paula_house_2_9>Solange es ihnen nicht besser geht, täglich.</paula_house_2_9>
 	<paula_house_2_10>
     Ihr Mann hat meiner Tochter das Leben gerettet…
     Ich konnte die Operation nicht bezahlen, deshalb gab er mir diese Anstellung, um sie abzuarbeiten.
     Er ist so ein wunderbarer Mensch...
-  </paula_house_2_10>
+  	</paula_house_2_10>
+  
+  	<!--  House Fourth Scene -->
+	<paula_house_4_1>Hier bei den Whittakers, mit wem spreche ich?</paula_house_4_1>
+	<paula_house_4_2>Mutter… sie ist ein kleines Kind. Sowas passiert einfach.</paula_house_4_2>
+	<paula_house_4_3>Dann lass sie weniger Süßigkeiten essen und prüfe nach, was sie sich im Fernsehen ansieht!</paula_house_4_3>
+	<paula_house_4_4>Ich muss jetzt weiter arbeiten Mutter...</paula_house_4_4>
+	<paula_house_4_5>Was tun sie da?</paula_house_4_5>
+	<paula_house_4_6>Ich denke es ist wieder Zeit für ihre Tabletten.</paula_house_4_6>
+	<paula_house_4_7>Hier bitte, ihr Wasser.</paula_house_4_7>
+	<paula_house_4_8>Sie sollten aufhören so viel herumzuwandern und sich hinlegen. Michael macht sich inzwischen große Sorgen.</paula_house_4_8>
+	
   
   <information_1>Wie lautet der Name des Arztes?</information_1>
   <information_2>Zu diesem Namen gibt es leider keinen Eintrag.</information_2>
@@ -232,4 +255,7 @@
   <meloff_4>Wie bitte?</meloff_4>
   <meloff_5>Ja das habe ich. Ativan um genau zu sein.</meloff_5>
   <meloff_6>Was?! Ähm, nein, das ist ein einfaches Beruhigungsmittel. Jane, wenn Michael gerade da ist, könntest du ihn mir bitte geben?</meloff_6>
+  
+  <paula_mum_1>Es ist aber inzwischen ein anhaltender Zustand. Das ist doch nicht normal.</paula_mum_1>
+  <paula_mum_2>Ich habe sie gut im Auge. Ich glaube kaum, dass Süßigkeiten oder ein Fernsehprogramm Ursache für die Alpträume sind.</paula_mum_2>
 </ger>

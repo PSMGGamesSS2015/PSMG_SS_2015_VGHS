@@ -27,6 +27,7 @@ public class HouseController : MonoBehaviour {
 	Vector3 bedPos = new Vector3(1.4f, 4.5f, 16.3f);
 	Vector3 michaelScene2Pos = new Vector3(22f, -1f, 32f);
 	Vector3 michaelScene3Pos = new Vector3(24f, 3f, 32f);
+	Vector3 phoneScene4Pos = new Vector3 (4.5f, 6f, 7.5f);
 	RaycastHit hit;
 	string actualDialog = "";
 	int pianoCount = 0;
@@ -66,6 +67,8 @@ public class HouseController : MonoBehaviour {
 	bool lostBookFound = false;
 	bool phoneTriggered = false;
 	bool answerCorrect = false;
+	bool stopFollowing = false;
+	bool pillsHidden = false;
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -160,7 +163,11 @@ public class HouseController : MonoBehaviour {
 					guiController.toggleSubtl("noteMonolog");
 					break;
 				case "Bookshelf": // interaction with bookshelf in workroom
-					guiController.toggleSubtl("bookshelf");
+					if(actualHouseScene == 4){
+						initDialog ("amnesia");
+					}else {
+						guiController.toggleSubtl("bookshelf");
+					}
 					break;
 				case "Sidetable": // managing interaction with sidetable and adressbook
 					if (!sidetableOpen){
@@ -188,10 +195,20 @@ public class HouseController : MonoBehaviour {
 						initDialog("information");
 						phoneTriggered = true;
 					}
+					if((actualHouseScene == 4 && !dialogsPerformed.Contains("paulaPhoneCall3_"))){
+						initDialog("paulaPhoneCall3_");
+					}
 					break;
 				case "Paula": // open interaction panel if interactions are available
 					if(guiController.checkForPanelContent()){
 						guiController.toggleInteractionPanel(true, "Paula");
+					}
+					break;
+				case "Warderobe": // interactions with warderobe in bedroom
+					if(!dialogsPerformed.Contains("freshWater")){
+						guiController.toggleSubtl("hidePills");
+						paula.GetComponent<FollowTarget>().target = player.transform;
+						pillsHidden = true;
 					}
 					break;
 				default: break;
@@ -298,9 +315,12 @@ public class HouseController : MonoBehaviour {
 					guiController.toggleSubtl("callDoc");
 					bedroomTriggered = true;
 				}
+				if (actualHouseScene == 4){
+					initDialog ("paulaPhoneCall2_");
+				}
 				break;
-			case "Phone":
-				if (actualHouseScene == 3 && !dialogsPerformed.Contains("meloffCall")){
+			case "Phone": // interactable in special cases
+				if (actualHouseScene == 3 && !dialogsPerformed.Contains("meloffCall") || (actualHouseScene == 4 && !dialogsPerformed.Contains("paulaPhoneCall3_"))){
 					guiController.toggleInteractionHint(true);
 				}
 				break;
@@ -313,6 +333,11 @@ public class HouseController : MonoBehaviour {
 				}else {
 					guiController.toggleInteractionHint (false);
                     DisableHighlighting("Paula");
+				}
+				break;
+			case "Warderobe": // show interactable when jane needs to hide the pills 
+				if(dialogsPerformed.Contains("paulaPills")){
+					guiController.toggleInteractionHint(true);
 				}
 				break;
 			default: 
@@ -358,99 +383,100 @@ public class HouseController : MonoBehaviour {
 		//do after-dialog-events here
 		if (dialogCount > dialogNum) {
 			// add dialog to performed dialogs list if not already added
-			if(!dialogsPerformed.Contains(actualSubtl.Substring(0, actualSubtl.Length-1))){
-				dialogsPerformed.Add(actualSubtl.Substring(0, actualSubtl.Length-1));
+			if (!dialogsPerformed.Contains (actualSubtl.Substring (0, actualSubtl.Length - 1))) {
+				dialogsPerformed.Add (actualSubtl.Substring (0, actualSubtl.Length - 1));
 			}
 			// add hint about scar during dialog
-			if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("scar") && scarHint == false){
-				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-3));
+			if (actualSubtl.Substring (0, actualSubtl.Length - 3).Equals ("scar") && scarHint == false) {
+				insertIntoInventory (actualSubtl.Substring (0, actualSubtl.Length - 3));
 				scarHint = true;
 			} 
 			// checkup dialog about family, insert information about visiting the brother and activate interaction for children if not already done at the piano
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("family")){
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("family")) {
 				family = true;
-				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
-				if(daughterFound == false){
-					guiController.manageInteraction("michael_daughter", "Michael");
+				insertIntoInventory (actualSubtl.Substring (0, actualSubtl.Length - 1));
+				if (daughterFound == false) {
+					guiController.manageInteraction ("michael_daughter", "Michael");
 				}
 			}
 			// checkup dialog about friends
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("friends")){
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("friends")) {
 				friends = true;
 			}
 			// add hint about emily to inventory
-			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("daughter")){
-				insertIntoInventory(actualSubtl.Substring(0, actualSubtl.Length-1));
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("daughter")) {
+				insertIntoInventory (actualSubtl.Substring (0, actualSubtl.Length - 1));
 				daughterFound = true;
 			}
 			// add hint about dianes daughter to inventory
-			else if(actualSubtl.Substring(0, actualSubtl.Length-3).Equals("daughter")){
-				insertIntoInventory("dianesDaughter");
-				guiController.manageInteraction("michael_friends", "Michael");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 3).Equals ("daughter")) {
+				insertIntoInventory ("dianesDaughter");
+				guiController.manageInteraction ("michael_friends", "Michael");
 			}
 			// add hint about the missing picture
-			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("picture")){
-				insertIntoInventory("missingPicture");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("picture")) {
+				insertIntoInventory ("missingPicture");
 				missingPictureFound = true;
 			}
 			// add hint about emilies whereabout
-			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("childsroom")){
-				insertIntoInventory("emilyWhereabout");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("childsroom")) {
+				insertIntoInventory ("emilyWhereabout");
 				emilyWhereabout = true;
 			}
 			// register that dialog about the adress book is done
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("adressBook")){
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("adressBook")) {
 				adressBookDialog = true;
 			}
 			// insert hint about pills after taking them for the first time
-			else if(actualSubtl.Substring(0, actualSubtl.Length-1).Equals("scene1Ending")){
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("scene1Ending")) {
 				scene1EndingDialog = true;
-				insertIntoInventory("pills");
+				insertIntoInventory ("pills");
 				//toggeling here next scene after this dialog makes sure, that nothing is destroyed while first scene still going on
 				StartCoroutine (onNextSceneStart ());
 			}
 			// dialog paula introduction needs to be added individually cause its too long (remove the old wrong entry first), add new interacion to panel
-			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("paulaIntroduction")){
-				dialogsPerformed.Remove("paulaIntroduction1");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("paulaIntroduction")) {
+				dialogsPerformed.Remove ("paulaIntroduction1");
 				dialogsPerformed.Add ("paulaIntroduction");
-				guiController.manageInteraction("paula_about2", "Paula");
-			}
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("paulaIntroduction2_")){
-				insertIntoInventory("paulasDaughter");
+				guiController.manageInteraction ("paula_about2", "Paula");
+			} else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("paulaIntroduction2_")) {
+				insertIntoInventory ("paulasDaughter");
 				paulaIntroductionDialog = true;
-			}
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("paulaPhoneCall")){
+			} else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("paulaPhoneCall")) {
 				paulaPhoneDialog2 = true;
 			}
 			// dialog mother needs to be added individually cause its too long (remove the old wrong entry first), add new hint to inventory
-			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("mother")){
-				dialogsPerformed.Remove("mother1");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("mother")) {
+				dialogsPerformed.Remove ("mother1");
 				dialogsPerformed.Add ("mother");
-				insertIntoInventory("crash");
+				insertIntoInventory ("crash");
 			}
 			// dialog lostAdressBook needs to be added individually cause its too long (remove the old wrong entry first)
-			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("lostAdressBook")){
-				dialogsPerformed.Remove("lostAdressBook1");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("lostAdressBook")) {
+				dialogsPerformed.Remove ("lostAdressBook1");
 				dialogsPerformed.Add ("lostAdressBook");
 			}
 			// remove dialog to toggle it more than one time and open quiz panel
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("information")){
-				dialogsPerformed.Remove("information");
-				guiController.toggleQuizPanel("doctor");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("information")) {
+				dialogsPerformed.Remove ("information");
+				guiController.toggleQuizPanel ("doctor");
 			}
 			// remove dialog to toggle it more than one time
-			else if (actualSubtl.Substring(0, actualSubtl.Length-1).Equals("information2_")){
-				dialogsPerformed.Remove("information2_");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("information2_")) {
+				dialogsPerformed.Remove ("information2_");
 			}
 			// dialog meloffCall needs to be added individually cause its too long (remove the old wrong entry first)
-			else if (actualSubtl.Substring(0, actualSubtl.Length-2).Equals("meloffCall")){
-				dialogsPerformed.Remove("meloffCall1");
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("meloffCall")) {
+				dialogsPerformed.Remove ("meloffCall1");
 				dialogsPerformed.Add ("meloffCall");
 			}
-			switch(actualDialog){
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("amnesia")) {
+				insertIntoInventory("amnesia");
+			}
+			switch (actualDialog) {
 			case "scare":
-				guiController.manageInteraction("michael_mother", "Michael");
-				guiController.manageInteraction("michael_father", "Michael");
+				guiController.manageInteraction ("michael_mother", "Michael");
+				guiController.manageInteraction ("michael_father", "Michael");
 				break;
 			}
 
@@ -460,8 +486,19 @@ public class HouseController : MonoBehaviour {
 			dialog = false;
 		} 
 		// insert hint about picture during dialog (this is a special case where the hint is added during dialog)
-		else if(actualSubtl.Equals("daughter2_2")){
-			insertIntoInventory("picture");
+		else if (actualSubtl.Equals ("daughter2_2")) {
+			insertIntoInventory ("picture");
+			guiController.toggleSubtl (actualSubtl);
+		} 
+		// insert hint about nightmares of paulas daughter
+		else if (actualSubtl.Equals ("paulaPhoneCall3_4")) {
+			insertIntoInventory ("nightmares");
+			guiController.toggleSubtl (actualSubtl);
+		}
+
+		else if (actualSubtl.Equals ("paulaPills5")) {
+			stopFollowing = true;
+			paula.GetComponent<FollowTarget>().target = GameObject.Find("notepad").transform;
 			guiController.toggleSubtl (actualSubtl);
 		}
 		// toggle subtl. during dialog
@@ -533,8 +570,12 @@ public class HouseController : MonoBehaviour {
 		}
 		// start next Scene
 		if (dialogsPerformed.Contains ("scene3Ending")&& actualHouseScene == 3) {
-			Debug.Log ("huhu");
 			StartCoroutine(onNextSceneStart());
+		}
+		// make Paula search for Jane after she found out about the nightmare and her amnesia
+		if (dialogsPerformed.Contains ("paulaPhoneCall3_") && dialogsPerformed.Contains ("amnesia") && !stopFollowing) {
+			paula.GetComponent<FollowTarget>().target = player.transform;
+			paula.GetComponent<NavMeshAgent>().speed = 3.5f;
 		}
 		master = false;
 			
@@ -577,6 +618,20 @@ public class HouseController : MonoBehaviour {
 				}
 			}
 		}
+		if(dialogsPerformed.Contains ("paulaPhoneCall3_") && dialogsPerformed.Contains ("amnesia")){
+			if (Physics.Raycast (lookRay, out hit, rayDist)) {
+				if(hit.collider.tag.Equals("Paula")){
+					initDialog ("paulaPills");
+				}
+			}
+		}
+		if (pillsHidden && !dialogsPerformed.Contains ("freshWater")) {
+			if (Physics.Raycast (lookRay, out hit, rayDist)) {
+				if(hit.collider.tag.Equals("Paula")){
+					initDialog ("freshWater");
+				}
+			}
+		}		
 	}
 
 	void checkQuizResult(){
@@ -640,6 +695,7 @@ public class HouseController : MonoBehaviour {
 			michael.SetActive(false);
 			paula.SetActive(true);
 			guiController.toggleSubtl("dizzy3");
+			GameObject.Find("telephone").transform.position = phoneScene4Pos;
 			break;
 		default: break;
 		}
@@ -677,6 +733,11 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("information2_", 2);
 		keyDialogSizeMap.Add("meloffCall", 12);
 		keyDialogSizeMap.Add("scene3Ending", 5);
+		keyDialogSizeMap.Add ("paulaPhoneCall2_", 2);
+		keyDialogSizeMap.Add ("paulaPhoneCall3_", 5);
+		keyDialogSizeMap.Add ("amnesia", 4);
+		keyDialogSizeMap.Add ("paulaPills", 6);
+		keyDialogSizeMap.Add ("freshWater", 4);
 	}
 
     void DisableHighlighting(string name)

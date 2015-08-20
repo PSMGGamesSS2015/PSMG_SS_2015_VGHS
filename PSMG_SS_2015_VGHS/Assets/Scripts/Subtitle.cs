@@ -226,6 +226,28 @@ public class Subtitle : MonoBehaviour {
 		keyNodeMap.Add ("scene3Ending5", "jane_house_3_17");
 		//text house 4
 		keyNodeMap.Add ("dizzy3", "jane_house_4_1");
+		keyNodeMap.Add ("paulaPhoneCall2_1", "paula_house_4_1");
+		keyNodeMap.Add ("paulaPhoneCall2_2", "jane_house_4_2");
+		keyNodeMap.Add ("paulaPhoneCall3_1", "paula_house_4_2");
+		keyNodeMap.Add ("paulaPhoneCall3_2", "paula_mum_1");
+		keyNodeMap.Add ("paulaPhoneCall3_3", "paula_house_4_3");
+		keyNodeMap.Add ("paulaPhoneCall3_4", "paula_mum_2");
+		keyNodeMap.Add ("paulaPhoneCall3_5", "paula_house_4_4");
+		keyNodeMap.Add ("amnesia1", "jane_house_4_3");
+		keyNodeMap.Add ("amnesia2", "jane_house_4_4");
+		keyNodeMap.Add ("amnesia3", "jane_house_4_5");
+		keyNodeMap.Add ("amnesia4", "jane_house_4_6");
+		keyNodeMap.Add ("paulaPills1", "paula_house_4_5");
+		keyNodeMap.Add ("paulaPills2", "jane_house_4_7");
+		keyNodeMap.Add ("paulaPills3", "paula_house_4_6");
+		keyNodeMap.Add ("paulaPills4", "jane_house_4_8");
+		keyNodeMap.Add ("paulaPills5", "jane_house_4_9");
+		keyNodeMap.Add ("paulaPills6", "jane_house_4_10");
+		keyNodeMap.Add ("hidePills", "jane_house_4_11");
+		keyNodeMap.Add ("freshWater1", "paula_house_4_7");
+		keyNodeMap.Add ("freshWater2", "jane_house_4_12");
+		keyNodeMap.Add ("freshWater3", "paula_house_4_8");
+		keyNodeMap.Add ("freshWater4", "jane_house_4_13");
 	}
 
 	// Setter for subtitle that needs to be shown

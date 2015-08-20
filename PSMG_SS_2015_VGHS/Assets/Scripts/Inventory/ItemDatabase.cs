@@ -24,5 +24,7 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add (new Item ("paulasDaughter", "Michael saved Paulas Daughter", 11));
 		items.Add (new Item ("crash", "Mother died in a car crash", 12));
 		items.Add (new Item ("dizzy", "Feeling so strange and dizzy", 13));
+		items.Add (new Item ("nightmares", "Paulas daughter has nightmares", 14));
+		items.Add (new Item ("amnesia", "I lost my memories on June, 24th June", 15));
 	}
 }

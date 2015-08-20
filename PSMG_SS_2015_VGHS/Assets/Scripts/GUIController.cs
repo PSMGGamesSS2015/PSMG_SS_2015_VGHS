@@ -96,6 +96,12 @@ public class GUIController : MonoBehaviour {
 		case "dizzy":
 			inventory.GetComponent<Inventory>().addItem (13);
 			break;
+		case "nightmares":
+			inventory.GetComponent<Inventory>().addItem (14);
+			break;
+		case "amnesia":
+			inventory.GetComponent<Inventory>().addItem (15);
+			break;
 		default: break;
 		}
 	}

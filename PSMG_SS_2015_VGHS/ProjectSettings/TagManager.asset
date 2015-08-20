@@ -36,6 +36,7 @@ TagManager:
   - Button2
   - Button3
   - Button4
+  - Warderobe
   layers:
   - Default
   - TransparentFX
