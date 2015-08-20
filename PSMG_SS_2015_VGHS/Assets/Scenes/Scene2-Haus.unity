@@ -7533,7 +7533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: dd8a005ce03b32f418c7a440945dde66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.98999977
+      value: 5.40999985
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: dd8a005ce03b32f418c7a440945dde66, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23246,6 +23246,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450103997}
   - 95: {fileID: 450103996}
+  - 65: {fileID: 450103998}
   m_Layer: 0
   m_Name: bathroom_full
   m_TagString: Untagged
@@ -23288,6 +23289,18 @@ Transform:
   - {fileID: 997275390}
   m_Father: {fileID: 863941722}
   m_RootOrder: 2
+--- !u!65 &450103998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 450103995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.85564625, y: 3.2008903, z: 1}
+  m_Center: {x: .112585977, y: 2.74128008, z: 0}
 --- !u!4 &451157863
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0f96d824d064d0f45862d057f7bd6272, type: 3}
@@ -48728,7 +48741,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: dd8a005ce03b32f418c7a440945dde66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.98999977
+      value: 5.38000011
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: dd8a005ce03b32f418c7a440945dde66, type: 3}
       propertyPath: m_LocalPosition.z
