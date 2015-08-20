@@ -110,6 +110,9 @@ public class GUIController : MonoBehaviour {
 		case "haldol":
 			inventory.GetComponent<Inventory>().addItem (16);
 			break;
+		case "personalStuff":
+			inventory.GetComponent<Inventory>().addItem (17);
+			break;
 		default: break;
 		}
 	}

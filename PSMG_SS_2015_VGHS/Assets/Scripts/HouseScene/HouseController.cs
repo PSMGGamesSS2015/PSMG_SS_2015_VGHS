@@ -19,6 +19,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject glassTableImpression;
 	public GameObject adressBook;
 	public GameObject playerCam;
+	public GameObject box;
 
 	public bool master = false;
 
@@ -71,6 +72,7 @@ public class HouseController : MonoBehaviour {
 	bool pillsHidden = false;
 	bool boxFound = false;
 	bool pillAnswer = false;
+	bool stuffFound = false;
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -195,7 +197,7 @@ public class HouseController : MonoBehaviour {
 						sidetableOpen = false;
 					}
 					break;
-				case "Phone":
+				case "Phone": // interact with telephone
 					if (dialogsPerformed.Contains ("pills") && !guiController.isShowing() && !dialogsPerformed.Contains("meloffCall")){
 						initDialog("information");
 						phoneTriggered = true;
@@ -217,12 +219,18 @@ public class HouseController : MonoBehaviour {
 					}
 					if(dialogsPerformed.Contains("freshWater") && !boxFound){
 						guiController.toggleSubtl("box");
-						// make box visible here!
+						box.SetActive(true);
 						boxFound = true;
 					}
 					if(boxFound && !guiController.isShowing()){
 						guiController.togglePills();
 					}
+					break;
+				case "Box": // interact with box
+					guiController.toggleSubtl("box2");
+					insertIntoInventory("personalStuff");
+					box.SetActive(false);
+					stuffFound = true;
 					break;
 				default: break;
 				}
@@ -350,6 +358,11 @@ public class HouseController : MonoBehaviour {
 				break;
 			case "Warderobe": // show interactable when jane needs to hide the pills 
 				if(dialogsPerformed.Contains("paulaPills")){
+					guiController.toggleInteractionHint(true);
+				}
+				break;
+			case "Box": // collide with box
+				if(!stuffFound){
 					guiController.toggleInteractionHint(true);
 				}
 				break;
@@ -509,7 +522,7 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl (actualSubtl);
 		}
 
-		else if (actualSubtl.Equals ("paulaPills5")) {
+		else if (actualSubtl.Equals ("paulaPills6")) {
 			stopFollowing = true;
 			paula.GetComponent<FollowTarget>().target = GameObject.Find("notepad").transform;
 			guiController.toggleSubtl (actualSubtl);

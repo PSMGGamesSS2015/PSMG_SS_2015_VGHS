@@ -41,6 +41,7 @@ TagManager:
   - Ativan
   - Haldol
   - Ritalin
+  - Box
   layers:
   - Default
   - TransparentFX
