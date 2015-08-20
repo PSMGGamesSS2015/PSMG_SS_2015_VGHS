@@ -32,6 +32,11 @@ ModelImporter:
     4300004: Nachttischpfosten
     4300006: Schublade
     4300008: Buch01
+    6400000: Buch01
+    6400002: Nachttisch-Ablage
+    6400004: Nachttisch-Kasten
+    6400006: Nachttischpfosten
+    6400008: Schublade
     7400000: Default Take
     9500000: //RootNode
     11100000: //RootNode
@@ -94,7 +99,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
