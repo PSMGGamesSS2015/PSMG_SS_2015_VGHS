@@ -47743,6 +47743,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 938758455}
   - 95: {fileID: 938758456}
+  - 65: {fileID: 938758457}
   m_Layer: 0
   m_Name: Schlafzimmer_Bett
   m_TagString: Untagged
@@ -47788,6 +47789,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!65 &938758457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938758454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.7137842, y: 4.04121733, z: 10.3956308}
+  m_Center: {x: -1.98036492, y: 2.27304649, z: .427380115}
 --- !u!1 &940457443
 GameObject:
   m_ObjectHideFlags: 0

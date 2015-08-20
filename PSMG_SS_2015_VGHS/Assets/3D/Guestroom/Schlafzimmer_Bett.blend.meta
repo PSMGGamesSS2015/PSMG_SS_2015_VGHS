@@ -59,6 +59,16 @@ ModelImporter:
     4300014: Decke_rechts_MeshPart0
     4300016: Decke_rechts_MeshPart1
     4300018: Decke_rechts_MeshPart2
+    6400000: Bettgestell
+    6400002: Decke_links
+    6400004: Decke_rechts_MeshPart0
+    6400006: Decke_rechts_MeshPart1
+    6400008: Decke_rechts_MeshPart2
+    6400010: K_rper_f_r_Decke
+    6400012: Kissen_links
+    6400014: Kissen_rechts
+    6400016: Matratze_links
+    6400018: Matratze_rechts
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -82,7 +92,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
