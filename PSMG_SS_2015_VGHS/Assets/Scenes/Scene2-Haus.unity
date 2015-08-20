@@ -62644,6 +62644,7 @@ GameObject:
   - 4: {fileID: 1225819999}
   - 95: {fileID: 1225820000}
   - 23: {fileID: 1225820002}
+  - 65: {fileID: 1225820001}
   m_Layer: 0
   m_Name: bookcase
   m_TagString: Untagged
@@ -62685,6 +62686,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!65 &1225820001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1225819998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.599329, y: 3.65304184, z: .886192322}
+  m_Center: {x: .0579395294, y: .855541706, z: .0569038391}
 --- !u!23 &1225820002
 MeshRenderer:
   m_ObjectHideFlags: 0
