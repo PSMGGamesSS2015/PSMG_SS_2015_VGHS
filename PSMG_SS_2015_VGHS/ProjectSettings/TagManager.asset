@@ -37,6 +37,10 @@ TagManager:
   - Button3
   - Button4
   - Warderobe
+  - Apirin
+  - Ativan
+  - Haldol
+  - Ritalin
   layers:
   - Default
   - TransparentFX

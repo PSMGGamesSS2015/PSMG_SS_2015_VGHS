@@ -12,16 +12,6 @@ public class QuizController : MonoBehaviour {
 	public GameObject button4;
 
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	public void setupButtonText(string button1text, string button2text, string button3text, string button4text){
 		GameObject.FindGameObjectWithTag ("Button1").GetComponent<Text> ().text = button1text;
 		GameObject.FindGameObjectWithTag ("Button2").GetComponent<Text> ().text = button2text;
