@@ -69,6 +69,8 @@ public class HouseController : MonoBehaviour {
 	bool answerCorrect = false;
 	bool stopFollowing = false;
 	bool pillsHidden = false;
+	bool boxFound = false;
+	bool pillAnswer = false;
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -165,6 +167,9 @@ public class HouseController : MonoBehaviour {
 				case "Bookshelf": // interaction with bookshelf in workroom
 					if(actualHouseScene == 4){
 						initDialog ("amnesia");
+					}
+					if(actualHouseScene == 4 && boxFound){
+						guiController.togglePillQuiz();
 					}else {
 						guiController.toggleSubtl("bookshelf");
 					}
@@ -205,10 +210,18 @@ public class HouseController : MonoBehaviour {
 					}
 					break;
 				case "Warderobe": // interactions with warderobe in bedroom
-					if(!dialogsPerformed.Contains("freshWater")){
+					if(!dialogsPerformed.Contains("freshWater") && dialogsPerformed.Contains("paulaPills")){
 						guiController.toggleSubtl("hidePills");
 						paula.GetComponent<FollowTarget>().target = player.transform;
 						pillsHidden = true;
+					}
+					if(dialogsPerformed.Contains("freshWater") && !boxFound){
+						guiController.toggleSubtl("box");
+						// make box visible here!
+						boxFound = true;
+					}
+					if(boxFound && !guiController.isShowing()){
+						guiController.togglePills();
 					}
 					break;
 				default: break;
@@ -577,6 +590,13 @@ public class HouseController : MonoBehaviour {
 			paula.GetComponent<FollowTarget>().target = player.transform;
 			paula.GetComponent<NavMeshAgent>().speed = 3.5f;
 		}
+		// make paula walk back into the kitchen after bringing another glass of water
+		if (dialogsPerformed.Contains ("freshWater")) {
+			paula.GetComponent<FollowTarget>().target = GameObject.Find("notepad").transform;
+		}
+		if (actualHouseScene == 3 && master) {
+			StartCoroutine(onNextSceneStart());
+		}
 		master = false;
 			
 	}
@@ -633,8 +653,9 @@ public class HouseController : MonoBehaviour {
 			}
 		}		
 	}
-
+	// check quiz results
 	void checkQuizResult(){
+		// check if phone quiz while trying to call the doctor turned out correctly
 		if (!guiController.quizAnswer.Equals ("") && !answerCorrect) {
 			if(guiController.quizAnswer.Equals ("Dr. Meloff")){
 				guiController.toggleQuizPanel("");
@@ -646,6 +667,21 @@ public class HouseController : MonoBehaviour {
 				initDialog("information2_");
 				guiController.quizAnswer = "";
 				guiController.toggleQuizPanel("");
+			}
+		}
+		// check if pill quiz while trying to identify the pills turned out correctly
+		if (!guiController.pillQuizAnswer.Equals ("")) {
+			if(guiController.pillQuizAnswer.Equals("Haldol") && !pillAnswer){
+				guiController.togglePillQuiz();
+				guiController.pillQuizAnswer = "";
+				pillAnswer = true;
+				guiController.toggleSubtl("haldol");
+				insertIntoInventory("haldol");
+			}
+			else{
+				guiController.togglePillQuiz();
+				guiController.pillQuizAnswer = "";
+				guiController.toggleSubtl("wrongPills");
 			}
 		}
 	}

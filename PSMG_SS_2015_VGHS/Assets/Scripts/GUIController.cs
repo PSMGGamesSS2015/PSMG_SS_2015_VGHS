@@ -24,6 +24,8 @@ public class GUIController : MonoBehaviour {
 	public GameObject adressBook;
 	public GameObject familyalbum;
 	public GameObject quizPanel;
+	public GameObject pills;
+	public GameObject pillQuiz;
     public GameObject soundOptions;
     public Slider slider;
 
@@ -35,7 +37,10 @@ public class GUIController : MonoBehaviour {
 	public bool albumClosedFirstTime = false;
 	bool menuShown;
 	bool quizIsShown;
+	bool pillsShown;
+	bool pillBookShown;
 	public string quizAnswer = "";
+	public string pillQuizAnswer = "";
 
 
 	// Use this for initialization
@@ -102,6 +107,9 @@ public class GUIController : MonoBehaviour {
 		case "amnesia":
 			inventory.GetComponent<Inventory>().addItem (15);
 			break;
+		case "haldol":
+			inventory.GetComponent<Inventory>().addItem (16);
+			break;
 		default: break;
 		}
 	}
@@ -153,7 +161,7 @@ public class GUIController : MonoBehaviour {
 
 	// method that makes it able to check if something is shown on UI currently
 	public bool isShowing(){
-		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown || familyalbumShown || quizIsShown) {
+		if (subtlShown || inventoryShown || menuShown || interactionPanelShown || adressBookShown || familyalbumShown || quizIsShown || pillBookShown) {
 			return true;
 		} else {
 			return false;
@@ -263,6 +271,29 @@ public class GUIController : MonoBehaviour {
 			quizPanel.SetActive(false);
 			quizIsShown = false;
 			Cursor.visible = false;
+		}
+	}
+	// show/unshow pills
+	public void togglePills(){
+		if (!pills.activeSelf) {
+			pills.SetActive (true);
+			pillsShown = true;
+		} else {
+			pills.SetActive (false);
+			pillsShown = false;
+			toggleSubtl("ativan");
+		}
+	}
+	// show/unshow medicin book 
+	public void togglePillQuiz(){
+		if (!pillQuiz.activeSelf) {
+			pillQuiz.SetActive (true);
+			Cursor.visible = true;
+			pillBookShown = true;
+		} else {
+			pillQuiz.SetActive (false);
+			Cursor.visible = false;
+			pillBookShown = false;
 		}
 	}
 
