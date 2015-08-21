@@ -153,10 +153,18 @@
 	<jane_house_4_38>Michael... ist... ist unsere Tochter auch... bei dem Unfall dabei gewesen?</jane_house_4_38>
 	<jane_house_4_39>Nein! Nein, das kann nicht sein!</jane_house_4_39>
 	<jane_house_4_40>Nein, bitte nicht...</jane_house_4_40>
-	<jane_house_4_41>Michael, was genau ist an dem Tag geschehen als ich die Amnesie erlitt?</jane_house_4_42>
-	<jane_house_4_42>Daher das Blut auf dem Kleid... oh Gott...</jane_house_4_43>
-	<jane_house_4_43>Ja... und dann will ich am besten nie wieder aufwachen...</jane_house_4_44>
+	<jane_house_4_41>Michael, was genau ist an dem Tag geschehen als ich die Amnesie erlitt?</jane_house_4_41>
+	<jane_house_4_42>Daher das Blut auf dem Kleid... oh Gott...</jane_house_4_42>
+	<jane_house_4_43>Ja... und dann will ich am besten nie wieder aufwachen...</jane_house_4_43>
 	
+	<!-- House Fifth Scene -->
+	<jane_house_5_1>In was für einem Alptraum befinde ich mich hier eigentlich?</jane_house_5_1>
+	<jane_house_5_2>Ich habe meine Mutter und meine Tochter getötet und kann mich nicht einmal mehr daran erinnern...</jane_house_5_2>
+	<jane_house_5_3>Michael liebt mich, das sehe ich ihm an... und ich bin mit einer Vase losgegangen, um...</jane_house_5_3>
+	<jane_house_5_4>...um jemanden namens Pat Rutherford zu treffen. Oh Gott hatte ich vielleicht eine Affäre? Konnte ich so eine grausame Person gewesen sein?</jane_house_5_4>
+	<jane_house_5_5>Es hilft nichts, ich muss wissen wer das ist!</jane_house_5_5>
+	<jane_house_5_6>Oh gott ist mir schlecht...</jane_house_5_6>
+	<jane_house_5_7>Was?! Verdammt, ich bin doch keine Verrückte?! Scheiße, jemand muss mir helfen!</jane_house_5_7>
 	
 	<!-- Michael Text -->
 	<!--  House First Scene -->
@@ -243,7 +251,7 @@
 	<michael_house_3_6>Hier deine Tabletten, Schatz.</michael_house_3_6>
 	<michael_house_3_7>Das ist schon wieder einen ganzen Tag her, Jane.</michael_house_3_7>
 	
-	<!-- House Fourth Scene Scene -->
+	<!-- House Fourth Scene -->
 	<michael_house_4_1>Jane? Was machst du da?</michael_house_4_1>
 	<michael_house_4_2>Jane, was treibst du denn da?!</michael_house_4_2>
 	<michael_house_4_3>Willst du denn, dass sich alle Sorgen machen?!</michael_house_4_3>
@@ -259,6 +267,13 @@
 	<michael_house_4_13>Schatz es tut mir so leid...</michael_house_4_13>
 	<michael_house_4_14>Je näher der Todestag deiner Mutter und unserer Tochter rückte, desto aufgebrachter warst du. Du hattest Stimmungsschwankungen, warst unberechenbar. Und vor einer Woche ist es dann passiert. Du bist vollkommen ausgerastet und hast mich angeschrien. Ich habe versucht dich zu beruhigen, mit dir zu reden, als du plötzlich nach einer Vase gegriffen hast und auf mich losgegangen bist.</michael_house_4_14>
 	<michael_house_4_15>Schatz ist alles in Ordnung? Soll ich dir deine Tabletten bringen?</michael_house_4_15>
+	
+	<!-- House Fifth Scene -->
+	<michael_house_5_1>Nehmen sie sich in Acht vor Jane.</michael_house_5_1>
+	<michael_house_5_2>Sie hatte gestern einen Zusammenbruch. Ich weiß nicht, was ihr heute alles einfällt, aber ich muss jetzt in die Praxis.</michael_house_5_2>
+	<michael_house_5_3>Ich habe ihr gestern ein starkes Medikament verabreicht. Sie müsste noch ein bis zwei Stunden schlafen.</michael_house_5_3>
+	<michael_house_5_4>Heute Nachmittag werde ich sie dann abholen lassen. Sie kann nicht hier bleiben, das ist zu gefährlich.</michael_house_5_4>
+	<michael_house_5_5>Ich habe leider keine andere Wahl...</michael_house_5_5>
 	
 	
 	<!-- Paula Text -->
@@ -290,6 +305,12 @@
 	<paula_house_4_6>Ich denke es ist wieder Zeit für ihre Tabletten.</paula_house_4_6>
 	<paula_house_4_7>Hier bitte, ihr Wasser.</paula_house_4_7>
 	<paula_house_4_8>Sie sollten aufhören so viel herumzuwandern und sich hinlegen. Michael macht sich inzwischen große Sorgen.</paula_house_4_8>
+	
+	<!--  House Fourth Scene -->
+	<paula_house_5_1>Wieso, was ist mit ihr?</paula_house_5_1>
+	<paula_house_5_2>Ich müsste eigentlich auch noch schnell die ein oder andere Besorgung machen.</paula_house_5_2>
+	<paula_house_5_3>Oh okay.</paula_house_5_3>
+	<paula_house_5_4>Sie wollen sie in ein Heim einweisen?</paula_house_5_4>
 	
   
   <information_1>Wie lautet der Name des Arztes?</information_1>

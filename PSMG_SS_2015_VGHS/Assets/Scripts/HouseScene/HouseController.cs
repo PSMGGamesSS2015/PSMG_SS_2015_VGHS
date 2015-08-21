@@ -356,6 +356,9 @@ public class HouseController : MonoBehaviour {
 				if (actualHouseScene == 4){
 					initDialog ("paulaPhoneCall2_");
 				}
+				if (actualHouseScene == 5){
+					initDialog ("michaelPaula");
+				}
 				break;
 			case "Phone": // interactable in special cases
 				guiController.toggleInteractionHint(true);
@@ -536,6 +539,13 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("daughterDead")) {
 				dialogsPerformed.Remove ("daughterDead1");
 				dialogsPerformed.Add ("daughterDead");
+				StartCoroutine (onNextSceneStart ());
+			}
+			// dialog michaelPaula needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("michaelPaula")) {
+				dialogsPerformed.Remove ("michaelPaula1");
+				dialogsPerformed.Add ("michaelPaula");
+				StartCoroutine (onNextSceneStart ());
 			}
 			switch (actualDialog) {
 			case "scare":
@@ -661,6 +671,9 @@ public class HouseController : MonoBehaviour {
 		if (actualHouseScene == 3 && master) {
 			StartCoroutine(onNextSceneStart());
 		}
+		if (actualHouseScene == 4 && master) {
+			StartCoroutine(onNextSceneStart());
+		}
 		master = false;
 			
 	}
@@ -676,6 +689,14 @@ public class HouseController : MonoBehaviour {
 			case 3:
 				player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 40);
 				playerCam.GetComponent<BlurOptimized>().blurIterations = 2;
+				break;
+			case 4:
+				player.GetComponent<FirstPersonController> ().randomControl ("Horizontal", "Vertical", 60);
+				playerCam.GetComponent<BlurOptimized>().blurIterations = 3;
+				break;
+			case 5:
+				player.GetComponent<FirstPersonController> ().randomControl ("Vertical", "Horizontal", 60);
+				playerCam.GetComponent<BlurOptimized>().blurIterations = 4;
 				break;
 			}
 		}else{
@@ -813,6 +834,12 @@ public class HouseController : MonoBehaviour {
 			phoneWorkroom.SetActive(true);
 			answerCorrect = false;
 			break;
+		case 5:
+			michael.SetActive(false);
+			paula.SetActive (false);
+			phoneWorkroom.SetActive(false);
+			initDialog("janeDespaired");
+			break;
 		default: break;
 		}
 	}
@@ -860,6 +887,8 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add ("haldol2_", 11);
 		keyDialogSizeMap.Add ("visit", 2);
 		keyDialogSizeMap.Add ("daughterDead", 11);
+		keyDialogSizeMap.Add ("janeDespaired", 6);
+		keyDialogSizeMap.Add ("michaelPaula", 10);
 	}
 
     void DisableHighlighting(string name)
