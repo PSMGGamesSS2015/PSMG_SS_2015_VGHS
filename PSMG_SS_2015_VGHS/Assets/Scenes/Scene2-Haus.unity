@@ -20505,12 +20505,16 @@ MonoBehaviour:
   theory2Text: Hit Michael?
   theory3Text: Pills make me dizzy?
   theory4Text: Visiting Brother was a lie?
+  theory5Text: Daughter died in car crash?
+  theory6Text: Michael lied!
   actualTheory: 0
   newHint: 0
   theory1Found: 0
   theory2Found: 0
   theory3Found: 0
   theory4Found: 0
+  theory5Found: 0
+  theory6Found: 0
 --- !u!114 &393317080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58126,7 +58130,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8dd254ff80fcb404dbbaac94667f5175, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.8500004
+      value: 25.7900009
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8dd254ff80fcb404dbbaac94667f5175, type: 3}
       propertyPath: m_LocalPosition.y

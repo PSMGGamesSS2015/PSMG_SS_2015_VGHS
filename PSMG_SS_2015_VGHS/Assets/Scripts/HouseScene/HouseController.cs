@@ -30,6 +30,7 @@ public class HouseController : MonoBehaviour {
 	Vector3 michaelScene2Pos = new Vector3(22f, -1f, 32f);
 	Vector3 michaelScene3Pos = new Vector3(24f, 3f, 32f);
 	Vector3 phoneScene4Pos = new Vector3 (4.5f, 6f, 7.5f);
+	Vector3 paulaScene5Pos = new Vector3 (28f, -1f, 24f);
 	RaycastHit hit;
 	string actualDialog = "";
 	int pianoCount = 0;
@@ -73,6 +74,7 @@ public class HouseController : MonoBehaviour {
 	bool phoneTriggered = false;
 	bool answerCorrect = false;
 	bool answerBrotherCorrect = false;
+	bool answerDianeCorrect = false;
 	bool stopFollowing = false;
 	bool pillsHidden = false;
 	bool boxFound = false;
@@ -214,6 +216,9 @@ public class HouseController : MonoBehaviour {
 					}
 					if(theory4Registered && !dialogsPerformed.Contains("brotherCall")){
 						initDialog("information3_");
+					}
+					if(theory6Registered && !dialogsPerformed.Contains("dianeCall")){
+						initDialog("information4_");
 					}else{
 						guiController.toggleSubtl("phoneDefault");
 					}
@@ -547,7 +552,19 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("michaelPaula")) {
 				dialogsPerformed.Remove ("michaelPaula1");
 				dialogsPerformed.Add ("michaelPaula");
-				StartCoroutine (onNextSceneStart ());
+			}
+			// remove dialog to toggle it more than one time and open quiz panel
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("information4_")) {
+				dialogsPerformed.Remove ("information4_");
+				guiController.toggleQuizPanel ("diane");
+			}
+			// dialog diane needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("dianeCall")) {
+				dialogsPerformed.Remove ("dianeCall1");
+				dialogsPerformed.Add ("dianeCall");
+				paula.transform.position = paulaScene5Pos;
+				paula.GetComponent<NavMeshAgent>().speed = 0f;
+				paula.SetActive(true);
 			}
 			switch (actualDialog) {
 			case "scare":
@@ -679,9 +696,7 @@ public class HouseController : MonoBehaviour {
 		if (actualHouseScene == 3 && master) {
 			StartCoroutine(onNextSceneStart());
 		}
-		if (actualHouseScene == 4 && master) {
-			StartCoroutine(onNextSceneStart());
-		}
+
 		master = false;
 			
 	}
@@ -724,19 +739,22 @@ public class HouseController : MonoBehaviour {
 				}
 			}
 		}
-		if (answerCorrect) {
+		if(dialogsPerformed.Contains("meloffCall")){
 			if (Physics.Raycast (lookRay, out hit, rayDist)) {
 				if(hit.collider.tag.Equals("Michael")){
-					if(dialogsPerformed.Contains("meloffCall")){
-						initDialog("scene3Ending");
-					}
-					else{
-						initDialog ("janeCought");
-					}
-
+					initDialog("scene3Ending");
 				}
 			}
 		}
+
+		if (dialogsPerformed.Contains ("brotherCall")) {
+			if (Physics.Raycast (lookRay, out hit, rayDist)) {
+				if (hit.collider.tag.Equals ("Michael")) {
+					initDialog ("janeCought");
+				}
+			}
+		}
+
 		if(dialogsPerformed.Contains ("paulaPhoneCall3_") && dialogsPerformed.Contains ("amnesia")){
 			if (Physics.Raycast (lookRay, out hit, rayDist)) {
 				if(hit.collider.tag.Equals("Paula")){
@@ -750,24 +768,39 @@ public class HouseController : MonoBehaviour {
 					initDialog ("freshWater");
 				}
 			}
-		}		
+		}
+		if (dialogsPerformed.Contains ("dianeCall")) {
+			if (Physics.Raycast (lookRay, out hit, rayDist)) {
+				if(hit.collider.tag.Equals("Paula")){
+					initDialog ("paulaBlock");
+				}
+			}
+		}	
 	}
 	// check quiz results
 	void checkQuizResult(){
 		// check if phone quiz while trying to call the doctor turned out correctly
-		if (!guiController.quizAnswer.Equals ("") && !answerCorrect) {
+		if (!guiController.quizAnswer.Equals ("")) {
 			if(guiController.quizAnswer.Equals ("Dr. Meloff")){
+				guiController.quizAnswer = "";
 				guiController.toggleQuizPanel("");
 				initDialog("meloffCall");
 				michael.GetComponent<FollowTarget>().target = player.transform;
 				answerCorrect = true;
 			}
-			if(guiController.quizAnswer.Equals ("San Diego")){
+			else if(guiController.quizAnswer.Equals ("San Diego")){
+				guiController.quizAnswer = "";
 				guiController.toggleQuizPanel("");
 				initDialog ("brotherCall");
 				michael.SetActive(true);
 				guiController.manageInteraction("michael_visit", "Michael");
-				answerCorrect = true;
+				answerBrotherCorrect = true;
+			}
+			else if(guiController.quizAnswer.Equals ("Boylston Street")){
+				guiController.quizAnswer = "";
+				guiController.toggleQuizPanel("");
+				initDialog ("dianeCall");
+				answerDianeCorrect = true;
 			}
 			else{
 				initDialog("information2_");
@@ -840,12 +873,10 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("dizzy3");
 			GameObject.FindGameObjectWithTag("PhoneBedroom").SetActive(false);
 			phoneWorkroom.SetActive(true);
-			answerCorrect = false;
 			break;
 		case 5:
 			michael.SetActive(false);
 			paula.SetActive (false);
-			phoneWorkroom.SetActive(false);
 			initDialog("janeDespaired");
 			break;
 		default: break;
@@ -897,6 +928,9 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add ("daughterDead", 11);
 		keyDialogSizeMap.Add ("janeDespaired", 6);
 		keyDialogSizeMap.Add ("michaelPaula", 10);
+		keyDialogSizeMap.Add("information4_", 3);
+		keyDialogSizeMap.Add("dianeCall", 11);
+		keyDialogSizeMap.Add ("paulaBlock", 4);
 	}
 
     void DisableHighlighting(string name)
