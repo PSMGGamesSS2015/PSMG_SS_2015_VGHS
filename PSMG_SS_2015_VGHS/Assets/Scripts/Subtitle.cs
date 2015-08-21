@@ -253,6 +253,14 @@ public class Subtitle : MonoBehaviour {
 		keyNodeMap.Add ("haldol", "jane_house_4_16");
 		keyNodeMap.Add ("wrongPills", "jane_house_4_17");
 		keyNodeMap.Add ("box2", "jane_house_4_18");
+		keyNodeMap.Add ("theory4", "jane_house_4_19");
+		keyNodeMap.Add ("phoneDefault", "jane_house_4_20");
+		keyNodeMap.Add ("information3_1", "jane_house_4_21");
+		keyNodeMap.Add ("information3_2", "information_4");
+		keyNodeMap.Add ("information3_3", "jane_house_4_22");
+		keyNodeMap.Add ("warderobe", "jane_house_4_23");
+		keyNodeMap.Add ("brotherCall1", "information_3");
+		//keyNodeMap.Add ("brotherCall2", "information_3");
 	}
 
 	// Setter for subtitle that needs to be shown

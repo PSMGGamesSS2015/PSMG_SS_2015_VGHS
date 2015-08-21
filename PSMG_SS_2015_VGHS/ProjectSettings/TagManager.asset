@@ -42,6 +42,8 @@ TagManager:
   - Haldol
   - Ritalin
   - Box
+  - PhoneBedroom
+  - Chest
   layers:
   - Default
   - TransparentFX

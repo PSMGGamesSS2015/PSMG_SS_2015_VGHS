@@ -20,6 +20,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject adressBook;
 	public GameObject playerCam;
 	public GameObject box;
+	public GameObject phoneWorkroom;
 
 	public bool master = false;
 
@@ -50,6 +51,7 @@ public class HouseController : MonoBehaviour {
 	bool dialog = false;
 	bool theory2Registered = false;
 	bool theory3Registered = false;
+	bool theory4Registered = false;
 	bool familyInteractionDone = false;
 	bool missingPicture = false;
 	bool missingPictureFound = false;
@@ -68,11 +70,14 @@ public class HouseController : MonoBehaviour {
 	bool lostBookFound = false;
 	bool phoneTriggered = false;
 	bool answerCorrect = false;
+	bool answerBrotherCorrect = false;
 	bool stopFollowing = false;
 	bool pillsHidden = false;
 	bool boxFound = false;
 	bool pillAnswer = false;
 	bool stuffFound = false;
+	bool pillsFound = false;
+	bool haldol = false;
 
 
 	// Setup Inventory and Interactions when House Scene starts
@@ -170,7 +175,7 @@ public class HouseController : MonoBehaviour {
 					if(actualHouseScene == 4){
 						initDialog ("amnesia");
 					}
-					if(actualHouseScene == 4 && boxFound){
+					if(actualHouseScene == 4 && pillsFound){
 						guiController.togglePillQuiz();
 					}else {
 						guiController.toggleSubtl("bookshelf");
@@ -205,6 +210,11 @@ public class HouseController : MonoBehaviour {
 					if((actualHouseScene == 4 && !dialogsPerformed.Contains("paulaPhoneCall3_"))){
 						initDialog("paulaPhoneCall3_");
 					}
+					if(theory4Registered && !dialogsPerformed.Contains("brotherCall")){
+						initDialog("information3_");
+					}else{
+						guiController.toggleSubtl("phoneDefault");
+					}
 					break;
 				case "Paula": // open interaction panel if interactions are available
 					if(guiController.checkForPanelContent()){
@@ -217,13 +227,19 @@ public class HouseController : MonoBehaviour {
 						paula.GetComponent<FollowTarget>().target = player.transform;
 						pillsHidden = true;
 					}
-					if(dialogsPerformed.Contains("freshWater") && !boxFound){
+					if(dialogsPerformed.Contains("freshWater") && !haldol){
+						guiController.togglePills();
+						pillsFound = true;
+					}
+					else{
+						guiController.toggleSubtl("warderobe");
+					}
+					break;
+				case "Chest": // interacting with chest of drawers ins guestroom
+					if(haldol){
 						guiController.toggleSubtl("box");
 						box.SetActive(true);
 						boxFound = true;
-					}
-					if(boxFound && !guiController.isShowing()){
-						guiController.togglePills();
 					}
 					break;
 				case "Box": // interact with box
@@ -341,9 +357,7 @@ public class HouseController : MonoBehaviour {
 				}
 				break;
 			case "Phone": // interactable in special cases
-				if (actualHouseScene == 3 && !dialogsPerformed.Contains("meloffCall") || (actualHouseScene == 4 && !dialogsPerformed.Contains("paulaPhoneCall3_"))){
-					guiController.toggleInteractionHint(true);
-				}
+				guiController.toggleInteractionHint(true);
 				break;
 			case "Sidetable": // check if sidetable triggered
 				guiController.toggleInteractionHint (true);
@@ -358,6 +372,11 @@ public class HouseController : MonoBehaviour {
 				break;
 			case "Warderobe": // show interactable when jane needs to hide the pills 
 				if(dialogsPerformed.Contains("paulaPills")){
+					guiController.toggleInteractionHint(true);
+				}
+				break;
+			case "Chest": // set interactible one time to find box 
+				if(haldol && !boxFound){
 					guiController.toggleInteractionHint(true);
 				}
 				break;
@@ -499,6 +518,11 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("amnesia")) {
 				insertIntoInventory("amnesia");
 			}
+			// remove dialog to toggle it more than one time and open quiz panel
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("information3_")) {
+				dialogsPerformed.Remove ("information3_");
+				guiController.toggleQuizPanel ("brother");
+			}
 			switch (actualDialog) {
 			case "scare":
 				guiController.manageInteraction ("michael_mother", "Michael");
@@ -567,6 +591,12 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("theory3");
 			guiController.manageInteraction("michael_dizzy", "Michael");
 			theory3Registered = true;
+		}
+		// check for fourth theory
+		if(theory.GetComponent<Theory> ().theory4Found && !theory4Registered){
+			guiController.toggleInventory();
+			guiController.toggleSubtl("theory4");
+			theory4Registered = true;
 		}
 	}
 
@@ -645,7 +675,7 @@ public class HouseController : MonoBehaviour {
 			}
 		}
 		if (answerCorrect) {
-			if (Physics.Raycast (lookRay, out hit, rayDist)) {
+			if (Physics.Raycast (lookRay, out hit, rayDist) && dialogsPerformed.Contains("meloffCall")) {
 				if(hit.collider.tag.Equals("Michael")){
 					initDialog("scene3Ending");
 				}
@@ -676,6 +706,13 @@ public class HouseController : MonoBehaviour {
 				michael.GetComponent<FollowTarget>().target = player.transform;
 				answerCorrect = true;
 			}
+			if(guiController.quizAnswer.Equals ("San Diego")){
+				guiController.toggleQuizPanel("");
+				initDialog ("brotherCall");
+				michael.SetActive(true);
+				answerCorrect = true;
+				Debug.Log ("huhu");
+			}
 			else{
 				initDialog("information2_");
 				guiController.quizAnswer = "";
@@ -690,6 +727,7 @@ public class HouseController : MonoBehaviour {
 				pillAnswer = true;
 				guiController.toggleSubtl("haldol");
 				insertIntoInventory("haldol");
+				haldol = true;
 			}
 			else{
 				guiController.togglePillQuiz();
@@ -744,7 +782,9 @@ public class HouseController : MonoBehaviour {
 			michael.SetActive(false);
 			paula.SetActive(true);
 			guiController.toggleSubtl("dizzy3");
-			GameObject.Find("telephone").transform.position = phoneScene4Pos;
+			GameObject.FindGameObjectWithTag("PhoneBedroom").SetActive(false);
+			phoneWorkroom.SetActive(true);
+			answerCorrect = false;
 			break;
 		default: break;
 		}
@@ -787,6 +827,8 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add ("amnesia", 4);
 		keyDialogSizeMap.Add ("paulaPills", 6);
 		keyDialogSizeMap.Add ("freshWater", 4);
+		keyDialogSizeMap.Add("information3_", 3);
+		keyDialogSizeMap.Add("brotherCall", 1);
 	}
 
     void DisableHighlighting(string name)

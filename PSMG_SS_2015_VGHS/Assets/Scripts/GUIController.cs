@@ -269,6 +269,9 @@ public class GUIController : MonoBehaviour {
 			case "doctor":
 				quizPanel.GetComponent<QuizController>().setupButtonText("Dr. Mellof", "Dr. Mehlhof", "Dr. Meloff", "Dr. Meltoff");
 				break;
+			case "brother":
+				quizPanel.GetComponent<QuizController>().setupButtonText("San Francisco", "San Diego", "San Andreas", "Santa Clara");
+				break;
 			}
 		} else {
 			quizPanel.SetActive(false);

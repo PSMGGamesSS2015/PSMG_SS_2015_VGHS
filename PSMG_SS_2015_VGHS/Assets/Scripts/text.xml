@@ -131,6 +131,11 @@
 	<jane_house_4_16>Das ist kein Ativan, das ist Haldol?! Was zum Henker geht hier eigentlich vor? Warum setzt man mich unter Drogen?</jane_house_4_16>
 	<jane_house_4_17>Hm... ich glaube ich sollte mir die Tabletten nochmal ansehen...</jane_house_4_17>
 	<jane_house_4_18>Das sind ja meine ganzen Sachen! Tasche, Personalausweis, alles hier!</jane_house_4_18>
+	<jane_house_4_19>Aber... wenn mein ganzes persönliches Zeug die ganze Zeit hier war... dann habe ich das Haus auch nicht verlassen um meinen Bruder zu besuchen?!</jane_house_4_19>
+	<jane_house_4_20>Ich wüsste nicht, wen ich anrufen sollte...</jane_house_4_20>
+	<jane_house_4_21>Hallo, ich bräuchte dringend die Nummer von Tom Lawrence.</jane_house_4_21>
+	<jane_house_4_22>Verdammt wo war das nochmal?</jane_house_4_22>
+	<jane_house_4_23>Was für ein großer Kleiderschrank...</jane_house_4_23>
 	
 	
 	<!-- Michael Text -->
@@ -253,6 +258,7 @@
   <information_1>Wie lautet der Name des Arztes?</information_1>
   <information_2>Zu diesem Namen gibt es leider keinen Eintrag.</information_2>
   <information_3>Einen Moment, ich verbinde sie...</information_3>
+  <information_4>Könnten sie mir noch eine Ortsangabe geben?</information_4>
   
   <meloff_1>Dr. Meloff am Apparat, was kann ich für sie tun?</meloff_1>
   <meloff_2>Ah, meine Amnesiepatientin! Wie gehts ihnen?</meloff_2>
