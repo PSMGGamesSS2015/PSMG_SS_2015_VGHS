@@ -298,6 +298,8 @@ public class Subtitle : MonoBehaviour {
 		keyNodeMap.Add ("daughterDead7", "jane_house_4_41");
 		keyNodeMap.Add ("daughterDead8", "michael_house_4_14");
 		keyNodeMap.Add ("daughterDead9", "jane_house_4_42");
+		keyNodeMap.Add ("daughterDead10", "michael_house_4_15");
+		keyNodeMap.Add ("daughterDead11", "jane_house_4_43");
 	}
 
 	// Setter for subtitle that needs to be shown

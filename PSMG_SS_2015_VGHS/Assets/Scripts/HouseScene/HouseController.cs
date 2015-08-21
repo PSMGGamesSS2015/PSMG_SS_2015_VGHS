@@ -859,7 +859,7 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("janeCought", 5);
 		keyDialogSizeMap.Add ("haldol2_", 11);
 		keyDialogSizeMap.Add ("visit", 2);
-		keyDialogSizeMap.Add ("daughterDead", 9);
+		keyDialogSizeMap.Add ("daughterDead", 11);
 	}
 
     void DisableHighlighting(string name)

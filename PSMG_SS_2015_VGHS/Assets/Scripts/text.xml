@@ -152,9 +152,10 @@
 	<jane_house_4_37>Oh Gott... kann es sein, dass Emily in Wahrheit...</jane_house_4_37>
 	<jane_house_4_38>Michael... ist... ist unsere Tochter auch... bei dem Unfall dabei gewesen?</jane_house_4_38>
 	<jane_house_4_39>Nein! Nein, das kann nicht sein!</jane_house_4_39>
-	<jane_house_4_40>Nein! Nein, bitte! Bitte nicht!!!</jane_house_4_40>
-	<jane_house_4_41>Was habe ich nur getan?! Wie konnte das passieren?!</jane_house_4_41>
-	<jane_house_4_42>Ja... und dann am besten gar nicht mehr aufwachen...</jane_house_4_42>
+	<jane_house_4_40>Nein, bitte nicht...</jane_house_4_40>
+	<jane_house_4_41>Michael, was genau ist an dem Tag geschehen als ich die Amnesie erlitt?</jane_house_4_42>
+	<jane_house_4_42>Daher das Blut auf dem Kleid... oh Gott...</jane_house_4_43>
+	<jane_house_4_43>Ja... und dann will ich am besten nie wieder aufwachen...</jane_house_4_44>
 	
 	
 	<!-- Michael Text -->
@@ -256,7 +257,8 @@
 	<michael_house_4_11>Ich hoffte du würdest dich erinnern, dann müsste ich es dir nicht sagen...</michael_house_4_11>
 	<michael_house_4_12>Doch Schatz... sie starb ebenfalls bei dem Unfall...</michael_house_4_12>
 	<michael_house_4_13>Schatz es tut mir so leid...</michael_house_4_13>
-	<michael_house_4_14>Bitte beruhige dich Jane. Möchtest du deine Tabletten nehmen?</michael_house_4_14>
+	<michael_house_4_14>Je näher der Todestag deiner Mutter und unserer Tochter rückte, desto aufgebrachter warst du. Du hattest Stimmungsschwankungen, warst unberechenbar. Und vor einer Woche ist es dann passiert. Du bist vollkommen ausgerastet und hast mich angeschrien. Ich habe versucht dich zu beruhigen, mit dir zu reden, als du plötzlich nach einer Vase gegriffen hast und auf mich losgegangen bist.</michael_house_4_14>
+	<michael_house_4_15>Schatz ist alles in Ordnung? Soll ich dir deine Tabletten bringen?</michael_house_4_15>
 	
 	
 	<!-- Paula Text -->
