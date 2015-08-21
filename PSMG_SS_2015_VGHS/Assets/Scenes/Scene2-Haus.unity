@@ -70227,7 +70227,7 @@ GameObject:
   - 114: {fileID: 1374283744}
   m_Layer: 0
   m_Name: ChestTrigger
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

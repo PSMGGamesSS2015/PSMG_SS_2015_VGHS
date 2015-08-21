@@ -136,6 +136,12 @@
 	<jane_house_4_21>Hallo, ich bräuchte dringend die Nummer von Tom Lawrence.</jane_house_4_21>
 	<jane_house_4_22>Verdammt wo war das nochmal?</jane_house_4_22>
 	<jane_house_4_23>Was für ein großer Kleiderschrank...</jane_house_4_23>
+	<jane_house_4_24>Eleanor?</jane_house_4_24>
+	<jane_house_4_25>Ist mein Bruder da?</jane_house_4_25>
+	<jane_house_4_26>Ja, ich bins, Jane, schnell, ich muss mit Tom sprechen!</jane_house_4_26>
+	<jane_house_4_27>Bitte, ich muss wirklich mit Tom reden!</jane_house_4_27>
+	<jane_house_4_28>Ich telefoniere mit Freunden!</jane_house_4_28>
+	<jane_house_4_29>Nein, aber du schuldest mir eine Erklärung!</jane_house_4_29>
 	
 	
 	<!-- Michael Text -->
@@ -223,6 +229,12 @@
 	<michael_house_3_6>Hier deine Tabletten, Schatz.</michael_house_3_6>
 	<michael_house_3_7>Das ist schon wieder einen ganzen Tag her, Jane.</michael_house_3_7>
 	
+	<!-- House Fourth Scene Scene -->
+	<michael_house_4_1>Jane? Was machst du da?</michael_house_4_1>
+	<michael_house_4_2>Jane, was treibst du denn da?!</michael_house_4_2>
+	<michael_house_4_3>Will du denn, dass sich alle Sorgen machen?!</michael_house_4_3>
+	<michael_house_4_4>Was ist denn los Schatz?</michael_house_4_4>
+	
 	
 	<!-- Paula Text -->
 	<!--  House Second Scene -->
@@ -269,4 +281,11 @@
   
   <paula_mum_1>Es ist aber inzwischen ein anhaltender Zustand. Das ist doch nicht normal.</paula_mum_1>
   <paula_mum_2>Ich habe sie gut im Auge. Ich glaube kaum, dass Süßigkeiten oder ein Fernsehprogramm Ursache für die Alpträume sind.</paula_mum_2>
+  
+  <eleanor_1>Ja?</eleanor_1>
+  <eleanor_2>Ja? Wer spricht denn da?</eleanor_2>
+  <eleanor_3>Jane bist dus? Oh mein Gott, ich habe deine Stimme gar nicht wiedererkannt!</eleanor_3>
+  <eleanor_4>Ist alles in Ordnung bei dir, du hörst dich nicht gesund an?</eleanor_4>
+  <eleanor_5>Aber du weißt doch, dass er seit Wochen auf Geschäftsreise ist?! Jane was ist denn los bei dir?!</eleanor_5>
+  
 </ger>

@@ -227,7 +227,7 @@ public class HouseController : MonoBehaviour {
 						paula.GetComponent<FollowTarget>().target = player.transform;
 						pillsHidden = true;
 					}
-					if(dialogsPerformed.Contains("freshWater") && !haldol){
+					else if(dialogsPerformed.Contains("freshWater") && !haldol){
 						guiController.togglePills();
 						pillsFound = true;
 					}
@@ -371,9 +371,7 @@ public class HouseController : MonoBehaviour {
 				}
 				break;
 			case "Warderobe": // show interactable when jane needs to hide the pills 
-				if(dialogsPerformed.Contains("paulaPills")){
 					guiController.toggleInteractionHint(true);
-				}
 				break;
 			case "Chest": // set interactible one time to find box 
 				if(haldol && !boxFound){
@@ -522,6 +520,11 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 1).Equals ("information3_")) {
 				dialogsPerformed.Remove ("information3_");
 				guiController.toggleQuizPanel ("brother");
+			}
+			// dialog brotherCall needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("brotherCall")) {
+				dialogsPerformed.Remove ("brotherCall1");
+				dialogsPerformed.Add ("brotherCall");
 			}
 			switch (actualDialog) {
 			case "scare":
@@ -675,9 +678,15 @@ public class HouseController : MonoBehaviour {
 			}
 		}
 		if (answerCorrect) {
-			if (Physics.Raycast (lookRay, out hit, rayDist) && dialogsPerformed.Contains("meloffCall")) {
+			if (Physics.Raycast (lookRay, out hit, rayDist)) {
 				if(hit.collider.tag.Equals("Michael")){
-					initDialog("scene3Ending");
+					if(dialogsPerformed.Contains("meloffCall")){
+						initDialog("scene3Ending");
+					}
+					else{
+						initDialog ("janeCought");
+					}
+
 				}
 			}
 		}
@@ -828,7 +837,8 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add ("paulaPills", 6);
 		keyDialogSizeMap.Add ("freshWater", 4);
 		keyDialogSizeMap.Add("information3_", 3);
-		keyDialogSizeMap.Add("brotherCall", 1);
+		keyDialogSizeMap.Add("brotherCall", 11);
+		keyDialogSizeMap.Add("janeCought", 5);
 	}
 
     void DisableHighlighting(string name)
