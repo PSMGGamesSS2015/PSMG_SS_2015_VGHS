@@ -52,6 +52,7 @@ public class HouseController : MonoBehaviour {
 	bool theory2Registered = false;
 	bool theory3Registered = false;
 	bool theory4Registered = false;
+	bool theory5Registered = false;
 	bool familyInteractionDone = false;
 	bool missingPicture = false;
 	bool missingPictureFound = false;
@@ -175,7 +176,7 @@ public class HouseController : MonoBehaviour {
 					if(actualHouseScene == 4){
 						initDialog ("amnesia");
 					}
-					if(actualHouseScene == 4 && pillsFound){
+					if(actualHouseScene == 4 && pillsFound && !haldol){
 						guiController.togglePillQuiz();
 					}else {
 						guiController.toggleSubtl("bookshelf");
@@ -531,6 +532,11 @@ public class HouseController : MonoBehaviour {
 				dialogsPerformed.Add ("haldol2_");
 				insertIntoInventory ("crash");
 			}
+			// dialog daughterDead needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("daughterDead")) {
+				dialogsPerformed.Remove ("daughterDead1");
+				dialogsPerformed.Add ("daughterDead");
+			}
 			switch (actualDialog) {
 			case "scare":
 				guiController.manageInteraction ("michael_mother", "Michael");
@@ -605,6 +611,13 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory4");
 			theory4Registered = true;
+		}
+		// check for fifth theory
+		if(theory.GetComponent<Theory> ().theory5Found && !theory5Registered){
+			guiController.toggleInventory();
+			guiController.toggleSubtl("theory5");
+			guiController.manageInteraction("michael_daughter2", "Michael");
+			theory5Registered = true;
 		}
 	}
 
@@ -726,7 +739,6 @@ public class HouseController : MonoBehaviour {
 				michael.SetActive(true);
 				guiController.manageInteraction("michael_visit", "Michael");
 				answerCorrect = true;
-				Debug.Log ("huhu");
 			}
 			else{
 				initDialog("information2_");
@@ -847,6 +859,7 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("janeCought", 5);
 		keyDialogSizeMap.Add ("haldol2_", 11);
 		keyDialogSizeMap.Add ("visit", 2);
+		keyDialogSizeMap.Add ("daughterDead", 9);
 	}
 
     void DisableHighlighting(string name)
