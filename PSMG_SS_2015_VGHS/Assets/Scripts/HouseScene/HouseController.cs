@@ -255,6 +255,14 @@ public class HouseController : MonoBehaviour {
 					box.SetActive(false);
 					stuffFound = true;
 					break;
+				case "Vase": // interact with vase
+					if(dialogsPerformed.Contains("paulaBlock")){
+						//trigger flashback here!
+					}
+					else{
+						guiController.toggleSubtl("vase");
+					}
+					break;
 				default: break;
 				}
 			}else{
@@ -392,6 +400,9 @@ public class HouseController : MonoBehaviour {
 				if(!stuffFound){
 					guiController.toggleInteractionHint(true);
 				}
+				break;
+			case "Vase": // collide with vase
+				guiController.toggleInteractionHint(true);
 				break;
 			default: 
 				guiController.toggleInteractionHint (false);

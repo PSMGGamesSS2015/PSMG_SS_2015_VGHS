@@ -44,6 +44,7 @@ TagManager:
   - Box
   - PhoneBedroom
   - Chest
+  - Vase
   layers:
   - Default
   - TransparentFX
