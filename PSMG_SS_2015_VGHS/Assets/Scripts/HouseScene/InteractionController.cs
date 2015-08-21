@@ -168,5 +168,7 @@ public class InteractionController : MonoBehaviour {
 		interactionDialogMap.Add ("Wer ist der Mann?", "father");
 		interactionDialogMap.Add ("Wo ist mein Adressbuch?", "lostAdressBook");
 		interactionDialogMap.Add ("Tabletten?", "pills");
+		interactionDialogMap.Add ("Haldol", "haldol2_");
+		interactionDialogMap.Add ("Besuch war eine Lüge!", "visit");
 	}
 }

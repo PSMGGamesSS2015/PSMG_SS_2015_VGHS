@@ -142,6 +142,13 @@
 	<jane_house_4_27>Bitte, ich muss wirklich mit Tom reden!</jane_house_4_27>
 	<jane_house_4_28>Ich telefoniere mit Freunden!</jane_house_4_28>
 	<jane_house_4_29>Nein, aber du schuldest mir eine Erklärung!</jane_house_4_29>
+	<jane_house_4_30>Was soll das mit den Tabletten?! Du gibst mir nicht, wie von Dr. Meloff verschrieben, Ativan, sondern Haldol!</jane_house_4_30>
+	<jane_house_4_31>Wie, dass ich es vielleicht noch brauche?! Warum sollte ich denn Haldol nehmen?!</jane_house_4_31>
+	<jane_house_4_32>Spuck endlich aus, warum du mich unter Drogen setzt!</jane_house_4_32>
+	<jane_house_4_33>Ja, verdammt nochmal, was ist damit? Muss ich dir alles aus der Nase ziehen?!</jane_house_4_33>
+	<jane_house_4_34>Was? Aber... oh mein Gott...</jane_house_4_34>
+	<jane_house_4_35>Ja... es... es geht schon...</jane_house_4_35>
+	<jane_house_4_36>Was hat es mit dieser Lüge vom Überraschungsbesuch meines Bruders auf sich?</jane_house_4_36>
 	
 	
 	<!-- Michael Text -->
@@ -232,8 +239,14 @@
 	<!-- House Fourth Scene Scene -->
 	<michael_house_4_1>Jane? Was machst du da?</michael_house_4_1>
 	<michael_house_4_2>Jane, was treibst du denn da?!</michael_house_4_2>
-	<michael_house_4_3>Will du denn, dass sich alle Sorgen machen?!</michael_house_4_3>
+	<michael_house_4_3>Willst du denn, dass sich alle Sorgen machen?!</michael_house_4_3>
 	<michael_house_4_4>Was ist denn los Schatz?</michael_house_4_4>
+	<michael_house_4_5>Ich gab dir Haldol, weil ich dachte, dass du es vielleicht noch brauchst...</michael_house_4_5>
+	<michael_house_4_6>Jane... bitte...</michael_house_4_6>
+	<michael_house_4_7>Der Unfall deiner Mutter vor einem Jahr...</michael_house_4_7>
+	<michael_house_4_8>Du warst damals der Fahrer... als sich der Jahrestag ihres Todes näherte verfielst du in so tiefe Depressionen, dass der Arzt dir Haldol verschrieb.</michael_house_4_8>
+	<michael_house_4_9>Ich habe einfach nur befürchtet, dass dieser Zustand unterbewusst weiter besteht und wollte dem vorbeugen... Schatz, ist alles ok?</michael_house_4_9>
+	<michael_house_4_10>Ich wollte dich damit nicht verletzen Schatz. Ich wollte nur vermeiden, dass alle nach dir fragen, damit du zur Ruhe kommen kannst.</michael_house_4_10>
 	
 	
 	<!-- Paula Text -->

@@ -492,7 +492,6 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("mother")) {
 				dialogsPerformed.Remove ("mother1");
 				dialogsPerformed.Add ("mother");
-				insertIntoInventory ("crash");
 			}
 			// dialog lostAdressBook needs to be added individually cause its too long (remove the old wrong entry first)
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("lostAdressBook")) {
@@ -525,6 +524,12 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("brotherCall")) {
 				dialogsPerformed.Remove ("brotherCall1");
 				dialogsPerformed.Add ("brotherCall");
+			}
+			// dialog haldol2_ needs to be added individually cause its too long (remove the old wrong entry first)
+			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("haldol2_")) {
+				dialogsPerformed.Remove ("haldol2_1");
+				dialogsPerformed.Add ("haldol2_");
+				insertIntoInventory ("crash");
 			}
 			switch (actualDialog) {
 			case "scare":
@@ -719,6 +724,7 @@ public class HouseController : MonoBehaviour {
 				guiController.toggleQuizPanel("");
 				initDialog ("brotherCall");
 				michael.SetActive(true);
+				guiController.manageInteraction("michael_visit", "Michael");
 				answerCorrect = true;
 				Debug.Log ("huhu");
 			}
@@ -735,7 +741,7 @@ public class HouseController : MonoBehaviour {
 				guiController.pillQuizAnswer = "";
 				pillAnswer = true;
 				guiController.toggleSubtl("haldol");
-				insertIntoInventory("haldol");
+				guiController.manageInteraction("michael_haldol", "Michael");
 				haldol = true;
 			}
 			else{
@@ -839,6 +845,8 @@ public class HouseController : MonoBehaviour {
 		keyDialogSizeMap.Add("information3_", 3);
 		keyDialogSizeMap.Add("brotherCall", 11);
 		keyDialogSizeMap.Add("janeCought", 5);
+		keyDialogSizeMap.Add ("haldol2_", 11);
+		keyDialogSizeMap.Add ("visit", 2);
 	}
 
     void DisableHighlighting(string name)
