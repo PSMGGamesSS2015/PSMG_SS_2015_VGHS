@@ -26,6 +26,9 @@ public class TheorySlots : MonoBehaviour {
 		case "theory5":
 			gameObject.GetComponentInChildren<Text> ().text = gameObject.transform.parent.GetComponent<Theory> ().theory5Text;
 			break;
+		case "theory6":
+			gameObject.GetComponentInChildren<Text> ().text = gameObject.transform.parent.GetComponent<Theory> ().theory6Text;
+			break;
 		default: break;
 		}
 	}

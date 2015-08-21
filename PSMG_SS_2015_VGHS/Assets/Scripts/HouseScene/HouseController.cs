@@ -53,6 +53,7 @@ public class HouseController : MonoBehaviour {
 	bool theory3Registered = false;
 	bool theory4Registered = false;
 	bool theory5Registered = false;
+	bool theory6Registered = false;
 	bool familyInteractionDone = false;
 	bool missingPicture = false;
 	bool missingPictureFound = false;
@@ -539,6 +540,7 @@ public class HouseController : MonoBehaviour {
 			else if (actualSubtl.Substring (0, actualSubtl.Length - 2).Equals ("daughterDead")) {
 				dialogsPerformed.Remove ("daughterDead1");
 				dialogsPerformed.Add ("daughterDead");
+				insertIntoInventory ("death");
 				StartCoroutine (onNextSceneStart ());
 			}
 			// dialog michaelPaula needs to be added individually cause its too long (remove the old wrong entry first)
@@ -628,6 +630,12 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("theory5");
 			guiController.manageInteraction("michael_daughter2", "Michael");
 			theory5Registered = true;
+		}
+		// check for sixth theory
+		if(theory.GetComponent<Theory> ().theory6Found && !theory6Registered){
+			guiController.toggleInventory();
+			guiController.toggleSubtl("lie");
+			theory6Registered = true;
 		}
 	}
 

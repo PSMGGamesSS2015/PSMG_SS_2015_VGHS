@@ -15,12 +15,14 @@ public class Theory : MonoBehaviour {
 	public string theory3Text = "Pills make me dizzy?";
 	public string theory4Text = "Visiting Brother was a lie?";
 	public string theory5Text = "Daughter died in car crash?";
+	public string theory6Text = "Michael lied!";
 
 	int theory1 = 1;
 	int theory2 = 2;
 	int theory3 = 3;
 	int theory4 = 4;
 	int theory5 = 5;
+	int theory6 = 6;
 	public int actualTheory;
 	public int newHint;
 
@@ -36,12 +38,15 @@ public class Theory : MonoBehaviour {
 	string hint10 = "personalStuff";
 	string hint11 = "crash";
 	string hint12 = "missingPicture";
+	string hint13 = "death";
+	string hint14 = "amnesia";
 
 	public bool theory1Found = false;
 	public bool theory2Found = false;
 	public bool theory3Found = false;
 	public bool theory4Found = false;
 	public bool theory5Found = false;
+	public bool theory6Found = false;
 
 	// set up theory depending on the hints that were combined
 	public int checkCombination(string first, string second){
@@ -112,6 +117,18 @@ public class Theory : MonoBehaviour {
 			if(second.Equals(hint11)){
 				theory5Found = true;
 				actualTheory = 5;
+			}
+			break;
+		case "death":
+			if(second.Equals(hint14)){
+				theory6Found = true;
+				actualTheory = 6;
+			}
+			break;
+		case "amnesia":
+			if(second.Equals(hint13)){
+				theory6Found = true;
+				actualTheory = 6;
 			}
 			break;
 		default: break;
