@@ -21,6 +21,7 @@ public class GUIController : MonoBehaviour {
     public GameObject resolutionMenu;
     public Toggle checkbox;
 	public GameObject interactionController;
+	public GameObject InteractionPanel;
 	public GameObject adressBook;
 	public GameObject familyalbum;
 	public GameObject quizPanel;
@@ -85,9 +86,6 @@ public class GUIController : MonoBehaviour {
 			break;
 		case "missingPicture":
 			inventory.GetComponent<Inventory>().addItem (8);
-			break;
-		case "emilyWhereabout":
-			inventory.GetComponent<Inventory>().addItem (9);
 			break;
 		case "pills":
 			inventory.GetComponent<Inventory>().addItem (10);
@@ -204,18 +202,26 @@ public class GUIController : MonoBehaviour {
 		}
 	}
 
+	public void preventInteraction(string key){
+		interactionController.GetComponent<InteractionController>().closedInteractions.Add(key);
+	}
+
 	// show/unshow interaction panel
-	public void toggleInteractionPanel(bool active, string person){
-		if (!active) {
+	public void toggleInteractionPanel(string person){
+		if (InteractionPanel.activeSelf) {
 			interactionController.SetActive (false);
 			interactionPanelShown = false;
 			Cursor.visible = false;
 		} else {
-			interactionController.SetActive(true);
 			interactionController.GetComponent<InteractionController>().updateInteractionPanel(person);
+			interactionController.SetActive(true);
 			interactionPanelShown = true;
 			Cursor.visible = true;
 		}
+		if (person.Equals ("")) {
+			interactionController.GetComponent<InteractionController> ().triggeredInteraction = person;
+		}
+
 	}
 
 	// manage shown interaction in interaction panel

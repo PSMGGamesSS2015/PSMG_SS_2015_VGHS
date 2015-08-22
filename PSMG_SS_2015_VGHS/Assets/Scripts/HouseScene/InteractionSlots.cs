@@ -36,7 +36,7 @@ public class InteractionSlots : MonoBehaviour, IPointerDownHandler {
 	}
 
 	public void forceInteractionSlotClose(string key){
-		if (key.Equals (text.GetComponent<Text> ().text)) {
+		if (key.Equals (gameObject.name)) {
 			isFilled = false;
 			gameObject.SetActive (false);
 		}

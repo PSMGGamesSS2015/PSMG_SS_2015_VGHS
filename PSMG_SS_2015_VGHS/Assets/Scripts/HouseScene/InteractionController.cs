@@ -25,8 +25,9 @@ public class InteractionController : MonoBehaviour {
 
 	string interactedWith = "Michael";
 
-	List<string> openMichaelInteractions = new List<string>();
-	List<string> openPaulaInteractions = new List<string>();
+	public List<string> openMichaelInteractions = new List<string>();
+	public List<string> openPaulaInteractions = new List<string>();
+	public List<string> closedInteractions = new List<string>();
 
 	Dictionary<string,string> interactionContent = new Dictionary<string,string>();
 	
@@ -64,20 +65,21 @@ public class InteractionController : MonoBehaviour {
 		interactedWith = person;
 		switch (person) {
 		case "Michael":
-			openMichaelInteractions.Add(key);
+			if(!openMichaelInteractions.Contains(key) && !closedInteractions.Contains(key)){
+				openMichaelInteractions.Add(key);
+			}
 			break;
 		case "Paula":
-			openPaulaInteractions.Add (key);
+			if(!openPaulaInteractions.Contains(key) && !closedInteractions.Contains(key)){
+				openPaulaInteractions.Add (key);
+			}
 			break;
 		}
 		updateInteractionPanel (person);
 	}
 
 	public void updateInteractionPanel(string person){
-		// first clear all slots
-		for (int j = 0; j < slotNum; j ++) {
-			iSlots [j].GetComponent<InteractionSlots>().isFilled = false;
-		}
+		
 		switch (person) {
 		case "Michael":
 			for (int i = 0; i < openMichaelInteractions.Count; i++) {
@@ -143,6 +145,7 @@ public class InteractionController : MonoBehaviour {
 	// called by interaction slots if user triggered an interaction
 	public void interactionAlert(string interaction, string slotName, string slotTag){
 		interactionDialogMap.TryGetValue (interaction, out triggeredInteraction);
+		closedInteractions.Add(slotName);
 		switch (slotTag) {
 		case "MichaelSlot":
 			openMichaelInteractions.Remove(slotName);

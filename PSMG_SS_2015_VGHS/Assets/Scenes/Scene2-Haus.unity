@@ -63662,6 +63662,10 @@ MonoBehaviour:
   iX: 1
   iY: 210
   triggeredInteraction: 
+  openMichaelInteractions: []
+  openPaulaInteractions: []
+  closedMichaelInteractions: []
+  closedPaulaInteractions: []
 --- !u!114 &1242278635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83357,6 +83361,7 @@ MonoBehaviour:
   box: {fileID: 1976582971}
   phoneWorkroom: {fileID: 689483370}
   master: 0
+  dialogsPerformed: []
 --- !u!114 &1631371277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103519,6 +103524,7 @@ MonoBehaviour:
   resolutionMenu: {fileID: 431699472}
   checkbox: {fileID: 1365536714}
   interactionController: {fileID: 1242278632}
+  InteractionPanel: {fileID: 1242278632}
   adressBook: {fileID: 2039568911}
   familyalbum: {fileID: 2116832243}
   quizPanel: {fileID: 620540438}
@@ -108861,6 +108867,10 @@ MonoBehaviour:
   iX: 1
   iY: 210
   triggeredInteraction: 
+  openMichaelInteractions: []
+  openPaulaInteractions: []
+  closedMichaelInteractions: []
+  closedPaulaInteractions: []
 --- !u!114 &2137816293
 MonoBehaviour:
   m_ObjectHideFlags: 0
