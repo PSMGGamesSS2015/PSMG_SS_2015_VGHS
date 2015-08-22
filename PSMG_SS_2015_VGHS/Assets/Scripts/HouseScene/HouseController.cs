@@ -62,7 +62,7 @@ public class HouseController : MonoBehaviour {
 	bool adressBookDialog = false;
 	bool adressBookLost = false;
 	bool adressBookFound = false;
-	bool scene1EndingDialog = false;
+	//bool scene1EndingDialog = false;
 	bool isDizzy = false;
 	bool secondSceneReady = false;
 	bool paulaPhoneDialog1 = false;
@@ -461,18 +461,13 @@ public class HouseController : MonoBehaviour {
 				insertIntoInventory (actualSubtl.Substring (0, actualSubtl.Length - 1));
 				break;
 			case "daughter2_":
-				insertIntoInventory ("dianesDaughter");
 				guiController.manageInteraction ("michael_friends", "Michael");
 				break;
 			case "picture":
 				insertIntoInventory ("missingPicture");
 				missingPictureFound = true;
 				break;
-			case "adressBook":
-				adressBookDialog = true;
-				break;
 			case "scene1Ending":
-				scene1EndingDialog = true;
 				insertIntoInventory ("pills");
 				//toggeling here next scene after this dialog makes sure, that nothing is destroyed while first scene still going on
 				StartCoroutine (onNextSceneStart ());
@@ -481,7 +476,6 @@ public class HouseController : MonoBehaviour {
 				guiController.manageInteraction ("paula_about2", "Paula");
 				break;
 			case "paulaIntroduction2_":
-				insertIntoInventory ("paulasDaughter");
 				paulaIntroductionDialog = true;
 				break;
 			case "scare":
@@ -605,7 +599,7 @@ public class HouseController : MonoBehaviour {
 	// check conditions to trigger a certain event
 	void checkConditions(){
 		// Ending conditions for first Scene in house
-		if((glasstableTriggered && family && adressBookFound && !guiController.isShowing() && !scene1EndingDialog && emilyWhereabout && actualHouseScene == 1) || (master && actualHouseScene == 1)){
+		if((dialogsPerformed.Contains ("glassTable") && dialogsPerformed.Contains ("family") && adressBookFound && !guiController.isShowing() && actualHouseScene == 1) || (master && actualHouseScene == 1)){
 			initDialog("scene1Ending");
 		}
 		// conditions to remove adressbook during second house scene

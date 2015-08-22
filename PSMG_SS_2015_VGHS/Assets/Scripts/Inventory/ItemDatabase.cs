@@ -16,11 +16,9 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add (new Item ("scar", "a scar on michaels head", 3));
 		items.Add (new Item ("family", "wanted to visit my Brother in San Diego", 4));
 		items.Add (new Item ("daughter", "I have a daughter named Emily. She is 7 years old", 5));
-		items.Add (new Item ("picture", "Emilies picture of first class", 6));
-		items.Add (new Item ("dianesDaughter", "Emilies picture of first grade", 7));
+		items.Add (new Item ("picture", "Emilies picture of first grade", 6));
 		items.Add (new Item ("missingPicture", "Picture of second grade missing", 8));
 		items.Add (new Item ("pills", "Dr. Meloff prescribed pills", 10));
-		items.Add (new Item ("paulasDaughter", "Michael saved Paulas Daughter", 11));
 		items.Add (new Item ("crash", "Mother died in a car crash", 12));
 		items.Add (new Item ("dizzy", "Feeling so strange and dizzy", 13));
 		items.Add (new Item ("nightmares", "Paulas daughter has nightmares", 14));

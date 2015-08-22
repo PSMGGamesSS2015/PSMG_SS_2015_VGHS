@@ -81,17 +81,11 @@ public class GUIController : MonoBehaviour {
 		case "picture":
 			inventory.GetComponent<Inventory>().addItem (6);
 			break;
-		case "dianesDaughter":
-			inventory.GetComponent<Inventory>().addItem (7);
-			break;
 		case "missingPicture":
 			inventory.GetComponent<Inventory>().addItem (8);
 			break;
 		case "pills":
 			inventory.GetComponent<Inventory>().addItem (10);
-			break;
-		case "paulasDaughter":
-			inventory.GetComponent<Inventory>().addItem (11);
 			break;
 		case "crash":
 			inventory.GetComponent<Inventory>().addItem (12);
