@@ -769,6 +769,7 @@ public class HouseController : MonoBehaviour {
 	// do stuff here that is needed when new scene starts
 	IEnumerator onNextSceneStart(){
 		actualHouseScene++;
+		gameObject.GetComponent<TriggerController> ().triggerTag = "";
 		GetComponent<SceneFader> ().SwitchScene (3);
 		yield return new WaitForSeconds (2);
 		// fade scene in and put player to bed

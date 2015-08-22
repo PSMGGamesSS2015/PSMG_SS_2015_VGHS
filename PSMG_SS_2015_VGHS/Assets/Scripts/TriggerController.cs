@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TriggerController : MonoBehaviour {
 
-	string triggerTag = "";
+	public string triggerTag = "";
 
 	public void setTriggerTag(string tag){
 		triggerTag = tag;
