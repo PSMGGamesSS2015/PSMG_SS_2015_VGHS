@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 // Handle anything happening in a slot here
-public class SlotScript : MonoBehaviour, IDragHandler, IPointerDownHandler{
+public class SlotScript : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerExitHandler, IPointerEnterHandler{
 
 	public Item item;
 	public int slotNumber;
@@ -48,5 +48,14 @@ public class SlotScript : MonoBehaviour, IDragHandler, IPointerDownHandler{
 		else if (inventory.Items [slotNumber] != null && inventory.draggingItem) {
 			inventory.dropItem (true, inventory.Items[slotNumber].itemName);
 		}
+	}
+
+	public void OnPointerEnter(PointerEventData data){
+		inventory.setupItemDescription (inventory.Items [slotNumber].itemDesc);
+
+	}
+
+	public void OnPointerExit(PointerEventData data){
+		inventory.setupItemDescription ("");
 	}
 }

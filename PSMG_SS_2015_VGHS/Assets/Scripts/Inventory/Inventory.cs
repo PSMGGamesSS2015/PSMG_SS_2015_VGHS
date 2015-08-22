@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour {
 
 	public GameObject canvas;
 	public GameObject theoryInventory;
+	public GameObject descText;
 
 	ItemDatabase database;
 
@@ -138,6 +139,10 @@ public class Inventory : MonoBehaviour {
 			TheorySlots.Add (slot);
 			thY -= slotDistY;
 		}
+	}
+
+	public void setupItemDescription(string description){
+		descText.GetComponent<Text> ().text = description;
 	}
 
 	// this method is needed when a drag ends and item needs to be put back
