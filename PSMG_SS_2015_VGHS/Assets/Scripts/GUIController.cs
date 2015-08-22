@@ -208,7 +208,7 @@ public class GUIController : MonoBehaviour {
 
 	// show/unshow interaction panel
 	public void toggleInteractionPanel(string person){
-		if (InteractionPanel.activeSelf) {
+		if (InteractionPanel.activeSelf || person.Equals ("")) {
 			interactionController.SetActive (false);
 			interactionPanelShown = false;
 			Cursor.visible = false;
@@ -218,10 +218,6 @@ public class GUIController : MonoBehaviour {
 			interactionPanelShown = true;
 			Cursor.visible = true;
 		}
-		if (person.Equals ("")) {
-			interactionController.GetComponent<InteractionController> ().triggeredInteraction = person;
-		}
-
 	}
 
 	// manage shown interaction in interaction panel
