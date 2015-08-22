@@ -2937,8 +2937,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50920856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.73999977, y: 5.78000021, z: .780000687}
-  m_LocalScale: {x: .290544033, y: .998809695, z: 1}
+  m_LocalPosition: {x: -7.73999977, y: 5.78000021, z: 1.40999997}
+  m_LocalScale: {x: .290544033, y: .998809695, z: 2.57424212}
   m_Children: []
   m_Father: {fileID: 111318177}
   m_RootOrder: 9
@@ -63664,8 +63664,7 @@ MonoBehaviour:
   triggeredInteraction: 
   openMichaelInteractions: []
   openPaulaInteractions: []
-  closedMichaelInteractions: []
-  closedPaulaInteractions: []
+  closedInteractions: []
 --- !u!114 &1242278635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108869,8 +108868,7 @@ MonoBehaviour:
   triggeredInteraction: 
   openMichaelInteractions: []
   openPaulaInteractions: []
-  closedMichaelInteractions: []
-  closedPaulaInteractions: []
+  closedInteractions: []
 --- !u!114 &2137816293
 MonoBehaviour:
   m_ObjectHideFlags: 0
