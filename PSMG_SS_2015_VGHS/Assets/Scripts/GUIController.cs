@@ -30,6 +30,8 @@ public class GUIController : MonoBehaviour {
     public GameObject soundOptions;
     public Slider slider;
 
+	Dictionary<string,int> keyIdMap = new Dictionary<string,int>();
+
 	public bool subtlShown;
 	public bool interactionPanelShown;
 	bool inventoryShown;
@@ -56,60 +58,21 @@ public class GUIController : MonoBehaviour {
 		if (Application.loadedLevel == 2) {
 			interactionController.GetComponent<InteractionController>().setupInteractionSlots();
 		}
-
+		setupKeyIdMap ();
         slider.value = AudioListener.volume;
 	}
 
 	// put hint into inventory
 	public void addHint(string key){
-		switch (key) {
-		case "dressHint": 
-			inventory.GetComponent<Inventory> ().addItem (0);
-			break;
-		case "noteHint":
-			inventory.GetComponent<Inventory> ().addItem (1);
-			break;
-		case "scar":
-			inventory.GetComponent<Inventory>().addItem (3);
-			break;
-		case "family":
-			inventory.GetComponent<Inventory>().addItem (4);
-			break;
-		case "daughter":
-			inventory.GetComponent<Inventory>().addItem (5);
-			break;
-		case "picture":
-			inventory.GetComponent<Inventory>().addItem (6);
-			break;
-		case "missingPicture":
-			inventory.GetComponent<Inventory>().addItem (8);
-			break;
-		case "pills":
-			inventory.GetComponent<Inventory>().addItem (10);
-			break;
-		case "crash":
-			inventory.GetComponent<Inventory>().addItem (12);
-			break;
-		case "dizzy":
-			inventory.GetComponent<Inventory>().addItem (13);
-			break;
-		case "nightmares":
-			inventory.GetComponent<Inventory>().addItem (14);
-			break;
-		case "amnesia":
-			inventory.GetComponent<Inventory>().addItem (15);
-			break;
-		case "haldol":
-			inventory.GetComponent<Inventory>().addItem (16);
-			break;
-		case "personalStuff":
-			inventory.GetComponent<Inventory>().addItem (17);
-			break;
-		case "death":
-			inventory.GetComponent<Inventory>().addItem (18);
-			break;
-		default: break;
-		}
+		int id;
+		keyIdMap.TryGetValue (key, out id);
+		inventory.GetComponent<Inventory> ().addItem (id);	
+	}
+
+	public void removeHint(string key){
+		int id;
+		keyIdMap.TryGetValue (key, out id);
+		inventory.GetComponent<Inventory> ().removeItem (id);
 	}
 
 	// show/hide inventory
@@ -361,4 +324,22 @@ public class GUIController : MonoBehaviour {
     {
         AudioListener.volume = slider.value;
     }
+
+	void setupKeyIdMap(){
+		keyIdMap.Add ("dressHint", 0);
+		keyIdMap.Add ("noteHint", 1);
+		keyIdMap.Add ("scar", 3);
+		keyIdMap.Add ("family", 4);
+		keyIdMap.Add ("daughter", 5);
+		keyIdMap.Add ("picture", 6);
+		keyIdMap.Add ("missingPicture", 8);
+		keyIdMap.Add ("pills", 10);
+		keyIdMap.Add ("crash", 12);
+		keyIdMap.Add ("dizzy", 13);
+		keyIdMap.Add ("nightmares", 14);
+		keyIdMap.Add ("amnesia", 15);
+		keyIdMap.Add ("haldol", 16);
+		keyIdMap.Add ("personalStuff", 17);
+		keyIdMap.Add ("death", 18);
+	}
 }

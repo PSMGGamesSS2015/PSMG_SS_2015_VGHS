@@ -21,12 +21,13 @@ public class SlotScript : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 	// Update is called once per frame
 	void Update () {
 		//check if there is an item in the slot and display icon
-	 	if (inventory.Items[slotNumber].itemName != null) {
-			itemImage.enabled = true;
-			itemImage.sprite = inventory.Items[slotNumber].itemIcon;
-		} 
-		else {
-			itemImage.enabled = false;
+		if (slotNumber < inventory.Items.Count) {
+			if (inventory.Items [slotNumber].itemName != null) {
+				itemImage.enabled = true;
+				itemImage.sprite = inventory.Items [slotNumber].itemIcon;
+			} else {
+				itemImage.enabled = false;
+			}
 		}
 	}
 
@@ -51,7 +52,9 @@ public class SlotScript : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 	}
 
 	public void OnPointerEnter(PointerEventData data){
-		inventory.setupItemDescription (inventory.Items [slotNumber].itemDesc);
+		if (inventory.Items [slotNumber].itemDesc != null) {
+			inventory.setupItemDescription (inventory.Items [slotNumber].itemDesc);
+		}
 
 	}
 

@@ -86,7 +86,6 @@ public class HouseController : MonoBehaviour {
 	// Setup Inventory and Interactions when House Scene starts
 	void Start () {
 		guiController.addHint("dressHint");
-		guiController.addHint("noteHint");
 		guiController.forceThSetup();
 		guiController.manageInteraction("michael_scar", "Michael");
 		setupKeyDialogSizeMap ();
@@ -557,6 +556,8 @@ public class HouseController : MonoBehaviour {
 					guiController.toggleSubtl("missingPictureFound");
 					guiController.toggleInventory();
 					guiController.manageInteraction("michael_missingPicture", "Michael");
+					guiController.removeHint("daughter");
+					guiController.removeHint("picture");
 				}
 				break;
 			}
@@ -567,6 +568,8 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("theory2");
 			guiController.manageInteraction("michael_scar_2", "Michael");
 			theory2Registered = true;
+			guiController.removeHint("scar");
+			guiController.removeHint("dressHint");
 		}
 		// check for third theory
 		if(theory.GetComponent<Theory> ().theory3Found && !theory3Registered){
@@ -574,12 +577,16 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("theory3");
 			guiController.manageInteraction("michael_dizzy", "Michael");
 			theory3Registered = true;
+			guiController.removeHint("pills");
+			guiController.removeHint("dizzy");
 		}
 		// check for fourth theory
 		if(theory.GetComponent<Theory> ().theory4Found && !theory4Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory4");
 			theory4Registered = true;
+			guiController.removeHint("family");
+			guiController.removeHint("personalStuff");
 		}
 		// check for fifth theory
 		if(theory.GetComponent<Theory> ().theory5Found && !theory5Registered){
@@ -587,12 +594,16 @@ public class HouseController : MonoBehaviour {
 			guiController.toggleSubtl("theory5");
 			guiController.manageInteraction("michael_daughter2", "Michael");
 			theory5Registered = true;
+			guiController.removeHint("missingPicture");
+			guiController.removeHint("crash");
 		}
 		// check for sixth theory
 		if(theory.GetComponent<Theory> ().theory6Found && !theory6Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("lie");
 			theory6Registered = true;
+			guiController.removeHint("amnesia");
+			guiController.removeHint("death");
 		}
 	}
 

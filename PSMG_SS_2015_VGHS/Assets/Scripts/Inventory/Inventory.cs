@@ -91,12 +91,34 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+	public void removeItem(int id){
+		Debug.Log ("yep");
+		for (int i = 0; i < database.items.Count; i++) {
+			if (database.items [i].itemId == id) {
+				Item item = database.items [i];
+				removeItemFromSlot (item);
+				break;
+			}
+		}
+	}
+
 	// make sure that an item is added to an empty slot
 	void addToEmptySlot(Item item){
-		if (Items.Contains (item) == false) {
+		if (!Items.Contains (item)) {
 			for (int i = 0; i < Items.Count; i++) {
 				if (Items [i].itemName == null) {
 					Items [i] = item;
+					break;
+				}
+			}
+		}
+	}
+
+	void removeItemFromSlot (Item item){
+		if (Items.Contains (item)) {
+			for (int i = 0; i < Items.Count; i++) {
+				if (Items [i].itemName.Equals(item.itemName)) {
+					Items.Remove(item);
 					break;
 				}
 			}
