@@ -215,3 +215,6 @@ bedroom - lamp:
 http://www.cgtextures.com/tiledpreview.php?id=24474&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
 
 http://www.cgtextures.com/tiledpreview.php?id=33823&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
+
+pill:
+http://www.neuraxpharm.de/images/praeparate/4815495.jpg
