@@ -218,3 +218,14 @@ http://www.cgtextures.com/tiledpreview.php?id=33823&PHPSESSID=35tn9l4nv2aphk6git
 
 pill:
 http://www.neuraxpharm.de/images/praeparate/4815495.jpg
+
+vase - marble:
+http://www.cgtextures.com/tiledpreview.php?id=49995&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+clay:
+http://www.cgtextures.com/tiledpreview.php?id=38526&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+lamp2:
+http://www.cgtextures.com/tiledpreview.php?id=32817&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+
