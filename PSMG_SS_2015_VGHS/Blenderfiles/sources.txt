@@ -237,3 +237,9 @@ http://www.cgtextures.com/tiledpreview.php?id=21199&PHPSESSID=208tf7lhlqjju90ctl
 
 guest room - bed:
 https://cdn.vectorstock.com/i/composite/85,67/texture-with-flowers-vector-368567.jpg
+
+office - wall:
+http://www.cgtextures.com/tiledpreview.php?id=21200&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+office - ground:
+http://www.cgtextures.com/tiledpreview.php?id=69802&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
