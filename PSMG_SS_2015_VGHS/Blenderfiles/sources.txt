@@ -235,3 +235,5 @@ http://www.cgtextures.com/tiledpreview.php?id=51023&PHPSESSID=208tf7lhlqjju90ctl
 guestroom - wall:
 http://www.cgtextures.com/tiledpreview.php?id=21199&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
 
+guest room - bed:
+https://cdn.vectorstock.com/i/composite/85,67/texture-with-flowers-vector-368567.jpg
