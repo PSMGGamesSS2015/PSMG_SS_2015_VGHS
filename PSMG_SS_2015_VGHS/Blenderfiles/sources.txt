@@ -229,3 +229,9 @@ lamp2:
 http://www.cgtextures.com/tiledpreview.php?id=32817&PHPSESSID=2tv4v72drhohs0vco0uimabl22
 
 
+guestroom - ground:
+http://www.cgtextures.com/tiledpreview.php?id=51023&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+guestroom - wall:
+http://www.cgtextures.com/tiledpreview.php?id=21199&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+

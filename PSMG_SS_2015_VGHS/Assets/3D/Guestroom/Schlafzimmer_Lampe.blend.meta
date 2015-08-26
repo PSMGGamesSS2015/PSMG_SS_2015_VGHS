@@ -12,6 +12,7 @@ ModelImporter:
     100008: Lampenschirm
     100010: //RootNode
     100012: Standfuss
+    100014: lamp1
     400000: BezierCurve
     400002: Circle
     400004: Circle_001
@@ -19,24 +20,28 @@ ModelImporter:
     400008: Lampenschirm
     400010: //RootNode
     400012: Standfuss
+    400014: lamp1
     2300000: BezierCurve
     2300002: Circle
     2300004: Circle_001
     2300006: Cylinder
     2300008: Lampenschirm
     2300010: Standfuss
+    2300012: lamp1
     3300000: BezierCurve
     3300002: Circle
     3300004: Circle_001
     3300006: Cylinder
     3300008: Lampenschirm
     3300010: Standfuss
+    3300012: lamp1
     4300000: Circle
     4300002: Cylinder
     4300004: Lampenschirm
     4300006: BezierCurve
     4300008: Circle_001
     4300010: Standfuss
+    4300012: lamp1
     7400000: Default Take
     9500000: //RootNode
   materials:
