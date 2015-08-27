@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: 8f3990519ed5bd844ab3952b80cbf08d
+timeCreated: 1440662958
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Base_001_Plane_001
+    100002: Cube_Cube_001_Cube_Cube_000
+    100004: fluttershy_eyelashes_lower_polySurface1_ZBrush_defualt_group
+    100006: fluttershy_eyelashes_upper_polySurface1
+    100008: polySurface1
+    100010: pony_body_polySurface1_pony_body_polySurface1_001
+    100012: //RootNode
+    100014: ZBrush_defualt_group_001
+    100016: ZBrush_defualt_group_002
+    100018: ZBrush_defualt_group_003
+    100020: ZBrush_defualt_group_004
+    100022: ZBrush_defualt_group_005
+    100024: ZBrush_defualt_group_007
+    100026: ZBrush_defualt_group_008
+    400000: Base_001_Plane_001
+    400002: Cube_Cube_001_Cube_Cube_000
+    400004: fluttershy_eyelashes_lower_polySurface1_ZBrush_defualt_group
+    400006: fluttershy_eyelashes_upper_polySurface1
+    400008: polySurface1
+    400010: pony_body_polySurface1_pony_body_polySurface1_001
+    400012: //RootNode
+    400014: ZBrush_defualt_group_001
+    400016: ZBrush_defualt_group_002
+    400018: ZBrush_defualt_group_003
+    400020: ZBrush_defualt_group_004
+    400022: ZBrush_defualt_group_005
+    400024: ZBrush_defualt_group_007
+    400026: ZBrush_defualt_group_008
+    2300000: Base_001_Plane_001
+    2300002: Cube_Cube_001_Cube_Cube_000
+    2300004: fluttershy_eyelashes_lower_polySurface1_ZBrush_defualt_group
+    2300006: fluttershy_eyelashes_upper_polySurface1
+    2300008: polySurface1
+    2300010: pony_body_polySurface1_pony_body_polySurface1_001
+    2300012: ZBrush_defualt_group_001
+    2300014: ZBrush_defualt_group_002
+    2300016: ZBrush_defualt_group_003
+    2300018: ZBrush_defualt_group_004
+    2300020: ZBrush_defualt_group_005
+    2300022: ZBrush_defualt_group_007
+    2300024: ZBrush_defualt_group_008
+    3300000: Base_001_Plane_001
+    3300002: Cube_Cube_001_Cube_Cube_000
+    3300004: fluttershy_eyelashes_lower_polySurface1_ZBrush_defualt_group
+    3300006: fluttershy_eyelashes_upper_polySurface1
+    3300008: polySurface1
+    3300010: pony_body_polySurface1_pony_body_polySurface1_001
+    3300012: ZBrush_defualt_group_001
+    3300014: ZBrush_defualt_group_002
+    3300016: ZBrush_defualt_group_003
+    3300018: ZBrush_defualt_group_004
+    3300020: ZBrush_defualt_group_005
+    3300022: ZBrush_defualt_group_007
+    3300024: ZBrush_defualt_group_008
+    4300000: pony_body_polySurface1_pony_body_polySurface1_001
+    4300002: ZBrush_defualt_group_004
+    4300004: polySurface1
+    4300006: Cube_Cube_001_Cube_Cube_000
+    4300008: ZBrush_defualt_group_003
+    4300010: ZBrush_defualt_group_008
+    4300012: Base_001_Plane_001
+    4300014: fluttershy_eyelashes_lower_polySurface1_ZBrush_defualt_group
+    4300016: ZBrush_defualt_group_005
+    4300018: ZBrush_defualt_group_002
+    4300020: ZBrush_defualt_group_007
+    4300022: ZBrush_defualt_group_001
+    4300024: fluttershy_eyelashes_upper_polySurface1
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
