@@ -239,7 +239,10 @@
 	<michael_house_1_34>Warte, ich bringe dir die Tabletten, die Dr. Meloff dir verschrieben hat.</michael_house_1_34>
 	
 	<!-- House Second Scene -->
-	<michael_house_2_1>Das tut mir sehr leid Schatz. Du siehst du die Familienalben durch? Das ist gut. Kannst du dich an etwas erinnern?</michael_house_2_1>
+	<michael_house_2_1>
+    Das tut mir sehr leid Schatz. Du siehst du die Familienalben durch?
+    Das ist gut. Kannst du dich an etwas erinnern?
+  </michael_house_2_1>
 	<michael_house_2_2>Was willst du wissen?</michael_house_2_2>
 	<michael_house_2_3>Das ist dein Vater. Er starb schon vor einiger Zeit.</michael_house_2_3>
 	<michael_house_2_4>Er hatte Krebs.</michael_house_2_4>
@@ -253,14 +256,28 @@
 	<michael_house_2_12>Aber was soll ich denn mit deinem Adressbuch, Jane?</michael_house_2_12>
 	<michael_house_2_13>Paula könnte doch auch nichts damit anfangen.</michael_house_2_13>
 	<michael_house_2_14>Vielleicht hast du es selbst weggelegt und weißt es nicht mehr?</michael_house_2_14>
-	<michael_house_2_15>Vielleicht irgendeine Nachwirkung deiner Amnesie… wir sollten vielleicht noch einmal zu Arzt gehen… Am besten beruhigst du dich erstmal und nimmst deine Tabletten… das Buch wird schon wieder auftauchen.</michael_house_2_15>
+	<michael_house_2_15>
+    Vielleicht irgendeine Nachwirkung deiner Amnesie…
+    Wir sollten vielleicht noch einmal zu Arzt gehen…
+    Am besten beruhigst du dich erstmal und nimmst deine Tabletten…
+    Das Buch wird schon wieder auftauchen.
+  </michael_house_2_15>
 	
 	<!-- House Third Scene -->
 	<michael_house_3_1>Wieso, was soll damit nicht stimmen?</michael_house_3_1>
-	<michael_house_3_2>Ich denke nicht, dass das die Tabletten sind. Das ist Ativan, das wirkt beruhigend, aber es macht nicht depressiv. Das muss mit deiner Amnesie zusammenhängen</michael_house_3_2>
+	<michael_house_3_2>
+    Ich denke nicht, dass das die Tabletten sind. Das ist Ativan,
+    das wirkt beruhigend, aber es macht nicht depressiv. Das muss mit deiner Amnesie zusammenhängen.
+  </michael_house_3_2>
 	<michael_house_3_3>Ich werden für nächste Woche einen Termin ausmachen.</michael_house_3_3>
-	<michael_house_3_4>Am besten gehst du wieder nach oben und legst dich hin. Ich bringe dir ein Glas Wasser. Du siehst unglaublich schwach aus.</michael_house_3_4>
-	<michael_house_3_5>Ja, Dr. Meloff?... Nein, hier ist alles in Ordnung… nein, sie ist ein wenig verwirrt… ja natürlich… Ja wir kommen zurecht.</michael_house_3_5>
+	<michael_house_3_4>
+    Am besten gehst du wieder nach oben und legst dich hin.
+    Ich bringe dir ein Glas Wasser. Du siehst unglaublich schwach aus.
+  </michael_house_3_4>
+	<michael_house_3_5>
+    Ja, Dr. Meloff?... Nein, hier ist alles in Ordnung… nein, sie ist ein wenig verwirrt…
+    Ja natürlich… Ja wir kommen zurecht.
+  </michael_house_3_5>
 	<michael_house_3_6>Hier deine Tabletten, Schatz.</michael_house_3_6>
 	<michael_house_3_7>Das ist schon wieder einen ganzen Tag her, Jane.</michael_house_3_7>
 	
@@ -272,20 +289,43 @@
 	<michael_house_4_5>Ich gab dir Haldol, weil ich dachte, dass du es vielleicht noch brauchst...</michael_house_4_5>
 	<michael_house_4_6>Jane... bitte...</michael_house_4_6>
 	<michael_house_4_7>Der Unfall deiner Mutter vor einem Jahr...</michael_house_4_7>
-	<michael_house_4_8>Du warst damals der Fahrer... als sich der Jahrestag ihres Todes näherte verfielst du in so tiefe Depressionen, dass der Arzt dir Haldol verschrieb.</michael_house_4_8>
-	<michael_house_4_9>Ich habe einfach nur befürchtet, dass dieser Zustand unterbewusst weiter besteht und wollte dem vorbeugen... Schatz, ist alles ok?</michael_house_4_9>
-	<michael_house_4_10>Ich wollte dich damit nicht verletzen Schatz. Ich wollte nur vermeiden, dass alle nach dir fragen, damit du zur Ruhe kommen kannst.</michael_house_4_10>
+	<michael_house_4_8>
+    Du warst damals der Fahrer... als sich der Jahrestag ihres Todes näherte,
+    verfielst du in so tiefe Depressionen, dass der Arzt dir Haldol verschrieb.
+  </michael_house_4_8>
+	<michael_house_4_9>
+    Ich habe einfach nur befürchtet, dass dieser Zustand unterbewusst weiter besteht
+    und wollte dem vorbeugen... Schatz, ist alles ok?
+  </michael_house_4_9>
+	<michael_house_4_10>
+    Ich wollte dich damit nicht verletzen Schatz. Ich wollte nur vermeiden,
+    dass alle nach dir fragen, damit du zur Ruhe kommen kannst.
+  </michael_house_4_10>
 	<michael_house_4_11>Ich hoffte du würdest dich erinnern, dann müsste ich es dir nicht sagen...</michael_house_4_11>
 	<michael_house_4_12>Doch Schatz... sie starb ebenfalls bei dem Unfall...</michael_house_4_12>
 	<michael_house_4_13>Schatz es tut mir so leid...</michael_house_4_13>
-	<michael_house_4_14>Je näher der Todestag deiner Mutter und unserer Tochter rückte, desto aufgebrachter warst du. Du hattest Stimmungsschwankungen, warst unberechenbar. Und vor einer Woche ist es dann passiert. Du bist vollkommen ausgerastet und hast mich angeschrien. Ich habe versucht dich zu beruhigen, mit dir zu reden, als du plötzlich nach einer Vase gegriffen hast und auf mich losgegangen bist.</michael_house_4_14>
+	<michael_house_4_14>
+    Je näher der Todestag deiner Mutter und unserer Tochter rückte, desto aufgebrachter warst du.
+    Du hattest Stimmungsschwankungen, warst unberechenbar. Und vor einer Woche ist es dann passiert.
+    Du bist vollkommen ausgerastet und hast mich angeschrien. Ich habe versucht dich zu beruhigen,
+    mit dir zu reden, als du plötzlich nach einer Vase gegriffen hast und auf mich losgegangen bist.
+  </michael_house_4_14>
 	<michael_house_4_15>Schatz ist alles in Ordnung? Soll ich dir deine Tabletten bringen?</michael_house_4_15>
 	
 	<!-- House Fifth Scene -->
 	<michael_house_5_1>Nehmen sie sich in Acht vor Jane.</michael_house_5_1>
-	<michael_house_5_2>Sie hatte gestern einen Zusammenbruch. Ich weiß nicht, was ihr heute alles einfällt, aber ich muss jetzt in die Praxis.</michael_house_5_2>
-	<michael_house_5_3>Ich habe ihr gestern ein starkes Medikament verabreicht. Sie müsste noch ein bis zwei Stunden schlafen.</michael_house_5_3>
-	<michael_house_5_4>Heute Nachmittag werde ich sie dann abholen lassen. Sie kann nicht hier bleiben, das ist zu gefährlich.</michael_house_5_4>
+	<michael_house_5_2>
+    Sie hatte gestern einen Zusammenbruch. Ich weiß nicht, was ihr heute alles einfällt,
+    aber ich muss jetzt in die Praxis.
+  </michael_house_5_2>
+	<michael_house_5_3>
+    Ich habe ihr gestern ein starkes Medikament verabreicht.
+    Sie müsste noch ein bis zwei Stunden schlafen.
+  </michael_house_5_3>
+	<michael_house_5_4>
+    Heute Nachmittag werde ich sie dann abholen lassen.
+    Sie kann nicht hier bleiben, das ist zu gefährlich.
+  </michael_house_5_4>
 	<michael_house_5_5>Ich habe leider keine andere Wahl...</michael_house_5_5>
 	
 	
@@ -312,12 +352,18 @@
   	<!--  House Fourth Scene -->
 	<paula_house_4_1>Hier bei den Whittakers, mit wem spreche ich?</paula_house_4_1>
 	<paula_house_4_2>Mutter… sie ist ein kleines Kind. Sowas passiert einfach.</paula_house_4_2>
-	<paula_house_4_3>Dann lass sie weniger Süßigkeiten essen und prüfe nach, was sie sich im Fernsehen ansieht!</paula_house_4_3>
+	<paula_house_4_3>
+    Dann lass sie weniger Süßigkeiten essen und prüfe nach,
+    was sie sich im Fernsehen ansieht!
+  </paula_house_4_3>
 	<paula_house_4_4>Ich muss jetzt weiter arbeiten Mutter...</paula_house_4_4>
 	<paula_house_4_5>Was tun sie da?</paula_house_4_5>
 	<paula_house_4_6>Ich denke es ist wieder Zeit für ihre Tabletten.</paula_house_4_6>
 	<paula_house_4_7>Hier bitte, ihr Wasser.</paula_house_4_7>
-	<paula_house_4_8>Sie sollten aufhören so viel herumzuwandern und sich hinlegen. Michael macht sich inzwischen große Sorgen.</paula_house_4_8>
+	<paula_house_4_8>
+    Sie sollten aufhören so viel herumzuwandern und sich hinlegen.
+    Michael macht sich inzwischen große Sorgen.
+  </paula_house_4_8>
 	
 	<!--  House Fifth Scene -->
 	<paula_house_5_1>Wieso, was ist mit ihr?</paula_house_5_1>
@@ -325,7 +371,10 @@
 	<paula_house_5_3>Oh okay.</paula_house_5_3>
 	<paula_house_5_4>Sie wollen sie in ein Heim einweisen?</paula_house_5_4>
 	<paula_house_5_5>Wo wollen sie hin?</paula_house_5_5>
-	<paula_house_5_6>Ich habe klare Anweisungen von Michael! Sie bleiben hier, da draußen sind sie nicht sicher!</paula_house_5_6>
+	<paula_house_5_6>
+    Ich habe klare Anweisungen von Michael! Sie bleiben hier,
+    da draußen sind sie nicht sicher!
+  </paula_house_5_6>
 	
   
   <information_1>Wie lautet der Name des Arztes?</information_1>
@@ -339,10 +388,16 @@
   <meloff_3>Sie glauben? Stimmt etwas nicht bei ihnen?</meloff_3>
   <meloff_4>Wie bitte?</meloff_4>
   <meloff_5>Ja das habe ich. Ativan um genau zu sein.</meloff_5>
-  <meloff_6>Was?! Ähm, nein, das ist ein einfaches Beruhigungsmittel. Jane, wenn Michael gerade da ist, könntest du ihn mir bitte geben?</meloff_6>
+  <meloff_6>
+    Was?! Ähm, nein, das ist ein einfaches Beruhigungsmittel.
+    Jane, wenn Michael gerade da ist, könntest du ihn mir bitte geben?
+  </meloff_6>
   
   <paula_mum_1>Es ist aber inzwischen ein anhaltender Zustand. Das ist doch nicht normal.</paula_mum_1>
-  <paula_mum_2>Ich habe sie gut im Auge. Ich glaube kaum, dass Süßigkeiten oder ein Fernsehprogramm Ursache für die Alpträume sind.</paula_mum_2>
+  <paula_mum_2>
+    Ich habe sie gut im Auge. Ich glaube kaum,
+    dass Süßigkeiten oder ein Fernsehprogramm Ursache für die Alpträume sind.
+  </paula_mum_2>
   
   <eleanor_1>Ja?</eleanor_1>
   <eleanor_2>Ja? Wer spricht denn da?</eleanor_2>
@@ -353,7 +408,13 @@
   <diane_1>Diane Brewster?</diane_1>
   <diane_2>Ach du meine Güte, wie hörst du dich denn an?</diane_2>
   <diane_3>Was? Wie? Ähm, ja ok?</diane_3>
-  <diane_4>Was zum Geier?! Wie kommst du denn auf sowas? Nein sie ist quietschlebendig! Herr Gott, was fragst du denn für Sachen?</diane_4>
-  <diane_5>Ja natürlich, das ist die Klassenleiterin unserer Kinder. Jane was ist denn los bei dir?</diane_5>
+  <diane_4>
+    Was zum Geier?! Wie kommst du denn auf sowas? Nein sie ist quietschlebendig!
+    Herr Gott, was fragst du denn für Sachen?
+  </diane_4>
+  <diane_5>
+    Ja natürlich, das ist die Klassenleiterin unserer Kinder.
+    Jane was ist denn los bei dir?
+  </diane_5>
   
 </ger>

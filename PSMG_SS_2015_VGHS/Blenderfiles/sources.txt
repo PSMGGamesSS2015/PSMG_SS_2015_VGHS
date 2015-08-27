@@ -215,3 +215,31 @@ bedroom - lamp:
 http://www.cgtextures.com/tiledpreview.php?id=24474&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
 
 http://www.cgtextures.com/tiledpreview.php?id=33823&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
+
+pill:
+http://www.neuraxpharm.de/images/praeparate/4815495.jpg
+
+vase - marble:
+http://www.cgtextures.com/tiledpreview.php?id=49995&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+clay:
+http://www.cgtextures.com/tiledpreview.php?id=38526&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+lamp2:
+http://www.cgtextures.com/tiledpreview.php?id=32817&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+
+guestroom - ground:
+http://www.cgtextures.com/tiledpreview.php?id=51023&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+guestroom - wall:
+http://www.cgtextures.com/tiledpreview.php?id=21199&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+guest room - bed:
+https://cdn.vectorstock.com/i/composite/85,67/texture-with-flowers-vector-368567.jpg
+
+office - wall:
+http://www.cgtextures.com/tiledpreview.php?id=21200&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+office - ground:
+http://www.cgtextures.com/tiledpreview.php?id=69802&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
