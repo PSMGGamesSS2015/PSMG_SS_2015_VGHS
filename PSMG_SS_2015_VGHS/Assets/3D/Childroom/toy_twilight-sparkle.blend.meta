@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 47ea617179be59849b476e82868ba825
+timeCreated: 1440717915
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cube_001_Cube_005
+    100002: Cube_002
+    100004: Cube_003
+    100006: Cube_004_Cube_008
+    100008: Cube_005_Cube_007
+    100010: Cube_Cube_001
+    100012: Group54397
+    100014: Group54397_001_Group54397_002
+    100016: Group54397_002_Group54397_006
+    100018: Group54397_003_Group54397_005
+    100020: pony_body_polySurface1
+    100022: //RootNode
+    100024: twilight_tail_ZBrush_defualt_group
+    100026: ZBrush_defualt_group
+    100028: ZBrush_defualt_group_002_ZBrush_defualt_group_005
+    100030: ZBrush_defualt_group_005_ZBrush_defualt_group_010
+    100032: ZBrush_defualt_group_006
+    100034: ZBrush_defualt_group_007_ZBrush_defualt_group_011
+    100036: ZBrush_defualt_group_008_ZBrush_defualt_group_012
+    100038: ZBrush_defualt_group_009
+    100040: ZBrush_defualt_group_009_ZBrush_defualt_group_002
+    100042: ZBrush_defualt_group_010
+    100044: ZBrush_defualt_group_010_ZBrush_defualt_group_007
+    100046: ZBrush_defualt_group_011
+    400000: Cube_001_Cube_005
+    400002: Cube_002
+    400004: Cube_003
+    400006: Cube_004_Cube_008
+    400008: Cube_005_Cube_007
+    400010: Cube_Cube_001
+    400012: Group54397
+    400014: Group54397_001_Group54397_002
+    400016: Group54397_002_Group54397_006
+    400018: Group54397_003_Group54397_005
+    400020: pony_body_polySurface1
+    400022: //RootNode
+    400024: twilight_tail_ZBrush_defualt_group
+    400026: ZBrush_defualt_group
+    400028: ZBrush_defualt_group_002_ZBrush_defualt_group_005
+    400030: ZBrush_defualt_group_005_ZBrush_defualt_group_010
+    400032: ZBrush_defualt_group_006
+    400034: ZBrush_defualt_group_007_ZBrush_defualt_group_011
+    400036: ZBrush_defualt_group_008_ZBrush_defualt_group_012
+    400038: ZBrush_defualt_group_009
+    400040: ZBrush_defualt_group_009_ZBrush_defualt_group_002
+    400042: ZBrush_defualt_group_010
+    400044: ZBrush_defualt_group_010_ZBrush_defualt_group_007
+    400046: ZBrush_defualt_group_011
+    2300000: Cube_001_Cube_005
+    2300002: Cube_002
+    2300004: Cube_003
+    2300006: Cube_004_Cube_008
+    2300008: Cube_005_Cube_007
+    2300010: Cube_Cube_001
+    2300012: Group54397
+    2300014: Group54397_001_Group54397_002
+    2300016: Group54397_002_Group54397_006
+    2300018: Group54397_003_Group54397_005
+    2300020: pony_body_polySurface1
+    2300022: twilight_tail_ZBrush_defualt_group
+    2300024: ZBrush_defualt_group
+    2300026: ZBrush_defualt_group_002_ZBrush_defualt_group_005
+    2300028: ZBrush_defualt_group_005_ZBrush_defualt_group_010
+    2300030: ZBrush_defualt_group_006
+    2300032: ZBrush_defualt_group_007_ZBrush_defualt_group_011
+    2300034: ZBrush_defualt_group_008_ZBrush_defualt_group_012
+    2300036: ZBrush_defualt_group_009
+    2300038: ZBrush_defualt_group_009_ZBrush_defualt_group_002
+    2300040: ZBrush_defualt_group_010
+    2300042: ZBrush_defualt_group_010_ZBrush_defualt_group_007
+    2300044: ZBrush_defualt_group_011
+    3300000: Cube_001_Cube_005
+    3300002: Cube_002
+    3300004: Cube_003
+    3300006: Cube_004_Cube_008
+    3300008: Cube_005_Cube_007
+    3300010: Cube_Cube_001
+    3300012: Group54397
+    3300014: Group54397_001_Group54397_002
+    3300016: Group54397_002_Group54397_006
+    3300018: Group54397_003_Group54397_005
+    3300020: pony_body_polySurface1
+    3300022: twilight_tail_ZBrush_defualt_group
+    3300024: ZBrush_defualt_group
+    3300026: ZBrush_defualt_group_002_ZBrush_defualt_group_005
+    3300028: ZBrush_defualt_group_005_ZBrush_defualt_group_010
+    3300030: ZBrush_defualt_group_006
+    3300032: ZBrush_defualt_group_007_ZBrush_defualt_group_011
+    3300034: ZBrush_defualt_group_008_ZBrush_defualt_group_012
+    3300036: ZBrush_defualt_group_009
+    3300038: ZBrush_defualt_group_009_ZBrush_defualt_group_002
+    3300040: ZBrush_defualt_group_010
+    3300042: ZBrush_defualt_group_010_ZBrush_defualt_group_007
+    3300044: ZBrush_defualt_group_011
+    4300000: twilight_tail_ZBrush_defualt_group
+    4300002: ZBrush_defualt_group_010_ZBrush_defualt_group_007
+    4300004: ZBrush_defualt_group_011
+    4300006: ZBrush_defualt_group_009_ZBrush_defualt_group_002
+    4300008: Cube_005_Cube_007
+    4300010: ZBrush_defualt_group_008_ZBrush_defualt_group_012
+    4300012: Cube_002
+    4300014: ZBrush_defualt_group_005_ZBrush_defualt_group_010
+    4300016: Group54397
+    4300018: ZBrush_defualt_group_010
+    4300020: ZBrush_defualt_group_007_ZBrush_defualt_group_011
+    4300022: ZBrush_defualt_group_009
+    4300024: ZBrush_defualt_group_006
+    4300026: Cube_003
+    4300028: Group54397_003_Group54397_005
+    4300030: ZBrush_defualt_group
+    4300032: Cube_001_Cube_005
+    4300034: Group54397_002_Group54397_006
+    4300036: ZBrush_defualt_group_002_ZBrush_defualt_group_005
+    4300038: pony_body_polySurface1
+    4300040: Cube_Cube_001
+    4300042: Group54397_001_Group54397_002
+    4300044: Cube_004_Cube_008
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
