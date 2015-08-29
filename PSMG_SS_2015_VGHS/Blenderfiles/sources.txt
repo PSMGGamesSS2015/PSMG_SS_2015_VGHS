@@ -243,3 +243,7 @@ http://www.cgtextures.com/tiledpreview.php?id=21200&PHPSESSID=208tf7lhlqjju90ctl
 
 office - ground:
 http://www.cgtextures.com/tiledpreview.php?id=69802&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+doors:
+http://www.cgtextures.com/tiledpreview.php?id=112995&PHPSESSID=e8u6r1dk08ci9laub56vq82kn2
+
