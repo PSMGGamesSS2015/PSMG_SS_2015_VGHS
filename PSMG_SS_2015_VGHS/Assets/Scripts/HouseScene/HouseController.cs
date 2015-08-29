@@ -10,6 +10,9 @@ using UnityStandardAssets.CrossPlatformInput;
 public class HouseController : MonoBehaviour {
 
 	public GUIController guiController;
+	public AudioController audioController;
+	
+	public GameObject voice;
 	public GameObject player;
 	public GameObject michael;
 	public GameObject paula;
@@ -282,6 +285,7 @@ public class HouseController : MonoBehaviour {
 			case "Diningroom": // check if diningroom entered and initialize new interactions
 				if(!diningRoomTriggered){
 					guiController.toggleSubtl ("diningRoom");
+					audioController.setupVoice("diningRoom");
 					guiController.manageInteraction ("michael_friends", "Michael");
 					guiController.manageInteraction ("michael_family", "Michael");
 					diningRoomTriggered = true;	
@@ -536,6 +540,9 @@ public class HouseController : MonoBehaviour {
 			}
 			// toggle subtl. during dialog
 			guiController.toggleSubtl (actualSubtl);
+			if(!voice.GetComponent<AudioSource>().isPlaying){
+				audioController.setupVoice(actualSubtl);
+			}
 		}
 	}
 

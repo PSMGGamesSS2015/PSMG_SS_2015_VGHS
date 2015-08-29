@@ -24,16 +24,22 @@ public class AudioController : MonoBehaviour {
 		string audioSource;
 		keyAudioList.TryGetValue (key, out audioSource);
 		AudioClip clip = Resources.Load ("Audio/Voice/"+audioSource)as AudioClip;
-
 		voiceOutput.GetComponent<AudioSource> ().clip = clip;
 		voiceOutput.GetComponent<AudioSource>().Play();
 	}
 
 	void setupKeyAudioList(){
-		keyAudioList.Add("entry", "jane_bath_1");
-		keyAudioList.Add("mirror1", "jane_bath_2");
-		keyAudioList.Add("mirror2", "jane_bath_3");
-		keyAudioList.Add("paper", "jane_bath_4");
-		keyAudioList.Add("theory1", "jane_bath_5");
+		keyAudioList.Add ("entry", "jane_bath_1");
+		keyAudioList.Add ("mirror1", "jane_bath_2");
+		keyAudioList.Add ("mirror2", "jane_bath_3");
+		keyAudioList.Add ("paper", "jane_bath_4");
+		keyAudioList.Add ("theory1", "jane_bath_5");
+
+		keyAudioList.Add ("welcome1", "michael_house_1_1");
+		keyAudioList.Add ("welcome2", "jane_house_1_1");
+		keyAudioList.Add ("welcome3", "michael_house_1_2");
+		keyAudioList.Add ("welcome4", "jane_house_1_2");
+		keyAudioList.Add ("welcome5", "michael_house_1_3");
+		keyAudioList.Add ("diningRoom", "michael_house_1_4");
 	}
 }
