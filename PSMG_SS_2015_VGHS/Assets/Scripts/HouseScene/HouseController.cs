@@ -172,6 +172,7 @@ public class HouseController : MonoBehaviour {
 					break;
 				case "Notepad": // interaction with notepad
 					guiController.toggleSubtl("noteMonolog");
+					audioController.setupVoice("noteMonolog");
 					break;
 				case "Bookshelf": // interaction with bookshelf in workroom
 					if(actualHouseScene == 4){
@@ -181,6 +182,7 @@ public class HouseController : MonoBehaviour {
 						guiController.togglePillQuiz();
 					}else {
 						guiController.toggleSubtl("bookshelf");
+						audioController.setupVoice("bookshelf");
 					}
 					break;
 				case "Sidetable": // managing interaction with sidetable and adressbook
@@ -196,6 +198,7 @@ public class HouseController : MonoBehaviour {
 						}
 						if(actualHouseScene == 2 && adressBookLost){
 							guiController.toggleSubtl("adressbookLost");
+							audioController.setupVoice("adressbookLost");
 							lostBookFound = true;
 							michael.GetComponent<FollowTarget>().target = player.transform;
 							guiController.manageInteraction ("michael_adressBook", "Michael");
@@ -219,6 +222,7 @@ public class HouseController : MonoBehaviour {
 						initDialog("information4_");
 					}else{
 						guiController.toggleSubtl("phoneDefault");
+						audioController.setupVoice("phoneDefault");
 					}
 					break;
 				case "Paula": // open interaction panel if interactions are available
@@ -229,6 +233,7 @@ public class HouseController : MonoBehaviour {
 				case "Warderobe": // interactions with warderobe in bedroom
 					if(!dialogsPerformed.Contains("freshWater") && dialogsPerformed.Contains("paulaPills")){
 						guiController.toggleSubtl("hidePills");
+						audioController.setupVoice("hidePills");
 						paula.GetComponent<FollowTarget>().target = player.transform;
 						pillsHidden = true;
 					}
@@ -238,17 +243,20 @@ public class HouseController : MonoBehaviour {
 					}
 					else{
 						guiController.toggleSubtl("warderobe");
+						audioController.setupVoice("warderobe");
 					}
 					break;
 				case "Chest": // interacting with chest of drawers ins guestroom
 					if(haldol){
 						guiController.toggleSubtl("box");
+						audioController.setupVoice("box");
 						box.SetActive(true);
 						boxFound = true;
 					}
 					break;
 				case "Box": // interact with box
 					guiController.toggleSubtl("box2");
+					audioController.setupVoice("box2");
 					insertIntoInventory("personalStuff");
 					box.SetActive(false);
 					stuffFound = true;
@@ -259,6 +267,7 @@ public class HouseController : MonoBehaviour {
 					}
 					else{
 						guiController.toggleSubtl("vase");
+						audioController.setupVoice("vase");
 					}
 					break;
 				default: break;
@@ -294,6 +303,7 @@ public class HouseController : MonoBehaviour {
 				// check if player got near paula in second house scene to trigger phone dialog
 				if(actualHouseScene == 2 && !paulaPhoneDialog1){
 					guiController.toggleSubtl("paulaPhoneDialog1");
+					audioController.setupVoice("paulaPhoneDialog1");
 					paulaPhoneDialog1 = true;
 				}
 				break;
@@ -349,6 +359,7 @@ public class HouseController : MonoBehaviour {
 			case "Workroom": // check if guestroom entered
 				if(!workroomTriggered){
 					guiController.toggleSubtl("workroom");
+					audioController.setupVoice("workroom");
 					workroomTriggered = true;
 				}
 				break;
@@ -359,10 +370,12 @@ public class HouseController : MonoBehaviour {
 				initDialog("bedroom");
 				if(!bedroomTriggered && dialogsPerformed.Contains ("bedtime") && actualHouseScene == 2){
 					guiController.toggleSubtl("bedroom3");
+					audioController.setupVoice("bedroom3");
 					bedroomTriggered = true;
 				}
 				if(dialogsPerformed.Contains("pills") && !dialogsPerformed.Contains("meloffCall") && !bedroomTriggered && actualHouseScene == 3){
 					guiController.toggleSubtl("callDoc");
+					audioController.setupVoice("callDoc");
 					bedroomTriggered = true;
 				}
 				if (actualHouseScene == 4){
@@ -561,6 +574,7 @@ public class HouseController : MonoBehaviour {
 				if(missingPicture == false){
 					missingPicture = true;
 					guiController.toggleSubtl("missingPictureFound");
+					audioController.setupVoice("missingPictureFound");
 					guiController.toggleInventory();
 					guiController.manageInteraction("michael_missingPicture", "Michael");
 					guiController.removeHint("daughter");
@@ -573,6 +587,7 @@ public class HouseController : MonoBehaviour {
 		if(theory.GetComponent<Theory> ().theory2Found && !theory2Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory2");
+			audioController.setupVoice("theory2");
 			guiController.manageInteraction("michael_scar_2", "Michael");
 			theory2Registered = true;
 			guiController.removeHint("scar");
@@ -582,6 +597,7 @@ public class HouseController : MonoBehaviour {
 		if(theory.GetComponent<Theory> ().theory3Found && !theory3Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory3");
+			audioController.setupVoice("theory3");
 			guiController.manageInteraction("michael_dizzy", "Michael");
 			theory3Registered = true;
 			guiController.removeHint("pills");
@@ -591,6 +607,7 @@ public class HouseController : MonoBehaviour {
 		if(theory.GetComponent<Theory> ().theory4Found && !theory4Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory4");
+			audioController.setupVoice("theory4");
 			theory4Registered = true;
 			guiController.removeHint("family");
 			guiController.removeHint("personalStuff");
@@ -599,6 +616,7 @@ public class HouseController : MonoBehaviour {
 		if(theory.GetComponent<Theory> ().theory5Found && !theory5Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory5");
+			audioController.setupVoice("theory5");
 			guiController.manageInteraction("michael_daughter2", "Michael");
 			theory5Registered = true;
 			guiController.removeHint("missingPicture");
@@ -608,6 +626,7 @@ public class HouseController : MonoBehaviour {
 		if(theory.GetComponent<Theory> ().theory6Found && !theory6Registered){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("lie");
+			audioController.setupVoice("lie");
 			theory6Registered = true;
 			guiController.removeHint("amnesia");
 			guiController.removeHint("death");
@@ -773,6 +792,7 @@ public class HouseController : MonoBehaviour {
 				guiController.pillQuizAnswer = "";
 				pillAnswer = true;
 				guiController.toggleSubtl("haldol");
+				audioController.setupVoice("haldol");
 				guiController.manageInteraction("michael_haldol", "Michael");
 				haldol = true;
 			}
@@ -780,6 +800,7 @@ public class HouseController : MonoBehaviour {
 				guiController.togglePillQuiz();
 				guiController.pillQuizAnswer = "";
 				guiController.toggleSubtl("wrongPills");
+				audioController.setupVoice("wrongPills");
 			}
 		}
 	}
@@ -811,6 +832,7 @@ public class HouseController : MonoBehaviour {
 			paula.SetActive(true);
 			isDizzy = true;
 			guiController.toggleSubtl("dizzy1");
+			audioController.setupVoice("dizzy1");
 			secondSceneReady = true;
 			guiController.manageInteraction("paula_about", "Paula");
 			guiController.manageInteraction("paula_phoneCall", "Paula");
@@ -824,12 +846,14 @@ public class HouseController : MonoBehaviour {
 			paula.SetActive(false);
 			bedroomTriggered = false;
 			guiController.toggleSubtl("dizzy2");
+			audioController.setupVoice("dizzy2");
 			insertIntoInventory("dizzy");
 			break;
 		case 4: 
 			michael.SetActive(false);
 			paula.SetActive(true);
 			guiController.toggleSubtl("dizzy3");
+			audioController.setupVoice("dizzy3");
 			GameObject.FindGameObjectWithTag("PhoneBedroom").SetActive(false);
 			phoneWorkroom.SetActive(true);
 			break;
