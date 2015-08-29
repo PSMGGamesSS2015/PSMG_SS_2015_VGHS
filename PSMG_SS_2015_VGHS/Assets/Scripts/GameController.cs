@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.Audio;
 
 public class GameController : MonoBehaviour {
 
 	public GUIController guiController;
 	public GameObject player;
+	public GameObject voice;
     bool windowed;
 
 	// Use this for initialization
@@ -30,6 +32,9 @@ public class GameController : MonoBehaviour {
 
 		// close subtitles
 		if (Input.GetKeyDown (KeyCode.Space) && guiController.isShowing ()) {
+			if(voice.GetComponent<AudioSource>().isPlaying){
+				voice.GetComponent<AudioSource>().Stop();
+			}
 			guiController.toggleSubtl (null);
 		}
 
