@@ -9,6 +9,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class BathController : MonoBehaviour {
 
 	public GUIController guiController;
+	public AudioController audioController;
 	public GameObject player;
 	public GameObject jacket;
 	public GameObject jacketOn;
@@ -24,6 +25,7 @@ public class BathController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		guiController.toggleSubtl ("entry");
+		audioController.setupVoice ("entry");
 	}
 	
 	// Update is called once per frame
@@ -61,10 +63,12 @@ public class BathController : MonoBehaviour {
 						switch (sinkCounter) {
 						case 0: 
 							guiController.toggleSubtl ("mirror1");
+							audioController.setupVoice ("mirror1");
 							sinkCounter++;
 							break;
 						case 1:
 							guiController.toggleSubtl ("mirror2");
+							audioController.setupVoice ("mirror2");
 							guiController.toggleInventoryHint ();
 							guiController.addHint ("dressHint");
 							sinkCounter++;
@@ -77,6 +81,7 @@ public class BathController : MonoBehaviour {
 				case "Jacket": // handle interaction with jacket
 					if(!noteFound){
 						guiController.toggleSubtl ("paper");
+						audioController.setupVoice ("paper");
 						guiController.toggleInventoryHint ();
 						guiController.addHint ("noteHint");
 						noteFound = true;
@@ -122,6 +127,7 @@ public class BathController : MonoBehaviour {
 		if(theory.GetComponent<Theory>().theory1Found && theory1Registered == false){
 			guiController.toggleInventory();
 			guiController.toggleSubtl("theory1");
+			audioController.setupVoice ("theory1");
 			theory1Registered = true;
 		}
 	}
