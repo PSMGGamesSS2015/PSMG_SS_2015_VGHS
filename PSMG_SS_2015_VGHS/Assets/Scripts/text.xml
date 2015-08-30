@@ -31,7 +31,6 @@
 	<jane_house_1_11>Oh mein Gott...</jane_house_1_11>
 	<jane_house_1_12>Ich kann mich nicht an sie erinnern… ich bin so eine schlechte Mutter!</jane_house_1_12>
 	<jane_house_1_13>Emily… meine kleine Emily… oh mein Gott warum kann ich mich nicht an dich erinnern?</jane_house_1_13>
-	<jane_house_1_14>Ich... ich weiß nicht, es kam ganz von selbst.</jane_house_1_14>
 	<jane_house_1_15>Sind das Klassenfotos? Ist Emily darauf abgebildet?</jane_house_1_15>
 	<jane_house_1_16>Nein, keines dieser Gesichter kommt mir bekannt vor.</jane_house_1_16>
 	<jane_house_1_17>Wer ist Sara?</jane_house_1_17>
@@ -49,7 +48,7 @@
 	<jane_house_1_26>Nein, nein... es tut mir nur so leid zu hören, was du durchmachen musstest...</jane_house_1_26>
 	<jane_house_1_27>Ja, wohlbehalten...</jane_house_1_27>
 	<jane_house_1_28>
-    Ein wirklich hübsches Zimmer für eine siebenjährige… Oh mein Gott, wie wird sie reagieren,
+    Ein wirklich hübsches Zimmer für eine Siebenjährige… Oh mein Gott, wie wird sie reagieren,
     wenn sie erfährt, dass ihre eigene Mutter sie vergessen hat?
   </jane_house_1_28>
 	<jane_house_1_29>Das ist wirklich lieb von dir… danke, dass du so viel Verständnis für mich hast...</jane_house_1_29>
@@ -79,7 +78,7 @@
 	<jane_house_2_17>Oh Gott, woran ist er gestorben?</jane_house_2_17>
 	<jane_house_2_18>Wow… selbst der Tod meines Vaters ruft keine Erinnerungen hervor...</jane_house_2_18>
 	<jane_house_2_19>Wer ist die Frau auf dem Bild?</jane_house_2_19>
-	<jane_house_2_20>Wohnt sie auch in San Diego? Wie mein Bruder?”</jane_house_2_20>
+	<jane_house_2_20>Wohnt sie auch in San Diego? Wie mein Bruder?</jane_house_2_20>
 	<jane_house_2_21>Was meinst du mit hat?</jane_house_2_21>
 	<jane_house_2_22>Was?! Oh mein Gott...</jane_house_2_22>
 	<jane_house_2_23>Und jetzt bin ich außer mir, weil ich nicht mehr weiß, was passiert ist...</jane_house_2_23>
@@ -160,7 +159,7 @@
 	<!-- House Fifth Scene -->
 	<jane_house_5_1>In was für einem Alptraum befinde ich mich hier eigentlich?</jane_house_5_1>
 	<jane_house_5_2>Ich habe meine Mutter und meine Tochter getötet und kann mich nicht einmal mehr daran erinnern...</jane_house_5_2>
-	<jane_house_5_3>Michael liebt mich, das sehe ich ihm an... und ich bin mit einer Vase losgegangen, um...</jane_house_5_3>
+	<jane_house_5_3>Michael liebt mich, das sehe ich ihm an... und ich bin mit einer Vase auf ihn losgegangen, um...</jane_house_5_3>
 	<jane_house_5_4>...um jemanden namens Pat Rutherford zu treffen. Oh Gott hatte ich vielleicht eine Affäre? Konnte ich so eine grausame Person gewesen sein?</jane_house_5_4>
 	<jane_house_5_5>Es hilft nichts, ich muss wissen wer das ist!</jane_house_5_5>
 	<jane_house_5_6>Oh gott ist mir schlecht...</jane_house_5_6>
@@ -206,8 +205,6 @@
 	<michael_house_1_11>Ja...</michael_house_1_11>
 	<michael_house_1_12>Eine Tochter um genau zu sein… sie ist jetzt 7 Jahre alt.</michael_house_1_12>
 	<michael_house_1_13>Unsinn! Du bist eine herrliche Mutter! Emily liebt dich über alles!</michael_house_1_13>
-	<michael_house_1_14>Du kannst dich daran erinnern?</michael_house_1_14>
-	<michael_house_1_15>Ich glaube du wirst dich ganz schnell wieder an alles erinnern, wenn du selbst das noch weißt!</michael_house_1_15>
 	<michael_house_1_16>Ja, Kindergarten und erste Klasse, um genau zu sein.</michael_house_1_16>
 	<michael_house_1_17>Glaubst du, du erkennst sie?</michael_house_1_17>
 	<michael_house_1_18>Hier, das ist sie, und gleich neben ihr ist Sara.</michael_house_1_18>
@@ -252,13 +249,13 @@
 	<michael_house_2_8>Du warst außer dir, als es passiert ist…</michael_house_2_8>
 	<michael_house_2_9>Es wird Zeit für deine Tabletten, Schatz.</michael_house_2_9>
 	<michael_house_2_10>Geh doch schonmal nach oben ins Schlafzimmer, ich bringe sie dir gleich.</michael_house_2_10>
-	<michael_house_2_11>Ist es nicht in der Schublade?</michael_house_2_11>
+	<michael_house_2_11>Es ist nicht in der Schublade?</michael_house_2_11>
 	<michael_house_2_12>Aber was soll ich denn mit deinem Adressbuch, Jane?</michael_house_2_12>
 	<michael_house_2_13>Paula könnte doch auch nichts damit anfangen.</michael_house_2_13>
 	<michael_house_2_14>Vielleicht hast du es selbst weggelegt und weißt es nicht mehr?</michael_house_2_14>
 	<michael_house_2_15>
     Vielleicht irgendeine Nachwirkung deiner Amnesie…
-    Wir sollten vielleicht noch einmal zu Arzt gehen…
+    Wir sollten noch einmal zum Arzt gehen…
     Am besten beruhigst du dich erstmal und nimmst deine Tabletten…
     Das Buch wird schon wieder auftauchen.
   </michael_house_2_15>
@@ -340,7 +337,7 @@
 	<paula_house_2_7>Es war halt einfach nicht wichtig.</paula_house_2_7>
 	<paula_house_2_8>
     Ihr Mann hat mir aufgetragen, sie niemanden anrufen zu lassen, oder Telefonate zu beantworten.
-    Das könnte sie zu sehr aufwühlen. Und ihre Freunde auch. Sie bräuchten erstmal nur Ruhe.
+    Das könnte sie zu sehr aufwühlen. Und ihre Freunde auch. Sie brauchen erstmal nur Ruhe.
   	</paula_house_2_8>
 	<paula_house_2_9>Solange es ihnen nicht besser geht, täglich.</paula_house_2_9>
 	<paula_house_2_10>

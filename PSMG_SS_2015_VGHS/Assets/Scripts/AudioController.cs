@@ -64,9 +64,6 @@ public class AudioController : MonoBehaviour {
 		keyAudioList.Add ("daughter5", "jane_house_1_12");		
 		keyAudioList.Add ("daughter6", "michael_house_1_13");		
 		keyAudioList.Add ("daughter7", "jane_house_1_13");		
-		keyAudioList.Add ("piano1", "michael_house_1_14");		
-		keyAudioList.Add ("piano2", "jane_house_1_14");		
-		keyAudioList.Add ("piano3", "michael_house_1_15");		
 		keyAudioList.Add ("daughter2_1", "jane_house_1_15");		
 		keyAudioList.Add ("daughter2_2", "michael_house_1_16");		
 		keyAudioList.Add ("daughter2_3", "michael_house_1_17");		
