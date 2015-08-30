@@ -9,19 +9,24 @@ ModelImporter:
     100002: //RootNode
     100004: lamp1
     100006: lamp2
+    100008: frame_upper_part
     400000: frame
     400002: //RootNode
     400004: lamp1
     400006: lamp2
+    400008: frame_upper_part
     2300000: frame
     2300002: lamp1
     2300004: lamp2
+    2300006: frame_upper_part
     3300000: frame
     3300002: lamp1
     3300004: lamp2
+    3300006: frame_upper_part
     4300000: lamp1
     4300002: frame
     4300004: lamp2
+    4300006: frame_upper_part
     7400000: Default Take
     9500000: //RootNode
   materials:
