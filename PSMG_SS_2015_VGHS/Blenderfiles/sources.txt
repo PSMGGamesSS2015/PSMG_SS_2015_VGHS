@@ -247,3 +247,8 @@ http://www.cgtextures.com/tiledpreview.php?id=69802&PHPSESSID=208tf7lhlqjju90ctl
 doors:
 http://www.cgtextures.com/tiledpreview.php?id=112995&PHPSESSID=e8u6r1dk08ci9laub56vq82kn2
 
+window frames:
+http://cgtextures.com/tiledpreview.php?id=112995&PHPSESSID=811ae857ent1dva2fhctvnf3d4
+
+office - chair:
+http://resources.blogscopia.com/2010/05/11/tubular-chair-download/
