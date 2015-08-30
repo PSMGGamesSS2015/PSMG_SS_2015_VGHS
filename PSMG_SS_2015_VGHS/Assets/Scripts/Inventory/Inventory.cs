@@ -92,11 +92,11 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void removeItem(int id){
-		Debug.Log ("yep");
 		for (int i = 0; i < database.items.Count; i++) {
 			if (database.items [i].itemId == id) {
 				Item item = database.items [i];
 				removeItemFromSlot (item);
+				setupItemDescription ("");
 				break;
 			}
 		}

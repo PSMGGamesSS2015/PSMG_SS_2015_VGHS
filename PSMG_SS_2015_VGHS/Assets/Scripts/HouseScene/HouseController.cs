@@ -24,6 +24,7 @@ public class HouseController : MonoBehaviour {
 	public GameObject playerCam;
 	public GameObject box;
 	public GameObject phoneWorkroom;
+	public GameObject floorTrigger;
 
 	public bool master = false;
 
@@ -129,10 +130,8 @@ public class HouseController : MonoBehaviour {
 				case "Piano": // manage interactions with piano
                     if(pianoCount <3){
 						switch (pianoCount){
+						
 						case 0:
-							initDialog ("piano");
-							break;
-						case 1:
 							initDialog("daughter");
 							//do this if interaction was set but not done yet
 							guiController.preventInteraction("michael_daughter");
@@ -142,7 +141,7 @@ public class HouseController : MonoBehaviour {
 								pianoCount++;
 							}
 							break;
-						case 2:
+						case 1:
 							initDialog("daughter2_");
 							break;
 						}
@@ -825,7 +824,7 @@ public class HouseController : MonoBehaviour {
 			GameObject.Find("ChildsroomTrigger").SetActive(false);
 			GameObject.Find("WorkroomTrigger").SetActive(false);
 			GameObject.Find("GuestroomTrigger").SetActive(false);
-			GameObject.Find("FloorTrigger").SetActive(true);
+			floorTrigger.SetActive(true);
 
 			michael.transform.position = michaelScene2Pos;
 			michael.SetActive(false);

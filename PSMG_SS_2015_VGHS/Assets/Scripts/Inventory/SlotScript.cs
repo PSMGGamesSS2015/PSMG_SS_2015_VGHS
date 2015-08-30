@@ -52,8 +52,10 @@ public class SlotScript : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 	}
 
 	public void OnPointerEnter(PointerEventData data){
-		if (inventory.Items [slotNumber].itemDesc != null) {
-			inventory.setupItemDescription (inventory.Items [slotNumber].itemDesc);
+		if (slotNumber < inventory.Items.Count) {
+			if (inventory.Items [slotNumber].itemDesc != null) {
+				inventory.setupItemDescription (inventory.Items [slotNumber].itemDesc);
+			}
 		}
 
 	}

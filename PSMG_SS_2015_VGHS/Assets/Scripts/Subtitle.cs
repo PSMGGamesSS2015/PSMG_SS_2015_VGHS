@@ -90,9 +90,6 @@ public class Subtitle : MonoBehaviour {
 		keyNodeMap.Add ("daughter5", "jane_house_1_12");		
 		keyNodeMap.Add ("daughter6", "michael_house_1_13");		
 		keyNodeMap.Add ("daughter7", "jane_house_1_13");		
-		keyNodeMap.Add ("piano1", "michael_house_1_14");		
-		keyNodeMap.Add ("piano2", "jane_house_1_14");		
-		keyNodeMap.Add ("piano3", "michael_house_1_15");		
 		keyNodeMap.Add ("daughter2_1", "jane_house_1_15");		
 		keyNodeMap.Add ("daughter2_2", "michael_house_1_16");		
 		keyNodeMap.Add ("daughter2_3", "michael_house_1_17");		
