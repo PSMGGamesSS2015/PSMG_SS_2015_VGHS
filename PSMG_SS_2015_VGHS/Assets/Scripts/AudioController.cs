@@ -9,7 +9,7 @@ public class AudioController : MonoBehaviour {
 	public GameObject voiceOutput;
 
 	public Dictionary<string, string> keyAudioList = new Dictionary<string, string>();
-
+	public List<string> performedAudio = new List<string>();
 
 	// Use this for initialization
 	void Start () {
@@ -21,11 +21,14 @@ public class AudioController : MonoBehaviour {
 	}
 
 	public void setupVoice(string key){
-		string audioSource;
-		keyAudioList.TryGetValue (key, out audioSource);
-		AudioClip clip = Resources.Load ("Audio/Voice/"+audioSource)as AudioClip;
-		voiceOutput.GetComponent<AudioSource> ().clip = clip;
-		voiceOutput.GetComponent<AudioSource>().Play();
+		if (!performedAudio.Contains (key)) {
+			string audioSource;
+			keyAudioList.TryGetValue (key, out audioSource);
+			AudioClip clip = Resources.Load ("Audio/Voice/" + audioSource)as AudioClip;
+			voiceOutput.GetComponent<AudioSource> ().clip = clip;
+			voiceOutput.GetComponent<AudioSource> ().Play ();
+			performedAudio.Add (key);
+		}
 	}
 
 	void setupKeyAudioList(){
