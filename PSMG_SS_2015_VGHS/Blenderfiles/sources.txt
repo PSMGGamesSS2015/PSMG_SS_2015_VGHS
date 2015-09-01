@@ -23,15 +23,6 @@ http://www.blenderchallenge.com/images/blends0033/final_phone.blend
 kitchen - frame parts:
 http://www.blendswap.com/blends/view/69874
 
-maid1:
-http://tf3dm.com/3d-model/girl-44203.html
-
-maid2:
-http://tf3dm.com/3d-model/girl-2-85892.html
-
-r2d2:
-http://tf3dm.com/3d-model/r2d2-by-abrock-46556.html
-
 plant1:
 http://tf3dm.com/3d-model/house-plant-3-24261.html
 
@@ -50,10 +41,31 @@ http://resources.blogscopia.com/2010/05/12/iron-bed-download
 childroom - penguin:
 http://www.blender-models.com/model-downloads/animals/amphibians/id/penguin/
 
+stuffed-toy:
+
+cat:
+http://tf3dm.com/3d-model/cartoon-cat-37218.html
+
+frog:
+http://tf3dm.com/3d-model/frog-3d-model-78864.html
+
+fluttershy:
+http://tf3dm.com/3d-model/fluttershy-98890.html
+
+twilight sparkle:
+http://tf3dm.com/3d-model/twilight-sparkle-34407.html
+
+maid:
+http://tf3dm.com/3d-model/alexia-89488.html
+
+office - chair:
+http://resources.blogscopia.com/2010/05/11/tubular-chair-download/
+
 
 ################################
 ##### sources for graphics #####
 ################################
+
 
 crumpled paper:
 http://www.psdgraphics.com/file/crumpled-paper.jpg
@@ -73,10 +85,31 @@ http://www.kristinthurm.de/wp-content/uploads/2012/05/60-01-familienfoto-fotogra
 
 http://www.gs-irschenberg.de/schulleben2012_13/1.schultag/1.klasse.jpg
 
+doors:
+http://www.cgtextures.com/tiledpreview.php?id=112995&PHPSESSID=e8u6r1dk08ci9laub56vq82kn2
+
+window frames:
+http://cgtextures.com/tiledpreview.php?id=112995&PHPSESSID=811ae857ent1dva2fhctvnf3d4
+
+pill:
+http://www.neuraxpharm.de/images/praeparate/4815495.jpg
+
+vase - marble:
+http://www.cgtextures.com/tiledpreview.php?id=49995&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+clay:
+http://www.cgtextures.com/tiledpreview.php?id=38526&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+lamp2:
+http://www.cgtextures.com/tiledpreview.php?id=32817&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+
+big pictures:
+http://www.unsplash.com
+
 
 entry-area:
 
-wallpaper:
+wall:
 http://www.cgtextures.com/texview.php?id=19071&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
 
 floor:
@@ -99,22 +132,6 @@ http://cdn.designbeep.com/wp-content/uploads/2012/10/7.gold-textures.jpg
 
 
 
-toilette:
-
-tiles:
-http://www.cgtextures.com/texview.php?id=72261&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
-
-cabinet:
-http://www.cgtextures.com/texview.php?id=14181&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
-
-towel:
-http://www.cgtextures.com/texview.php?id=107727&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
-
-
-bedroom:
-
-cotton:
-http://www.bco-wohntextilien.de/out/pictures/master/product/1/gc9091061.jpg
 
 living-room:
 
@@ -137,118 +154,122 @@ http://www.cgtextures.com/texview.php?id=6850&PHPSESSID=p7nhp3ueps66b7n2sem6dn84
 family-album:
 http://www.cgtextures.com/texview.php?id=15237&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
 
+
+
+
 bath:
 
-ground:
+ground / wall:
 http://www.cgtextures.com/tiledpreview.php?id=76594&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
 
-dining-room - table:
+tiles:
+http://www.cgtextures.com/texview.php?id=72261&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+cabinet:
+http://www.cgtextures.com/texview.php?id=14181&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+towel:
+http://www.cgtextures.com/texview.php?id=107727&PHPSESSID=tjlbllrh72746ggd4nrieid8v0
+
+
+
+
+dining room:
+
+table:
 http://www.cgtextures.com/texview.php?id=4319&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
 
 chair:
 http://www.cgtextures.com/tiledpreview.php?id=38137&PHPSESSID=goof6hkukkl7n6pkc66g6vo8t3
 
-kitchen - ground:
+
+
+
+kitchen:
+
+phone:
+http://www.urethanesupply.com/images_old/3803texturesmall.main.jpg
+
+ground:
 http://www.cgtextures.com/texview.php?id=68269&PHPSESSID=6qrui48momudd66rqjskl32ac6
 
-kitchen - table and plates:
+table and plates:
 http://www.cgtextures.com/tiledpreview.php?id=49995&PHPSESSID=q0tlbnnonfj303fetk6pd9kqe4
 
-wintergarten - ground:
+
+
+
+wintergarden:
+
+ground:
 http://www.cgtextures.com/tiledpreview.php?id=76626&PHPSESSID=gqncjv422voi6sjsdvtai84r44
 
-wintergarten wall:
+wall:
 http://www.cgtextures.com/texview.php?id=66991&PHPSESSID=gqncjv422voi6sjsdvtai84r44
 
-kids - wall:
+
+
+
+childroom:
+
+wall:
 https://www.colourbox.de/preview/6025284-seamless-abstract-liana-twisted-tendril-background.jpg
 
-kids - ground:
+ground:
 http://www.cgtextures.com/tiledpreview.php?id=107346&PHPSESSID=gqncjv422voi6sjsdvtai84r44
 
-office - table:
-http://www.cgtextures.com/tiledpreview.php?id=16437&PHPSESSID=f6drus3v0ogou7326ebafnsk86
-
-office - table: plate:
-http://www.cgtextures.com/tiledpreview.php?id=33823&PHPSESSID=f6drus3v0ogou7326ebafnsk86
-
-office - couch leather:
-http://www.cgtextures.com/tiledpreview.php?id=38149&PHPSESSID=f6drus3v0ogou7326ebafnsk86
-
-kiddy-room:
-stuffed-toy:
-
-cat:
-http://tf3dm.com/3d-model/cartoon-cat-37218.html
-
-frog:
-http://tf3dm.com/3d-model/frog-3d-model-78864.html
-
-dog:
-http://tf3dm.com/3d-model/dog-9109.html
-
-fluttershy:
-http://tf3dm.com/3d-model/fluttershy-98890.html
-
-teddy:
-http://tf3dm.com/3d-model/teddy-45008.html
-
-snail:
-http://tf3dm.com/3d-model/snail-17540.html
-
-twilight sparkle:
-http://tf3dm.com/3d-model/twilight-sparkle-34407.html
-
-mario & luigi:
-http://tf3dm.com/3d-model/mario-and-luigi-56237.html
-
-childroom - wood:
+wood:
 http://www.cgtextures.com/tiledpreview.php?id=21897&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
 
-bedroom - wall:
+
+
+
+office:
+
+table:
+http://www.cgtextures.com/tiledpreview.php?id=16437&PHPSESSID=f6drus3v0ogou7326ebafnsk86
+
+table: plate:
+http://www.cgtextures.com/tiledpreview.php?id=33823&PHPSESSID=f6drus3v0ogou7326ebafnsk86
+
+couch leather:
+http://www.cgtextures.com/tiledpreview.php?id=38149&PHPSESSID=f6drus3v0ogou7326ebafnsk86
+
+wall:
+http://www.cgtextures.com/tiledpreview.php?id=21200&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+ground:
+http://www.cgtextures.com/tiledpreview.php?id=69802&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
+
+
+
+
+bedroom:
+
+wall:
 http://www.cgtextures.com/tiledpreview.php?id=18526&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
 
-bedroom - ground:
+ground:
 http://www.cgtextures.com/texview.php?id=39945&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
 
-bedroom - lamp:
+lamp:
 http://www.cgtextures.com/tiledpreview.php?id=24474&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
 
 http://www.cgtextures.com/tiledpreview.php?id=33823&PHPSESSID=35tn9l4nv2aphk6gitoe0uq6r0
 
-pill:
-http://www.neuraxpharm.de/images/praeparate/4815495.jpg
-
-vase - marble:
-http://www.cgtextures.com/tiledpreview.php?id=49995&PHPSESSID=2tv4v72drhohs0vco0uimabl22
-
-clay:
-http://www.cgtextures.com/tiledpreview.php?id=38526&PHPSESSID=2tv4v72drhohs0vco0uimabl22
-
-lamp2:
-http://www.cgtextures.com/tiledpreview.php?id=32817&PHPSESSID=2tv4v72drhohs0vco0uimabl22
+cotton:
+http://www.bco-wohntextilien.de/out/pictures/master/product/1/gc9091061.jpg
 
 
-guestroom - ground:
+
+
+guestroom:
+
+ground:
 http://www.cgtextures.com/tiledpreview.php?id=51023&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
 
-guestroom - wall:
+wall:
 http://www.cgtextures.com/tiledpreview.php?id=21199&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
 
-guest room - bed:
+bed:
 https://cdn.vectorstock.com/i/composite/85,67/texture-with-flowers-vector-368567.jpg
-
-office - wall:
-http://www.cgtextures.com/tiledpreview.php?id=21200&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
-
-office - ground:
-http://www.cgtextures.com/tiledpreview.php?id=69802&PHPSESSID=208tf7lhlqjju90ctl9ka7pvr3
-
-doors:
-http://www.cgtextures.com/tiledpreview.php?id=112995&PHPSESSID=e8u6r1dk08ci9laub56vq82kn2
-
-window frames:
-http://cgtextures.com/tiledpreview.php?id=112995&PHPSESSID=811ae857ent1dva2fhctvnf3d4
-
-office - chair:
-http://resources.blogscopia.com/2010/05/11/tubular-chair-download/
